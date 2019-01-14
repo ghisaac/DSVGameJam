@@ -4,10 +4,10 @@ using UnityEngine;
 
 public abstract class PlayerBaseState : State
 {
-    protected PlayerController controller;
+    protected PlayerController controller { get { return (PlayerController)StateMachine.owner; } }
     protected Transform transform { get { return controller.transform; } }
     protected Vector2 Velocity { get { return controller.Velocity; } set { controller.Velocity = value; } }
-
+    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(controller.myPlayer.RewierdId); } }
 
     //Protected methods
     /// <summary>
@@ -28,4 +28,6 @@ public abstract class PlayerBaseState : State
         Physics.CapsuleCast(transform.position, transform.position + Vector3.up * height, radius, Velocity.normalized, out hitinfo, float.MaxValue, controller.CollisionLayers);
         return hitinfo;
     }
+
+    
 }

@@ -12,7 +12,7 @@ public class StateMachine
 
     public State CurrentState;
     protected Dictionary<Type, State> stateDictionary;
-    private object owner;
+    public object owner { get; set; }
     private List<State> instancedStates;
 
     public StateMachine(StateMachine stateMachine)
