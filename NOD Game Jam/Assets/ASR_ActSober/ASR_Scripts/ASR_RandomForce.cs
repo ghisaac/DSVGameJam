@@ -5,6 +5,7 @@ using UnityEngine;
 public class ASR_RandomForce : MonoBehaviour
 {
     public Rigidbody[] _rigidbodies;
+    public ASR_CharacterController[] Characters;
     public float StartForce;
     public float ForceMultiplier;
     private float _force;
@@ -47,10 +48,17 @@ public class ASR_RandomForce : MonoBehaviour
         float timer = 0f;
 
         while (timer < PushTime){
-            
+
+            /*
             foreach (Rigidbody rb in _rigidbodies)
             {
                 rb.AddForce(rb.transform.right * randomHorizontal * _force, ForceMode.Acceleration);
+            }
+            */
+
+            foreach (ASR_CharacterController cc in Characters)
+            {
+                cc.AddForce(cc.transform.right * randomHorizontal * _force);
             }
 
             timer += Time.deltaTime;

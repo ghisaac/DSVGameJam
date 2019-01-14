@@ -11,6 +11,8 @@ public class ASR_CharacterController : MonoBehaviour
     private float _inputModifier = 1f;
     private const float INPUT_MODIFIER_MIN = 1F;
 
+    public Transform ForcePositionTransform;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -26,10 +28,11 @@ public class ASR_CharacterController : MonoBehaviour
     {
         _horizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector3 direction = -transform.right * _horizontal;
+        //Vector3 direction = -transform.right * _horizontal;
+        //_rigidbody.AddForce(direction * Force * _inputModifier, ForceMode.Acceleration);
 
-        _rigidbody.AddForce(direction * Force * _inputModifier, ForceMode.Acceleration);
-
+        Vector3 direction = -ForcePositionTransform.right * _horizontal;
+        _rigidbody.AddForceAtPosition(direction * Force * _inputModifier, ForcePositionTransform.position, ForceMode.Acceleration);
     }
 
     private void InputModification(){
@@ -40,6 +43,12 @@ public class ASR_CharacterController : MonoBehaviour
             _inputModifier = Mathf.Clamp(_inputModifier - Time.deltaTime, INPUT_MODIFIER_MIN, _inputModifier);
         }
         Debug.Log("Inputmodifier = " + _inputModifier);
+    }
+
+    public void AddForce(Vector3 force){
+
+        _rigidbody.AddForceAtPosition(force, ForcePositionTransform.position, ForceMode.Acceleration);
+
     }
 
 }
