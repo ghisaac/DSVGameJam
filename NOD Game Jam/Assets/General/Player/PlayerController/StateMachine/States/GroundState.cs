@@ -9,34 +9,56 @@ public class GroundState : PlayerBaseState
     public float Acceleration;
     public float Friction;
     public float MaxSpeed;
+    public float JumpForce;
 
     private Vector3 groundPlane = Vector3.up;
     public override void StateUpdate()
     {
-        if(!GetGround())
-        {
-            //Switch to air
-            return;
-        }
+
+        Velocity += Vector3.down * 10 * Time.deltaTime;
+
+        Fric();
         Move();
-        PreventCollision();
-        transform.position += Velocity * Time.deltaTime;
+        Collide();
+        if (RewierdPlayer.GetButtonDown("A"))
+        {
+            Velocity += Vector3.up * JumpForce;
+            StateMachine.TransitionToState<AirState>();
+        }
+
+        transform.position += controller.Velocity * Time.deltaTime;
     }
 
-    private bool GetGround()
+    private void Collide()
     {
-        RaycastHit hit;
-        Physics.Raycast(new Ray(transform.position, Vector3.down), out hit, .5f, controller.CollisionLayers);
-        groundPlane = hit.normal;
+        List<RaycastHit> allhits = PreventCollision();
+        RaycastHit hit = CheckGround(allhits);
+        if (hit.collider != null)
+            groundPlane = hit.normal;
+        else
+            StateMachine.TransitionToState<AirState>();
+    }
 
-        return hit.collider != null;
+    private RaycastHit CheckGround(List<RaycastHit> allhits)
+    {
+        foreach (RaycastHit hit in allhits)
+            if (Vector3.Dot(hit.normal, Vector3.up) > .7f)
+                return hit;
+        return new RaycastHit();
     }
 
     private void Move()
     {
-        
         Vector3 rawInput = new Vector3(RewierdPlayer.GetAxis("Horizontal"), 0f, RewierdPlayer.GetAxis("Vertical"));
         Vector3 movement = Vector3.ProjectOnPlane(rawInput, groundPlane).normalized;
-        Velocity += movement * Acceleration * Time.deltaTime;
+
+        controller.Velocity += movement * Acceleration * Time.deltaTime;
+        if(Vector3.ProjectOnPlane(Velocity, groundPlane).magnitude > MaxSpeed)
+            controller.Velocity = Vector3.ClampMagnitude(Vector3.ProjectOnPlane(controller.Velocity, groundPlane), MaxSpeed) + Vector3.Project(controller.Velocity, groundPlane);
+    }
+
+    private void Fric()
+    {
+        controller.Velocity -= controller.Velocity.normalized * Friction * Time.deltaTime;
     }
 }
