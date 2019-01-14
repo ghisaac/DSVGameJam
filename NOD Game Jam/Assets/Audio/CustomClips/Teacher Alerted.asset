@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
-  m_Name: LavaLoop
+  m_Name: Teacher Alerted
   m_EditorClassIdentifier: 
-  AudioClips:
-  - {fileID: 8300000, guid: 837e11982a3168a4fb1af60e94e0db28, type: 3}
-  Volume: 0.25
-  Pitch: 0.2
-  PitchVariance: 0.05
-  Loop: 1
+  AudioClips: []
+  Volume: 1
+  Pitch: 1
+  PitchVariance: 0
+  Loop: 0
   MinDistance: 1
   MaxDistance: 10
   RolloffMode: 0

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3120324293551576130}
-  - component: {fileID: 3120324293551576131}
   - component: {fileID: 3120324293551576129}
+  - component: {fileID: 3120324293551576131}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -32,21 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3120324293551576131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3120324293551576140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17915901367da034caebc2e208ce4678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TableMelting: {fileID: 0}
-  LavaSFX: {fileID: 0}
-  CupStack: {fileID: 0}
 --- !u!114 &3120324293551576129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,3 +44,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2bf38932a7a0143ad1d2c3ff92c819, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3120324293551576131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120324293551576140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17915901367da034caebc2e208ce4678, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ButtonHover: {fileID: 11400000, guid: 556ed161b9f5fa4448d0d6374984a1d1, type: 2}
+  ButtonPress: {fileID: 11400000, guid: 435bd5956f7957743b02f10acfa12f44, type: 2}
+  GameSelect: {fileID: 11400000, guid: a96b4a70eefbe614197b4b455c940500, type: 2}
+  PlayerLand: {fileID: 11400000, guid: 26b62a11d65f3124db1f26288a889de0, type: 2}
+  PlayerRun: {fileID: 11400000, guid: 6ac8b47be1508004ea55e31c12f8bb3f, type: 2}
+  CollidePlayer: {fileID: 11400000, guid: 1dce51b3cb4fd2044a05f8f529761099, type: 2}
+  CollideTerrain: {fileID: 11400000, guid: 996ba4fc364515043bea2dbac76b59c1, type: 2}
+  TableMelting: {fileID: 11400000, guid: 7c70f1500b5481a4c975bc9491a78081, type: 2}
+  TableShaking: {fileID: 11400000, guid: 52fe34a2ce09b234ab747c8a86105138, type: 2}
+  LavaSFX: {fileID: 11400000, guid: 8927a915f3b1fdf48b980b63a415dd0d, type: 2}
+  CupStack: {fileID: 11400000, guid: 49a0973a1c2a9a248b5e1c3c64abbce5, type: 2}
+  CupImpact: {fileID: 11400000, guid: 0f27717719e53b14c88b72e3d75e2fa8, type: 2}
+  TapFeet: {fileID: 11400000, guid: d69820ac921ce5f4594bd321396d1f9f, type: 2}
+  SpeedBoost: {fileID: 11400000, guid: 3a5348e9106e83e4e9b7e9cba1ce2dc3, type: 2}
+  TeacherIdle: {fileID: 11400000, guid: 0968f3c0829616044a3542237ac25e66, type: 2}
+  TeacherAlerted: {fileID: 11400000, guid: dfacbc5d2f4f0c441b85e156de7566b8, type: 2}
+  StudentAskHelp: {fileID: 11400000, guid: d063f4fe6e0e15f46a0f1d684e20d32b, type: 2}
+  StudentDemandHelp: {fileID: 11400000, guid: e59fd2dfcd10ab14dbd3be92f1e22c34, type: 2}
+  DuckFromSight: {fileID: 11400000, guid: 4c5a09a9d8ac5d643b829523c9dd605c, type: 2}
+  SitDown: {fileID: 11400000, guid: 9c5e323e26007e548b1fec9e79e3a726, type: 2}
+  Burp: {fileID: 11400000, guid: d36d741b16d9fe545a9b69dae796a5bd, type: 2}
+  DrunkIdle: {fileID: 11400000, guid: f9b9708a67945e34ba608a86ce631e32, type: 2}
+  PlayerFall: {fileID: 11400000, guid: f41929bce11745840bc1964353a9b0c6, type: 2}
