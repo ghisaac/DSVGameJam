@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player
 {
     public int RewierdId { get; private set; }
     public int Points { get; private set; }
