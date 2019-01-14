@@ -39,7 +39,7 @@ public class Player
         Player toReturn = null;
         foreach (Player p in AllPlayers)
         {
-            if (p.name == name)
+            if (p.Name == name)
             {
                 toReturn = p;
                 break;
