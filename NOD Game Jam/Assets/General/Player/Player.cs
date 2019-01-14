@@ -10,7 +10,7 @@ public class Player
 
     public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
 
-    public static List<Player> AllPlayers;
+    public static List<Player> AllPlayers = new List<Player>();
 
     public Player(int RewierdId, string Name)
     {
