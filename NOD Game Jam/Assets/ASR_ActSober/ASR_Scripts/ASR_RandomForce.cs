@@ -40,7 +40,33 @@ public class ASR_RandomForce : MonoBehaviour
     private IEnumerator RandomForceTimer()
     {
         yield return new WaitForSeconds(Random.Range(MinRandomTime, MaxRandomTime));
-        AddRandomForce();
+        //AddRandomForce();
+        yield return AddForceOverTime();
         StartCoroutine(RandomForceTimer());
     }
+
+    private IEnumerator AddForceOverTime(){
+
+        float randomHorizontal = Random.value > 0.5 ? 1 : -1;
+
+        float timer = 0f;
+
+        while (timer < 2){
+            
+            foreach (Rigidbody rb in _rigidbodies)
+            {
+                rb.AddForce(rb.transform.right * randomHorizontal * _force, ForceMode.Acceleration);
+            }
+            Debug.Log("VArv");
+
+            timer += Time.deltaTime;
+
+            yield return null;
+
+        }
+
+        _force *= ForceMultiplier;
+
+    }
+
 }
