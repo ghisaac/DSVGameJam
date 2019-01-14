@@ -8,6 +8,8 @@ public class Player
     public int Points { get; private set; }
     public string Name { get; private set; }
 
+    public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
+
     public static List<Player> AllPlayers;
 
     public Player(int RewierdId, string Name)
