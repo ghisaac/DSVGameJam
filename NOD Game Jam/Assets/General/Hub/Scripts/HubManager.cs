@@ -7,27 +7,35 @@ using UnityEngine;
 public class HubManager : MonoBehaviour
 {
 
-    public GameObject[] levels;
-    public int current;
+    private GameObject[] levelPins;
+    private GameObject currentSelection;
+    private int currentIndex;
 
     void Start()
     {
-        current = 0;
+        levelPins = GameObject.FindGameObjectsWithTag("LevelPins");
+        currentIndex = 0;
+        currentSelection = levelPins[currentIndex];
     }
 
     void Update()
     {
-        //ReInput.players.GetPlayer(Player.AllPlayers[0].RewierdId).GetButton("A");
+        HandleJoins();
+        HandleLevelSelection();
+    }
 
-        foreach(Rewired.Player p in ReInput.players.AllPlayers)
+    private void HandleJoins()
+    {
+        foreach (Rewired.Player p in ReInput.players.AllPlayers)
         {
-            if(p.GetButtonDown("Start"))
+            if (p.GetButtonDown("Start"))
             {
                 if (!Player.CheckIfPlayerExists(p.id))
                 {
-                    new Player(p.id, "Maestro " +  p.id);
+                    new Player(p.id, "Maestro " + p.id);
                 }
             }
+
             else if (p.GetButtonDown("Back"))
             {
                 if (Player.CheckIfPlayerExists(p.id))
@@ -35,18 +43,33 @@ public class HubManager : MonoBehaviour
                     Player.RemovePlayer(p.id);
                 }
             }
-
         }
-
     }
 
-    private void HandleJoins()
+    private void HandleLevelSelection()
     {
-        //ReInput.players
+        if (ReInput.players.AllPlayers[0].GetAxisRaw("Horizontal") > 0)
+        {
+            currentIndex += 1;
 
-            //När start trycks lägg till den kontrollern som en spelare
-            //när back trycks ta bort den kontrollern från spelare
+            if (currentIndex > levelPins.Length)
+            {
+                currentIndex = 0;
+            }
 
-        //ReInput.configuration.
+            currentSelection = levelPins[currentIndex];
+        }
+
+        else if (ReInput.players.AllPlayers[0].GetAxisRaw("Horizontal") < 0)
+        {
+            currentIndex -= 1;
+
+            if (currentIndex < 0)
+            {
+                currentIndex = 0;
+            }
+
+            currentSelection = levelPins[currentIndex];
+        }
     }
 }
