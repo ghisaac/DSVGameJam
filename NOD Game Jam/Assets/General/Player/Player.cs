@@ -18,6 +18,27 @@ public class Player
         AllPlayers.Add(this);
     }
 
+    public static bool CheckIfPlayerExists(int RewierdId)
+    {
+        foreach(Player p in AllPlayers)
+        {
+            if (p.RewierdId == RewierdId)
+                return true;
+        }
+        return false;
+    }
+    public static void RemovePlayer(int RewierdId)
+    {
+        Player toRemove = null;
+        foreach (Player p in AllPlayers)
+        {
+            if (p.RewierdId == RewierdId)
+                toRemove = p;
+        }
+        if (toRemove != null)
+            AllPlayers.Remove(toRemove);
+    }
+
     public static void DistributePoints()
     {
 
