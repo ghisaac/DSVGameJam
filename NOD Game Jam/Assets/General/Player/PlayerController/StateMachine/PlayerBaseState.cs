@@ -14,7 +14,7 @@ public abstract class PlayerBaseState : State
     /// This method prevents the character from falling through the ground, walls and other players.
     /// </summary>
     /// <returns>The returned list can be used if you want to make checks on the hits, etc</returns>
-    protected List<RaycastHit> PreventCollistion()
+    protected List<RaycastHit> PreventCollision()
     {
         return PhysicsHelper.PreventCollision(CapsuleCast, ref controller.Velocity, transform, Time.deltaTime, 0.1f);
     }
