@@ -30,6 +30,5 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         stateMachine.Update();
-        this.transform.position += Velocity * Time.deltaTime;
     }
 }
