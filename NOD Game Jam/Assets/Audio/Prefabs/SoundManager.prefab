@@ -63,19 +63,30 @@ MonoBehaviour:
   PlayerRun: {fileID: 11400000, guid: 6ac8b47be1508004ea55e31c12f8bb3f, type: 2}
   CollidePlayer: {fileID: 11400000, guid: 1dce51b3cb4fd2044a05f8f529761099, type: 2}
   CollideTerrain: {fileID: 11400000, guid: 996ba4fc364515043bea2dbac76b59c1, type: 2}
+  RoundStart: {fileID: 11400000, guid: 3123c21340175c64e8b0eafaf4849423, type: 2}
+  GainPoints: {fileID: 11400000, guid: cfc118d47c14c4049b89c19cfe9da711, type: 2}
+  TickTock: {fileID: 11400000, guid: 18e40b8cd6b1e2c428901f9838afb691, type: 2}
+  VictorySound: {fileID: 11400000, guid: 705cf214616f6e84a8d8267836f37e49, type: 2}
   TableMelting: {fileID: 11400000, guid: 7c70f1500b5481a4c975bc9491a78081, type: 2}
   TableShaking: {fileID: 11400000, guid: 52fe34a2ce09b234ab747c8a86105138, type: 2}
   LavaSFX: {fileID: 11400000, guid: 8927a915f3b1fdf48b980b63a415dd0d, type: 2}
+  FallInLava: {fileID: 11400000, guid: b9a61dff4b9ee1a4ab5aab9f5edecf54, type: 2}
   CupStack: {fileID: 11400000, guid: 49a0973a1c2a9a248b5e1c3c64abbce5, type: 2}
   CupImpact: {fileID: 11400000, guid: 0f27717719e53b14c88b72e3d75e2fa8, type: 2}
+  CoffeeSplash: {fileID: 11400000, guid: 0bf45d297bc2a07449391a24aab43bb0, type: 2}
   TapFeet: {fileID: 11400000, guid: d69820ac921ce5f4594bd321396d1f9f, type: 2}
   SpeedBoost: {fileID: 11400000, guid: 3a5348e9106e83e4e9b7e9cba1ce2dc3, type: 2}
+  ChairRoll: {fileID: 11400000, guid: c2d5cbc70ca85194cb15c6c5b9dba470, type: 2}
+  Countdown: {fileID: 11400000, guid: cb952ad02b3ddfc42bf036c750337fc3, type: 2}
+  Groan: {fileID: 11400000, guid: 026b93b197f903d45b2f759def77d04d, type: 2}
   TeacherIdle: {fileID: 11400000, guid: 0968f3c0829616044a3542237ac25e66, type: 2}
   TeacherAlerted: {fileID: 11400000, guid: dfacbc5d2f4f0c441b85e156de7566b8, type: 2}
   StudentAskHelp: {fileID: 11400000, guid: d063f4fe6e0e15f46a0f1d684e20d32b, type: 2}
   StudentDemandHelp: {fileID: 11400000, guid: e59fd2dfcd10ab14dbd3be92f1e22c34, type: 2}
   DuckFromSight: {fileID: 11400000, guid: 4c5a09a9d8ac5d643b829523c9dd605c, type: 2}
   SitDown: {fileID: 11400000, guid: 9c5e323e26007e548b1fec9e79e3a726, type: 2}
+  Caught: {fileID: 11400000, guid: c10afc45d95226f4eb88956443c44f6b, type: 2}
   Burp: {fileID: 11400000, guid: d36d741b16d9fe545a9b69dae796a5bd, type: 2}
   DrunkIdle: {fileID: 11400000, guid: f9b9708a67945e34ba608a86ce631e32, type: 2}
   PlayerFall: {fileID: 11400000, guid: f41929bce11745840bc1964353a9b0c6, type: 2}
+  FoundSpot: {fileID: 11400000, guid: ee92d77d8fe91404092fa960cf322545, type: 2}

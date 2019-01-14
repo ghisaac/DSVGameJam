@@ -8,24 +8,26 @@ public class SoundManager : MonoBehaviour
     [Header("UI")]
     public CustomClip ButtonHover;
     public CustomClip ButtonPress, GameSelect;
-    [Header("Player General")]
+    [Header("General")]
     public CustomClip PlayerLand;
-    public CustomClip PlayerRun, CollidePlayer, CollideTerrain;
+    public CustomClip PlayerRun, CollidePlayer, CollideTerrain, RoundStart, GainPoints, TickTock, VictorySound;
     [Header("Floor is Lava")]
     public CustomClip TableMelting;
-    public CustomClip TableShaking, LavaSFX;
+    public CustomClip TableShaking, LavaSFX, FallInLava;
     [Header("Kaffekopp Stacking")]
     public CustomClip CupStack;
-    public CustomClip CupImpact;
+    public CustomClip CupImpact, CoffeeSplash;
     [Header("Kontorstols-racing")]
     public CustomClip TapFeet;
-    public CustomClip SpeedBoost;
+    public CustomClip SpeedBoost, ChairRoll, Countdown, Groan;
     [Header("Hela Havet Sneakar")]
     public CustomClip TeacherIdle;
-    public CustomClip TeacherAlerted, StudentAskHelp, StudentDemandHelp, DuckFromSight, SitDown;
+    public CustomClip TeacherAlerted, StudentAskHelp, StudentDemandHelp, DuckFromSight, SitDown, Caught;
     [Header("Act Sober")]
     public CustomClip Burp;
     public CustomClip DrunkIdle, PlayerFall;
+    [Header("Geoguessr")]
+    public CustomClip FoundSpot;
 
     private void Awake()
     {
@@ -53,7 +55,7 @@ public class SoundManager : MonoBehaviour
         AudioPlayer.Instance.Play2DSound(GameSelect);
     }
 
-    //PLAYER GENERAL
+    //GENERAL
     public void PlayPlayerRun(GameObject sourceOfSound)
     {
         AudioPlayer.Instance.Play3DSound(PlayerRun, sourceOfSound);
@@ -70,6 +72,19 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play3DSound(CollideTerrain, sourceOfSound);
     }
+    public void PlayRoundStart()
+    {
+        AudioPlayer.Instance.Play2DSound(CollideTerrain);
+    }
+    public void PlayTicking()
+    {
+        AudioPlayer.Instance.Play2DSound(TickTock);
+    }
+    public void PlayVictorySound()
+    {
+        AudioPlayer.Instance.Play2DSound(VictorySound);
+    }
+
 
     //FLOOR IS LAVA
     public void PlayTableMelting(GameObject sourceOfSound)
@@ -84,6 +99,10 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(LavaSFX);
     }
+    public void PlayFallInLava(GameObject sourceOfSound)
+    {
+        AudioPlayer.Instance.Play3DSound(FallInLava, sourceOfSound);
+    }
 
     //KAFFEKOPP STACKING
     public void PlayCupStack()
@@ -94,6 +113,10 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(CupImpact);
     }
+    public void PlayCoffeeSplash()
+    {
+        AudioPlayer.Instance.Play2DSound(CoffeeSplash);
+    }
 
     //KONTORSTOLSRACING
     public void PlaySpeedUp(GameObject sourceOfSound)
@@ -103,6 +126,18 @@ public class SoundManager : MonoBehaviour
     public void PlayBoost(GameObject sourceOfSound)
     {
         AudioPlayer.Instance.Play3DSound(SpeedBoost, sourceOfSound);
+    }
+    public void PlayChairRolling(GameObject sourceOfSound)
+    {
+        AudioPlayer.Instance.Play3DSound(ChairRoll, sourceOfSound);
+    }
+    public void PlayCountdown()
+    {
+        AudioPlayer.Instance.Play2DSound(Countdown);
+    }
+    public void PlayGroan()
+    {
+        AudioPlayer.Instance.Play2DSound(Groan);
     }
 
     //HELA HAVET SNEAKAR
@@ -126,6 +161,10 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(DuckFromSight);
     }
+    public void PlayCaught()
+    {
+        AudioPlayer.Instance.Play2DSound(Caught);
+    }
     public void PlaySitDown()
     {
         AudioPlayer.Instance.Play2DSound(SitDown);
@@ -144,4 +183,6 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(PlayerFall);
     }
+
+    //GEOGUESSER
 }
