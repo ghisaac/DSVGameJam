@@ -543,46 +543,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3206439344402662678, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206439344402662678, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206439344402662678, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206439344402662678, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206439343768899028, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3206439344588070486, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5503012126335111774, guid: 20d8aeeb62bc040d199a5140e472d15e,
         type: 3}
       propertyPath: ForcePositionTransform
       value: 
       objectReference: {fileID: 333300626}
-    - target: {fileID: 5503012126335111774, guid: 20d8aeeb62bc040d199a5140e472d15e,
-        type: 3}
-      propertyPath: Force
-      value: 7
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 3206439342973936534, guid: 20d8aeeb62bc040d199a5140e472d15e, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20d8aeeb62bc040d199a5140e472d15e, type: 3}
