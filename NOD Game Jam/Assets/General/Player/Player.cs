@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class Player
 {
     public int RewierdId { get; private set; }
@@ -10,15 +10,26 @@ public class Player
 
     public static List<Player> AllPlayers;
 
+    public Player(int RewierdId, string Name)
+    {
+        this.RewierdId = RewierdId;
+        this.Name = Name;
+        this.Points = 0;
+        AllPlayers.Add(this);
+    }
+
     public static void DistributePoints()
     {
+
     }
     public static void NameWinners()
     {
 
     }
-    public static void GetPlayerByPlacement(int placement)
+    public static Player GetPlayerByPlacement(int placement)
     {
+        
+        return null;
     }
     public static Player GetPlayerByRewindID(int id)
     {
