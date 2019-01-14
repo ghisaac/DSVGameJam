@@ -1,18 +1,62 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Player : MonoBehaviour
+using System.Linq;
+public class Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public int RewierdId { get; private set; }
+    public int Points { get; private set; }
+    public string Name { get; private set; }
+
+    public static List<Player> AllPlayers;
+
+    public Player(int RewierdId, string Name)
     {
-        
+        this.RewierdId = RewierdId;
+        this.Name = Name;
+        this.Points = 0;
+        AllPlayers.Add(this);
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void DistributePoints()
+    {
+
+    }
+    public static void NameWinners()
+    {
+
+    }
+    public static Player GetPlayerByPlacement(int placement)
     {
         
+        return null;
+    }
+    public static Player GetPlayerByRewindID(int id)
+    {
+        Player toReturn = null;
+        foreach (Player p in AllPlayers)
+        {
+            if (p.RewierdId == id)
+            {
+                toReturn = p;
+                break;
+            }
+
+        }
+        return toReturn;
+    }
+    public static Player GetPlayerByName(string name)
+    {
+        Player toReturn = null;
+        foreach (Player p in AllPlayers)
+        {
+            if (p.Name == name)
+            {
+                toReturn = p;
+                break;
+            }
+
+        }
+        return toReturn;
     }
 }
