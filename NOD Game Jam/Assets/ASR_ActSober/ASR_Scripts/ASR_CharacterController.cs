@@ -40,7 +40,7 @@ public class ASR_CharacterController : MonoBehaviour
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0){
             _inputModifier += Time.deltaTime;
         } else {
-            _inputModifier = Mathf.Clamp(_inputModifier - Time.deltaTime, INPUT_MODIFIER_MIN, _inputModifier);
+            _inputModifier = INPUT_MODIFIER_MIN; //Mathf.Clamp(_inputModifier - Time.deltaTime, INPUT_MODIFIER_MIN, _inputModifier);
         }
         Debug.Log("Inputmodifier = " + _inputModifier);
     }
