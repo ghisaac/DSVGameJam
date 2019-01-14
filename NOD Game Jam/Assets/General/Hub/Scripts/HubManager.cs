@@ -19,9 +19,23 @@ public class HubManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ReInput.players.GetPlayer(Player.AllPlayers[0].RewierdId).GetButton("A");
+
+        if (Input.GetButtonDown("Start"))
+        {
+
+        }
 
 
+    }
 
+    private void HandleJoins()
+    {
+        //ReInput.players
 
+            //När start trycks lägg till den kontrollern som en spelare
+            //när back trycks ta bort den kontrollern från spelare
+
+        //ReInput.configuration.
     }
 }
