@@ -13,10 +13,6 @@ public class GroundState : PlayerBaseState
     private Vector3 groundPlane = Vector3.up;
     public override void StateUpdate()
     {
-        foreach(Rewired.Player p in ReInput.players.AllPlayers)
-        {
-            Debug.Log(p.id);
-        }
         if(!GetGround())
         {
             //Switch to air
