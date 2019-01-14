@@ -6,14 +6,41 @@ using Rewired;
 [CreateAssetMenu(menuName = "Player/State/PlayerGroundState")]
 public class GroundState : PlayerBaseState
 {
-    void Start()
+    public float Acceleration;
+    public float Friction;
+    public float MaxSpeed;
+
+    private Vector3 groundPlane = Vector3.up;
+    public override void StateUpdate()
     {
-        
+        foreach(Rewired.Player p in ReInput.players.AllPlayers)
+        {
+            Debug.Log(p.id);
+        }
+        if(!GetGround())
+        {
+            //Switch to air
+            return;
+        }
+        Move();
+        PreventCollision();
+        transform.position += Velocity * Time.deltaTime;
     }
 
-    // Update is called once per frame
-    void Update()
+    private bool GetGround()
+    {
+        RaycastHit hit;
+        Physics.Raycast(new Ray(transform.position, Vector3.down), out hit, .5f, controller.CollisionLayers);
+        groundPlane = hit.normal;
+
+        return hit.collider != null;
+    }
+
+    private void Move()
     {
         
+        Vector3 rawInput = new Vector3(RewierdPlayer.GetAxis("Horizontal"), 0f, RewierdPlayer.GetAxis("Vertical"));
+        Vector3 movement = Vector3.ProjectOnPlane(rawInput, groundPlane).normalized;
+        Velocity += movement * Acceleration * Time.deltaTime;
     }
 }
