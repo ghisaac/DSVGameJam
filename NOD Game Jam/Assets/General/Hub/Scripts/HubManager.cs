@@ -10,18 +10,24 @@ public class HubManager : MonoBehaviour
     private GameObject[] levelPins;
     private GameObject currentSelection;
     private int currentIndex;
+    private bool selectOnCooldown;
 
     void Start()
     {
-        levelPins = GameObject.FindGameObjectsWithTag("LevelPins");
+        levelPins = GameObject.FindGameObjectsWithTag("LevelPin");
         currentIndex = 0;
         currentSelection = levelPins[currentIndex];
+        selectOnCooldown = false;
     }
 
     void Update()
     {
         HandleJoins();
-        HandleLevelSelection();
+
+        if (!selectOnCooldown)
+        {
+            HandleLevelSelection();
+        }
     }
 
     private void HandleJoins()
@@ -48,28 +54,47 @@ public class HubManager : MonoBehaviour
 
     private void HandleLevelSelection()
     {
-        if (ReInput.players.AllPlayers[0].GetAxisRaw("Horizontal") > 0)
+        if (ReInput.players.AllPlayers[1].GetAxisRaw("Horizontal") > 0)
         {
             currentIndex += 1;
 
-            if (currentIndex > levelPins.Length)
+            if (currentIndex >= levelPins.Length)
             {
                 currentIndex = 0;
             }
 
+            StartCoroutine(SelectionCooldown());
+            currentSelection.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
             currentSelection = levelPins[currentIndex];
         }
-
-        else if (ReInput.players.AllPlayers[0].GetAxisRaw("Horizontal") < 0)
+        
+        else if (ReInput.players.AllPlayers[1].GetAxisRaw("Horizontal") < 0)
         {
+            if (currentIndex == 0)
+            {
+                currentIndex = levelPins.Length;
+            }
+
             currentIndex -= 1;
 
-            if (currentIndex < 0)
-            {
-                currentIndex = 0;
-            }
-
+            StartCoroutine(SelectionCooldown());
+            currentSelection.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
             currentSelection = levelPins[currentIndex];
         }
+
+        else if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
+        {
+            int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPinSceneReference>().GetSceneIndex();
+            SceneManager.LoadScene(currentSelectionSceneIndex);
+        }
+
+        currentSelection.GetComponent<MeshRenderer>().material.color = new Color(255, 255, 255);
+    }
+
+    private IEnumerator SelectionCooldown()
+    {
+        selectOnCooldown = true;
+        yield return new WaitForSeconds(0.32f);
+        selectOnCooldown = false;
     }
 }

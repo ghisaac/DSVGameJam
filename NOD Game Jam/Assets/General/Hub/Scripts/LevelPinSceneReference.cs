@@ -5,11 +5,17 @@ using UnityEngine;
 
 public class LevelPinSceneReference : MonoBehaviour
 {
-    public Scene myScene;
-    public int mySceneIndex;
+    [SerializeField]
+    private Scene pinScene;
+    private int pinSceneIndex;
 
-    public Scene GetMyScene()
+    private void Start()
     {
-        return SceneManager.GetSceneByBuildIndex(mySceneIndex);
+        pinSceneIndex = pinScene.buildIndex;
+    }
+
+    public int GetSceneIndex()
+    {
+        return pinSceneIndex;
     }
 }
