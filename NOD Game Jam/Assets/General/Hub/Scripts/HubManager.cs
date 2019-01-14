@@ -19,13 +19,38 @@ public class HubManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReInput.players.GetPlayer(Player.AllPlayers[0].RewierdId).GetButton("A");
+        //ReInput.players.GetPlayer(Player.AllPlayers[0].RewierdId).GetButton("A");
 
-        if (Input.GetButtonDown("Start"))
+        foreach(Rewired.Player p in ReInput.players.AllPlayers)
         {
+            if(p.GetButtonDown("Start"))
+            {
+                Debug.Log("  START" + p.id);
+                if (!Player.CheckIfPlayerExists(p.id))
+                {
+                    new Player(p.id, "Maestro " +  p.id);
+                    Debug.Log("  NEW " + p.id);
+                }
+            }
 
         }
-
+        foreach (Rewired.Player p in ReInput.players.AllPlayers)
+        {
+            if (p.GetButtonDown("Back"))
+            {
+                Debug.Log("  Backubuttono Pressu " + p.id);
+                if (Player.CheckIfPlayerExists(p.id))
+                {
+                    Player.RemovePlayer(p.id);
+                    Debug.Log("  Playeru Ideruu remuvuu " + p.id);
+                }
+            }
+        }
+        Debug.Log("  All makt åt tengil");
+        Debug.Log(" " + ReInput.players.AllPlayers[0].GetButtonDown("Back"));
+        Debug.Log(" " + ReInput.players.AllPlayers[1].GetButtonDown("Back"));
+        Debug.Log(" " + ReInput.players.AllPlayers[2].GetButtonDown("Back"));
+        Debug.Log(" " + ReInput.players.AllPlayers[3].GetButtonDown("Back"));
 
     }
 
