@@ -4,12 +4,9 @@ using UnityEngine;
 
 public abstract class PlayerBaseState : State
 {
-    protected PlayerController controller;
+    protected PlayerController controller { get { return (PlayerController)StateMachine.owner; } }
+
     protected Transform transform { get { return controller.transform; } }
     protected Vector2 Velocity { get { return controller.Velocity; } set { controller.Velocity = value; } }
-    public override void Initialize(object owner)
-    {
-        controller = (PlayerController)owner;
-    }
-
+    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(controller.myPlayer.RewierdId); } }
 }

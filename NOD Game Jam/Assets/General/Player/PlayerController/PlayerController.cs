@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public StateMachine stateMachine;
     public Vector3 Velocity;
     public LayerMask CollisionLayers;
+    [HideInInspector] public Player myPlayer;
 
     void Awake()
     {
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         stateMachine.Update();
+        this.transform.position += Velocity * Time.deltaTime;
     }
 }
