@@ -8,7 +8,9 @@ public class Player
     public int Points { get; private set; }
     public string Name { get; private set; }
 
-    public static List<Player> AllPlayers;
+    public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
+
+    public static List<Player> AllPlayers = new List<Player>();
 
     public Player(int RewierdId, string Name)
     {

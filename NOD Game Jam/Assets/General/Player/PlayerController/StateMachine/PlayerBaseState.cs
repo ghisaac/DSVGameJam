@@ -7,7 +7,7 @@ public abstract class PlayerBaseState : State
     protected PlayerController controller { get { return (PlayerController)StateMachine.owner; } }
     protected Transform transform { get { return controller.transform; } }
     protected Vector3 Velocity { get { return controller.Velocity; } set { controller.Velocity = value; } }
-    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(0); } }
+    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(controller.myPlayer.RewierdId); } }
 
     //Protected methods
     /// <summary>
@@ -22,10 +22,10 @@ public abstract class PlayerBaseState : State
     //Private methods
     private RaycastHit CapsuleCast()
     {
-        float height = controller.Collider.height;
-        float radius = controller.Collider.radius;
+        float height = 10f;
+        float radius = 1f;
         RaycastHit hitinfo;
-        Physics.CapsuleCast(controller.Collider.center + Vector3.down * height / 2f, transform.position + Vector3.up * height / 2f, radius, Velocity.normalized, out hitinfo, float.MaxValue, controller.CollisionLayers);
+        Physics.CapsuleCast(transform.position, transform.position + Vector3.up * height, radius, Velocity.normalized, out hitinfo, float.MaxValue, controller.CollisionLayers);
         return hitinfo;
     }
 
