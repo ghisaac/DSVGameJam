@@ -10,15 +10,6 @@ public class ScoreScreenPlayerScore : MonoBehaviour
     [SerializeField] private TextMeshProUGUI placement, name, score;
     [SerializeField] private Image portrait;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     public void SetValues(Player player)
     {
