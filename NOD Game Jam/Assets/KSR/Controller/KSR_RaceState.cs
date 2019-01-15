@@ -27,46 +27,7 @@ public class KSR_RaceState : PlayerBaseState
 
     public override void StateUpdate()
     {
-        if (RewierdPlayer.GetButtonDown("LT"))
-        {
-            Debug.Log("pressing LT");
-            // _rb.AddForce(new Vector3(1 * thrustFwd, 0, 0));
-            //Boost();
-            _rb.AddForce(transform.right * -dashSpeed);
-        }
-        if (RewierdPlayer.GetButtonDown("RT"))
-        {
-            Debug.Log("pressing RT");
-            // _rb.AddForce(new Vector3(1 * thrustFwd, 0, 0));
-            //Boost();
-            _rb.AddForce(transform.right * dashSpeed);
-        }
-
-        _currentThrust = 0.0f;
-        float thrustInput = RewierdPlayer.GetAxis("Vertical");
-        if (thrustInput > _deadzone)
-        {
-
-            _currentThrust = thrustInput * thrustFwd;
-        }
-        else if (thrustInput < _deadzone)
-        {
-            _currentThrust = thrustInput * thrustBack;
-            //Debug.Log("Back är " + _currentThrust);
-        }
-
-        _currentTurn = 0.0f;
-        float turnInput = RewierdPlayer.GetAxis("Horizontal");
-        if (Mathf.Abs(turnInput) > _deadzone)
-        {
-            _currentTurn = turnInput;
-        }
-        else if (Mathf.Abs(turnInput) < _deadzone)
-        {
-            _currentTurn = 0;
-
-        }
-
+        ReadInput();
         FixedUpdate();
     }
 
@@ -81,18 +42,58 @@ public class KSR_RaceState : PlayerBaseState
         {
 
             _rb.AddRelativeTorque(Vector3.up * _currentTurn * turnSpeed);
-     //       _rotation = transform.rotation.eulerAngles;
         }
-        else
+    }
+
+    private void ReadInput()
+    {
+        _currentThrust = 0.0f;
+        float thrustInput = RewierdPlayer.GetAxis("Vertical");
+        if (thrustInput > _deadzone)
         {
-            // transform.rotation = Quaternion.Euler(_rotation);
 
+            _currentThrust = thrustInput * thrustFwd;
+        }
+        else if (thrustInput < _deadzone)
+        {
+            _currentThrust = thrustInput * thrustBack;
         }
 
+        _currentTurn = 0.0f;
+        float turnInput = RewierdPlayer.GetAxis("Horizontal");
+        if (Mathf.Abs(turnInput) > _deadzone)
+        {
+            _currentTurn = turnInput;
+        }
+        else if (Mathf.Abs(turnInput) < _deadzone)
+        {
+            _currentTurn = 0;
+
+        }
+        Dash();
+    }
+
+    private void Dash()
+    {
+        if (RewierdPlayer.GetButtonDown("LT"))
+        {
+            _rb.AddForce(transform.right * -dashSpeed);
+        }
+
+        if (RewierdPlayer.GetButtonDown("RT"))
+        {
+            _rb.AddForce(transform.right * dashSpeed);
+        }
     }
 
     public void Boost()
     {
         _rb.AddForce(transform.forward  * boostSpeed);
     }
+
+    public float getHorizontalAxis()
+    {
+        return RewierdPlayer.GetAxis("Horizontal");
+    }
+
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Checkpoint
   - LevelPin
+  - Wall
   layers:
   - Default
   - TransparentFX
