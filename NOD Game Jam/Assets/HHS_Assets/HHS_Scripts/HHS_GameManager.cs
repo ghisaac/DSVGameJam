@@ -95,6 +95,45 @@ public class HHS_GameManager : MonoBehaviour {
         //Tilldela betyg
         //Visa Betyg
         //GO NEXT
+        SortPlayersByPoints();
+    }
+
+    private void SortPlayersByPoints() {
+
+
+
+        List<HHS_Player> scoreList = new List<HHS_Player>();
+        List<HHS_Player> startList = new List<HHS_Player>();
+        startList.AddRange(activePlayers);
+
+
+        while (startList.Count > 0) {
+            HHS_Player temp = null;
+            int highestpoints = 0;
+            foreach (HHS_Player player in activePlayers) {
+
+                if (player.Points > highestpoints) 
+                {
+                    highestpoints = player.Points;
+                    temp = player;
+                }
+             }
+            scoreList.Add(temp);
+            startList.Remove(temp);
+        }
+
+        AwardPointsForTheGame(scoreList);
+
+    }
+
+    private void AwardPointsForTheGame(List <HHS_Player> sortedList) {
+
+        Player[] players = new Player[activePlayers.Count];
+
+        for (int i = 0; i < activePlayers.Count; i++) {
+            players[i] = activePlayers[i].GetComponent<PlayerController>().myPlayer;
+        }
+        Player.DistributePoints(players);
     }
 
     private void ResetPlayers() {
@@ -115,7 +154,8 @@ public class HHS_GameManager : MonoBehaviour {
         for (int i = 0; i < playersInGame; i++) {
             Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
             GameObject newPlayer = Instantiate(playerPrefab, newPosition, Quaternion.identity);
-           // newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
+            // newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
+            newPlayer.GetComponent<HHS_Player>().PlayerID = i;
             newPlayer.GetComponent<HHS_Player>().Startposition = newPosition;
             newPlayer.GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
             activePlayers.Add(newPlayer.GetComponent<HHS_Player>());
@@ -138,8 +178,8 @@ public class HHS_GameManager : MonoBehaviour {
         RoundCountDownTimerUI.gameObject.SetActive(false);
     }
 
-    public void PlayerReachedGoal(int player) {
-        activePlayers[player - 1].Points += (int)roundTimer * 100;
+    public void PlayerReachedGoal(int playerIndex) {
+        activePlayers[playerIndex].Points += (int)roundTimer * 100;
 
     }
  

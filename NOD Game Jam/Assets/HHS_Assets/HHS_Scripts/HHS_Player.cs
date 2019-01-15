@@ -14,7 +14,6 @@ public class HHS_Player : MonoBehaviour
     public int PlayerID;
 
 
-
     public void SetGoal(GameObject newGoal) {
         goal = newGoal;
         goalindicator.transform.position = newGoal.transform.position + new Vector3(2,0,0);
