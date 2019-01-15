@@ -13,11 +13,9 @@ public class GroundState : PlayerBaseState
     
     public override void StateUpdate()
     {
-
-        Velocity += Vector3.down * 10 * Time.deltaTime;
-
         Fric();
         Move();
+        Velocity += Vector3.down * 10 * Time.deltaTime;
         Collide();
         if (RewierdPlayer.GetButtonDown("A"))
         {
@@ -59,6 +57,6 @@ public class GroundState : PlayerBaseState
 
     private void Fric()
     {
-        controller.Velocity -= controller.Velocity.normalized * Friction * Time.deltaTime;
+        controller.Velocity = controller.Velocity.magnitude <= (Friction * Time.deltaTime) ? Vector3.zero : controller.Velocity - controller.Velocity.normalized * Friction * Time.deltaTime;
     }
 }

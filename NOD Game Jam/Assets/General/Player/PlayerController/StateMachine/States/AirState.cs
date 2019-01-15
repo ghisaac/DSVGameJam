@@ -8,10 +8,11 @@ public class AirState : PlayerBaseState
     public float Acceleration;
     public float Friction;
     public float MaxSpeed;
+    public float Gravity;
 
     public override void StateUpdate()
     {
-        Velocity += Vector3.down * 100 * Time.deltaTime;
+        Velocity += Vector3.down * Gravity * Time.deltaTime;
         Fric();
         Move();
         Collide();
@@ -44,8 +45,9 @@ public class AirState : PlayerBaseState
         if (Vector3.ProjectOnPlane(Velocity, Vector3.up).magnitude > MaxSpeed)
             controller.Velocity = Vector3.ClampMagnitude(Vector3.ProjectOnPlane(controller.Velocity, Vector3.up), MaxSpeed) + Vector3.Project(controller.Velocity, Vector3.up);
     }
+
     private void Fric()
     {
-        controller.Velocity -= controller.Velocity.normalized * Friction * Time.deltaTime;
+        controller.Velocity = controller.Velocity.magnitude <= (Friction * Time.deltaTime) ? Vector3.zero : controller.Velocity - controller.Velocity.normalized * Friction * Time.deltaTime;
     }
 }
