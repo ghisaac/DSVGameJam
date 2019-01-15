@@ -8,7 +8,7 @@ public class ASR_GameManager : MonoBehaviour
 
     public static ASR_GameManager Instance;
 
-    public Vector3[] StartPositions;
+    public Transform[] StartPositionTransforms;
 
     public GameObject PlayerPrefab;
 
@@ -45,15 +45,15 @@ public class ASR_GameManager : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositions[i], Quaternion.identity).GetComponent<ASR_CharacterController>();
+                ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity).GetComponent<ASR_CharacterController>();
                 _allCharacters.Add(character);
-                character.enabled = false;
+                //character.enabled = false;
             }
         }
 
         for (int i = 0; i < Player.AllPlayers.Count; i++)
         {
-            ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositions[i], Quaternion.identity).GetComponent<ASR_CharacterController>();
+            ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity).GetComponent<ASR_CharacterController>();
             _allCharacters.Add(character);
             character.Player = Player.AllPlayers[i];
             character.enabled = false;
@@ -84,7 +84,7 @@ public class ASR_GameManager : MonoBehaviour
         if (_roundCounter == AmountOfRounds){
             
         } else {
-            
+            StartCoroutine(RestartGame());
         }
 
     }
