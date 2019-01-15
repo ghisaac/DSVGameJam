@@ -13,11 +13,9 @@ public class GroundState : PlayerBaseState
     
     public override void StateUpdate()
     {
-
-        Velocity += Vector3.down * 10 * Time.deltaTime;
-
         Fric();
         Move();
+        Velocity += Vector3.down * 10 * Time.deltaTime;
         Collide();
         if (RewierdPlayer.GetButtonDown("A"))
         {
