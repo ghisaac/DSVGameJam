@@ -23,6 +23,6 @@ public class PlayerAnimation : MonoBehaviour
         Quaternion wantToLook = Quaternion.LookRotation(lookDirection, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, wantToLook, 0.1f);
         Animator.SetFloat("Velocity", Mathf.Clamp01(lookDirection.magnitude / maxSpeed));
-        Animator.SetBool("Airborne", true);
+        Animator.SetBool("Airborne", controller.stateMachine.CurrentState == controller.stateMachine.GetState<AirState>());
     }
 }
