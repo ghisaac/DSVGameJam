@@ -403,8 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinScene:
-    m_Handle: 3
+  pinSceneIndex: 1
 --- !u!1 &592069972
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,8 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinScene:
-    m_Handle: 1
+  pinSceneIndex: 2
 --- !u!1 &1561692322
 GameObject:
   m_ObjectHideFlags: 0
@@ -847,5 +845,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinScene:
-    m_Handle: 2
+  pinSceneIndex: 3
