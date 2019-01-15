@@ -52,7 +52,7 @@ public class KSR_RaceState : PlayerBaseState
         else if (thrustInput < _deadzone)
         {
             _currentThrust = thrustInput * thrustBack;
-            Debug.Log("Back är " + _currentThrust);
+            //Debug.Log("Back är " + _currentThrust);
         }
 
         _currentTurn = 0.0f;
