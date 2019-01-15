@@ -26,7 +26,7 @@ public class ASR_GameManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        Rewired.ReInput.players.GetPlayer(0).GetAxis("Horizontal");
+
     }
 
     // Update is called once per frame
@@ -46,14 +46,21 @@ public class ASR_GameManager : MonoBehaviour
     private void InitializePlayers()
     {
 
+        foreach (Player player in Player.AllPlayers)
+        {
+            
+
+
+        }
+
         // Instaciera spelarobjekt och koppla deras id till CharacterController
 
     }
 
     public void PlayerKnockedOut(ASR_CharacterController character)
     {
-
-
+        _characterPlacement.Add(character);
+        _activeCharacters.Remove(character);
 
     }
 
@@ -67,7 +74,7 @@ public class ASR_GameManager : MonoBehaviour
     private void StartGame()
     {
         foreach (ASR_CharacterController cc in _allCharacters){
-            // eller en metod
+            cc.ActivatePlayer();
         }
     }
 

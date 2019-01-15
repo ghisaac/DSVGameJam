@@ -19,6 +19,9 @@ public class ASR_CharacterController : MonoBehaviour
     public LayerMask FloorMask;
     public float RayMaxDistance = 2;
 
+    [Header("DEBUGGING")]
+    public bool UseKeyboard;
+
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -41,8 +44,11 @@ public class ASR_CharacterController : MonoBehaviour
 
     private void Move()
     {
-        //_horizontal = Input.GetAxisRaw("Horizontal");
-        _horizontal = Rewired.ReInput.players.GetPlayer(0).GetAxisRaw("Horizontal");
+        if (UseKeyboard){
+            _horizontal = Input.GetAxisRaw("Horizontal");
+        } else {
+            _horizontal = Rewired.ReInput.players.GetPlayer(0).GetAxisRaw("Horizontal");
+        }
 
         //Vector3 direction = -transform.right * _horizontal;
         //_rigidbody.AddForce(direction * Force * _inputModifier, ForceMode.Acceleration);
