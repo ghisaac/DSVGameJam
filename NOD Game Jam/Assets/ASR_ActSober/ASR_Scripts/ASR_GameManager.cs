@@ -28,6 +28,9 @@ public class ASR_GameManager : MonoBehaviour
     private ASR_RandomForce _forceGenerator;
 
 
+    [Header("DEBUGGING")]
+    public bool Debug;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -38,6 +41,15 @@ public class ASR_GameManager : MonoBehaviour
 
     private void InitializePlayers()
     {
+        if (Debug)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositions[i], Quaternion.identity).GetComponent<ASR_CharacterController>();
+                _allCharacters.Add(character);
+                character.enabled = false;
+            }
+        }
 
         for (int i = 0; i < Player.AllPlayers.Count; i++)
         {
@@ -146,7 +158,7 @@ public class ASR_GameManager : MonoBehaviour
         ResetPlayers();
 
         yield return Countdown();
-
+        StartGame();
     }
 
 }

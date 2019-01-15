@@ -19,6 +19,8 @@ public class ASR_CharacterController : MonoBehaviour
     public LayerMask FloorMask;
     public float RayMaxDistance = 2;
 
+    public float InputModifierModifier = 0.5f;
+
     private int _score = 0;
 
     [Header("DEBUGGING")]
@@ -69,7 +71,7 @@ public class ASR_CharacterController : MonoBehaviour
     private void InputModification(){
 
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0){
-            _inputModifier += Time.deltaTime;
+            _inputModifier += Time.deltaTime * InputModifierModifier;
         } else {
             _inputModifier = INPUT_MODIFIER_MIN; //Mathf.Clamp(_inputModifier - Time.deltaTime, INPUT_MODIFIER_MIN, _inputModifier);
         }
