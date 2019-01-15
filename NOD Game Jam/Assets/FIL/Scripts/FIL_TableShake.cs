@@ -9,6 +9,7 @@ namespace FIL
     {
         [SerializeField] private float shakeAmount;
         [SerializeField] private float shakeDuration;
+        [SerializeField] private GameObject tableMesh;
 
         private float shakePercentage;
         private float startAmount;
@@ -21,8 +22,17 @@ namespace FIL
         {
             amount = shakeAmount;
             duration = shakeDuration;
+            tableMesh = transform.GetChild(0).gameObject;
         }
 
+        private void Update()
+        {
+            
+            if (Input.GetKeyDown(KeyCode.Return) && !isRunning)
+            {
+                ShakeTable();
+            }
+        }
 
         public void ShakeTable()
         {
@@ -50,11 +60,11 @@ namespace FIL
                 shakeAmount = startAmount * shakePercentage;
                 shakeDuration = Mathf.Lerp(shakeDuration, 0, Time.deltaTime);
 
-                transform.localRotation = Quaternion.Euler(rotationAmount);
+                tableMesh.transform.localRotation = Quaternion.Euler(rotationAmount);
                 yield return null;
             }
 
-            transform.localRotation = Quaternion.identity;
+            tableMesh.transform.localRotation = Quaternion.identity;
             isRunning = false;
         }
 

@@ -30,11 +30,17 @@ namespace FIL
         [SerializeField] private float _tableDrownDelay = 2f;
         private List<GameObject> _tablesList;
 
-        private WaitForSeconds _waitForSeconds;
+
         [SerializeField]
         private float _gameStartDelay = 2f;
+
         [SerializeField]
         private FIL_UI _uI;
+
+        [SerializeField]
+        private GameObject playerPrefab;
+
+        private WaitForSeconds _waitForSeconds;
 
 
         private void Awake()
@@ -45,11 +51,20 @@ namespace FIL
 
         private void Start()
         {
-            for(int i = 0; i < _players.Length; i++)
+            _players = new GameObject[Player.AllPlayers.Count];
+
+
+            for (int i = 0; i < Player.AllPlayers.Count; i++)
             {
+                GameObject player = Instantiate(playerPrefab);
+                _players[i] = player;
+
+                _players[i].GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
                 _players[i].transform.position = _spawns[i].position;
+
             }
 
+ 
             _tablesList = new List<GameObject>();
             _waitForSeconds =  new WaitForSeconds(_tableDrownDelay);
             for (int i = 0; i < tables.transform.childCount; i++)
