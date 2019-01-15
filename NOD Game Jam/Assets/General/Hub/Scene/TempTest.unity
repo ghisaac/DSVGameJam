@@ -289,7 +289,7 @@ GameObject:
   - component: {fileID: 173328811}
   - component: {fileID: 173328810}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: HUB Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -307,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb0c5ae4d8a4ea64d9ada2141415c006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  confirmationPanel: {fileID: 0}
 --- !u!135 &173328811
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class HubManager : MonoBehaviour
 {
-
+    [SerializeField]
+    private GameObject confirmationPanel;
     private GameObject[] levelPins;
     private GameObject currentSelection;
     private int currentIndex;
