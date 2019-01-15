@@ -3,21 +3,24 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Rewired;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HubManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject confirmationPanel;
-    private GameObject[] levelPins;
+    
     private GameObject currentSelection;
     private Rewired.Player leavingPlayer;
     private int currentIndex;
     private bool selectOnCooldown;
     private bool waitingForConfirmation;
+    
+    [SerializeField]
+    private GameObject[] levelPins;
 
     void Start()
     {
-        levelPins = GameObject.FindGameObjectsWithTag("LevelPin");
         currentIndex = 0;
         currentSelection = levelPins[currentIndex];
         selectOnCooldown = false;
@@ -75,7 +78,7 @@ public class HubManager : MonoBehaviour
             }
 
             StartCoroutine(SelectionCooldown());
-            currentSelection.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            currentSelection.GetComponent<Image>().color = new Color(90, 90, 90);
             currentSelection = levelPins[currentIndex];
         }
         
@@ -89,7 +92,7 @@ public class HubManager : MonoBehaviour
             currentIndex -= 1;
 
             StartCoroutine(SelectionCooldown());
-            currentSelection.GetComponent<MeshRenderer>().material.color = new Color(1, 1, 1);
+            currentSelection.GetComponent<Image>().color = new Color(90, 90, 90);
             currentSelection = levelPins[currentIndex];
         }
 
@@ -99,7 +102,7 @@ public class HubManager : MonoBehaviour
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
 
-        currentSelection.GetComponent<MeshRenderer>().material.color = new Color(255, 255, 255);
+        currentSelection.GetComponent<Image>().color = new Color(255, 0, 0);
     }
 
     private void ToggleConfirmationPanel()

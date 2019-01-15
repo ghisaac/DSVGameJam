@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   confirmationPanel: {fileID: 0}
+  levelPins:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
