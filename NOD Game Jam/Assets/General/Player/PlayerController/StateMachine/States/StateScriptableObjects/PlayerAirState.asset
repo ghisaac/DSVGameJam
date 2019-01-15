@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8cc695dc4be27742afdb566fec390ea, type: 3}
   m_Name: PlayerAirState
   m_EditorClassIdentifier: 
-  Acceleration: 30
+  Acceleration: 60
   Friction: 5
-  MaxSpeed: 10
+  MaxSpeed: 6
