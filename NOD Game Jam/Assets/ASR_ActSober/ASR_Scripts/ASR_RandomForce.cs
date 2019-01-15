@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ASR_RandomForce : MonoBehaviour
 {
-    public Rigidbody[] _rigidbodies;
+    //public Rigidbody[] _rigidbodies;
     public ASR_CharacterController[] Characters;
     public float StartForce;
     public float ForceMultiplier;
@@ -14,13 +14,27 @@ public class ASR_RandomForce : MonoBehaviour
     public float MinRandomTime;
     public float MaxRandomTime;
 
-    
+    //private IEnumerator _activeCoroutine;
+
     void Start()
     {
         _force = StartForce;
         StartCoroutine(RandomForceTimer());
     }
 
+    public void ActivateForceGenerator()
+    {
+        ResetForce();
+        StartCoroutine(RandomForceTimer());
+        //_activeCoroutine = RandomForceTimer();
+        //StartCoroutine(_activeCoroutine);
+    }
+
+    public void ResetForce()
+    {
+        _force = StartForce;
+    }
+    /*
     private void AddRandomForce()
     {
         float randomHorizontal = Random.value > 0.5 ? 1 : -1;
@@ -32,6 +46,7 @@ public class ASR_RandomForce : MonoBehaviour
         }
         _force *= ForceMultiplier;
     }
+    */
 
     private IEnumerator RandomForceTimer()
     {

@@ -19,6 +19,8 @@ public class ASR_CharacterController : MonoBehaviour
     public LayerMask FloorMask;
     public float RayMaxDistance = 2;
 
+    private int _score = 0;
+
     [Header("DEBUGGING")]
     public bool UseKeyboard;
 
@@ -108,6 +110,11 @@ public class ASR_CharacterController : MonoBehaviour
         //this.enabled = false;
     }
 
+    public void Deactivate(){
+        this.enabled = false;
+        _isKnockedOut = true;
+    }
+
     public void OnRespawn()
     {
         //this.enabled = true;
@@ -126,6 +133,11 @@ public class ASR_CharacterController : MonoBehaviour
     public void SetStartPosition(Vector3 startPos)
     {
         StartPosition = startPos;
+    }
+
+    public void AddScore(int awardedScore)
+    {
+        _score += awardedScore;
     }
 
 }
