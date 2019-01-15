@@ -108,10 +108,21 @@ public class Player
     {
         for(int i = 0; i < amountOfPlayers; i++)
         {
-            new Player(i, "player" + 1);
+            new Player(i, "player " + i);
         }
     }
+    public static int GetPlayerPlacementByID(int ID)
+    {
+        List<Player> tempList = GetPlayersByPoints();
+        Player myPlayer = Player.GetPlayerByRewindID(ID);
+        for(int i = 0; i < tempList.Count; i++)
+        {
+            if (myPlayer == tempList[i])
+                return i;
+        }
 
+        return -1;
+    }
 
     private static List<Player> GetPlayersByLocalPlacement()
     {
