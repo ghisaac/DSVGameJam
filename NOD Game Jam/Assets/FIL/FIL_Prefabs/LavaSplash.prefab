@@ -4726,7 +4726,7 @@ Transform:
   m_GameObject: {fileID: 1202484820752091076}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1202484819649284583}
   m_RootOrder: 0
@@ -4867,7 +4867,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9.218888
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6774,7 +6774,7 @@ ParticleSystem:
     speedModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9466,7 +9466,6 @@ GameObject:
   - component: {fileID: 1202484820873469104}
   - component: {fileID: 1202484820873469111}
   - component: {fileID: 1202484820873469110}
-  - component: {fileID: 1202484820873469109}
   - component: {fileID: 1202484820873469105}
   m_Layer: 0
   m_Name: LavaSplash
@@ -9483,7 +9482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202484820873469108}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.076107085, y: -0.047, z: 3.294}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
   m_Children:
   - {fileID: 1202484819649284583}
@@ -9515,7 +9514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1c7df112ab97c5540a5dc2bd3f76fcc8, type: 2}
+  - {fileID: 2100000, guid: e839d3a94aeb9e44081afa4876376096, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9535,19 +9534,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!135 &1202484820873469109
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1202484820873469108}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1202484820873469105
 MonoBehaviour:
   m_ObjectHideFlags: 0
