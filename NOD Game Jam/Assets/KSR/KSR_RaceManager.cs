@@ -38,18 +38,18 @@ public class KSR_RaceManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        int i = 0;
-        foreach (Player player in Player.AllPlayers)
-        {
-            GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i*5, 0, 0), startLine.rotation);
-            p.GetComponent<KSR_Racer>().player = player;
-            p.GetComponent<KSR_Racer>().nextCheckpoint = checkpoints[0];
-            racers.Add(p.GetComponent<KSR_Racer>());
-            i++;
-        }
-    }
+    //void Start()
+    //{
+    //    int i = 0;
+    //    foreach (Player player in Player.AllPlayers)
+    //    {
+    //        GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i * 5, 0, 0), startLine.rotation);
+    //        p.GetComponent<KSR_Racer>().player = player;
+    //        p.GetComponent<KSR_Racer>().nextCheckpoint = checkpoints[0];
+    //        racers.Add(p.GetComponent<KSR_Racer>());
+    //        i++;
+    //    }
+    //}
 
     // Update is called once per frame
     void Update()
@@ -75,7 +75,7 @@ public class KSR_RaceManager : MonoBehaviour
         {
             if (racer != null)
             {
-                racer.GetComponent<KSR_Controller>().enabled = false;
+     //           racer.GetComponent<KSR_Controller>().enabled = false;
             }
         }
         Debug.Log("Race Over!");
@@ -85,7 +85,7 @@ public class KSR_RaceManager : MonoBehaviour
     {
         foreach(KSR_Racer racer in racers)
         {
-            racer.GetComponent<KSR_Controller>().enabled = true;
+ //           racer.GetComponent<KSR_Controller>().enabled = true;
             racer.GetComponent<Rigidbody>().useGravity = true;
         }
         StartTime();

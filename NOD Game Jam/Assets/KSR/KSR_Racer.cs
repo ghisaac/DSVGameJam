@@ -23,6 +23,6 @@ public class KSR_Racer: MonoBehaviour
 
     public void Finished()
     {
-        GetComponent<KSR_Controller>().enabled = false;
+ //       GetComponent<KSR_Controller>().enabled = false;
     }
 }
