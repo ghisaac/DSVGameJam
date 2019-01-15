@@ -36,7 +36,7 @@ public class HHS_SittingState : PlayerBaseState
     public override void Enter() {
         base.Enter();
         Velocity = Vector3.zero;
-
+        //SoundManager.Instance.PlaySitDown();  LJUD HÄR
     }
 
     public override void Exit() {

@@ -28,6 +28,7 @@ public class HHS_GameManager : MonoBehaviour {
     public int MiniGameRounds = 3;
     [HideInInspector]
     private float roundTimer;
+    private int goalCounter = 0;
 
     [Header("")]
     public List<GameObject> GoalChairs = new List<GameObject>();
@@ -60,6 +61,7 @@ public class HHS_GameManager : MonoBehaviour {
     public void ResetGoals() {
         GoalChairs.AddRange(usedGoalChairs);
         usedGoalChairs.Clear();
+        goalCounter = 0;
     }
 
     public void ResetRound() {
@@ -69,6 +71,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
 
     private void StartRound() {
+
         roundTimer = RoundTime;
         roundIsActive = true;
         Teacher.StartStudent();
@@ -179,8 +182,12 @@ public class HHS_GameManager : MonoBehaviour {
     }
 
     public void PlayerReachedGoal(int playerIndex) {
-        activePlayers[playerIndex].Points += (int)roundTimer * 100;
-
+        activePlayers[playerIndex].Points += (int)(roundTimer * 100);
+        goalCounter++;
+        if (goalCounter == activePlayers.Count) {
+            roundIsActive = false;
+            EndRound();
+        }
     }
  
 
@@ -193,6 +200,8 @@ public class HHS_GameManager : MonoBehaviour {
                 EndRound();
             }
         }
+
+
 
         for(int i = 0; i < activePlayers.Count; i++) {
             PointsUI[i].text = activePlayers[i].Points.ToString();

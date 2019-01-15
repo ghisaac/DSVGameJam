@@ -72,17 +72,22 @@ public class HHS_Teacher : MonoBehaviour
     }
 
     public IEnumerator RaiseHand() {
+        //SoundManager.Instance.PlayStudentDemandHelp();   LJUD HÄR
         HandRaised = true;
         yield return new WaitForSeconds(1f);
         Icon.sprite = AlertIcon;
         yield return new WaitForSeconds(1f);
+        transform.eulerAngles = new Vector3(0, 270, 0);
         CheckIfBusted();
         teacherMad = true;
+        //SoundManager.Instance.PlayTeacherAlerted();   LJUD KOMMER HÄR
         //Animation till arg
         yield return new WaitForSeconds(2f); //TeacherActiveTime, balansera
+        transform.eulerAngles = new Vector3(0, 90, 0);
         teacherMad = false;
         Icon.sprite = IdleIcon;
         //Teacher alert icon away
+        //SoundManager.Instance.PlayTeacherIdle();   LJUD KOMMER HÄR
         HandRaised = false;
         StartStudent();
         yield return 0;
@@ -108,6 +113,9 @@ public class HHS_Teacher : MonoBehaviour
 
             if (!bustedSomeone) {
                 Icon.sprite = IdleIcon;
+            }
+            else {
+                //SoundManager.Instance.PlayCaught(); LJUD HÄR
             }
             //Starta olika animationer beroende på om spelare hittas eller ej.
             //StudentActivation = StartCoroutine(ActiveStudentQuestion());
