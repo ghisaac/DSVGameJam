@@ -7,6 +7,7 @@ public class Player
     public int RewierdId { get; private set; }
     public int Points { get; private set; }
     public string Name { get; private set; }
+    public int LocalPlacement;
 
     public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
 
@@ -40,19 +41,19 @@ public class Player
         if (toRemove != null)
             AllPlayers.Remove(toRemove);
     }
-
+    //Not implemented
     public static void DistributePoints()
     {
 
     }
+    //Not implemented
     public static void NameWinners()
     {
 
     }
-    public static Player GetPlayerByPlacement(int placement)
+    public static Player GetPlayerAtPlacement(int placement)
     {
-        
-        return null;
+        return GetPlayersByPoints()[placement];
     }
     public static Player GetPlayerByRewindID(int id)
     {
@@ -82,4 +83,19 @@ public class Player
         }
         return toReturn;
     }
+
+    private static List<Player> GetPlayersByLocalPlacement()
+    {
+        List<Player> tempPlayers = new List<Player>(AllPlayers);
+        tempPlayers.OrderBy(x => x.LocalPlacement);
+        return tempPlayers;
+    }
+
+    private static List<Player> GetPlayersByPoints()
+    {
+        List<Player> tempPlayers = new List<Player>(AllPlayers);
+        tempPlayers.OrderBy(x => x.Points);
+        return tempPlayers;
+    }
+
 }
