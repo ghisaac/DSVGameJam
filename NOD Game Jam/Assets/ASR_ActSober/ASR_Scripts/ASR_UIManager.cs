@@ -8,35 +8,30 @@ public class ASR_UIManager : MonoBehaviour
     public TextMeshProUGUI RoundNumber, RoundCountdown, Winscreen;
     public int TestWinNumber;
 
-    // Start is called before the first frame update
-    void Start()
+    private Dictionary<ASR_CharacterController, TextMeshProUGUI> _scoreGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
+    private Dictionary<ASR_CharacterController, TextMeshProUGUI> _placementGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
+
+    public IEnumerator RoundCountdownTimer(int roundNumber)
     {
-        /*
-        RoundNumber.enabled = false;
-        RoundCountdown.enabled = false;
-        Winscreen.enabled = false;
-        */
-        
+        RoundNumber.SetText("Round {0}", roundNumber);
+        RoundNumber.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2);
+
+        RoundCountdown.SetText("3");
+        RoundCountdown.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        RoundCountdown.SetText("2");
+        yield return new WaitForSeconds(1);
+        RoundCountdown.SetText("1");
+        yield return new WaitForSeconds(1);
+        RoundNumber.gameObject.SetActive(false);
+        RoundCountdown.gameObject.SetActive(false);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ActivateWinScreen(TestWinNumber);
-        }
-    }
-
-    public void ActivateWinScreen(int playerWinNumber)
+    public IEnumerator WinScreenCoroutine(int playerWinNumber)
     {
         Winscreen.SetText("Player {0} Wins!", playerWinNumber);
-        StartCoroutine(WinScreenCoroutine());
-    }
-
-    private IEnumerator WinScreenCoroutine()
-    {
-        Debug.Log("Entered winscreen activate");
         Winscreen.gameObject.SetActive(true);
         
         yield return new WaitForSeconds(3f);
