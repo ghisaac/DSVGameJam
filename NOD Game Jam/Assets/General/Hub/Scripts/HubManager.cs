@@ -41,7 +41,7 @@ public class HubManager : MonoBehaviour
             {
                 if (!Player.CheckIfPlayerExists(p.id))
                 {
-                    new Player(p.id, "Maestro " + p.id);
+                    new Player(p.id, "Player " + p.id);
                     Debug.Log("Player added: " + p.name);
                 }
             }
@@ -100,7 +100,7 @@ public class HubManager : MonoBehaviour
     {
         if (ReInput.players.GetPlayer(rewindID).GetButtonDown("A"))
         {
-
+            
         }
     }
 

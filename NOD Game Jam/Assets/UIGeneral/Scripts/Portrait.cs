@@ -22,7 +22,7 @@ public class Portrait : MonoBehaviour
 
     private void Update()
     {
-        if (!Player.CheckIfPlayerExists(0))
+        if (!Player.CheckIfPlayerExists(ID))
         {
             profile.SetActive(false);
             return;
