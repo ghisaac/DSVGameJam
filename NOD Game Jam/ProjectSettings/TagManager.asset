@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+<<<<<<< HEAD
+  - Lava
+=======
+  - LevelPin
+>>>>>>> master
   layers:
   - Default
   - TransparentFX
@@ -13,6 +18,8 @@ TagManager:
   - UI
   - 
   - 
+  - PostProcessing
+  - Stuff
   - 
   - 
   - 
@@ -34,9 +41,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Lava
   m_SortingLayers:
   - name: Default
     uniqueID: 0
