@@ -8802,7 +8802,7 @@ GameObject:
   - component: {fileID: 1713544227}
   - component: {fileID: 1713544226}
   - component: {fileID: 1713544230}
-  m_Layer: 31
+  m_Layer: 4
   m_Name: Lava Floor
   m_TagString: Lava
   m_Icon: {fileID: 0}
@@ -9347,7 +9347,7 @@ PrefabInstance:
     - target: {fileID: 7096558007157862406, guid: 70e094d454b2481458caab89b55b78ef,
         type: 3}
       propertyPath: mask.m_Bits
-      value: 2147483648
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70e094d454b2481458caab89b55b78ef, type: 3}
