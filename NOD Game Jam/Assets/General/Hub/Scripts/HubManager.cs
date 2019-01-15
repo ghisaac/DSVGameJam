@@ -12,7 +12,8 @@ public class HubManager : MonoBehaviour
     private GameObject currentSelection;
     private int currentIndex;
     private bool selectOnCooldown;
-    delegate void InputDelegate(string input);
+    delegate void InputDelegate(int rewindID);
+
 
     void Start()
     {
@@ -42,7 +43,6 @@ public class HubManager : MonoBehaviour
                 {
                     new Player(p.id, "Maestro " + p.id);
                     Debug.Log("Player added: " + p.name);
-
                 }
             }
 
@@ -50,15 +50,8 @@ public class HubManager : MonoBehaviour
             {
                 if (Player.CheckIfPlayerExists(p.id))
                 {
-                    if (p.GetButtonDown("A"))
-                    {
-                        Player.RemovePlayer(p.id);
-                        Debug.Log("Player removed: " + p.name);
-                    }
-                    else if (p.GetButtonDown("B"))
-                    {
-                        return;
-                    }
+                    Player.RemovePlayer(p.id);
+                    Debug.Log("Player removed: " + p.name);
                 }
             }
         }
@@ -101,6 +94,14 @@ public class HubManager : MonoBehaviour
         }
 
         currentSelection.GetComponent<MeshRenderer>().material.color = new Color(255, 255, 255);
+    }
+
+    private void HandleConfirmationInput(int rewindID)
+    {
+        if (ReInput.players.GetPlayer(rewindID).GetButtonDown("A"))
+        {
+
+        }
     }
 
     private IEnumerator SelectionCooldown()
