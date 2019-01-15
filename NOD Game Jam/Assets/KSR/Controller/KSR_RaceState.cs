@@ -12,6 +12,8 @@ public class KSR_RaceState : PlayerBaseState
     public float thrustFwd = 100.0f;
     public float thrustBack = 25.0f;
     public float turnSpeed = 10f;
+    public float dashSpeed = 100f;
+    public float boostSpeed = 1000f;
 
     private float _currentThrust;
     private float _currentTurn;
@@ -20,22 +22,28 @@ public class KSR_RaceState : PlayerBaseState
     public override void Enter()
     {
         _rb = controller.GetComponent<Rigidbody>();
-        //      Debug.Log("Joy Stick Length " + Input.GetJoystickNames().Length);
         _rotation = transform.rotation.eulerAngles;
     }
 
-    // Update is called once per frame
     public override void StateUpdate()
     {
         if (RewierdPlayer.GetButtonDown("LT"))
         {
             Debug.Log("pressing LT");
-            _rb.AddForce(new Vector3(1 * thrustFwd, 0, 0));
+            // _rb.AddForce(new Vector3(1 * thrustFwd, 0, 0));
+            //Boost();
+            _rb.AddForce(transform.right * -dashSpeed);
+        }
+        if (RewierdPlayer.GetButtonDown("RT"))
+        {
+            Debug.Log("pressing RT");
+            // _rb.AddForce(new Vector3(1 * thrustFwd, 0, 0));
+            //Boost();
+            _rb.AddForce(transform.right * dashSpeed);
         }
 
         _currentThrust = 0.0f;
         float thrustInput = RewierdPlayer.GetAxis("Vertical");
-        //  Debug.Log(thrustInput);
         if (thrustInput > _deadzone)
         {
 
@@ -44,6 +52,7 @@ public class KSR_RaceState : PlayerBaseState
         else if (thrustInput < _deadzone)
         {
             _currentThrust = thrustInput * thrustBack;
+            Debug.Log("Back är " + _currentThrust);
         }
 
         _currentTurn = 0.0f;
@@ -80,5 +89,10 @@ public class KSR_RaceState : PlayerBaseState
 
         }
 
+    }
+
+    public void Boost()
+    {
+        _rb.AddForce(transform.forward  * boostSpeed);
     }
 }

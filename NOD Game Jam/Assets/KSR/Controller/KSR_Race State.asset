@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: KSR_Race State
   m_EditorClassIdentifier: 
   _deadzone: 0.5
-  thrustFwd: 10
-  thrustBack: 7.5
+  thrustFwd: 5
+  thrustBack: 4
   turnSpeed: 0.24
+  dashSpeed: 300
+  boostSpeed: 1000
