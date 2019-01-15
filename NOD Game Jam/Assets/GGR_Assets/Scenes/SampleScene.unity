@@ -719,6 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389255496}
   - component: {fileID: 1389255495}
+  - component: {fileID: 1389255497}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -739,7 +740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rounds: 1
-  playerControllerPrefab: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+  playerControllerPrefab: {fileID: 4948377840328725220, guid: 346627553304c2c47bebea453618c9a6,
     type: 3}
   spawnPositions:
   - {fileID: 1487555644}
@@ -760,6 +761,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1389255497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389255494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd356495ab539a3468bd52f4c61800dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1484389617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9716,7 +9729,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729565001}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.43, y: 0, z: 56.39}
+  m_LocalPosition: {x: 38.14, y: 0, z: 54.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

@@ -20,4 +20,23 @@ public static class GGR_Helper
         position.y = 0;
         return position;
     }
+
+    public static Vector3? GetPathPositionByFactor(float factor, Vector3[] path, out int corners)
+    {
+        float totalLength = GetPathLength(path);
+        float remainingDistance = totalLength * factor;
+        corners = 0;
+        for(int i = 0; i < path.Length-1; i++)
+        {
+            corners = i+1;
+            float distance = Vector3.Distance(path[i], path[i + 1]);
+            if (remainingDistance > distance)
+            {
+                remainingDistance -= distance;
+                continue;
+            }
+            return path[i] + (path[i + 1] - path[i]).normalized * remainingDistance;
+        }
+        return null;
+    }
 }

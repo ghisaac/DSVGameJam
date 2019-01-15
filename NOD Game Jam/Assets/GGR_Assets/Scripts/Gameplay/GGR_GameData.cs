@@ -83,7 +83,10 @@ public class GGR_GameData : MonoBehaviour
 
     public static void GivePlayerScore(Player player, float score)
     {
-        instance.scoreBoard[player] += score;
+        if (instance.scoreBoard.ContainsKey(player))
+            instance.scoreBoard[player] += score;
+        else
+            instance.scoreBoard.Add(player, score);
     }
 
     
