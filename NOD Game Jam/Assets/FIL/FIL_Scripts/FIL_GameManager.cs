@@ -11,41 +11,29 @@ namespace FIL
 
         [SerializeField]
         private int[] _pointsPerPlacement;
-
         [SerializeField]
         private List <GameObject> _placement = new List<GameObject>();
-
         [SerializeField]
         private GameObject[] _players;
-
         [SerializeField]
         private Transform[] _spawns;
-
         [SerializeField]
         private float _drownSpeed = 0.005f;
-
         [SerializeField]
         private GameObject tables;
-
         [SerializeField] private float _tableDrownDelay = 2f;
         private List<GameObject> _tablesList;
-
-
         [SerializeField]
         private float _gameStartDelay = 2f;
 
         [SerializeField]
         private FIL_UI _uI;
-
         [SerializeField]
         private GameObject playerPrefab;
-
         [SerializeField]
         private GameObject _lavaBubblePrefab;
-
         [SerializeField]
         private GameObject _smokePrefab;
-
         private WaitForSeconds _waitForSeconds;
 
         public bool gameStarted = false;
@@ -146,7 +134,6 @@ namespace FIL
 
         private void EndGame()
         {
-            //spelare kan inte längre röra sig
             StopAllCoroutines();
             AddLastPlayer();
             AwardPoints();
