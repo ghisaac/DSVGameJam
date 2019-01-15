@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class ASR_CharacterController : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class ASR_CharacterController : MonoBehaviour
     public float InputModifierModifier = 0.5f;
 
     private int _score = 0;
+    
+    public TextMeshProUGUI ScoreUI;
 
     [Header("DEBUGGING")]
     public bool UseKeyboard;
@@ -31,6 +34,7 @@ public class ASR_CharacterController : MonoBehaviour
         Debug.Log("Start");
         _rigidbody = GetComponent<Rigidbody>();
         StartPosition = transform.position;
+        
     }
 
     private void Update()
