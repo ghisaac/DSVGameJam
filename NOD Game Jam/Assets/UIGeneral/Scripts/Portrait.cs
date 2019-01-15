@@ -22,7 +22,7 @@ public class Portrait : MonoBehaviour
 
     private void Update()
     {
-        if (!Player.CheckIfPlayerExists(0))
+        if (!Player.CheckIfPlayerExists(ID))
         {
             profile.SetActive(false);
             return;
@@ -34,7 +34,6 @@ public class Portrait : MonoBehaviour
 
         profileName.text = Player.GetPlayerByRewindID(ID).Name;
         points.text = "" + Player.GetPlayerByRewindID(ID).Points;
-        ID = Player.GetPlayerByRewindID(ID).RewierdId;
     
     }
 
