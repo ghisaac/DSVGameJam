@@ -179,13 +179,15 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator StartCharacterAnimationsWithDelay()
     {
+        float animationSpeedModifier = 0.6f;
 
         for (int i = 0; i < _allCharacters.Count; i++)
         {
-            _allCharacters[i].CharacterAnimator.SetTrigger("Drunk");
+            _allCharacters[i].CharacterAnimator.SetFloat("AnimationSpeed", animationSpeedModifier);
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.2f);
 
+            animationSpeedModifier += 0.3f;
         }
 
     }
