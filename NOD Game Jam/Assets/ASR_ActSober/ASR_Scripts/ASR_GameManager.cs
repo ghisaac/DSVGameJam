@@ -51,21 +51,28 @@ public class ASR_GameManager : MonoBehaviour
                 _allCharacters.Add(character);
                 character.enabled = false;
             }
+        } 
+        else 
+        {
+            for (int i = 0; i < Player.AllPlayers.Count; i++)
+            {
+                GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
+                ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
+                _allCharacters.Add(character);
+                character.Player = Player.AllPlayers[i];
+                character.enabled = false;
+            }
         }
 
-        for (int i = 0; i < Player.AllPlayers.Count; i++)
-        {
-            GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
-            ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();            
-            _allCharacters.Add(character);
-            character.Player = Player.AllPlayers[i];
-            character.enabled = false;
-        }
+        _forceGenerator.AddCharacters(_allCharacters.ToArray());
 
     }
 
     public void PlayerKnockedOut(ASR_CharacterController character)
     {
+        if (_activeCharacters.Count == 0)
+            return;
+
         _characterPlacement.Add(character);
         _activeCharacters.Remove(character);
 
@@ -85,7 +92,7 @@ public class ASR_GameManager : MonoBehaviour
         }
 
         if (_roundCounter == AmountOfRounds){
-            
+            CalculateWinner();
         } else {
             StartCoroutine(RestartGame());
         }
@@ -118,7 +125,7 @@ public class ASR_GameManager : MonoBehaviour
         _forceGenerator.ResetForce();
         _roundCounter++;
 
-
+        Debug.Log("StartRound");
 
         foreach (ASR_CharacterController cc in _allCharacters)
         {
