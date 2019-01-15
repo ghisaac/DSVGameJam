@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CapsuleCollider collider;
     public CapsuleCollider Collider { get { return collider; } private set { } }
     public float skinWidth;
+    public Animator animator;
+    public Vector3 groundPlane = Vector3.up;
 
     [Header("DEBUGGING")]
     public bool TestPlayer;
