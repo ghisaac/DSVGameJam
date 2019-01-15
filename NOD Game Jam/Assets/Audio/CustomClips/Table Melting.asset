@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
+  m_Name: Table Melting
+  m_EditorClassIdentifier: 
+  AudioClips:
+  - {fileID: 8300000, guid: 837e11982a3168a4fb1af60e94e0db28, type: 3}
+  Volume: 1
+  Pitch: 1
+  PitchVariance: 0.2
+  Loop: 0
+  MinDistance: 0.3
+  MaxDistance: 10
+  RolloffMode: 2
+  CurveType: 0
+  CustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1.0037537
+      inSlope: -5.860942
+      outSlope: -5.860942
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06696041
+    - serializedVersion: 3
+      time: 0.11498185
+      value: 0.502022
+      inSlope: -2.1724918
+      outSlope: -2.1724918
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25954136
+      outWeight: 0.07831017
+    - serializedVersion: 3
+      time: 0.36809337
+      value: 0.18827732
+      inSlope: -0.69942397
+      outSlope: -0.69942397
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.25557056
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.003753662
+      inSlope: -0.12085306
+      outSlope: -0.12085306
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.29269886
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
