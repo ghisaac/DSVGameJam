@@ -11,6 +11,19 @@ public class KSR_Racer: MonoBehaviour
     public KSR_Checkpoint lastCheckpoint;
     public KSR_Checkpoint nextCheckpoint;
     public Player player;
+    public float distanceToNextCheckpoint = 0;
+
+
+    private void Update()
+    {
+        distanceToNextCheckpoint = Vector3.Distance(nextCheckpoint.transform.position, transform.position);
+    }
+
+    private void Start()
+    {
+        lastCheckpoint = KSR_RaceManager.instance.checkpoints[0];
+        nextCheckpoint = KSR_RaceManager.instance.checkpoints[0];
+    }
 
     private void OnTriggerEnter(Collider other)
     {
