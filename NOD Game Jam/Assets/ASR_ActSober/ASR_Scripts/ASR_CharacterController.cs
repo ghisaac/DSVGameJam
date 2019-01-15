@@ -24,17 +24,13 @@ public class ASR_CharacterController : MonoBehaviour
 
     public float InputModifierModifier = 0.5f;
 
-    private int _score = 0;
+    public int Score = 0;
     
     public TextMeshProUGUI ScoreUI;
 
     [Header("DEBUGGING")]
     public bool UseKeyboard;
 
-	private void Start()
-	{
-        Initialize();
-	}
 
 	public void Initialize()
 	{
@@ -161,7 +157,7 @@ public class ASR_CharacterController : MonoBehaviour
 
     public void AddScore(int awardedScore)
     {
-        _score += awardedScore;
+        Score += awardedScore;
     }
 
 }
