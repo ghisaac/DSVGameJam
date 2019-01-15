@@ -9,7 +9,8 @@ public class HHS_Teacher : MonoBehaviour
     public float MinStudentActivateTime;
     public float MaxStudentActivateTime;
 
-    private Coroutine StudentActivation;
+    public Coroutine StudentActivation;
+    public Coroutine RaiseHandRoutine;
 
     [SerializeField]
     private SpriteRenderer Icon;
@@ -17,6 +18,8 @@ public class HHS_Teacher : MonoBehaviour
     [SerializeField]
     private Sprite IdleIcon, AlertIcon, BustIcon;
 
+    [HideInInspector]
+    public bool HandRaised = false;
 
     [HideInInspector]
     public bool teacherMad = false;
@@ -27,20 +30,50 @@ public class HHS_Teacher : MonoBehaviour
         
     }
 
+    public void StopStudent() {
+            StopCoroutine(StudentActivation);
+
+
+    }
+
     public GameObject PickStudent() {
         return Students[Random.Range(0, Students.Length)];
     }
 
     public IEnumerator ActiveStudentQuestion() {
+        GameObject student = PickStudent();
+        ResetStudents();
+        ResetPlayerRaisedHand();
         float delayTime = Random.Range(MinStudentActivateTime, MaxStudentActivateTime);
         yield return new WaitForSeconds(delayTime);
-        GameObject student = PickStudent();
+        
+        student.GetComponentInChildren<SpriteRenderer>().enabled = true;
         //Activate student;
-
+        //Animate student
+        //Speech bubble over student
         //FLYTTA NEDAN TILL EGEN METOD
+        RaiseHandRoutine = StartCoroutine(RaiseHand());
 
 
-        yield return new WaitForSeconds(2f);
+ 
+    }
+
+    private void ResetStudents() {
+        foreach(GameObject student in Students) {
+            student.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
+
+    }
+
+    private void ResetPlayerRaisedHand() {
+        foreach (HHS_Player player in HHS_GameManager.instance.activePlayers) {
+            player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+        }
+    }
+
+    public IEnumerator RaiseHand() {
+        HandRaised = true;
+        yield return new WaitForSeconds(1f);
         Icon.sprite = AlertIcon;
         yield return new WaitForSeconds(1f);
         CheckIfBusted();
@@ -50,11 +83,18 @@ public class HHS_Teacher : MonoBehaviour
         teacherMad = false;
         Icon.sprite = IdleIcon;
         //Teacher alert icon away
-        StudentActivation = StartCoroutine(ActiveStudentQuestion());
- 
+        HandRaised = false;
+        StartStudent();
+        yield return 0;
     }
 
+    public void StartStudent() {
+        StudentActivation = StartCoroutine(ActiveStudentQuestion());
+    }
 
+    public void StartRaiseHand() {
+        RaiseHandRoutine = StartCoroutine(RaiseHand());
+    }
 
 
     private void CheckIfBusted() {

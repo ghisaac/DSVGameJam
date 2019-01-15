@@ -8,6 +8,8 @@ public class HHS_Player : MonoBehaviour
     public LayerMask Chairlayer;
     public int Points;
     private GameObject goal;
+    [HideInInspector]
+    public SpriteRenderer goalindicator;
 
     public int PlayerID;
 
@@ -15,6 +17,7 @@ public class HHS_Player : MonoBehaviour
 
     public void SetGoal(GameObject newGoal) {
         goal = newGoal;
+        goalindicator.transform.position = newGoal.transform.position + new Vector3(2,0,0);
     }
 
     public GameObject GetGoal() {

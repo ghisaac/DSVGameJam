@@ -8,14 +8,14 @@ public class HHS_GameManager : MonoBehaviour {
     public static HHS_GameManager instance;
 
     [Header("Players")]
-    public HHS_Player[] players;
     [HideInInspector]
     public List<HHS_Player> activePlayers = new List<HHS_Player>();
     public int playersInGame = 2;
 
     public TextMeshProUGUI[] PointsUI;
-
-
+    public GameObject playerPrefab;
+    public Transform startPosition;
+    public SpriteRenderer[] goalIndicators;
 
     [Header("UI")]
     public float RoundTime = 60f;
@@ -53,6 +53,7 @@ public class HHS_GameManager : MonoBehaviour {
             usedGoalChairs.Add(goal);
             GoalChairs.Remove(goal);
             player.SetGoal(goal);
+            player.GetComponent<PlayerController>().stateMachine.TransitionToState<HHS_GroundState>();
         }
     }
 
@@ -64,20 +65,24 @@ public class HHS_GameManager : MonoBehaviour {
     public void ResetRound() {
         ResetGoals();
         ResetPlayers();
-        AssignRandomChairs();
         StartCoroutine(WaitForStartRound());
     }
 
     private void StartRound() {
         roundTimer = RoundTime;
         roundIsActive = true;
-        StartCoroutine(Teacher.ActiveStudentQuestion());
+        Teacher.StartStudent();
         //Byt state på spelare (lås upp kontroller)
+        AssignRandomChairs();
+
     }
 
     private void EndRound() {
         //Showpoints? LeaderBoard?
         --MiniGameRounds;
+        foreach (HHS_Player player in activePlayers) {
+            player.GetComponent<PlayerController>().stateMachine.TransitionToState<HHS_FrozenState>();
+        }
         if (MiniGameRounds <= 0) {
             GameOver();
         }
@@ -93,7 +98,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
 
     private void ResetPlayers() {
-        foreach (HHS_Player player in players) {
+        foreach (HHS_Player player in activePlayers) {
             //Lås spelare 
             //Sätta animationer
             player.ResetPosition();
@@ -102,12 +107,18 @@ public class HHS_GameManager : MonoBehaviour {
 
     private void InitializeGame() 
     {
-        //Kolla hur många spelare som är aktiva
+        //Instansiera mängden spelare i Player.AllPlayers.Count
+        //Sätt dem på nån position och få dem att komma ihåg sin startposition.
         roundTimer = RoundTime;
 
+        //loopa på Player.AllPlayers.Count
         for (int i = 0; i < playersInGame; i++) {
-            players[i].gameObject.SetActive(true);
-            activePlayers.Add(players[i]);
+            Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
+            GameObject newPlayer = Instantiate(playerPrefab, newPosition, Quaternion.identity);
+           // newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
+            newPlayer.GetComponent<HHS_Player>().Startposition = newPosition;
+            newPlayer.GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
+            activePlayers.Add(newPlayer.GetComponent<HHS_Player>());
             PointsUI[i].gameObject.SetActive(true);
         }
         StartCoroutine(WaitForStartRound());

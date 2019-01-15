@@ -2,17 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HHS_FrozenState : MonoBehaviour
+[CreateAssetMenu(menuName = "Player/State/HHS_States/HHS_PlayerFrozenState")]
+public class HHS_FrozenState : PlayerBaseState
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
