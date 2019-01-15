@@ -16,10 +16,11 @@ public class HHS_GroundState : PlayerBaseState {
     private Vector3 groundPlane = Vector3.up;
     public override void StateUpdate() {
 
-        Velocity += Vector3.down * 10 * Time.deltaTime;
+        
 
         Fric();
         Move();
+        Velocity += Vector3.down * 10 * Time.deltaTime;
         Collide();
         if (RewierdPlayer.GetButtonDown("A")) {
             CheckForNearbyChair();
@@ -42,7 +43,7 @@ public class HHS_GroundState : PlayerBaseState {
             hidden = true;
             controller.GetComponent<MeshRenderer>().material.color = Color.blue;
             //Kör animation
-            transform.position = chosenChair.gameObject.transform.position + new Vector3(0, 0, 1);
+            transform.position = new Vector3(chosenChair.gameObject.transform.position.x, transform.position.y, chosenChair.gameObject.transform.position.z + 1);
             //Flytta position
             //transform.rotation = new Quaternion(
             //Rotera?
@@ -56,7 +57,8 @@ public class HHS_GroundState : PlayerBaseState {
     private void CheckIfAtGoal(GameObject chair) {
         if (chair == controller.GetComponent<HHS_Player>().GetGoal()) {
             //HHS_GameManager.instance.PlayerReachedGoal();
-            //TransitionToState<HHS_FrozenState>();
+            TransitionToState<HHS_FrozenState>();
+            
         }
         else {
             TransitionToState<HHS_SittingState>();
@@ -69,8 +71,8 @@ public class HHS_GroundState : PlayerBaseState {
         RaycastHit hit = CheckGround(allhits);
         if (hit.collider != null)
             groundPlane = hit.normal;
-        else
-            StateMachine.TransitionToState<HHS_AirState>();
+        //else
+            //StateMachine.TransitionToState<HHS_AirState>();
     }
 
     private RaycastHit CheckGround(List<RaycastHit> allhits) {

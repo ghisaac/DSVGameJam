@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
-  m_Name: HHS_Air State
+  m_Name: New HHS_Air State
   m_EditorClassIdentifier: Assembly-CSharp::HHS_AirState
-  Acceleration: 30
-  Friction: 5
-  MaxSpeed: 10
+  Acceleration: 0
+  Friction: 0
+  MaxSpeed: 0

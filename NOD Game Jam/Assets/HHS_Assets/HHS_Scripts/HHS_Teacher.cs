@@ -60,7 +60,7 @@ public class HHS_Teacher : MonoBehaviour
     private void CheckIfBusted() {
         foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {
             bool bustedSomeone = false;
-            if (!player.IsHidden()) {
+            if (player.GetComponent<PlayerController>().stateMachine.CurrentState is HHS_GroundState) {
                 player.Bust();
                 Icon.sprite = BustIcon;
                 bustedSomeone = true;

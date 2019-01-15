@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HHS_Player : MonoBehaviour
 {
-    private bool hidden = false;
     public Vector3 Startposition;
     public LayerMask Chairlayer;
     public int Points;
@@ -22,11 +21,6 @@ public class HHS_Player : MonoBehaviour
         return goal;
     }
 
-
-    public bool IsHidden() {
-        return hidden;
-    }
-
     public void Bust() {
         ResetPosition();
         //Animation
@@ -38,37 +32,37 @@ public class HHS_Player : MonoBehaviour
         transform.position = Startposition;
     }
 
-    private void CheckForNearbyChair() {
-        Collider[] colliderhits = Physics.OverlapSphere(transform.position, 2f, Chairlayer);
-        float closestDistance = 9000f;
-        if(colliderhits.Length > 0) {
-            Collider chosenChair = null;
-            foreach (Collider collider in colliderhits) {
-                float distance = Vector3.Distance(transform.position, collider.transform.position);
-                if (distance < closestDistance) {
-                    chosenChair = collider;
-                }
-            }
-            hidden = true;
-            GetComponent<MeshRenderer>().material.color = Color.blue;
-            //Kör animation
-            transform.position = chosenChair.gameObject.transform.position + new Vector3(0, 0, 1);
-            //Flytta position
-            //transform.rotation = new Quaternion(
-            //Rotera?
-            //Kolla mot målstol
-            CheckIfAtGoal(chosenChair.gameObject);
+    //private void CheckForNearbyChair() {
+    //    Collider[] colliderhits = Physics.OverlapSphere(transform.position, 2f, Chairlayer);
+    //    float closestDistance = 9000f;
+    //    if(colliderhits.Length > 0) {
+    //        Collider chosenChair = null;
+    //        foreach (Collider collider in colliderhits) {
+    //            float distance = Vector3.Distance(transform.position, collider.transform.position);
+    //            if (distance < closestDistance) {
+    //                chosenChair = collider;
+    //            }
+    //        }
+    //        hidden = true;
+    //        GetComponent<MeshRenderer>().material.color = Color.blue;
+    //        //Kör animation
+    //        transform.position = chosenChair.gameObject.transform.position + new Vector3(0, 0, 1);
+    //        //Flytta position
+    //        //transform.rotation = new Quaternion(
+    //        //Rotera?
+    //        //Kolla mot målstol
+    //        CheckIfAtGoal(chosenChair.gameObject);
             
-        }
+    //    }
 
-    }
+    //}
 
-    private void CheckIfAtGoal(GameObject chair) {
-        if(chair == goal) {
-            HHS_GameManager.instance.PlayerReachedGoal(PlayerID);
-            //LOCK ME
-        }
-    }
+    //private void CheckIfAtGoal(GameObject chair) {
+    //    if(chair == goal) {
+    //        HHS_GameManager.instance.PlayerReachedGoal(PlayerID);
+    //        //LOCK ME
+    //    }
+    //}
 
     private void Start() {
         Startposition = transform.position;
@@ -76,18 +70,18 @@ public class HHS_Player : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            if (hidden) {
-                //StartWalking()
-                hidden = false;
-                GetComponent<MeshRenderer>().material.color = Color.white;
-            }
-            else {
-                CheckForNearbyChair();
-            }
+    //void Update() {
+    //    if (Input.GetKeyDown(KeyCode.Space)) {
+    //        if (hidden) {
+    //            //StartWalking()
+    //            hidden = false;
+    //            GetComponent<MeshRenderer>().material.color = Color.white;
+    //        }
+    //        else {
+    //            CheckForNearbyChair();
+    //        }
             
-        }
-    }
+    //    }
+    //}
 
 }

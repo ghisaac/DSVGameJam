@@ -8,7 +8,6 @@ public class HHS_SittingState : PlayerBaseState
 {
     public override void StateUpdate() {
 
-        Velocity += Vector3.down * 10 * Time.deltaTime;
 
         if (RewierdPlayer.GetButtonDown("A")) {
             TransitionToState<HHS_AirState>();
