@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class LevelPin : MonoBehaviour
 {
-    [SerializeField]
-    private int pinSceneIndex;
+    public enum Level { FooBar, Cafeteria, L50, Entrance, GamesLab, L70 }
 
-    public int GetSceneIndex()
-    {
-        return pinSceneIndex;
-    }
+    [SerializeField]
+    private Level myLevel;
+    [SerializeField]
+    private int levelBuildIndex;
+
+    public int GetSceneIndex() { return levelBuildIndex; }
+
+    public Level GetLevel() { return myLevel; }
 }
