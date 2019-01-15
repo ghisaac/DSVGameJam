@@ -65,7 +65,7 @@ public class ASR_GameManager : MonoBehaviour
         }
 
         _forceGenerator.AddCharacters(_allCharacters.ToArray());
-
+        StartCoroutine(StartCharacterAnimationsWithDelay());
     }
 
     public void PlayerKnockedOut(ASR_CharacterController character)
@@ -175,6 +175,19 @@ public class ASR_GameManager : MonoBehaviour
 
         yield return Countdown();
         StartGame();
+    }
+
+    private IEnumerator StartCharacterAnimationsWithDelay()
+    {
+
+        for (int i = 0; i < _allCharacters.Count; i++)
+        {
+            _allCharacters[i].CharacterAnimator.SetTrigger("Drunk");
+
+            yield return new WaitForSeconds(0.5f);
+
+        }
+
     }
 
 }

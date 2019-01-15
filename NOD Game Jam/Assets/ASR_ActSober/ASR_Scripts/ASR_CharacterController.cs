@@ -5,7 +5,9 @@ using TMPro;
 
 public class ASR_CharacterController : MonoBehaviour
 {
-    public Rigidbody _rigidbody;
+    private Rigidbody _rigidbody;
+    [HideInInspector]
+    public Animator CharacterAnimator;
     private float _horizontal;
     public float Force = 20f;
     private bool _isKnockedOut;
@@ -29,11 +31,17 @@ public class ASR_CharacterController : MonoBehaviour
     [Header("DEBUGGING")]
     public bool UseKeyboard;
 
+	private void Start()
+	{
+        Initialize();
+	}
+
 	public void Initialize()
 	{
         Debug.Log("Initialize");
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.isKinematic = true;
+        CharacterAnimator = GetComponent<Animator>();
         StartPosition = transform.position;
         enabled = false;
 	}
