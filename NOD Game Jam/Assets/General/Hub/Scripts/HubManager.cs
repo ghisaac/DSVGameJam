@@ -101,7 +101,10 @@ public class HubManager : MonoBehaviour
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
+    }
 
+    private void HighlightLevel()
+    {
         currentSelection.GetComponent<Image>().color = new Color(255, 0, 0);
     }
 
