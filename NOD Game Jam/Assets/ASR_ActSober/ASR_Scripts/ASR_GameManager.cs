@@ -46,15 +46,17 @@ public class ASR_GameManager : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity).GetComponent<ASR_CharacterController>();
+                GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
+                ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
                 _allCharacters.Add(character);
-                //character.enabled = false;
+                character.enabled = false;
             }
         }
 
         for (int i = 0; i < Player.AllPlayers.Count; i++)
         {
-            ASR_CharacterController character = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity).GetComponent<ASR_CharacterController>();
+            GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
+            ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();            
             _allCharacters.Add(character);
             character.Player = Player.AllPlayers[i];
             character.enabled = false;
@@ -116,8 +118,10 @@ public class ASR_GameManager : MonoBehaviour
         _forceGenerator.ResetForce();
         _roundCounter++;
 
-        foreach (ASR_CharacterController cc in _allCharacters){
-            Debug.Log(cc);
+
+
+        foreach (ASR_CharacterController cc in _allCharacters)
+        {
             cc.ActivatePlayer();
         }
     }
