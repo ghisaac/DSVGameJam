@@ -81,7 +81,7 @@ public class HHS_GroundState : PlayerBaseState {
 
     private void CheckIfAtGoal(GameObject chair) {
         if (chair == controller.GetComponent<HHS_Player>().GetGoal()) {
-            //HHS_GameManager.instance.PlayerReachedGoal();
+            HHS_GameManager.instance.PlayerReachedGoal(controller.GetComponent<HHS_Player>().PlayerID);
             TransitionToState<HHS_FrozenState>();
 
         }
