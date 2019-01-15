@@ -52,7 +52,9 @@ public class HHS_Player : MonoBehaviour
             hidden = true;
             GetComponent<MeshRenderer>().material.color = Color.blue;
             //Kör animation
+            transform.position = chosenChair.gameObject.transform.position + new Vector3(0, 0, 1);
             //Flytta position
+            //transform.rotation = new Quaternion(
             //Rotera?
             //Kolla mot målstol
             CheckIfAtGoal(chosenChair.gameObject);
