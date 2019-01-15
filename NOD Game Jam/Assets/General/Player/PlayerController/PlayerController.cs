@@ -33,4 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         stateMachine.Update();
     }
+    void FixedUpdate()
+    {
+        stateMachine.FixedUpdate();
+    }
 }

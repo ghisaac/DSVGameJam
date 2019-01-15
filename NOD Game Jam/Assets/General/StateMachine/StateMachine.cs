@@ -52,6 +52,11 @@ public class StateMachine
         if (CurrentState != null)
             CurrentState.StateUpdate();
     }
+    public virtual void FixedUpdate()
+    {
+        if (CurrentState != null)
+            CurrentState.StateFixedUpdate();
+    }
 
     public T GetState<T>()
     {
