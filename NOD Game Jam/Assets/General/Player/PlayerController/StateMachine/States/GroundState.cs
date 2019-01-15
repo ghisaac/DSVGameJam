@@ -10,8 +10,7 @@ public class GroundState : PlayerBaseState
     public float Friction;
     public float MaxSpeed;
     public float JumpForce;
-
-    private Vector3 groundPlane = Vector3.up;
+    
     public override void StateUpdate()
     {
 
@@ -23,6 +22,7 @@ public class GroundState : PlayerBaseState
         if (RewierdPlayer.GetButtonDown("A"))
         {
             Velocity += Vector3.up * JumpForce;
+            controller.animator.SetTrigger("Jump");
             StateMachine.TransitionToState<AirState>();
         }
 
@@ -34,7 +34,7 @@ public class GroundState : PlayerBaseState
         List<RaycastHit> allhits = PreventCollision();
         RaycastHit hit = CheckGround(allhits);
         if (hit.collider != null)
-            groundPlane = hit.normal;
+            controller.groundPlane = hit.normal;
         else
             StateMachine.TransitionToState<AirState>();
     }
@@ -50,11 +50,11 @@ public class GroundState : PlayerBaseState
     private void Move()
     {
         Vector3 rawInput = new Vector3(RewierdPlayer.GetAxis("Horizontal"), 0f, RewierdPlayer.GetAxis("Vertical"));
-        Vector3 movement = Vector3.ProjectOnPlane(rawInput, groundPlane).normalized;
+        Vector3 movement = Vector3.ProjectOnPlane(rawInput, controller.groundPlane).normalized;
 
         controller.Velocity += movement * Acceleration * Time.deltaTime;
-        if(Vector3.ProjectOnPlane(Velocity, groundPlane).magnitude > MaxSpeed)
-            controller.Velocity = Vector3.ClampMagnitude(Vector3.ProjectOnPlane(controller.Velocity, groundPlane), MaxSpeed) + Vector3.Project(controller.Velocity, groundPlane);
+        if(Vector3.ProjectOnPlane(Velocity, controller.groundPlane).magnitude > MaxSpeed)
+            controller.Velocity = Vector3.ClampMagnitude(Vector3.ProjectOnPlane(controller.Velocity, controller.groundPlane), MaxSpeed) + Vector3.Project(controller.Velocity, controller.groundPlane);
     }
 
     private void Fric()
