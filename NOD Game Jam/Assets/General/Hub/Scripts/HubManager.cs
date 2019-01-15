@@ -10,10 +10,10 @@ public class HubManager : MonoBehaviour
     private GameObject confirmationPanel;
     private GameObject[] levelPins;
     private GameObject currentSelection;
+    private Rewired.Player leavingPlayer;
     private int currentIndex;
     private bool selectOnCooldown;
-    delegate void InputDelegate(int rewindID);
-
+    private bool waitingForConfirmation;
 
     void Start()
     {
@@ -25,6 +25,12 @@ public class HubManager : MonoBehaviour
 
     void Update()
     {
+        if (waitingForConfirmation)
+        {
+            HandleConfirmationInput(leavingPlayer);
+            return;
+        }
+
         HandleJoins();
 
         if (!selectOnCooldown)
@@ -50,8 +56,8 @@ public class HubManager : MonoBehaviour
             {
                 if (Player.CheckIfPlayerExists(p.id))
                 {
-                    Player.RemovePlayer(p.id);
-                    Debug.Log("Player removed: " + p.name);
+                    leavingPlayer = p;
+                    ToggleConfirmationPanel();
                 }
             }
         }
@@ -87,7 +93,7 @@ public class HubManager : MonoBehaviour
             currentSelection = levelPins[currentIndex];
         }
 
-        else if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
+        if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
         {
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPinSceneReference>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
@@ -96,11 +102,24 @@ public class HubManager : MonoBehaviour
         currentSelection.GetComponent<MeshRenderer>().material.color = new Color(255, 255, 255);
     }
 
-    private void HandleConfirmationInput(int rewindID)
+    private void ToggleConfirmationPanel()
     {
-        if (ReInput.players.GetPlayer(rewindID).GetButtonDown("A"))
+        confirmationPanel.SetActive(!confirmationPanel.activeSelf);
+        waitingForConfirmation = !waitingForConfirmation;
+    }
+
+    private void HandleConfirmationInput(Rewired.Player player)
+    {
+        if (player.GetButtonDown("A"))
         {
-            
+            Player.RemovePlayer(player.id);
+            Debug.Log("Player removed: " + player.name);
+            ToggleConfirmationPanel();
+        }
+
+        if (player.GetButtonDown("B"))
+        {
+            ToggleConfirmationPanel();
         }
     }
 
