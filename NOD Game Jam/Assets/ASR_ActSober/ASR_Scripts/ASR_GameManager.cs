@@ -49,7 +49,7 @@ public class ASR_GameManager : MonoBehaviour
                 GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
                 _allCharacters.Add(character);
-                character.enabled = false;
+                character.Initialize();
             }
         } 
         else 
@@ -60,7 +60,7 @@ public class ASR_GameManager : MonoBehaviour
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
                 _allCharacters.Add(character);
                 character.Player = Player.AllPlayers[i];
-                character.enabled = false;
+                character.Initialize();
             }
         }
 
@@ -86,6 +86,8 @@ public class ASR_GameManager : MonoBehaviour
         _characterPlacement.Add(_activeCharacters[0]);
         _activeCharacters[0].Deactivate();
 
+        Debug.Log("Round finished");
+
         for (int i = 0; i < _characterPlacement.Count; i++)
         {
             _characterPlacement[0].AddScore(_placementScores[0]);
@@ -101,7 +103,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private void CalculateWinner()
     {
-        
+        Debug.Log("Someone won!");
     }
 
     private void ResetPlayers()
@@ -166,6 +168,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
+        Debug.Log("Restart game");
         yield return RoundFeedback();
 
         ResetPlayers();

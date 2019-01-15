@@ -5,7 +5,7 @@ using TMPro;
 
 public class ASR_CharacterController : MonoBehaviour
 {
-    private Rigidbody _rigidbody;
+    public Rigidbody _rigidbody;
     private float _horizontal;
     public float Force = 20f;
     private bool _isKnockedOut;
@@ -29,26 +29,30 @@ public class ASR_CharacterController : MonoBehaviour
     [Header("DEBUGGING")]
     public bool UseKeyboard;
 
-    private void Start()
-    {
-        Debug.Log("Start");
+	public void Initialize()
+	{
+        Debug.Log("Initialize");
         _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody.isKinematic = true;
         StartPosition = transform.position;
-        
-    }
+        enabled = false;
+	}
 
-    private void Update()
+	private void Update()
     {
+        // Debugging
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+
+            OnRespawn();
+        }
+
         InputModification();
         Move();
         ClampPosition();
         CheckHeadCollision();
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            
-            OnRespawn();
-        }
+
     }
 
     private void Move()
@@ -100,7 +104,7 @@ public class ASR_CharacterController : MonoBehaviour
         Debug.DrawRay(RaycastTransform.position, transform.right * RayMaxDistance, Color.green);
         if (Physics.Raycast(RaycastTransform.position, -transform.right, out leftSide, RayMaxDistance, FloorMask) || Physics.Raycast(RaycastTransform.position, transform.right, out rightSide, RayMaxDistance, FloorMask))
         {
-            Debug.Log("You ded");
+            //Debug.Log("You ded");
             OnKnockout();
         }
         
@@ -111,7 +115,10 @@ public class ASR_CharacterController : MonoBehaviour
     private void OnKnockout()
     {
         //kalla på metod i gamemanager
-        _isKnockedOut = true;
+        //_isKnockedOut = true;
+
+        ASR_GameManager.Instance.PlayerKnockedOut(this);
+        Deactivate();
 
         //Kom ihåg att ta bort kommentar!!!
         //this.enabled = false;
@@ -124,6 +131,7 @@ public class ASR_CharacterController : MonoBehaviour
 
     public void OnRespawn()
     {
+        _rigidbody.isKinematic = true;
         //this.enabled = true;
         transform.SetPositionAndRotation(StartPosition, Quaternion.identity);
         _rigidbody.velocity = Vector3.zero;
@@ -135,6 +143,7 @@ public class ASR_CharacterController : MonoBehaviour
     {
         this.enabled = true;
         _isKnockedOut = false;
+        _rigidbody.isKinematic = false;
     }
 
     public void SetStartPosition(Vector3 startPos)
