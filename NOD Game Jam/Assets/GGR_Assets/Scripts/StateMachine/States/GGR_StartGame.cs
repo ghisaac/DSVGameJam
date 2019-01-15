@@ -7,6 +7,13 @@ namespace GGR
     [CreateAssetMenu(menuName = "GGR/States/StartGame")]
     public class GGR_StartGame : GGR_State
     {
+        public override void Enter()
+        {
+            Player johannaPlayer = new Player(0, "Johanna");
+            Player danielPlayer = new Player(1, "Daniel");
+            GGR_GameData.SpawnPlayer(johannaPlayer);
+            GGR_GameData.SpawnPlayer(danielPlayer);
+        }
 
         public override bool Run()
         {

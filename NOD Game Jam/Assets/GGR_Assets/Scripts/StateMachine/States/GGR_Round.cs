@@ -13,7 +13,7 @@ namespace GGR
         public override void Enter()
         {
             currentTime = roundTime;
-            //unfreeze playuhss
+            GGR_GameData.UnfreezeAllPlayers();
         }
 
         public override bool Run()
