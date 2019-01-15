@@ -10,6 +10,7 @@ public class KSR_Racer: MonoBehaviour
     public List<KSR_Checkpoint> checkpointsCleared;
     public KSR_Checkpoint lastCheckpoint;
     public KSR_Checkpoint nextCheckpoint;
+    public Player player;
 
     private void OnTriggerEnter(Collider other)
     {

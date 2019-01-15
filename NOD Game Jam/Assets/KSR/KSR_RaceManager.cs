@@ -32,9 +32,22 @@ public class KSR_RaceManager : MonoBehaviour
         racers.Clear();
         for (int i = 0; i<nrPLayers; i++)
         {
-            GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i, 0, 0), startLine.rotation);
+            GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i*5, 0, 0), startLine.rotation);
             p.GetComponentInChildren<KSR_Racer>().nextCheckpoint = checkpoints[0];
             racers.Add(p.GetComponent<KSR_Racer>());
+        }
+    }
+
+    void Start()
+    {
+        int i = 0;
+        foreach (Player player in Player.AllPlayers)
+        {
+            GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i*5, 0, 0), startLine.rotation);
+            p.GetComponent<KSR_Racer>().player = player;
+            p.GetComponent<KSR_Racer>().nextCheckpoint = checkpoints[0];
+            racers.Add(p.GetComponent<KSR_Racer>());
+            i++;
         }
     }
 
