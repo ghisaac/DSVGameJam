@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class LevelPinSceneReference : MonoBehaviour
+public class LevelPin : MonoBehaviour
 {
     [SerializeField]
     private int pinSceneIndex;

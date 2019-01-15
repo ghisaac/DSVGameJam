@@ -159,10 +159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 124856183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 6
+  pinSceneIndex: 0
 --- !u!114 &124856187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,10 +247,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 175718165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 3
+  pinSceneIndex: 5
 --- !u!114 &175718169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,10 +401,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 461727687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 5
+  pinSceneIndex: 1
 --- !u!114 &461727691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ PrefabInstance:
     - target: {fileID: 6484526053384843527, guid: 8c1355d8513b5f342bee27e028286d14,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -32.953
+      value: -32.95288
       objectReference: {fileID: 0}
     - target: {fileID: 6484526053384843527, guid: 8c1355d8513b5f342bee27e028286d14,
         type: 3}
@@ -631,10 +631,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1179073913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 1
+  pinSceneIndex: 3
 --- !u!114 &1179073917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,10 +719,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1303473814}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 2
+  pinSceneIndex: 4
 --- !u!114 &1303473818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -807,10 +807,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1370544719}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc71a8535ffbdb842b706e5e6c73e251, type: 3}
+  m_Script: {fileID: 11500000, guid: 21d8cb832afd2e647a30c8afd279a074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pinSceneIndex: 4
+  pinSceneIndex: 2
 --- !u!114 &1370544723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1470,6 +1470,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerUIPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704534545511015514, guid: f75d11b13a4a9694ab921e59ada702a4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2704534545511015517, guid: f75d11b13a4a9694ab921e59ada702a4,
         type: 3}

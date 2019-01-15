@@ -7,17 +7,19 @@ using UnityEngine.UI;
 
 public class HubManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject confirmationPanel;
-    
     private GameObject currentSelection;
     private Rewired.Player leavingPlayer;
     private int currentIndex;
     private bool selectOnCooldown;
     private bool waitingForConfirmation;
-    
+
+    [SerializeField]
+    private GameObject confirmationPanel;
     [SerializeField]
     private GameObject[] levelPins;
+
+    [SerializeField]
+    private Image currentMapImage;
 
     void Start()
     {
@@ -98,7 +100,7 @@ public class HubManager : MonoBehaviour
 
         if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
         {
-            int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPinSceneReference>().GetSceneIndex();
+            int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
 
