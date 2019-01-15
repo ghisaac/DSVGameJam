@@ -9,6 +9,7 @@ public abstract class State : ScriptableObject
     public virtual void Initialize(object owner) { }
     public virtual void Enter() { }
     public virtual void StateUpdate() { }
+    public virtual void StateFixedUpdate() { }
     public virtual void Exit() { }
 
     public virtual void TransitionToMe()
