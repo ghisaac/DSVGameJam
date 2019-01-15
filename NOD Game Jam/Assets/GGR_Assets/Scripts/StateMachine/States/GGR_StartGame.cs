@@ -10,7 +10,7 @@ namespace GGR
 
         public override bool Run()
         {
-            if (Input.GetKeyDown(KeyCode.KeypadEnter))
+            if (Input.GetKeyDown(KeyCode.Space))
                 Owner.TransitionTo<GGR_RunGame>();
                 
             return false;
