@@ -27,7 +27,7 @@ public class KSR_Collision : MonoBehaviour
         if (col.gameObject.tag == "Wall")
         {
             Bounce(col.contacts[0].normal);
-            Debug.Log("WALL");
+           // Debug.Log("WALL");
         }
     }
 
@@ -35,6 +35,7 @@ public class KSR_Collision : MonoBehaviour
     {
         var movementSpeed = currentVelocity.magnitude;
         var direction = Vector3.Reflect(currentVelocity.normalized, collisonNormal);
-        _rb.velocity = direction * Mathf.Max(movementSpeed, bounceSpeed);
+        _rb.velocity = direction * Mathf.Clamp(Mathf.Max(movementSpeed, bounceSpeed), -10, 10);
+        Debug.Log("bouncen är: " + _rb.velocity);
     }
 }

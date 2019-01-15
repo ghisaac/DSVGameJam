@@ -91,4 +91,9 @@ public class KSR_RaceState : PlayerBaseState
         _rb.AddForce(transform.forward  * boostSpeed);
     }
 
+    public float getHorizontalAxis()
+    {
+        return RewierdPlayer.GetAxis("Horizontal");
+    }
+
 }
