@@ -59,6 +59,6 @@ public class GroundState : PlayerBaseState
 
     private void Fric()
     {
-        controller.Velocity -= controller.Velocity.normalized * Friction * Time.deltaTime;
+        controller.Velocity = controller.Velocity.magnitude <= (Friction * Time.deltaTime) ? Vector3.zero : controller.Velocity - controller.Velocity.normalized * Friction * Time.deltaTime;
     }
 }
