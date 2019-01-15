@@ -11,6 +11,13 @@ public class HHS_Teacher : MonoBehaviour
 
     private Coroutine StudentActivation;
 
+    [SerializeField]
+    private SpriteRenderer Icon;
+
+    [SerializeField]
+    private Sprite IdleIcon, AlertIcon, BustIcon;
+
+
     [HideInInspector]
     public bool teacherMad = false;
 
@@ -34,16 +41,15 @@ public class HHS_Teacher : MonoBehaviour
 
 
         yield return new WaitForSeconds(2f);
-        //Teacher alert icon
+        Icon.sprite = AlertIcon;
         yield return new WaitForSeconds(1f);
-        GetComponent<MeshRenderer>().material.color = Color.red;
         CheckIfBusted();
         teacherMad = true;
         //Animation till arg
         yield return new WaitForSeconds(2f); //TeacherActiveTime, balansera
         teacherMad = false;
-        //Animation tillbaka till idle
-        //Teacher alert icon
+        Icon.sprite = IdleIcon;
+        //Teacher alert icon away
         StudentActivation = StartCoroutine(ActiveStudentQuestion());
  
     }
@@ -53,8 +59,15 @@ public class HHS_Teacher : MonoBehaviour
 
     private void CheckIfBusted() {
         foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {
+            bool bustedSomeone = false;
             if (!player.IsHidden()) {
                 player.Bust();
+                Icon.sprite = BustIcon;
+                bustedSomeone = true;
+            }
+
+            if (!bustedSomeone) {
+                Icon.sprite = IdleIcon;
             }
             //Starta olika animationer beroende på om spelare hittas eller ej.
             //StudentActivation = StartCoroutine(ActiveStudentQuestion());

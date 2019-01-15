@@ -39,7 +39,7 @@ public class HHS_Player : MonoBehaviour
     }
 
     private void CheckForNearbyChair() {
-        Collider[] colliderhits = Physics.OverlapSphere(transform.position, 10f, Chairlayer);
+        Collider[] colliderhits = Physics.OverlapSphere(transform.position, 2f, Chairlayer);
         float closestDistance = 9000f;
         if(colliderhits.Length > 0) {
             Collider chosenChair = null;
@@ -50,6 +50,7 @@ public class HHS_Player : MonoBehaviour
                 }
             }
             hidden = true;
+            GetComponent<MeshRenderer>().material.color = Color.blue;
             //Kör animation
             //Flytta position
             //Rotera?
@@ -78,6 +79,7 @@ public class HHS_Player : MonoBehaviour
             if (hidden) {
                 //StartWalking()
                 hidden = false;
+                GetComponent<MeshRenderer>().material.color = Color.white;
             }
             else {
                 CheckForNearbyChair();
