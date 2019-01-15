@@ -29,7 +29,7 @@ public class ASR_GameManager : MonoBehaviour
 
 
     [Header("DEBUGGING")]
-    public bool Debug;
+    public bool Debugging;
 
     // Start is called before the first frame update
     void Awake()
@@ -37,11 +37,12 @@ public class ASR_GameManager : MonoBehaviour
         Instance = this;
         _forceGenerator = FindObjectOfType<ASR_RandomForce>();
         InitializePlayers();
+        StartCoroutine(ActivateGame());
     }
 
     private void InitializePlayers()
     {
-        if (Debug)
+        if (Debugging)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -116,6 +117,7 @@ public class ASR_GameManager : MonoBehaviour
         _roundCounter++;
 
         foreach (ASR_CharacterController cc in _allCharacters){
+            Debug.Log(cc);
             cc.ActivatePlayer();
         }
     }

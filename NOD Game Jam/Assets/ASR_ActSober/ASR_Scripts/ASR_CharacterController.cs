@@ -28,6 +28,7 @@ public class ASR_CharacterController : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log("Start");
         _rigidbody = GetComponent<Rigidbody>();
         StartPosition = transform.position;
     }

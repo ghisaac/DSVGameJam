@@ -30,6 +30,11 @@ public class ASR_RandomForce : MonoBehaviour
         //StartCoroutine(_activeCoroutine);
     }
 
+    public void AddCharacters(ASR_CharacterController[] characters)
+    {
+        Characters = characters;
+    }
+
     public void ResetForce()
     {
         _force = StartForce;
