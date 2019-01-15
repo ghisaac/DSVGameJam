@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: FIL_GroundState
   m_EditorClassIdentifier: 
   Acceleration: 300
-  Friction: 100
-  MaxSpeed: 10
-  JumpForce: 20
+  Friction: 200
+  MaxSpeed: 6
+  JumpForce: 17

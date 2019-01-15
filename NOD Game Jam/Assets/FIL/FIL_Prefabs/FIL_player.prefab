@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 7553296917039859802}
   - component: {fileID: 7553296917039859783}
   - component: {fileID: 7553296917039859800}
+  - component: {fileID: 7096558007157862406}
   m_Layer: 0
   m_Name: FIL_player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -48,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine:
     states:
-    - {fileID: 11400000, guid: 059daa6fcafdb02449ff9bb15c950df0, type: 2}
-    - {fileID: 11400000, guid: a15864088299aae43b7b52886fc9abc4, type: 2}
+    - {fileID: 11400000, guid: 99d6b30b18845e04da05a124f2f1fc10, type: 2}
+    - {fileID: 11400000, guid: 99d7251caadf9a94b92a573eb374ccc7, type: 2}
     firstStateIsDefault: 1
     CurrentState: {fileID: 0}
   Velocity: {x: 0, y: 0, z: 0}
@@ -90,6 +91,22 @@ CapsuleCollider:
   m_Height: 1.0161579
   m_Direction: 1
   m_Center: {x: 0, y: 0.52505624, z: 0}
+--- !u!114 &7096558007157862406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553296917039859803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4710a3fcf1a0d3748afcf1d25132b942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 2147483648
+  player: {fileID: 7553296917039859803}
 --- !u!1001 &7553296915424346009
 PrefabInstance:
   m_ObjectHideFlags: 0

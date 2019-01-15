@@ -48,6 +48,8 @@ namespace FIL
 
         private WaitForSeconds _waitForSeconds;
 
+        public bool gameStarted = false;
+
 
         private void Awake()
         {
@@ -59,7 +61,6 @@ namespace FIL
         {
             _players = new GameObject[Player.AllPlayers.Count];
 
-
             for (int i = 0; i < Player.AllPlayers.Count; i++)
             {
                 GameObject player = Instantiate(playerPrefab);
@@ -69,20 +70,14 @@ namespace FIL
                 _players[i].transform.position = _spawns[i].position;
 
             }
-
  
             _tablesList = new List<GameObject>();
             _waitForSeconds =  new WaitForSeconds(_tableDrownDelay);
+
             for (int i = 0; i < tables.transform.childCount; i++)
             {
                 _tablesList.Add(tables.transform.GetChild(i).gameObject);
             }
-
-            //kolla hur många PlayerControllers som finns / antalet spelare.
-            //anpassa UI efter antalet spelare
-            //tilldela varje spelare en karaktär.
-
-            //Spelarna kan inte röra sig
 
             _uI.StartTimer();
         }
@@ -90,7 +85,7 @@ namespace FIL
 
         public void StartGameLoop()
         {
-            //Spelarna kan röra sig
+            gameStarted = true;
             StartCoroutine("DrownTable");
         }
 
@@ -100,6 +95,14 @@ namespace FIL
             if(_placement.Count == _players.Length - 1)
             {
                 EndGame();
+            }
+
+            if (!gameStarted)
+            {
+                for (int i = 0; i < _players.Length; i++)
+                {
+                    _players[i].transform.position = _spawns[i].position;
+                }
             }
         }
 
@@ -113,7 +116,6 @@ namespace FIL
                 _tablesList.Remove(table);
                 Vector3 tablePos = table.transform.position;
                 table.GetComponent<FIL_TableShake>().ShakeTable();
-                //spela bubbeleffekter och rök runt det valda bordet här
                 
                 yield return _waitForSeconds;
                 Instantiate(_smokePrefab, tablePos, Quaternion.Euler(-90, 0, 0));
@@ -165,6 +167,8 @@ namespace FIL
 
         private void AwardPoints()
         {
+
+            Debug.Log("GameEnded");
             for (int i = 0; i < _players.Length; i++)
             {
                 //_placement[i].DistributePoints(_pointsPerPlacements[i]);
@@ -175,8 +179,12 @@ namespace FIL
         public void PlayerDeath(GameObject player)
         {
             _placement.Add(player);
+            GameObject bubble = Instantiate(_lavaBubblePrefab, player.transform.position, Quaternion.identity);
+            bubble.transform.localScale *= 2;
+            if (_placement.Count == _players.Length - 1)
+            {
+                EndGame();
+            }
         }
-
-
     }
 }

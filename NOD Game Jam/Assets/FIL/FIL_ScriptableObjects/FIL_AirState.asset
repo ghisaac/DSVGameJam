@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Acceleration: 60
   Friction: 2
-  MaxSpeed: 10
+  MaxSpeed: 7
   Gravity: 60
