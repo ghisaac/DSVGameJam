@@ -9,20 +9,23 @@ public class HubManager : MonoBehaviour
 {
     private GameObject currentSelection;
     private Rewired.Player leavingPlayer;
-    private int currentIndex;
+    private int currentPinIndex;
     private bool selectOnCooldown;
     private bool waitingForConfirmation;
-    private Image currentMapImage;
+    private Image mapImage;
 
     [SerializeField]
     private GameObject confirmationPanel;
+    [SerializeField]
+    private GameObject map;
     [SerializeField]
     private GameObject[] levelPins;
 
     void Start()
     {
-        currentIndex = 0;
-        currentSelection = levelPins[currentIndex];
+        mapImage = map.GetComponent<Image>();
+        currentPinIndex = 0;
+        currentSelection = levelPins[currentPinIndex];
         selectOnCooldown = false;
     }
 
@@ -68,32 +71,32 @@ public class HubManager : MonoBehaviour
 
     private void HandleLevelSelection()
     {
-        if (ReInput.players.AllPlayers[1].GetAxisRaw("Horizontal") > 0)
+        if (ReInput.players.AllPlayers[1].GetAxisRaw("Vertical") < 0)
         {
-            currentIndex += 1;
+            currentPinIndex += 1;
 
-            if (currentIndex >= levelPins.Length)
+            if (currentPinIndex >= levelPins.Length)
             {
-                currentIndex = 0;
+                currentPinIndex = 0;
             }
 
             StartCoroutine(SelectionCooldown());
-            currentSelection.GetComponent<Image>().color = new Color(90, 90, 90);
-            currentSelection = levelPins[currentIndex];
+            DehighlightLevel();
+            currentSelection = levelPins[currentPinIndex];
         }
         
-        else if (ReInput.players.AllPlayers[1].GetAxisRaw("Horizontal") < 0)
+        else if (ReInput.players.AllPlayers[1].GetAxisRaw("Vertical") > 0)
         {
-            if (currentIndex == 0)
+            if (currentPinIndex == 0)
             {
-                currentIndex = levelPins.Length;
+                currentPinIndex = levelPins.Length;
             }
 
-            currentIndex -= 1;
+            currentPinIndex -= 1;
 
             StartCoroutine(SelectionCooldown());
-            currentSelection.GetComponent<Image>().color = new Color(90, 90, 90);
-            currentSelection = levelPins[currentIndex];
+            DehighlightLevel();
+            currentSelection = levelPins[currentPinIndex];
         }
 
         if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
@@ -101,11 +104,19 @@ public class HubManager : MonoBehaviour
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
+
+        HighlightLevel();
     }
 
     private void HighlightLevel()
     {
         currentSelection.GetComponent<Image>().color = new Color(255, 0, 0);
+        mapImage.sprite = currentSelection.GetComponent<LevelPin>().GetMapSprite();
+    }
+
+    private void DehighlightLevel()
+    {
+        currentSelection.GetComponent<Image>().color = new Color(20, 20, 20);
     }
 
     private void ToggleConfirmationPanel()
