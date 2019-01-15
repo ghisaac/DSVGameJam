@@ -6,10 +6,73 @@ using TMPro;
 public class ASR_UIManager : MonoBehaviour
 {
     public TextMeshProUGUI RoundNumber, RoundCountdown, Winscreen;
+    public TextMeshProUGUI[] PlayerScoreGUIs;
+    public TextMeshProUGUI[] PlayerPlacementGuis;
     public int TestWinNumber;
 
     private Dictionary<ASR_CharacterController, TextMeshProUGUI> _scoreGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
     private Dictionary<ASR_CharacterController, TextMeshProUGUI> _placementGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
+
+    public void FillUpDictionarys(ASR_CharacterController[] characterControllerList)
+    {
+        for(int i = 0; i < characterControllerList.Length; i++)
+        {
+            _scoreGUIDictionary.Add(characterControllerList[i], PlayerScoreGUIs[i]);
+            _placementGUIDictionary.Add(characterControllerList[i], PlayerPlacementGuis[i]);
+
+            SetScoreGuiActive(characterControllerList[i]);
+        }
+    }
+
+    public void SetScoreGui(ASR_CharacterController characterController, int score)
+    {
+        _scoreGUIDictionary[characterController].SetText("Score: {0}", score);
+    }
+
+    public void SetPlacementGui(ASR_CharacterController characterController, int placement)
+    {
+        _placementGUIDictionary[characterController].SetText("Placement: {0}", placement);
+        _placementGUIDictionary[characterController].gameObject.SetActive(true);
+    }
+
+    public void SetScoreGuiActive(ASR_CharacterController characterController)
+    {
+        _scoreGUIDictionary[characterController].gameObject.SetActive(true);
+    }
+
+    public void SetScoreGuiInActive(ASR_CharacterController characterController)
+    {
+        _scoreGUIDictionary[characterController].gameObject.SetActive(false);
+    }
+
+    public void SetPlacementGUIActive(ASR_CharacterController characterController)
+    {
+        _placementGUIDictionary[characterController].gameObject.SetActive(true);
+    }
+
+    public void SetPlacementGUIInActive(ASR_CharacterController characterController)
+    {
+        _placementGUIDictionary[characterController].gameObject.SetActive(false);
+    }
+
+    public void InactivatePlacementGui()
+    {
+        for(int i = 0; i < PlayerPlacementGuis.Length; i++)
+        {
+            PlayerPlacementGuis[i].gameObject.SetActive(false);
+        }
+    }
+
+
+    public TextMeshProUGUI GetScoreGUI(ASR_CharacterController characterController)
+    {
+        return _scoreGUIDictionary[characterController];
+    }
+
+    public TextMeshProUGUI GetPlacementGUI(ASR_CharacterController characterController)
+    {
+        return _placementGUIDictionary[characterController];
+    }
 
     public IEnumerator RoundCountdownTimer(int roundNumber)
     {

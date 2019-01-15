@@ -8,6 +8,8 @@ public class ASR_GameManager : MonoBehaviour
 
     public static ASR_GameManager Instance;
 
+    public ASR_UIManager UIManager;
+
     public Transform[] StartPositionTransforms;
 
     public GameObject PlayerPrefab;
@@ -65,6 +67,7 @@ public class ASR_GameManager : MonoBehaviour
         }
 
         _forceGenerator.AddCharacters(_allCharacters.ToArray());
+        UIManager.FillUpDictionarys(_allCharacters.ToArray());
         StartCoroutine(StartCharacterAnimationsWithDelay());
     }
 
@@ -76,8 +79,13 @@ public class ASR_GameManager : MonoBehaviour
         _characterPlacement.Add(character);
         _activeCharacters.Remove(character);
 
+
         if (_activeCharacters.Count == 1){
+            UIManager.SetPlacementGui(character, 1);
             RoundFinished();
+        } else
+        {
+            UIManager.SetPlacementGui(character, _activeCharacters.Count + 1);
         }
     }
 
@@ -90,13 +98,24 @@ public class ASR_GameManager : MonoBehaviour
 
         for (int i = 0; i < _characterPlacement.Count; i++)
         {
-            _characterPlacement[0].AddScore(_placementScores[0]);
+            _characterPlacement[i].AddScore(_placementScores[i]);
         }
+
+        UpdateScoreInUI();
 
         if (_roundCounter == AmountOfRounds){
             CalculateWinner();
         } else {
             StartCoroutine(RestartGame());
+        }
+
+    }
+
+    private void UpdateScoreInUI()
+    {
+        foreach(ASR_CharacterController cc in _allCharacters)
+        {
+            UIManager.SetScoreGui(cc, cc.Score);
         }
 
     }
@@ -160,7 +179,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         yield return ShowInstructions();
 
-        yield return Countdown();
+        yield return UIManager.RoundCountdownTimer(_roundCounter);
 
         _forceGenerator.ActivateForceGenerator();
         StartGame();
@@ -168,12 +187,14 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator RestartGame()
     {
+        yield return Countdown();
+        UIManager.InactivatePlacementGui();
         Debug.Log("Restart game");
         yield return RoundFeedback();
 
         ResetPlayers();
 
-        yield return Countdown();
+        yield return UIManager.RoundCountdownTimer(_roundCounter);
         StartGame();
     }
 
