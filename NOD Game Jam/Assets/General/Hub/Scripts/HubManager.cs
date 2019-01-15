@@ -12,6 +12,7 @@ public class HubManager : MonoBehaviour
     private GameObject currentSelection;
     private int currentIndex;
     private bool selectOnCooldown;
+    delegate void InputDelegate(string input);
 
     void Start()
     {
@@ -40,6 +41,8 @@ public class HubManager : MonoBehaviour
                 if (!Player.CheckIfPlayerExists(p.id))
                 {
                     new Player(p.id, "Maestro " + p.id);
+                    Debug.Log("Player added: " + p.name);
+
                 }
             }
 
@@ -47,7 +50,15 @@ public class HubManager : MonoBehaviour
             {
                 if (Player.CheckIfPlayerExists(p.id))
                 {
-                    Player.RemovePlayer(p.id);
+                    if (p.GetButtonDown("A"))
+                    {
+                        Player.RemovePlayer(p.id);
+                        Debug.Log("Player removed: " + p.name);
+                    }
+                    else if (p.GetButtonDown("B"))
+                    {
+                        return;
+                    }
                 }
             }
         }
