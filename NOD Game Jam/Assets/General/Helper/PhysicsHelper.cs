@@ -13,10 +13,10 @@ public static class PhysicsHelper
     /// <param name="DeltaTime">The deltatime the collision happens in</param>
     /// <param name="skinWidth">SkinWidth for security</param>
     /// <returns></returns>
-    public static List<RaycastHit> PreventCollision(Func<RaycastHit> raycastFunction, ref Vector3 velocity, Transform transform, float DeltaTime, float skinWidth = 0.0f)
+    public static List<RaycastHit> PreventCollision(Func<RaycastHit> raycastFunction, ref Vector3 velocity, Transform transform, float DeltaTime, float skinWidth = 0.0f, float bounciness = 0.0f)
     {
         RaycastHit hit;
-        List<RaycastHit> hits = new List<RaycastHit>();
+        List<RaycastHit> raycastHits = new List<RaycastHit>();
         while ((hit = raycastFunction()).collider != null)
         {
             float distanceToCorrect = skinWidth / Vector3.Dot(velocity.normalized, hit.normal);
@@ -24,15 +24,15 @@ public static class PhysicsHelper
 
             if (distanceToMove <= velocity.magnitude * DeltaTime)
             {
-                hits.Add(hit);
+                raycastHits.Add(hit);
                 if (distanceToMove > 0.0f)
                     transform.position += velocity.normalized * distanceToMove;
-                velocity += CalculateNormalForce(hit.normal, velocity);
+                velocity += CalculateNormalForce(hit.normal, velocity) * (1.0f + bounciness);
             }
             else
                 break;
         }
-        return hits;
+        return raycastHits;
     }
 
     /// <summary>

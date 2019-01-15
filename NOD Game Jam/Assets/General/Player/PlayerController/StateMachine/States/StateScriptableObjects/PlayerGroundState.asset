@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2b49535754bdf4eab3c20ba83dcacb, type: 3}
   m_Name: PlayerGroundState
   m_EditorClassIdentifier: 
+  Acceleration: 60
+  Friction: 20
+  MaxSpeed: 10
+  JumpForce: 20
