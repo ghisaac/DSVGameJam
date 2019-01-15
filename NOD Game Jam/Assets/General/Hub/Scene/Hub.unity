@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 0
-  pinSceneIndex: 0
+  levelBuildIndex: 0
 --- !u!114 &124856187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 5
-  pinSceneIndex: 5
+  levelBuildIndex: 5
 --- !u!114 &175718169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 1
-  pinSceneIndex: 1
+  levelBuildIndex: 1
 --- !u!114 &461727691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 3
-  pinSceneIndex: 3
+  levelBuildIndex: 3
 --- !u!114 &1179073917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,7 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 4
-  pinSceneIndex: 4
+  levelBuildIndex: 4
 --- !u!114 &1303473818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +816,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myLevel: 2
-  pinSceneIndex: 2
+  levelBuildIndex: 2
 --- !u!114 &1370544723
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,14 +12,12 @@ public class HubManager : MonoBehaviour
     private int currentIndex;
     private bool selectOnCooldown;
     private bool waitingForConfirmation;
+    private Image currentMapImage;
 
     [SerializeField]
     private GameObject confirmationPanel;
     [SerializeField]
     private GameObject[] levelPins;
-
-    [SerializeField]
-    private Image currentMapImage;
 
     void Start()
     {
