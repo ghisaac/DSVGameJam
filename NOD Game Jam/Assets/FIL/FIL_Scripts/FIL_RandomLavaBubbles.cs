@@ -6,7 +6,7 @@ public class FIL_RandomLavaBubbles : MonoBehaviour
 {
 
     [SerializeField] private BoxCollider _lavaCollider;
-    [SerializeField] private GameObject _lavaSplashPrefab;
+    [SerializeField] private GameObject[] _lavaParticlePrefabs;
     [SerializeField] private float _minRandom = 0f;
     [SerializeField] private float _maxRandom = 5f;
     [SerializeField] private float _randomNumber;
@@ -28,8 +28,9 @@ public class FIL_RandomLavaBubbles : MonoBehaviour
             _timer = 0f;
             float _randomXPos = Random.Range(0, _lavaCollider.size.x) - (_lavaCollider.size.x / 2);
             float _randomYPos = Random.Range(0, _lavaCollider.size.y) - (_lavaCollider.size.y / 2);
-            _randomPos = new Vector3(_randomXPos, 0.25f,_randomYPos);
-            Instantiate(_lavaSplashPrefab, _randomPos, Quaternion.identity);
+            _randomPos = new Vector3(_randomXPos, 1.2f, _randomYPos);
+            int randomPrefab = Random.Range(0, _lavaParticlePrefabs.Length - 1);
+            Instantiate(_lavaParticlePrefabs[randomPrefab], _randomPos, Quaternion.identity);
         }
     }
 }
