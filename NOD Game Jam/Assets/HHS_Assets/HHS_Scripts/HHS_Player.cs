@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HSS_Player : MonoBehaviour
+public class HHS_Player : MonoBehaviour
 {
     private bool hidden = false;
     public Vector3 Startposition;
@@ -62,7 +62,7 @@ public class HSS_Player : MonoBehaviour
 
     private void CheckIfAtGoal(GameObject chair) {
         if(chair == goal) {
-            HSS_GameManager.instance.PlayerReachedGoal(PlayerID);
+            HHS_GameManager.instance.PlayerReachedGoal(PlayerID);
             //LOCK ME
         }
     }

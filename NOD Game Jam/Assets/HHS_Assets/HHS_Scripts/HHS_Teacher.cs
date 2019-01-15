@@ -52,7 +52,7 @@ public class HHS_Teacher : MonoBehaviour
 
 
     private void CheckIfBusted() {
-        foreach(HSS_Player player in HSS_GameManager.instance.activePlayers) {
+        foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {
             if (!player.IsHidden()) {
                 player.Bust();
             }

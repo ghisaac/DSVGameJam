@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HSS_GameManager : MonoBehaviour {
+public class HHS_GameManager : MonoBehaviour {
 
-    public static HSS_GameManager instance;
+    public static HHS_GameManager instance;
 
     [Header("Players")]
-    public HSS_Player[] players;
+    public HHS_Player[] players;
     [HideInInspector]
-    public List<HSS_Player> activePlayers = new List<HSS_Player>();
+    public List<HHS_Player> activePlayers = new List<HHS_Player>();
     public int playersInGame = 2;
 
     public TextMeshProUGUI[] PointsUI;
@@ -48,7 +48,7 @@ public class HSS_GameManager : MonoBehaviour {
     }
 
     private void AssignRandomChairs() {
-        foreach (HSS_Player player in activePlayers) {
+        foreach (HHS_Player player in activePlayers) {
             GameObject goal = GoalChairs[Random.Range(0, GoalChairs.Count)];
             usedGoalChairs.Add(goal);
             GoalChairs.Remove(goal);
@@ -93,7 +93,7 @@ public class HSS_GameManager : MonoBehaviour {
     }
 
     private void ResetPlayers() {
-        foreach (HSS_Player player in players) {
+        foreach (HHS_Player player in players) {
             //Lås spelare 
             //Sätta animationer
             player.ResetPosition();

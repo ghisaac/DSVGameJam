@@ -1189,7 +1189,6 @@ GameObject:
   - component: {fileID: 892803284}
   - component: {fileID: 892803283}
   - component: {fileID: 892803282}
-  - component: {fileID: 892803281}
   m_Layer: 0
   m_Name: PlayerTest (1)
   m_TagString: Untagged
@@ -1211,31 +1210,6 @@ Transform:
   m_Father: {fileID: 555901429}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &892803281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 892803279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be37cebaa80a0a42964d49324113de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine:
-    states:
-    - {fileID: 11400000, guid: 9e9125558d3d89647bf8556f0bf3f175, type: 2}
-    firstStateIsDefault: 1
-    CurrentState: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  CollisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  collider: {fileID: 0}
-  skinWidth: 0
-  TestPlayer: 0
-  myTestPlayerId: -1
 --- !u!114 &892803282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1508,7 +1482,6 @@ GameObject:
   - component: {fileID: 1058280411}
   - component: {fileID: 1058280410}
   - component: {fileID: 1058280409}
-  - component: {fileID: 1058280408}
   m_Layer: 0
   m_Name: PlayerTest (2)
   m_TagString: Untagged
@@ -1530,31 +1503,6 @@ Transform:
   m_Father: {fileID: 555901429}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1058280408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1058280406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be37cebaa80a0a42964d49324113de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine:
-    states:
-    - {fileID: 11400000, guid: 9e9125558d3d89647bf8556f0bf3f175, type: 2}
-    firstStateIsDefault: 1
-    CurrentState: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  CollisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  collider: {fileID: 0}
-  skinWidth: 0
-  TestPlayer: 0
-  myTestPlayerId: -1
 --- !u!114 &1058280409
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1804,7 +1752,6 @@ GameObject:
   - component: {fileID: 1192788167}
   - component: {fileID: 1192788166}
   - component: {fileID: 1192788165}
-  - component: {fileID: 1192788164}
   m_Layer: 0
   m_Name: PlayerTest
   m_TagString: Untagged
@@ -1812,31 +1759,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &1192788164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1192788163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be37cebaa80a0a42964d49324113de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine:
-    states:
-    - {fileID: 11400000, guid: 9e9125558d3d89647bf8556f0bf3f175, type: 2}
-    firstStateIsDefault: 1
-    CurrentState: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  CollisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  collider: {fileID: 0}
-  skinWidth: 0
-  TestPlayer: 0
-  myTestPlayerId: -1
 --- !u!114 &1192788165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2282,7 +2204,6 @@ GameObject:
   - component: {fileID: 1384570762}
   - component: {fileID: 1384570761}
   - component: {fileID: 1384570760}
-  - component: {fileID: 1384570759}
   m_Layer: 0
   m_Name: PlayerTest (3)
   m_TagString: Untagged
@@ -2304,31 +2225,6 @@ Transform:
   m_Father: {fileID: 555901429}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1384570759
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1384570757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2be37cebaa80a0a42964d49324113de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stateMachine:
-    states:
-    - {fileID: 11400000, guid: 9e9125558d3d89647bf8556f0bf3f175, type: 2}
-    firstStateIsDefault: 1
-    CurrentState: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
-  CollisionLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  collider: {fileID: 0}
-  skinWidth: 0
-  TestPlayer: 0
-  myTestPlayerId: -1
 --- !u!114 &1384570760
 MonoBehaviour:
   m_ObjectHideFlags: 0
