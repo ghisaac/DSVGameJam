@@ -11,7 +11,7 @@ namespace GGR
 
         // Methods
         public virtual void Initialize(GGR_StateMachine owner) { Owner = owner; }
-        public virtual void Enter() { Debug.Log("Entering: " + Owner.currentState); }
+        public virtual void Enter() { }
         public virtual bool Run() { return true; }
         public virtual void Exit() { }
     }

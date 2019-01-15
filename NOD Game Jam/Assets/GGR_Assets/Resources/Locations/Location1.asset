@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Location1
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
-  pictureMesh: {fileID: 0}
-  pictureMaterial: {fileID: 0}
+  pictureMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  pictureMaterial: {fileID: 2100000, guid: 55fd144fe75a2bc42aa493975e8d0216, type: 2}

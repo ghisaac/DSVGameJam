@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e7e5631d23e3549b526ea509df04ba, type: 3}
   m_Name: PreRound
   m_EditorClassIdentifier: Assembly-CSharp:GGR:GGR_RunGame/GGR_PreRound
+  showPictureLength: 3

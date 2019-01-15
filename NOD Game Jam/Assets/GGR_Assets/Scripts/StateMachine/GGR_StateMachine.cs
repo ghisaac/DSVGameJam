@@ -12,8 +12,8 @@ namespace GGR
         public List<GGR_State> States;
 
         private Dictionary<Type, GGR_State> stateMap = new Dictionary<Type, GGR_State>();
-        public GGR_State queuedState;
-        public GGR_State currentState;
+        private GGR_State queuedState;
+        private GGR_State currentState;
 
         // Methods
         public void Awake()
