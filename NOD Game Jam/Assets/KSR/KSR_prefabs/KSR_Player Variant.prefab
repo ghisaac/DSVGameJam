@@ -98,6 +98,25 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &298701512898772231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036641374899888024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 942ecfd42745c8941b17fd14996a75b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lap: 0
+  lapTimes: []
+  finished: 0
+  checkpointsCleared: []
+  lastCheckpoint: {fileID: 0}
+  nextCheckpoint: {fileID: 0}
+  distanceToNextCheckpoint: 0
 --- !u!1001 &4257246205435942851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108,7 +127,7 @@ PrefabInstance:
     - target: {fileID: 7553296917039859803, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}
       propertyPath: m_Name
-      value: KSR_Player
+      value: KSR_Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7553296917039859783, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}

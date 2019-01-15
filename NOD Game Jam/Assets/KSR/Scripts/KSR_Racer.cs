@@ -7,22 +7,22 @@ public class KSR_Racer: MonoBehaviour
     public int lap = 0;
     public List<float> lapTimes;
     public bool finished = false;
-    public List<KSR_Checkpoint> checkpointsCleared;
+    public int checkpointsCleared = 0;
     public KSR_Checkpoint lastCheckpoint;
     public KSR_Checkpoint nextCheckpoint;
     public Player player;
     public float distanceToNextCheckpoint = 0;
-
-
-    private void Update()
-    {
-        distanceToNextCheckpoint = Vector3.Distance(nextCheckpoint.transform.position, transform.position);
-    }
+    public float positionScore = 0;
 
     private void Start()
     {
         lastCheckpoint = KSR_RaceManager.instance.checkpoints[0];
         nextCheckpoint = KSR_RaceManager.instance.checkpoints[0];
+    }
+
+    private void Update()
+    {
+        distanceToNextCheckpoint = Vector3.Distance(nextCheckpoint.transform.position, transform.position);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -32,6 +32,12 @@ public class KSR_Racer: MonoBehaviour
             lastCheckpoint = other.GetComponent<KSR_Checkpoint>();
             nextCheckpoint = KSR_RaceManager.instance.Checkpoint(this);
         }
+    }
+
+    public float CalculateScore()
+    {
+        positionScore = (lap * checkpointsCleared * 100f) - distanceToNextCheckpoint;
+        return positionScore;
     }
 
     public void Finished()
