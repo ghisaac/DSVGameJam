@@ -13,6 +13,12 @@ public class Player
 
     public static List<Player> AllPlayers = new List<Player>();
 
+    private static int[] POINTSFORPLACEMENTS = { 3,2,1};
+
+
+
+
+
     public Player(int RewierdId, string Name)
     {
         this.RewierdId = RewierdId;
@@ -41,14 +47,25 @@ public class Player
         if (toRemove != null)
             AllPlayers.Remove(toRemove);
     }
-    //Not implemented
-    public static void DistributePoints()
+    public static void DistributePoints(Player firstPlace, Player secondPlace = null, Player thirdPlace = null)
     {
+        Player[] tempArr = { firstPlace, secondPlace, thirdPlace };
+        DistributePoints(tempArr);
 
     }
-    //Not implemented
-    public static void NameWinners()
+    public static void DistributePoints(Player[] placements)
     {
+        if (placements.Length > 3)
+        {
+            Player[] tempArr = { placements[0], placements[1], placements[2] };
+            placements = tempArr;
+        }
+            
+        for(int i = 0; i < placements.Length; i++)
+        {
+            if(placements[i] != null)
+                placements[i].Points += POINTSFORPLACEMENTS[i];
+        }
 
     }
     public static Player GetPlayerAtPlacement(int placement)
@@ -83,6 +100,18 @@ public class Player
         }
         return toReturn;
     }
+    /// <summary>
+    /// This method should only be used for testing when a scene is not played from the HUB scene. 
+    /// </summary>
+    /// <param name="amountOfPlayers"></param>
+    public static void SpawnTestPlayers(int amountOfPlayers)
+    {
+        for(int i = 0; i < amountOfPlayers; i++)
+        {
+            new Player(i, "player" + 1);
+        }
+    }
+
 
     private static List<Player> GetPlayersByLocalPlacement()
     {
@@ -97,5 +126,4 @@ public class Player
         tempPlayers.OrderBy(x => x.Points);
         return tempPlayers;
     }
-
 }
