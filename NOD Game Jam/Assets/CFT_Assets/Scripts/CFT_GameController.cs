@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CFT_GameController : MonoBehaviour
 {
     //Enum för game state
@@ -58,6 +58,8 @@ public class CFT_GameController : MonoBehaviour
     private CFT_WinnerData _winnerData;
   
     private int _winner;
+
+    private bool _gameOver = false;
 
     private void Awake()
     {
@@ -170,7 +172,21 @@ public class CFT_GameController : MonoBehaviour
     #region GameStateEnd
     private void GameStateEnd()
     {
-        _winner = _winnerData.GetWinner();
+        if(!_gameOver)
+        {
+
+            _winner = _winnerData.GetWinner();
+            _gameOver = true;
+            StartCoroutine(LoadEndScen());
+        }      
+    }
+
+    IEnumerator LoadEndScen()
+    {
+        yield return new WaitForSeconds(3);
+      
+
+        SceneManager.LoadScene("ScoreScreenScene");
     }
     #endregion
 
