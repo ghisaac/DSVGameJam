@@ -32,7 +32,6 @@ namespace GGR
             }
             currentTime = 0;
             currentLocation = GGR_GameData.GetNextLocation();
-
             PictureSetup();
         }
 
@@ -56,26 +55,11 @@ namespace GGR
         private void PictureSetup()
         {
             GameObject picuture = ObjectPool.Instantiate(currentLocation.picture, GGR_GameData.GetPictureSlots()[slotIndex].position, GGR_GameData.GetPictureSlots()[slotIndex].rotation);
-            GGR_GameData.instance.StartCoroutine(ZoomToPicture());
+            Vector3 cameraDestination = GGR_GameData.GetPictureSlots()[slotIndex].position - GGR_GameData.GetPictureSlots()[slotIndex].right * cameraDistanceFromPicture;
+            GGR_CameraMovement.instance.PanToPosition(GGR_GameData.GetPictureSlots()[slotIndex], cameraDestination, cameraZoomTime, () => zoomDone = true);
+           // GGR_GameData.instance.StartCoroutine(ZoomToPicture());
             slotIndex++;
 
         }
-
-        private IEnumerator ZoomToPicture()
-        {
-            Transform slotTransform = GGR_GameData.GetPictureSlots()[slotIndex];
-            Vector3 finalCameraPos = slotTransform.position + -slotTransform.right * cameraDistanceFromPicture;
-            float currentZoomTime = 0;
-            while(currentZoomTime <= cameraZoomTime)
-            {
-                Camera.main.transform.LookAt(slotTransform);
-                Camera.main.transform.position = Vector3.Lerp(cameraStartPos, finalCameraPos, currentZoomTime / cameraZoomTime);
-                currentZoomTime += Time.deltaTime;
-                yield return null;
-            }
-            zoomDone = true;
-          
-        }
-
     }
 }

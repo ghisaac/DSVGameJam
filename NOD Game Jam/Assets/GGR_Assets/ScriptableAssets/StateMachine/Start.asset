@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1087c43c9f992f04ab2ccaea49d544dd, type: 3}
   m_Name: Start
   m_EditorClassIdentifier: 
+  initialInstructionTime: 3
+  distanceFromNote: 0.15
+  cameraStartPos: {x: 35.64, y: 0.67, z: 45.24}
+  cameraStartRotation: {x: 10.119, y: 45.466, z: 0.039}

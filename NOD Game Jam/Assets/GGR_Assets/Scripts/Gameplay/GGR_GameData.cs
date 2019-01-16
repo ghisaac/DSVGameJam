@@ -9,6 +9,7 @@ public class GGR_GameData : MonoBehaviour
     public int rounds;
     public List<Transform> spawnPositions = new List<Transform>();
     public List<Transform> boardPictureSlots;
+    public Transform instructionNoteTransform;
 
     public static GGR_GameData instance { get; private set; }
     private List<GGR_Location> allLocations = new List<GGR_Location>();

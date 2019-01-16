@@ -19,6 +19,7 @@ namespace GGR
         private Vector3 zoomPosition;
         private Vector3 zoomStartPos;
 
+
         private void Awake()
         {
             if (instance == null)
@@ -79,6 +80,25 @@ namespace GGR
             StartCoroutine(ZoomToPos(callback));
         }
 
+        public void PanToPosition(Transform transform, Vector3 position, float time, Action callback)
+        {
+            StartCoroutine(ZoomToPicture(transform, position, time, callback));
+        }
+
+        private IEnumerator ZoomToPicture(Transform transform, Vector3 position, float time,Action callback)
+        {
+            //Transform slotTransform = GGR_GameData.GetPictureSlots()[slotIndex];
+            Vector3 cameraStartPos = Camera.main.transform.position;
+            float currentZoomTime = 0;
+            while (currentZoomTime <= time)
+            {
+                Camera.main.transform.LookAt(transform);
+                Camera.main.transform.position = Vector3.Lerp(cameraStartPos, position, currentZoomTime / time);
+                currentZoomTime += Time.deltaTime;
+                yield return null;
+            }
+            callback();
+        }
         private void UpdateVertical()
         {
             float xDifference = -(GetMinPosition().x - GetMaxPosition().x);

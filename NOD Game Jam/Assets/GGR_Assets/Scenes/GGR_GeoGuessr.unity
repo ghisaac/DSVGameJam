@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -321,7 +321,7 @@ PrefabInstance:
     - target: {fileID: 1526715878425035779, guid: c037af8982f453c46b56e4aa31229132,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1526715878425035777, guid: c037af8982f453c46b56e4aa31229132,
         type: 3}
@@ -493,17 +493,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: lapp
       objectReference: {fileID: 0}
+    - target: {fileID: 4031442105203530, guid: 204845022f8aa104885abc88e06254ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.189
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031442105203530, guid: 204845022f8aa104885abc88e06254ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4031442105203530, guid: 204845022f8aa104885abc88e06254ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.047
+      objectReference: {fileID: 0}
     - target: {fileID: 4085323614143446, guid: 204845022f8aa104885abc88e06254ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.015
+      value: -0.021
       objectReference: {fileID: 0}
     - target: {fileID: 4085323614143446, guid: 204845022f8aa104885abc88e06254ae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.129
+      value: 1.109
       objectReference: {fileID: 0}
     - target: {fileID: 4085323614143446, guid: 204845022f8aa104885abc88e06254ae, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.065
+      value: -0.048
       objectReference: {fileID: 0}
     - target: {fileID: 4085323614143446, guid: 204845022f8aa104885abc88e06254ae, type: 3}
       propertyPath: m_LocalRotation.x
@@ -734,6 +746,7 @@ MonoBehaviour:
   - {fileID: 2649498634572803272}
   - {fileID: 2003893773758808856}
   - {fileID: 1041550020585774316}
+  instructionNoteTransform: {fileID: 4085323614143446}
 --- !u!4 &1389255496
 Transform:
   m_ObjectHideFlags: 0
@@ -9886,6 +9899,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4085323614143446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4085323614143446, guid: 204845022f8aa104885abc88e06254ae,
+    type: 3}
+  m_PrefabInstance: {fileID: 657453038}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1041550020585774316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1041550020585774316, guid: f174abb41d9eca14abc71e9dc8ad1907,

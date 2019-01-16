@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e7e5631d23e3549b526ea509df04ba, type: 3}
   m_Name: PreRound
   m_EditorClassIdentifier: Assembly-CSharp:GGR:GGR_RunGame/GGR_PreRound
-  showPictureLength: 5
+  showPictureLength: 7
   cameraDistanceFromPicture: 0.09
   cameraStartPos: {x: 35.64, y: 0.67, z: 45.24}
   cameraStartRotation: {x: 10.119, y: 45.466, z: 0.039}
