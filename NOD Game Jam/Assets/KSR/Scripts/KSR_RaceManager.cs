@@ -26,20 +26,6 @@ public class KSR_RaceManager : MonoBehaviour
         instance = this;
     }
 
-    // Start is called before the first frame update
-    //void Start()
-    //{
-    //    result.Clear();
-    //    racers.Clear();
-    //    for (int i = 0; i<nrPlayers; i++)
-    //    {
-    //        GameObject p = Instantiate(playerPrefab, startLine.position + new Vector3(i*2, 0, 0), startLine.rotation);
-    //        p.GetComponentInChildren<KSR_Racer>().nextCheckpoint = checkpoints[0];
-    //        racers.Add(p.GetComponent<KSR_Racer>());
-    //    }
-    //    positions.Capacity = nrPlayers;
-    //}
-
     void Start()
     {
         Player.SpawnTestPlayers(4);
@@ -66,7 +52,6 @@ public class KSR_RaceManager : MonoBehaviour
                 StartRace();
             }
         }
-
         UpdatePositions();
     }
 
@@ -131,24 +116,6 @@ public class KSR_RaceManager : MonoBehaviour
         else return racer.nextCheckpoint;
     }
 
-    //public void Positions()
-    //{
-    //    positions.Clear();
-    //    foreach(KSR_Racer racer in racers)
-    //    {
-    //        if(!TestPosition(0, racer))
-    //        {
-    //            if(!TestPosition(1, racer))
-    //            {
-    //                if(!TestPosition(2, racer))
-    //                {
-    //                    positions.Add(racer);
-    //                }
-    //            }
-    //        }
-    //    }
-    //}
-
     private void UpdatePositions()
     {
         positions.Clear();
@@ -166,28 +133,5 @@ public class KSR_RaceManager : MonoBehaviour
             });
         }
         positions.Reverse();
-    }
-
-    bool TestPosition(int index, KSR_Racer racer)
-    {
-        if (positions.Count > index && racer.lap > positions[index].lap)
-        {
-            positions.Insert(index, racer);
-            return true;
-        }
-        else if (positions.Count > index && racer.nextCheckpoint.checkpointNr > positions[index].nextCheckpoint.checkpointNr && racer.lap >= positions[index].lap)
-        {
-            positions.Insert(index, racer);
-            return true;
-        }
-        else if (positions.Count > index && racer.distanceToNextCheckpoint < positions[index].distanceToNextCheckpoint)
-        {
-            positions.Insert(index, racer);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 }
