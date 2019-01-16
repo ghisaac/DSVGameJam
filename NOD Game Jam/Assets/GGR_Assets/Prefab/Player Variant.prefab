@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+        type: 3}
+      propertyPath: stateMachine.states.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+        type: 3}
+      propertyPath: stateMachine.states.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: b8c8b458952e4ce4d869ac78f4728950,
+        type: 2}
+    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2157923889191650190}
     - target: {fileID: 7553296917039859801, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,16 +83,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+    - target: {fileID: 7553296917039859783, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}
-      propertyPath: stateMachine.states.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
-        type: 3}
-      propertyPath: stateMachine.states.Array.data[2]
+      propertyPath: Animator
       value: 
-      objectReference: {fileID: 11400000, guid: b8c8b458952e4ce4d869ac78f4728950,
-        type: 2}
+      objectReference: {fileID: 2157923889191650190}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f1b95bf4944124583f9c3346d24fee, type: 3}
+--- !u!95 &2157923889191650190 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3570480063920642352, guid: 74f1b95bf4944124583f9c3346d24fee,
+    type: 3}
+  m_PrefabInstance: {fileID: 3206168121899719358}
+  m_PrefabAsset: {fileID: 0}
