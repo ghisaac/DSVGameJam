@@ -32,6 +32,7 @@ public class HubManager : MonoBehaviour
         currentPinIndex = 0;
         currentSelection = levelPins[currentPinIndex];
         selectOnCooldown = false;
+        startPos = currentSelection.GetComponent<LevelPin>().currentTextObject.transform.position;
     }
 
     void Update()
