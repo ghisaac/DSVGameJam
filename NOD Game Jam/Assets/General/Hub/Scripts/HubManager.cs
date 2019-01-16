@@ -154,10 +154,7 @@ public class HubManager : MonoBehaviour
 
         foreach (Player p in Player.AllPlayers)
         {
-            if (name == p.Name)
-            {
-                name = AssignName();
-            }
+            if (name == p.Name) { name = AssignName(); }
         }
 
         return name;
