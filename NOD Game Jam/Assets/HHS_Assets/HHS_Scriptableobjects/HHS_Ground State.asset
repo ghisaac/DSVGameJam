@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adc985d0e596c1948921d1a375fd5b0f, type: 3}
   m_Name: HHS_Ground State
   m_EditorClassIdentifier: 
-  Acceleration: 200
+  Acceleration: 100
   Friction: 5
-  MaxSpeed: 3
+  MaxSpeed: 2
   JumpForce: 15
   ChairLayer:
     serializedVersion: 2

@@ -31,7 +31,6 @@ public class HHS_GroundState : PlayerBaseState {
         Vector3 lookDirection = Vector3.zero;
         if (newlookDirection.magnitude > 1f)
             lookDirection = newlookDirection;
-        Debug.Log(lookDirection);
         Quaternion wantToLook = Quaternion.LookRotation(lookDirection, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, wantToLook, 0.1f);
         controller.animator.SetFloat("Velocity", Mathf.Clamp(lookDirection.magnitude / MaxSpeed, 0, 0.8f));
