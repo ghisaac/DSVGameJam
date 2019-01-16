@@ -5,7 +5,7 @@ using UnityEngine;
 public class CFT_CupLogic : MonoBehaviour
 {
     [HideInInspector]public CFT_CupController _controller;
-    [HideInInspector] public ParticleSystem particleSystem;
+    public ParticleSystem particleSystem;
     [HideInInspector] public bool collided = false;
     private void OnCollisionEnter(Collision collision)
     {   
@@ -19,7 +19,7 @@ public class CFT_CupLogic : MonoBehaviour
 
         if (collision.rigidbody != null && (collision.rigidbody.isKinematic == false) || collision.rigidbody == null)
         {
-                    
+                        
             _controller.InstantiateCup();
             particleSystem.Play();
             collided = true;

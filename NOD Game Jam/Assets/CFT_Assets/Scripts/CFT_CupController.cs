@@ -131,10 +131,10 @@ public class CFT_CupController : MonoBehaviour
     {
         foreach (GameObject c in cupList)
         {
-            if (c == null) return;
-            if (c.GetComponent<CFT_CupLogic>() != null)
+            if (c == null) continue;
+            if (!c.GetComponent<CFT_CupLogic>().collided)
                 InstantiateCup();
-                Destroy(c);
+            Destroy(c);
         }
         cupList.Clear();
             
