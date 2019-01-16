@@ -7,7 +7,6 @@ using System;
 public class GGR_GameData : MonoBehaviour
 {
     public int rounds;
-    public PlayerController playerControllerPrefab;
     public List<Transform> spawnPositions = new List<Transform>();
     public List<Transform> boardPictureSlots;
 
@@ -45,11 +44,13 @@ public class GGR_GameData : MonoBehaviour
         return instance.roundLocations.Count;
     }
 
-    public static void SpawnPlayer(Player player)
+    public static void FindPlayers()
     {
-        PlayerController pc = Instantiate(instance.playerControllerPrefab) as PlayerController;
-        pc.myPlayer = player;
-        instance.allPlayerControllers.Add(player, pc);
+        List <PlayerController> controllers = FindObjectsOfType<PlayerController>().ToList();
+        foreach(PlayerController pc in controllers)
+        {
+            instance.allPlayerControllers.Add(pc.myPlayer, pc);
+        }
     }
 
     public static void SetPlayerPosition(Player player, Vector3 position)

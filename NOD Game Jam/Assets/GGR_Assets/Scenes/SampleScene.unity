@@ -657,6 +657,7 @@ GameObject:
   - component: {fileID: 1351519159}
   - component: {fileID: 1351519158}
   - component: {fileID: 1351519160}
+  - component: {fileID: 1351519161}
   m_Layer: 0
   m_Name: Dummy
   m_TagString: Untagged
@@ -789,6 +790,24 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &1351519161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351519157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd4b1ea9083a424f89e9ec4ee82d24d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AllPlayerPrefabs:
+  - {fileID: 367011448025202147, guid: d74236b9d7f177b4dae60616683ee5cf, type: 3}
+  - {fileID: 5667975227115122982, guid: cc2b8244436aed24383248f627efd11e, type: 3}
+  - {fileID: 3273361224545270906, guid: d47eb6cf968470345a5685d5c0474f31, type: 3}
+  - {fileID: 1933383140343035808, guid: 5c2338a752f0d6b40a1d56ea43fcb607, type: 3}
+  DEBUGGING: 1
 --- !u!1 &1389255494
 GameObject:
   m_ObjectHideFlags: 0

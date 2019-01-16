@@ -9,10 +9,13 @@ namespace GGR
     {
         public override void Enter()
         {
+            GGR_GameData.FindPlayers();
+            /*
             Player johannaPlayer = new Player(0, "Johanna");
             Player danielPlayer = new Player(1, "Daniel");
             GGR_GameData.SpawnPlayer(johannaPlayer);
             GGR_GameData.SpawnPlayer(danielPlayer);
+            */
         }
 
         public override bool Run()
