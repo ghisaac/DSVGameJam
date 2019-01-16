@@ -8,12 +8,12 @@ namespace FIL
     {
         public Animator Animator;
         public float maxSpeed;
-        private PlayerController controller;
+        private FIL_PlayerController controller;
         private Vector3 lookDirection;
 
         private void Start()
         {
-            controller = GetComponent<PlayerController>();
+            controller = GetComponent<FIL_PlayerController>();
         }
 
         void Update()

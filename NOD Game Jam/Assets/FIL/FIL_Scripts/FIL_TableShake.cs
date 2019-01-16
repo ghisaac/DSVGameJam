@@ -36,6 +36,7 @@ namespace FIL
 
         public void ShakeTable()
         {
+            FIL_GameManager.instance.RemoveTableFromList(gameObject);
             shakeAmount += amount;
             startAmount = shakeAmount;
             shakeDuration += duration;

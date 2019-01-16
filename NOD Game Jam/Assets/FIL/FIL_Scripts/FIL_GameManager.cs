@@ -22,6 +22,7 @@ namespace FIL
         [SerializeField]
         private GameObject tables;
         [SerializeField] private float _tableDrownDelay = 2f;
+        [SerializeField] 
         private List<GameObject> _tablesList;
         [SerializeField]
         private float _gameStartDelay = 2f;
@@ -30,8 +31,7 @@ namespace FIL
         private FIL_UI _uI;
         [SerializeField]
         private GameObject playerPrefab;
-        [SerializeField]
-        private GameObject _lavaBubblePrefab;
+        public GameObject _lavaBubblePrefab;
         [SerializeField]
         private GameObject _smokePrefab;
         private WaitForSeconds _waitForSeconds;
@@ -56,7 +56,7 @@ namespace FIL
 
                 _players[i].GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
                 _players[i].transform.position = _spawns[i].position;
-
+                //Sätt rätt färg på spelare / i UIt beroende på rewired ID
             }
  
             _tablesList = new List<GameObject>();
@@ -131,14 +131,18 @@ namespace FIL
             }
         }
 
-
         private void EndGame()
         {
             StopAllCoroutines();
             AddLastPlayer();
+            FlipPlacementList();
             AwardPoints();
         }
 
+        private void FlipPlacementList()
+        {
+            _placement.Reverse();
+        }
 
         private void AddLastPlayer()
         {
@@ -146,32 +150,49 @@ namespace FIL
             {
                 if (!_placement.Contains(player))
                 {
+                    //add myPlayer, not the gameobject to placement list 
                     _placement.Add(player);
                 }
             }
         }
 
-
         private void AwardPoints()
         {
 
             Debug.Log("GameEnded");
+
+            //Player.DistributePoints(_placements);
+            //load scoreboardscene
+
             for (int i = 0; i < _players.Length; i++)
             {
                 //_placement[i].DistributePoints(_pointsPerPlacements[i]);
             }
         }
 
-
         public void PlayerDeath(GameObject player)
         {
+            player.SetActive(false);
             _placement.Add(player);
-            GameObject bubble = Instantiate(_lavaBubblePrefab, player.transform.position, Quaternion.identity);
-            bubble.transform.localScale *= 2;
+           
             if (_placement.Count == _players.Length - 1)
             {
                 EndGame();
             }
         }
+
+        public void RemoveTableFromList(GameObject table)
+        {
+            _tablesList.Remove(table);
+        }
+
+        public void RespawnPlayer(FIL_PlayerController player)
+        {
+            Debug.Log("Respawning " + player.gameObject.name);
+            int random = UnityEngine.Random.Range(0, _tablesList.Count - 1);
+            GameObject table = _tablesList[random];
+            player.gameObject.transform.position = table.transform.position + (Vector3.up * 4);
+        }
+
     }
 }
