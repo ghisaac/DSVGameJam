@@ -1,7 +1,8 @@
 fileFormatVersion: 2
-guid: 4fbea9a020eeb8d42abac2dc753c329b
+guid: 8d6178b80debd2546a8e65f1cecd44b7
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: portrait_simple_red_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,11 +116,31 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: portrait_simple_red_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 63
+        width: 720
+        height: 763
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70faa45a2c2f8da4fb79ae8d9ef9f0ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d5dbcac822d59404db3a0cc9541efd3c
     vertices: []
     indices: 
     edges: []
