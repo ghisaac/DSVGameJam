@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class KSR_CameraFollow : MonoBehaviour
 {
-
     public Transform player;
     public float cameraDistance = 3.0f;
     public float cameraHeight = 2.5f;
@@ -18,6 +17,7 @@ public class KSR_CameraFollow : MonoBehaviour
     private float delayTime = 0f;
     private float _increaseDelay = 0f;
 
+
     private void Awake()
     {
         _increaseDelay = followDelay;
@@ -26,17 +26,21 @@ public class KSR_CameraFollow : MonoBehaviour
     {
         _followPos = player.TransformPoint(0, cameraHeight, Mathf.Clamp(-cameraDistance, -maxDistance, 0));
         transform.position = _followPos;
-        if (!delayCam)
-        {
-            transform.position = _followPos;
 
-        }
-        else
-        {
-            CameraDelay();
-        }
-      //  followRotation = Quaternion.LookRotation(player.position - transform.position, player.up);
-        transform.LookAt(player);
+
+
+        //if (!delayCam)
+        //{
+        //    transform.position = _followPos;
+
+        //}
+        //else
+        //{
+        //    CameraDelay();
+        //}
+        //  followRotation = Quaternion.LookRotation(player.position - transform.position, player.up);
+        //transform.RotateAround()
+        //      transform.LookAt(player);
     }
 
 

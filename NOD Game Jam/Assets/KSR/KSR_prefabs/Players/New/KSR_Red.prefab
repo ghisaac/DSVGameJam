@@ -113,7 +113,7 @@ PrefabInstance:
     - target: {fileID: 1592322270107480720, guid: e2b8d00342a416b48bac98e36ce6f46b,
         type: 3}
       propertyPath: m_Name
-      value: Red Variant
+      value: KSR_Red
       objectReference: {fileID: 0}
     - target: {fileID: 1592322270107578032, guid: e2b8d00342a416b48bac98e36ce6f46b,
         type: 3}
@@ -168,6 +168,11 @@ PrefabInstance:
     - target: {fileID: 1592322270107578032, guid: e2b8d00342a416b48bac98e36ce6f46b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: e2b8d00342a416b48bac98e36ce6f46b,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1855741713182755059, guid: e2b8d00342a416b48bac98e36ce6f46b,
