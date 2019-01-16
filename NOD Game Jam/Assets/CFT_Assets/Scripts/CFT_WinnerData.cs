@@ -16,10 +16,34 @@ public class CFT_WinnerData
 
     public int GetWinner()
     {
-        player.Sort();
-        return player[(player.Count - 1)].Id;
-
+        player.Sort(new SortByScoreDecending());
+        return player[0].Id;
     }
+
+    public void SetPlayerAllOverPlacement()
+    {
+        List<int> placement = new List<int>();
+        foreach(CFT_PlayerData p in player)
+        {
+            if(placement.Contains(p.Score) == false)
+                placement.Add(p.Score);
+        }
+
+        placement.Sort();
+        placement.Reverse();
+
+        for (int i = 0; i < placement.Count; i++)
+        {
+            for (int j = 0; j < player.Count; j++)
+            {
+                if(placement[i] == player[j].Score)
+                {
+                    player[j].TotalPlacement = i + 1;
+                }
+            }
+        }
+    }
+
 
     public void SetRoundScore(int round)
     {
@@ -48,6 +72,7 @@ public class CFT_WinnerData
     {
         foreach(int id in ids)
         {
+           
             CFT_PlayerData p = new CFT_PlayerData(id);
             if (player.Contains(p))
             {
@@ -60,4 +85,22 @@ public class CFT_WinnerData
             }
         }
     }
+
+    private class SortByScoreDecending : IComparer<CFT_PlayerData>
+    {
+        public int Compare(CFT_PlayerData x, CFT_PlayerData y)
+        {
+            if (x.Score < y.Score)
+                return 1;
+            if (x.Score > y.Score)
+                return -1;
+            else
+                return 0;
+        }
+    }
+
 }
+
+
+
+

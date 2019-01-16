@@ -5,13 +5,11 @@ using UnityEngine;
 public class CFT_RoundData
 {
     public float range = 0.25f;
-    public Dictionary<int, float> roundScores = new Dictionary<int, float>();
     public Dictionary<int, int[]> placements = new Dictionary<int, int[]>();
     int _placement = 0;
 
     public void SetRoundPlacement(Dictionary<int, float> playerList)
     {
-        Debug.Log(playerList.Count.ToString());
         _placement++;
         List<int> winner = new List<int>();
         float highest = GetHighest(playerList);
@@ -36,6 +34,7 @@ public class CFT_RoundData
         {
             SetRoundPlacement(loosers);
         }
+
     }
 
     public float GetHighest(Dictionary<int, float> playerList)

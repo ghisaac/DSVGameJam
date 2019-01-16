@@ -6,7 +6,6 @@ using UnityEngine;
 public class CFT_PlayerController : MonoBehaviour
 {
     public CFT_InputHandler _inputHandler;
-    public static int NumberOfPlayers = 0;
     public int ID;
     public int controllNumber;
     private bool isProduction;
@@ -16,9 +15,7 @@ public class CFT_PlayerController : MonoBehaviour
     public void Init(int ID)
     {
         this.ID = ID;
-        NumberOfPlayers++;
-        controllNumber = NumberOfPlayers;
-        _inputHandler.Init(controllNumber);
+        _inputHandler.Init(ID);
         isProduction = false;
         _canDrop = true;
 
@@ -27,8 +24,6 @@ public class CFT_PlayerController : MonoBehaviour
     public void InitProduction(int ID)
     {
         this.ID = ID;
-        NumberOfPlayers++;
-        controllNumber = NumberOfPlayers;
         _inputHandler.InitProduction();
         isProduction = true;
         _canDrop = true;

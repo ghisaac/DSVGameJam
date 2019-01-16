@@ -18,7 +18,6 @@ public class CFT_EventManager : MonoBehaviour
 
     public static void OnClicked(int ID)
     {
-        Debug.Log(ID);
         switch (ID)
         {
             case 0:

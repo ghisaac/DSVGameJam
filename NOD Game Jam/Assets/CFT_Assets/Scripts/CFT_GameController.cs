@@ -148,60 +148,35 @@ public class CFT_GameController : MonoBehaviour
         if (_timer <= 0)
         {
             CheckRoundWinner();
+            //DebugPoints();
             ClearGameBoard();
             _timer = _setInitTimer;
-            _currentRound += 1;
-            if (_currentRound >= _maxRound) { _gameState = GameState.end; }
-            else
-                _gameState = GameState.pause;
+            _currentRound++;
+            _gameState = GameState.pause;
         }
     }
-    #endregion
-
-    #region GameStatePause
-    private void GameStatePause()
-    {
-        if (_timer <= 0)
-        {
-            _timer = _setInitTimer;
-            _gameState = GameState.init;
-        }
-    }
-    #endregion
-
-    #region GameStateEnd
-    private void GameStateEnd()
-    {
-        if(!_gameOver)
-        {
-
-            _winner = _winnerData.GetWinner();
-            _gameOver = true;
-            StartCoroutine(LoadEndScen());
-        }      
-    }
-
-    IEnumerator LoadEndScen()
-    {
-        yield return new WaitForSeconds(3);
-      
-
-        SceneManager.LoadScene("ScoreScreenScene");
-    }
-    #endregion
 
     private void CheckRoundWinner()
     {
         CFT_RoundData _roundData = new CFT_RoundData();
+        Dictionary<int, float> roundScores = new Dictionary<int, float>();
 
         foreach (CFT_CupController g in _gameBoards)
         {
             var _playerCups = g.GetComponent<CFT_CupController>();
-            _roundData.roundScores.Add(_playerCups.playerID, _playerCups.BoxCastHeight());       
+            roundScores.Add(_playerCups.playerID, _playerCups.BoxCastHeight());
         }
-        _roundData.SetRoundPlacement(_roundData.roundScores);
+        _roundData.SetRoundPlacement(roundScores);
         _winnerData.rounds.Add(_roundData);
-        _winnerData.SetRoundScore((_currentRound));
+        _winnerData.SetRoundScore(_currentRound);
+    }
+
+    private void DebugPoints()
+    {
+        foreach(CFT_PlayerData p in _winnerData.player)
+        {
+            Debug.Log("Id: " + p.Id + ", Poäng: " + p.Score);
+        }
     }
 
     private void ClearGameBoard()
@@ -211,6 +186,53 @@ public class CFT_GameController : MonoBehaviour
             c.RemoveCups();
         }
     }
+
+    #endregion
+
+    #region GameStatePause
+    private void GameStatePause()
+    {
+        if (_timer <= 0)
+        {           
+            _timer = _setInitTimer;
+            if (_currentRound >= _maxRound)
+                _gameState = GameState.end;
+            else
+                _gameState = GameState.init;
+        }
+    }
+    #endregion
+
+    #region GameStateEnd
+    private void GameStateEnd()
+    {
+        if (!_gameOver)
+        {
+            //_winner = _winnerData.GetWinner();
+            _winnerData.SetPlayerAllOverPlacement();
+          
+            _gameOver = true;
+            StartCoroutine(LoadEndScen());
+        }
+    }
+
+    IEnumerator LoadEndScen()
+    {
+        yield return new WaitForSeconds(3);
+
+        foreach (CFT_PlayerData p in _winnerData.player)
+        {
+            Debug.Log("Id: "+ p.Id + ", Placement: " + p.TotalPlacement + ", points: " + p.Score);
+        }
+        foreach (CFT_PlayerData p in _winnerData.player)
+        {
+            Player.GivePlayerPointsBasedOnPlacement(Player.GetPlayerByRewindID(p.Id), p.TotalPlacement);
+        }
+
+        SceneManager.LoadScene("ScoreScreenScene");
+    }
+    #endregion
+
 
     private void SetCameraViewport()
     {     
@@ -274,16 +296,15 @@ public class CFT_GameController : MonoBehaviour
         }
         else if (_gameState == GameState.end)
         {
-            _timerText.text = "MATCH ENDED!" + "\n" + "Winner is: " + "Player" + _winner.ToString();
+            _timerText.text = "MATCH ENDED!";
         }       
     }
 
     private string RoundWinner()
     {
         string winner = null;
-        CFT_RoundData placementHolder = _winnerData.rounds[(_currentRound - 1)];
+        CFT_RoundData placementHolder = _winnerData.rounds[_currentRound-1];
         int[] winners = placementHolder.GetPlacement(1);
-
 
         if (winners.Length == 1)
         {

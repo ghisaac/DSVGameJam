@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
       propertyPath: _numberOfPlayers
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
@@ -390,12 +390,12 @@ PrefabInstance:
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
       propertyPath: _setRoundTimer
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
       propertyPath: _setInitTimer
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
@@ -405,7 +405,7 @@ PrefabInstance:
     - target: {fileID: 1141140021405141783, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
       propertyPath: _setCheckTimer
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1141140021405141776, guid: 9d3a122f426c0b140a2aa964606c9e72,
         type: 3}
