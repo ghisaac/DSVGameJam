@@ -97,6 +97,7 @@ public class HHS_Teacher : MonoBehaviour
         //Teacher alert icon away
         //SoundManager.Instance.PlayTeacherIdle();   LJUD KOMMER HÄR
         animator.SetBool("Turn Around", false);
+       // animator.ResetTrigger("Bust");
         HandRaised = false;
         studentAnimator.SetBool("Raised Hand", false);
         StartStudent();
@@ -119,6 +120,7 @@ public class HHS_Teacher : MonoBehaviour
                 player.Bust();
                 Icon.sprite = BustIcon;
                 bustedSomeone = true;
+               
             }
 
             if (!bustedSomeone) {
