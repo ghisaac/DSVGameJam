@@ -90,6 +90,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         _characterPlacement.Add(_activeCharacters[0]);
         _activeCharacters[0].Deactivate();
+        UIManager.SetPlacementGui(_activeCharacters[0], 1);
 
         Debug.Log("Round finished");
 
