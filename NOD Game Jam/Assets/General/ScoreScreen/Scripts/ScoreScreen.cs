@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class ScoreScreen : MonoBehaviour
 {
 
+    [SerializeField] private Sprite[] icons;
+
     [SerializeField] private ScoreScreenPlayerScore[] playerScoreObjects;
     public bool testing = false;
 
@@ -59,7 +61,8 @@ public class ScoreScreen : MonoBehaviour
     {
         for(int i = 0; i < Player.AllPlayers.Count; i++)
         {
-            playerScoreObjects[i].SetValues(Player.GetPlayerAtPlacement(i));
+            Player tempPlayer = Player.GetPlayerAtPlacement(i);
+            playerScoreObjects[i].SetValues(tempPlayer, icons[tempPlayer.RewierdId]);
         }
         for(int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
         {
