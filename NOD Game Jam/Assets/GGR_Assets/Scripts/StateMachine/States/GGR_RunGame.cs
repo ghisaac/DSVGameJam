@@ -9,16 +9,16 @@ namespace GGR
     {
         // Attributes
         public GGR_StateMachine StateMachine;
+        private GGR_StateMachine myMachine;
 
         public override void Enter()
         {
-            StateMachine.Awake();
-            base.Enter();
+            myMachine = Instantiate(StateMachine);
         }
 
         public override bool Run()
         {
-            if (StateMachine.Run())
+            if (myMachine.Run())
                 Owner.TransitionTo<GGR_EndGame>();
             return false;
         }

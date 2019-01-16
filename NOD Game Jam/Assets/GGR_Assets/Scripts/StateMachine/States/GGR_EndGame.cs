@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
+
 namespace GGR
 {
     [CreateAssetMenu(menuName = "GGR/States/EndGame")]
@@ -9,15 +11,11 @@ namespace GGR
     {
         public override bool Run()
         {
-            
-            //Player.DistributePoints();
+            List<Player> allPlayers = Player.AllPlayers;
+            allPlayers = allPlayers.OrderBy(p => GGR_GameData.GetPlayerScore(p)).ToList();
+            Player.DistributePoints(allPlayers.ToArray());
             SceneManager.LoadScene("ScoreScreenScene");
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("THE END!");
-                return true;
-            }
-            return false;
+            return true;
         }
     }
 }
