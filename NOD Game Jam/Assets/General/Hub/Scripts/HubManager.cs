@@ -102,7 +102,6 @@ public class HubManager : MonoBehaviour
             }
 
             StartCoroutine(SelectionCooldown());
-            DehighlightLevel();
             currentSelection = levelPins[currentPinIndex];
         }
         
@@ -116,7 +115,6 @@ public class HubManager : MonoBehaviour
             currentPinIndex -= 1;
 
             StartCoroutine(SelectionCooldown());
-            DehighlightLevel();
             currentSelection = levelPins[currentPinIndex];
         }
 
@@ -138,13 +136,6 @@ public class HubManager : MonoBehaviour
         startPos = textHighlighter.transform.position;
         targetPos = currentLevelPin.currentTextObject.transform.position;
         highlightAnimationTimer = 0;
-
-        currentSelection.GetComponent<Image>().color = new Color(255, 0, 0);
-    }
-
-    private void DehighlightLevel()
-    {
-        currentSelection.GetComponent<Image>().color = new Color(20, 20, 20);
     }
 
     private string AssignName()
