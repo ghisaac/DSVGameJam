@@ -18,8 +18,7 @@ public class Timer : MonoBehaviour
             instance = this;
         }
 
-        StartTimer();
-            
+        //StartTimer(30);
     }
 
     private void Update()
