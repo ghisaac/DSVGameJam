@@ -3272,7 +3272,7 @@ MonoBehaviour:
   - {fileID: 3049326608091501211, guid: e338351a73e90a649846cb498fbab0c7, type: 3}
   - {fileID: 3049326608091501211, guid: e338351a73e90a649846cb498fbab0c7, type: 3}
   - {fileID: 3049326608091501211, guid: e338351a73e90a649846cb498fbab0c7, type: 3}
-  DEBUGGING: 0
+  DEBUGGING: 1
 --- !u!4 &1001672692
 Transform:
   m_ObjectHideFlags: 0
@@ -5911,7 +5911,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlayers: []
-  playersInGame: 1
+  playersInGame: 4
   PointsUI:
   - {fileID: 1068241886}
   - {fileID: 1466296394}
@@ -5934,6 +5934,7 @@ MonoBehaviour:
   GoalChairs:
   - {fileID: 373307288}
   - {fileID: 901193339}
+  - {fileID: 68602849}
   - {fileID: 825602607}
   Teacher: {fileID: 121781669}
 --- !u!4 &1789754850
