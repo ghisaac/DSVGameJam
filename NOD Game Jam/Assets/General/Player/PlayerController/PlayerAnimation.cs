@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     public Animator Animator;
     public float maxSpeed;
     private PlayerController controller;
-    private Vector3 lookDirection;
+    private Vector3 lookDirection = Vector3.one;
 
     private void Start()
     {

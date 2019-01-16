@@ -13,21 +13,18 @@ public class PlayerController : MonoBehaviour
     public float skinWidth;
     public Animator animator;
     public Vector3 groundPlane = Vector3.up;
-
-    [Header("DEBUGGING")]
-    public bool TestPlayer;
-    private static int testPlayerIdCounter = 0;
-
-    [HideInInspector] public int myTestPlayerId = -1;
     [HideInInspector] public Player myPlayer;
 
     void Awake()
     {
         stateMachine.Initialize(this);
-        if (TestPlayer)
-            myTestPlayerId = testPlayerIdCounter++;
     }
 
+    public void CreatePlayerController(Player player)
+    {
+        myPlayer = player;
+        //Here you can also choose where this player should be positioned.
+    }
 
     void Update()
     {
