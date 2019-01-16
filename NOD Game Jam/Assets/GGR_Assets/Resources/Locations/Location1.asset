@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6550325d02e51b74a8fc55919d5383ab, type: 3}
   m_Name: Location1
   m_EditorClassIdentifier: 
-  position: {x: 38, y: 0, z: 55}
-  pictureMesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
-  pictureMaterial: {fileID: 2100000, guid: 55fd144fe75a2bc42aa493975e8d0216, type: 2}
+  position: {x: -35, y: 0, z: -5}
+  picture: {fileID: 1368504671622648, guid: 0103dd8896a2ab5469d234417ec7a4e8, type: 3}

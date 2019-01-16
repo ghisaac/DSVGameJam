@@ -9,18 +9,25 @@ namespace GGR
     public class GGR_CameraMovement : MonoBehaviour
     {
         //Attributes
+        public static GGR_CameraMovement instance;
         public float minYPosition, maxYPosition;
         public Vector2 minPlayerDistance, maxPlayerDistance;
         public float zoomTime;
         public float distanceFromZoomPoint;
+        public Vector3 defaultRotation;
 
-        private bool zooming = false;
         private Vector3 zoomPosition;
         private Vector3 zoomStartPos;
-        private float currentTime = 0;
 
-        private Action zoomCallback;
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+            else
+                Debug.LogError("camera overload");
+        }
 
+        /*
         private void Update()
         {
             if (!zooming) {
@@ -42,20 +49,39 @@ namespace GGR
                 currentTime += Time.deltaTime;
               
             }
+        }*/
+
+        public void FollowPlayers()
+        {
+            UpdateHorizontal();
+            UpdateVertical();
+            transform.position += Vector3.back * Mathf.Tan(Mathf.Deg2Rad * Vector3.Angle(Vector3.down, Camera.main.transform.forward)) * transform.position.y;
+        }
+
+        private IEnumerator ZoomToPos(Action zoomCallback)
+        {
+            float currentTime = 0;
+            while (currentTime <= zoomTime)
+            {
+                Vector3 cameraToZoomPos = zoomPosition - zoomStartPos;
+                transform.position = Vector3.Lerp(zoomStartPos, zoomPosition, currentTime / zoomTime);
+                currentTime += Time.deltaTime;
+                yield return null;
+            }
+            zoomCallback();
+
         }
 
         public void ZoomInToPosition(Vector3 goalPosition, Action callback)
         {
-            zoomCallback = callback;
-            zooming = true;
-            currentTime = 0;
             zoomStartPos = transform.position;
             zoomPosition = goalPosition - Camera.main.transform.forward * distanceFromZoomPoint;
+            StartCoroutine(ZoomToPos(callback));
         }
 
         private void UpdateVertical()
         {
-            float xDifference =  -(GetMinPosition().x - GetMaxPosition().x);
+            float xDifference = -(GetMinPosition().x - GetMaxPosition().x);
 
             float xFactor = (xDifference - minPlayerDistance.x) / (maxPlayerDistance.x - minPlayerDistance.x);
 
@@ -72,7 +98,7 @@ namespace GGR
             zFactor /= maxPlayerDistance.y;
 
             float yPos = Mathf.Clamp(Mathf.Max(xFactor, zFactor) * maxYPosition, minYPosition, maxYPosition);
-          //  float yPos = Mathf.Clamp(Mathf.Max(xFactor, zFactor), minYPosition, maxYPosition);
+            //  float yPos = Mathf.Clamp(Mathf.Max(xFactor, zFactor), minYPosition, maxYPosition);
 
             transform.position = new Vector3(transform.position.x, yPos, transform.position.z);
         }
@@ -88,13 +114,13 @@ namespace GGR
         private Vector2 GetMinPosition()
         {
             Vector2 minPosition = Vector2.positiveInfinity;
-            foreach(PlayerController pc in GGR_GameData.GetAllPlayerControllers())
+            foreach (PlayerController pc in GGR_GameData.GetAllPlayerControllers())
             {
-                if(pc.transform.position.x < minPosition.x)
+                if (pc.transform.position.x < minPosition.x)
                 {
                     minPosition.x = pc.transform.position.x;
                 }
-                if(pc.transform.position.z < minPosition.y)
+                if (pc.transform.position.z < minPosition.y)
                 {
                     minPosition.y = pc.transform.position.z;
                 }

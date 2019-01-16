@@ -32,7 +32,7 @@ namespace GGR
                 GGR_GameData.GivePlayerScore(player, score);
                 roundScores.Add(player, score);
             }
-            Camera.main.GetComponent<GGR_CameraMovement>().ZoomInToPosition(goalLocation.position, ZoomDone);
+            GGR_CameraMovement.instance.ZoomInToPosition(goalLocation.position, ZoomDone);
         }
 
         public override bool Run()
@@ -101,7 +101,7 @@ namespace GGR
             }
 
             yield return new WaitForSeconds(5);
-
+            ShowScore();
            foreach(LineRenderer lr in lineRenderers)
            {
                 lr.positionCount = 0;
@@ -122,6 +122,16 @@ namespace GGR
             }
             Debug.Log(maxDistance);
             return maxDistance;
+        }
+
+        private void ShowScore()
+        {
+            foreach(Player p in roundScores.Keys)
+            {
+                Debug.Log("round score"+" name" + p.Name + "score:" + roundScores[p]);
+                Debug.Log("total score" + p.Name + "score:" + GGR_GameData.GetPlayerScore(p));
+            }
+            
         }
     }
 }

@@ -9,6 +9,7 @@ public class GGR_GameData : MonoBehaviour
     public int rounds;
     public PlayerController playerControllerPrefab;
     public List<Transform> spawnPositions = new List<Transform>();
+    public List<Transform> boardPictureSlots;
 
     public static GGR_GameData instance { get; private set; }
     private List<GGR_Location> allLocations = new List<GGR_Location>();
@@ -89,6 +90,15 @@ public class GGR_GameData : MonoBehaviour
             instance.scoreBoard.Add(player, score);
     }
 
+    public static float GetPlayerScore(Player player)
+    {
+        return instance.scoreBoard[player];
+    }
+
+    public static List<Transform> GetPictureSlots()
+    {
+        return instance.boardPictureSlots;
+    }
     
     private void DeckShuffle()
     {

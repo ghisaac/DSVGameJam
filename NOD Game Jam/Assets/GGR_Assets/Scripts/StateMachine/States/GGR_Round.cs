@@ -18,6 +18,7 @@ namespace GGR
 
         public override bool Run()
         {
+            GGR_CameraMovement.instance.FollowPlayers();
             if(currentTime <= 0)
             {
                 Owner.TransitionTo<GGR_PostRound>();
