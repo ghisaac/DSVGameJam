@@ -558,6 +558,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b73acff6a43bfa4aa1b6b42982884c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  icons:
+  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
+  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
+  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
+  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
   playerScoreObjects:
   - {fileID: 2339405783473997582}
   - {fileID: 571159627}
@@ -1552,6 +1557,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21817754228136656, guid: 503e2d81dfbaace47a9d8b5706bd5460,
         type: 2}
+    - target: {fileID: 4764463515136011656, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfd2bd00192c114193fa279c13277d4, type: 3}
 --- !u!224 &3412247050134297264 stripped
