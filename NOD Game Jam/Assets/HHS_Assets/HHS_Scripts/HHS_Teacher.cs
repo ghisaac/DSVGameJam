@@ -10,6 +10,8 @@ public class HHS_Teacher : MonoBehaviour
     public float MaxStudentActivateTime;
 
     public Coroutine StudentActivation;
+    private Animator animator;
+    private Animator studentAnimator;
     public Coroutine RaiseHandRoutine;
 
     [SerializeField]
@@ -27,7 +29,7 @@ public class HHS_Teacher : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void StopStudent() {
@@ -42,6 +44,7 @@ public class HHS_Teacher : MonoBehaviour
 
     public IEnumerator ActiveStudentQuestion() {
         GameObject student = PickStudent();
+        studentAnimator = student.GetComponentInChildren<Animator>();
         ResetStudents();
         ResetPlayerRaisedHand();
         float delayTime = Random.Range(MinStudentActivateTime, MaxStudentActivateTime);
@@ -52,6 +55,7 @@ public class HHS_Teacher : MonoBehaviour
         //Animate student
         //Speech bubble over student
         //FLYTTA NEDAN TILL EGEN METOD
+        
         RaiseHandRoutine = StartCoroutine(RaiseHand());
 
 
@@ -74,21 +78,28 @@ public class HHS_Teacher : MonoBehaviour
     public IEnumerator RaiseHand() {
         //SoundManager.Instance.PlayStudentDemandHelp();   LJUD HÄR
         HandRaised = true;
+        studentAnimator.SetBool("Raised Hand", true);
         yield return new WaitForSeconds(1f);
         Icon.sprite = AlertIcon;
         yield return new WaitForSeconds(1f);
-       // transform.eulerAngles = new Vector3(0, 270, 0);
+        // transform.eulerAngles = new Vector3(0, 270, 0);
+        animator.SetBool("Turn Around", true);
+        Debug.Log("turn");
         CheckIfBusted();
         teacherMad = true;
         //SoundManager.Instance.PlayTeacherAlerted();   LJUD KOMMER HÄR
         //Animation till arg
+        animator.SetTrigger("Bust");
         yield return new WaitForSeconds(2f); //TeacherActiveTime, balansera
       //  transform.eulerAngles = new Vector3(0, 90, 0);
         teacherMad = false;
         Icon.sprite = IdleIcon;
         //Teacher alert icon away
         //SoundManager.Instance.PlayTeacherIdle();   LJUD KOMMER HÄR
+        animator.SetBool("Turn Around", false);
+       // animator.ResetTrigger("Bust");
         HandRaised = false;
+        studentAnimator.SetBool("Raised Hand", false);
         StartStudent();
         yield return 0;
     }
@@ -109,6 +120,7 @@ public class HHS_Teacher : MonoBehaviour
                 player.Bust();
                 Icon.sprite = BustIcon;
                 bustedSomeone = true;
+               
             }
 
             if (!bustedSomeone) {
