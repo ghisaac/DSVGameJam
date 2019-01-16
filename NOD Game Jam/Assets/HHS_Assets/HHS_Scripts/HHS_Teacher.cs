@@ -90,13 +90,13 @@ public class HHS_Teacher : MonoBehaviour
         //SoundManager.Instance.PlayTeacherAlerted();   LJUD KOMMER HÄR
         //Animation till arg
         animator.SetTrigger("Bust");
-        yield return new WaitForSeconds(2f); //TeacherActiveTime, balansera
+        yield return new WaitForSeconds(1f); //TeacherActiveTime, balansera
       //  transform.eulerAngles = new Vector3(0, 90, 0);
         teacherMad = false;
-        Icon.sprite = IdleIcon;
         //Teacher alert icon away
         //SoundManager.Instance.PlayTeacherIdle();   LJUD KOMMER HÄR
         animator.SetBool("Turn Around", false);
+        StartCoroutine(WaitForAnimationAndSetSprite(1f, IdleIcon));
        // animator.ResetTrigger("Bust");
         HandRaised = false;
         studentAnimator.SetBool("Raised Hand", false);
@@ -112,6 +112,12 @@ public class HHS_Teacher : MonoBehaviour
         RaiseHandRoutine = StartCoroutine(RaiseHand());
     }
 
+    public IEnumerator WaitForAnimationAndSetSprite(float waitTime, Sprite sprite)
+    {
+      
+        yield return new WaitForSeconds(waitTime);
+        Icon.sprite = sprite;
+    }
 
     private void CheckIfBusted() {
         foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {

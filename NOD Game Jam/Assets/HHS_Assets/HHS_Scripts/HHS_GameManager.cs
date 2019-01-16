@@ -16,6 +16,7 @@ public class HHS_GameManager : MonoBehaviour {
     public GameObject playerPrefab;
     public Transform startPosition;
     public SpriteRenderer[] goalIndicators;
+    public GameObject[] characters;
 
     [Header("UI")]
     public float RoundTime = 60f;
