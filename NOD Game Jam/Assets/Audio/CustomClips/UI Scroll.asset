@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioClips:
   - {fileID: 8300000, guid: 798eab3cec7fe1b4a8440a605acac1c3, type: 3}
-  Volume: 1
+  Volume: 0.6
   Pitch: 1
-  PitchVariance: 0
+  PitchVariance: 0.05
   Loop: 0
   MinDistance: 1
   MaxDistance: 10
@@ -24,7 +24,25 @@ MonoBehaviour:
   CurveType: 0
   CustomCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
