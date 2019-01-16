@@ -88,9 +88,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
-  m_LightingDataAsset: {fileID: 112000000, guid: 2584e3e2083d50f49acf386357d400af,
-    type: 2}
-  m_UseShadowmask: 1
+  m_LightingDataAsset: {fileID: 0}
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -412,7 +411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &38190221
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2708,11 +2707,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIL_playerYellow
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748979, guid: a14049324f19c8248af0ca2e5c3949cf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: a14049324f19c8248af0ca2e5c3949cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2768,16 +2762,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748978, guid: a14049324f19c8248af0ca2e5c3949cf,
-        type: 3}
-      propertyPath: mask.m_Bits
-      value: 513
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748943, guid: a14049324f19c8248af0ca2e5c3949cf,
-        type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965144748943, guid: a14049324f19c8248af0ca2e5c3949cf,
         type: 3}
       propertyPath: hearts.Array.data[0]
@@ -2793,11 +2777,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1085973730}
-    - target: {fileID: 5234886965144748943, guid: a14049324f19c8248af0ca2e5c3949cf,
-        type: 3}
-      propertyPath: TestPlayer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a14049324f19c8248af0ca2e5c3949cf, type: 3}
 --- !u!4 &310484224 stripped
@@ -4940,11 +4919,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIL_playerRed
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748979, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5000,21 +4974,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748978, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: mask.m_Bits
-      value: 513
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748940, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748943, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965144748943, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
         type: 3}
       propertyPath: hearts.Array.data[0]
@@ -5030,16 +4989,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 879638166}
-    - target: {fileID: 5234886965144748943, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: TestPlayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 863134656800681868, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da410f4cd2ea8540920ccf3dd0963fc, type: 3}
 --- !u!4 &582408124 stripped
@@ -11454,11 +11403,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIL_playerGreen
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748979, guid: 42881eec6dff1834599d42c0c0c92acd,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: 42881eec6dff1834599d42c0c0c92acd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11514,16 +11458,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748978, guid: 42881eec6dff1834599d42c0c0c92acd,
-        type: 3}
-      propertyPath: mask.m_Bits
-      value: 513
-      objectReference: {fileID: 0}
-    - target: {fileID: 5234886965144748943, guid: 42881eec6dff1834599d42c0c0c92acd,
-        type: 3}
-      propertyPath: hearts.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5234886965144748943, guid: 42881eec6dff1834599d42c0c0c92acd,
         type: 3}
       propertyPath: hearts.Array.data[0]
@@ -11539,11 +11473,6 @@ PrefabInstance:
       propertyPath: hearts.Array.data[2]
       value: 
       objectReference: {fileID: 1314739435}
-    - target: {fileID: 5234886965144748943, guid: 42881eec6dff1834599d42c0c0c92acd,
-        type: 3}
-      propertyPath: TestPlayer
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42881eec6dff1834599d42c0c0c92acd, type: 3}
 --- !u!4 &1238788721 stripped
