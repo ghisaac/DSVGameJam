@@ -19,6 +19,7 @@ public class ASR_CharacterController : MonoBehaviour
 
     public Transform RaycastTransform;
     public Transform ForcePositionTransform;
+    public Transform BurpTransform;
     public LayerMask FloorMask;
     public float RayMaxDistance = 2;
 

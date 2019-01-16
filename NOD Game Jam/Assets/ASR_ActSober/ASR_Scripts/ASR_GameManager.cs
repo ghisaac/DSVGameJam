@@ -12,7 +12,7 @@ public class ASR_GameManager : MonoBehaviour
 
     public Transform[] StartPositionTransforms;
 
-    public GameObject PlayerPrefab;
+    
     public GameObject[] PlayerPrefabs;
 
     public GameObject InstructionPanel;
@@ -43,6 +43,8 @@ public class ASR_GameManager : MonoBehaviour
         StartCoroutine(ActivateGame());
     }
 
+    
+
     private void InitializePlayers()
     {
         if (SpawnFourPlayers)
@@ -60,11 +62,13 @@ public class ASR_GameManager : MonoBehaviour
         {
             for (int i = 0; i < Player.AllPlayers.Count; i++)
             {
-                GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
+                GameObject instance = Instantiate(PlayerPrefabs[Player.AllPlayers[i].RewierdId], StartPositionTransforms[Player.AllPlayers[i].RewierdId].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
                 _allCharacters.Add(character);
                 character.Player = Player.AllPlayers[i];
                 character.Initialize();
+
+                
             }
         }
 
@@ -93,6 +97,7 @@ public class ASR_GameManager : MonoBehaviour
         _characterPlacement.Add(_activeCharacters[0]);
         _activeCharacters[0].Deactivate();
         UIManager.SetPlacementGui(_activeCharacters[0], 1);
+        
 
         Debug.Log("Round finished");
 
@@ -118,6 +123,11 @@ public class ASR_GameManager : MonoBehaviour
             UIManager.SetScoreGui(cc, cc.Score);
         }
 
+    }
+
+    public ASR_CharacterController[] GetAllCharacters()
+    {
+        return _allCharacters.ToArray();
     }
 
     private void CalculateWinner()

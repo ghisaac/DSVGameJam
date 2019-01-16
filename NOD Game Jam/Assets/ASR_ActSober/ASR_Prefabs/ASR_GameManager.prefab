@@ -43,10 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c26f009c2db4dbeafae32f38e81517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UIManager: {fileID: 0}
   StartPositionTransforms: []
-  PlayerPrefab: {fileID: 0}
+  PlayerPrefabs:
+  - {fileID: 1181189532187368718, guid: a48c449d1fd5dcd4aa6aa8fa00892797, type: 3}
+  - {fileID: 8833151438057912310, guid: db5a19f062a369f479d9e431320aa5ee, type: 3}
+  - {fileID: 4841344259051757189, guid: e89f8da0378b1ca418637e331c564f0f, type: 3}
+  - {fileID: 5475192877250811860, guid: b4f5dd4c78108d645a0184a34b1dd0c7, type: 3}
   InstructionPanel: {fileID: 0}
   TimeForInstructions: 5
   CountdownTime: 3
   AmountOfRounds: 3
-  Debugging: 0
+  SpawnFourPlayers: 1
