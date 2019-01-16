@@ -559,9 +559,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   icons:
-  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
-  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
-  - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
+  - {fileID: 21300000, guid: 8d6178b80debd2546a8e65f1cecd44b7, type: 3}
+  - {fileID: 21300000, guid: d3745b9e1e701c547bec86fe3e4ec4b6, type: 3}
+  - {fileID: 21300000, guid: ddbacf7273201c94e81ddcc67dca5f4e, type: 3}
   - {fileID: 21300000, guid: d85e3cade98dca24f924858d3df40000, type: 3}
   playerScoreObjects:
   - {fileID: 2339405783473997582}
@@ -1535,6 +1535,46 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21817754228136656, guid: 503e2d81dfbaace47a9d8b5706bd5460,
         type: 2}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_text
+      value: asdasdas
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144750810458775197, guid: 9bfd2bd00192c114193fa279c13277d4,
+        type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7050867804158272162, guid: 9bfd2bd00192c114193fa279c13277d4,
         type: 3}
       propertyPath: m_havePropertiesChanged
