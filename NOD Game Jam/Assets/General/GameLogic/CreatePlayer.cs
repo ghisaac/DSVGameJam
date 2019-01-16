@@ -20,7 +20,7 @@ public class CreatePlayer : MonoBehaviour
         
         allSpawnedPlayerControllers.Clear();
 
-        for(int i=0; i< AllPlayerPrefabs.Length;i++)
+        for(int i=0; i< Player.AllPlayers.Count;i++)
         {
             GameObject obj = Instantiate(AllPlayerPrefabs[Player.AllPlayers[i].RewierdId]);
             obj.SendMessage("CreatePlayerController", Player.AllPlayers[i]);
