@@ -725,7 +725,7 @@ Animator:
   m_GameObject: {fileID: 170150125}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 303d4dd8779ef444d9a5330ca5464c4d, type: 3}
-  m_Controller: {fileID: 9100000, guid: c035a215bfa83d245af1c9fc12b4be38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38f16a09a18a0f94fb98deae0d812f8e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1649,7 +1649,7 @@ Animator:
   m_GameObject: {fileID: 432324907}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 303d4dd8779ef444d9a5330ca5464c4d, type: 3}
-  m_Controller: {fileID: 9100000, guid: c035a215bfa83d245af1c9fc12b4be38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38f16a09a18a0f94fb98deae0d812f8e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -4179,7 +4179,7 @@ Animator:
   m_GameObject: {fileID: 1260791399}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 303d4dd8779ef444d9a5330ca5464c4d, type: 3}
-  m_Controller: {fileID: 9100000, guid: c035a215bfa83d245af1c9fc12b4be38, type: 2}
+  m_Controller: {fileID: 9100000, guid: 38f16a09a18a0f94fb98deae0d812f8e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5866,7 +5866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlayers: []
-  playersInGame: 2
+  playersInGame: 1
   PointsUI:
   - {fileID: 1068241886}
   - {fileID: 1466296394}
@@ -5880,11 +5880,11 @@ MonoBehaviour:
   - {fileID: 1247631300}
   - {fileID: 2043149341}
   - {fileID: 690084514}
-  RoundTime: 10
+  RoundTime: 60
   TimeUI: {fileID: 1951341339}
   RoundCountDownTimerUI: {fileID: 1252581862}
-  waitForStartTimer: 3
-  MiniGameRounds: 1
+  waitForStartTimer: 1
+  MiniGameRounds: 3
   GoalChairs:
   - {fileID: 373307288}
   - {fileID: 901193339}

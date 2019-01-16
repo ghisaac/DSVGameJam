@@ -7,7 +7,7 @@ using Rewired;
 public class HHS_SittingState : PlayerBaseState
 {
 
-
+    
 
     public override void StateUpdate() {
 
@@ -22,6 +22,8 @@ public class HHS_SittingState : PlayerBaseState
                 HHS_GameManager.instance.Teacher.StopStudent();
                 HHS_GameManager.instance.Teacher.StartRaiseHand();
                 controller.GetComponentInChildren<SpriteRenderer>().enabled = true;
+                controller.animator.SetBool("Raised Hand", true);
+                
                 //Animate player
                 Debug.Log("RAISING HAND!");
             }
@@ -36,12 +38,13 @@ public class HHS_SittingState : PlayerBaseState
     public override void Enter() {
         base.Enter();
         Velocity = Vector3.zero;
+        controller.animator.SetFloat("Velocity", 0);
         //SoundManager.Instance.PlaySitDown();  LJUD HÄR
     }
 
     public override void Exit() {
         base.Exit();
-
+        controller.animator.SetBool("Raised Hand", false);
         controller.transform.position += new Vector3(-2, 0, 0); 
     }
 }
