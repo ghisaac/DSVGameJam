@@ -33,8 +33,10 @@ namespace FIL
         public GameObject _smokePrefab;
         private WaitForSeconds _waitForSeconds;
 
-        public bool gameStarted = false;
+        public GameObject[] spritesInColorOrder;
 
+        public bool gameStarted = false;
+        //blå, grön, röd, gul
 
         private void Awake()
         {
@@ -90,7 +92,6 @@ namespace FIL
                 }
             }
         }
-
 
         private IEnumerator DrownTable()
         {
