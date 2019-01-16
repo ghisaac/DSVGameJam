@@ -7,7 +7,9 @@ public class Player
     public int RewierdId { get; private set; }
     public int Points { get; private set; }
     public string Name { get; private set; }
+    public Color PlayerColor { get; private set; }
     public int LocalPlacement;
+    private Color[] colors = { Color.red, Color.blue, Color.green, Color.yellow };
 
     public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
 
@@ -24,7 +26,20 @@ public class Player
         this.RewierdId = RewierdId;
         this.Name = Name;
         this.Points = 0;
+        this.PlayerColor = colors[RewierdId];
         AllPlayers.Add(this);
+    }
+
+    public static bool SetNewName(int playerID, string name)
+    {
+        for(int i = 0; i < Player.AllPlayers.Count; i++)
+        {
+            if(Player.AllPlayers[i].Name == name)
+                return false;
+        }
+        Player.GetPlayerByRewindID(playerID).Name = name;
+        return true;
+       
     }
 
     public static bool CheckIfPlayerExists(int RewierdId)

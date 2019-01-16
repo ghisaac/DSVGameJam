@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8423795954640769346}
   - component: {fileID: 7536423751771011411}
   - component: {fileID: 4010432073307495247}
-  m_Layer: 0
+  - component: {fileID: 6416505771809644489}
+  m_Layer: 9
   m_Name: General_2_Seat_Sofa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,3 +78,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &6416505771809644489
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571728392479050347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0301796, y: 1.1374102, z: 2.6710482}
+  m_Center: {x: 0, y: 0.58024967, z: 0}
