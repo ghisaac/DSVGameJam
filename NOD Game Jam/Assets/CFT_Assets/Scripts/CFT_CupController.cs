@@ -22,12 +22,14 @@ public class CFT_CupController : MonoBehaviour
     private Vector3 cameraOffset;
     private float cameraLerpValue;
     private List<GameObject> cupList = new List<GameObject>();
+    public Color playerColor;
 
 
     // Start is called before the first frame update
     public void Init(int ID)
     {
         playerID = ID;
+        playerColor = Player.AllPlayers[playerID].PlayerColor;
         SubcribeToClickEvent();
     }
 
@@ -111,12 +113,21 @@ public class CFT_CupController : MonoBehaviour
     public void InstantiateCup()
     {
         letGo = false;
-        if(Cup != null)
-        Cup.layer = 0;
+        if (Cup != null)
+            Cup.layer = 0;
         Cup = Instantiate(CupPrefab, transform.position, Quaternion.identity);
-        Cup.GetComponent<CFT_CupLogic>()._controller = this;
+        SetColor();
         topHeight = BoxCastHeight();
-        
+
+    }
+
+    private void SetColor()
+    {
+        MeshRenderer meshRenderer = Cup.GetComponentInChildren<MeshRenderer>();
+        Material material = meshRenderer.materials[2];
+        meshRenderer.materials[2] = Instantiate(meshRenderer.materials[2]);
+        meshRenderer.materials[2].color = playerColor;
+        Cup.GetComponent<CFT_CupLogic>()._controller = this;
     }
 
     public float BoxCastHeight()
