@@ -64,12 +64,13 @@ public class CFT_GameController : MonoBehaviour
         _gameBoards = new List<CFT_CupController>();
         _cameras = new List<Camera>();      
         _playerManager = FindObjectOfType<CFT_PlayerManager>();
+        new Player(0, "Micke");
+        new Player(1, "Kalle");
+        new Player(2, "Steffan");
+        new Player(3, "Arne");
+
         if (_isProduction)
-        {
-            new Player(0, "Micke");
-            new Player(1, "Kalle");
-            new Player(2, "Steffan");
-            new Player(3, "Arne");
+        {       
             _numberOfPlayers = Player.AllPlayers.Count;
             InitializePlayerProduction();
             _playerManager.InitProduction();           
@@ -79,6 +80,7 @@ public class CFT_GameController : MonoBehaviour
             InitializePlayer();
             _playerManager.Init(_numberOfPlayers);            
         }
+
         SetCameraViewport();
         _gameState = GameState.init;
         _timer = _setInitTimer;
