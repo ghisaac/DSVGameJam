@@ -10,13 +10,12 @@ public class HHS_GameManager : MonoBehaviour {
     [Header("Players")]
     [HideInInspector]
     public List<HHS_Player> activePlayers = new List<HHS_Player>();
-    public int playersInGame = 2;
 
     public TextMeshProUGUI[] PointsUI;
     public GameObject playerPrefab;
     public Transform startPosition;
     public SpriteRenderer[] goalIndicators;
-    public GameObject[] characters;
+
 
     [Header("UI")]
     public float RoundTime = 60f;
@@ -146,16 +145,17 @@ public class HHS_GameManager : MonoBehaviour {
         //Sätt dem på nån position och få dem att komma ihåg sin startposition.
         roundTimer = RoundTime;
 
-       // loopa på Player.AllPlayers.Count
-        for (int i = 0; i < playersInGame; i++)
+        // loopa på Player.AllPlayers.Count
+
+        for (int i = 0; i < CreatePlayer.allSpawnedPlayerControllers.Count; i++)
         {
             Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
-            GameObject newPlayer = Instantiate(playerPrefab, newPosition, Quaternion.identity);
-            //    newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
-            newPlayer.GetComponent<HHS_Player>().PlayerID = i;
-            newPlayer.GetComponent<HHS_Player>().Startposition = newPosition;
-            newPlayer.GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
-            activePlayers.Add(newPlayer.GetComponent<HHS_Player>());
+          
+            activePlayers.Add(CreatePlayer.allSpawnedPlayerControllers[i].GetComponent<HHS_Player>());
+            activePlayers[i].GetComponent<HHS_Player>().PlayerID = i;
+            activePlayers[i].GetComponent<HHS_Player>().Startposition = newPosition;
+            activePlayers[i].GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
+            
             PointsUI[i].gameObject.SetActive(true);
         }
         StartCoroutine(WaitForStartRound());
