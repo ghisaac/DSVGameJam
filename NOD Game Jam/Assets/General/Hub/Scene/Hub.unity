@@ -499,7 +499,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 300195396}
   myLevel: 5
   myMapSprite: {fileID: 21300000, guid: 0a077bf53205e2342934cbc0b3e8eb85, type: 3}
-  levelBuildIndex: 5
+  levelBuildIndex: 0
 --- !u!222 &175718170
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1062,7 +1062,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 274446711}
   myLevel: 1
   myMapSprite: {fileID: 21300000, guid: 9dd457bfc84917b46a9e4bab781b2902, type: 3}
-  levelBuildIndex: 1
+  levelBuildIndex: 0
 --- !u!222 &461727692
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2854,7 +2854,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 1321762044}
   myLevel: 3
   myMapSprite: {fileID: 21300000, guid: d46b577c107c8d641be8e205689284a0, type: 3}
-  levelBuildIndex: 2
+  levelBuildIndex: 0
 --- !u!222 &1179073918
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3378,7 +3378,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 654361255}
   myLevel: 4
   myMapSprite: {fileID: 21300000, guid: 0b5933d5912391346aad8336868650f9, type: 3}
-  levelBuildIndex: 4
+  levelBuildIndex: 0
 --- !u!222 &1303473819
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3513,7 +3513,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 650713999}
   myLevel: 2
   myMapSprite: {fileID: 21300000, guid: 7804a382b0d551745b3fdb4b75fc4d79, type: 3}
-  levelBuildIndex: 2
+  levelBuildIndex: 3
 --- !u!222 &1370544724
 CanvasRenderer:
   m_ObjectHideFlags: 0

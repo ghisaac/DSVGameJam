@@ -85,6 +85,10 @@ public class Player
         }
 
     }
+    public static void GivePlayerPointsBasedOnPlacement(Player player, int Placement)
+    {
+        player.Points += POINTSFORPLACEMENTS[Placement - 1];
+    }
     public static Player GetPlayerAtPlacement(int placement)
     {
         return GetPlayersByPoints()[placement];
@@ -152,6 +156,7 @@ public class Player
     {
         List<Player> tempPlayers = new List<Player>(AllPlayers);
         tempPlayers.OrderBy(x => x.Points);
+        tempPlayers.Reverse();
         return tempPlayers;
     }
 }
