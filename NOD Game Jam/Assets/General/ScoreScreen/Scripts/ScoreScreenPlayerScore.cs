@@ -11,10 +11,11 @@ public class ScoreScreenPlayerScore : MonoBehaviour
     [SerializeField] private Image portrait;
 
 
-    public void SetValues(Player player)
+    public void SetValues(Player player, Sprite sprite)
     {
         placement.text = "" + (Player.GetPlayerPlacementByID(player.RewierdId) + 1);
         name.text = player.Name;
         score.text = "" + player.Points;
+        portrait.sprite = sprite;
     }
 }
