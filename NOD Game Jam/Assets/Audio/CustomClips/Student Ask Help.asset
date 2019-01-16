@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
   m_Name: Student Ask Help
   m_EditorClassIdentifier: 
-  AudioClips: []
-  Volume: 1
+  AudioClips:
+  - {fileID: 8300000, guid: 9e9f680fa3d146f49ad5b7496d28c0d4, type: 3}
+  Volume: 0.2
   Pitch: 1
   PitchVariance: 0
   Loop: 0
