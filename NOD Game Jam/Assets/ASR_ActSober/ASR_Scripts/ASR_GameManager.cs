@@ -13,6 +13,7 @@ public class ASR_GameManager : MonoBehaviour
     public Transform[] StartPositionTransforms;
 
     public GameObject PlayerPrefab;
+    public GameObject[] PlayerPrefabs;
 
     public GameObject InstructionPanel;
     public float TimeForInstructions = 5f;
@@ -31,7 +32,7 @@ public class ASR_GameManager : MonoBehaviour
 
 
     [Header("DEBUGGING")]
-    public bool Debugging;
+    public bool SpawnFourPlayers;
 
     // Start is called before the first frame update
     void Awake()
@@ -44,7 +45,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private void InitializePlayers()
     {
-        if (Debugging)
+        if (SpawnFourPlayers)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -121,6 +122,13 @@ public class ASR_GameManager : MonoBehaviour
     private void CalculateWinner()
     {
         Debug.Log("Someone won!");
+
+        _allCharacters.Sort((p2, p1) => p1.Score.CompareTo(p2.Score));
+
+        foreach (ASR_CharacterController cc in _allCharacters){
+            Debug.Log("Score = " + cc.Score);
+        }
+
     }
 
     private void ResetPlayers()
