@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KSR_Collision : MonoBehaviour
 {
+    public GameObject mainCamera;
     public float bounceSpeed = 1f;
     private Vector3 currentVelocity;
     private Rigidbody _rb;
@@ -27,8 +28,13 @@ public class KSR_Collision : MonoBehaviour
         if (col.gameObject.tag == "Wall")
         {
             Bounce(col.contacts[0].normal);
-           // Debug.Log("WALL");
+
+            if(mainCamera != null)
+                mainCamera.GetComponent<KSR_CameraFollow>().delayCam = true;
+            // Debug.Log("WALL");
         }
+
+        
     }
 
     private void Bounce(Vector3 collisonNormal)

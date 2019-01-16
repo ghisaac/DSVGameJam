@@ -18,11 +18,14 @@ public class KSR_RaceState : PlayerBaseState
     private float _currentThrust;
     private float _currentTurn;
     private Vector3 _rotation;
+    private float _rotationSpeed = 100f;
+    private GameObject _playerCamera;
 
     public override void Enter()
     {
         _rb = controller.GetComponent<Rigidbody>();
         _rotation = transform.rotation.eulerAngles;
+        _playerCamera = controller.gameObject.transform.GetChild(2).gameObject;
     }
 
     public override void StateUpdate()
@@ -71,6 +74,23 @@ public class KSR_RaceState : PlayerBaseState
 
         }
         Dash();
+        RotateCamera();
+    }
+
+    private void RotateCamera()
+    {
+        Vector3 cameraRotation = new Vector3(0f, 0, 0f);
+        float yRotation = RewierdPlayer.GetAxis("RightHorizontal");
+        if(Mathf.Abs(yRotation) > _deadzone) {
+
+            cameraRotation = new Vector3(0f, yRotation, 0f);
+            _playerCamera.transform.RotateAround(controller.gameObject.transform.position, cameraRotation, Time.deltaTime * _rotationSpeed);
+        }
+        else
+        {
+       //     _playerCamera.transform.rotation = new Quaternion(0,0,0,0);
+        }
+        
     }
 
     private void Dash()
@@ -86,14 +106,19 @@ public class KSR_RaceState : PlayerBaseState
         }
     }
 
+   
     public void Boost()
     {
         _rb.AddForce(transform.forward  * boostSpeed);
     }
 
-    public float getHorizontalAxis()
+    public float GetHorizontalAxis()
     {
-        return RewierdPlayer.GetAxis("Horizontal");
+        return RewierdPlayer.GetAxis("RightHorizontal");
+    }
+    public float GetVerticalAxis()
+    {
+        return RewierdPlayer.GetAxis("RightVertical");
     }
 
 }
