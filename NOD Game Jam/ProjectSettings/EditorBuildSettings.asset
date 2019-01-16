@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ASR_ActSober/ASR_Scenes/ASR_MainScene.unity
     guid: 45b9e9d96ed0f403f8cecb93b88b71c2
+  - enabled: 1
+    path: Assets/FIL/FIL_Scenes/Lava.unity
+    guid: 01fd2f6a0d54f1d4887ed49a9d89da63
   m_configObjects: {}
