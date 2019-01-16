@@ -568,7 +568,7 @@ MonoBehaviour:
   - {fileID: 571159627}
   - {fileID: 728566874}
   - {fileID: 348081627}
-  testing: 1
+  testing: 0
   dropDownCurv:
     serializedVersion: 2
     m_Curve:
