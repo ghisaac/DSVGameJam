@@ -14,10 +14,19 @@ public class HubManager : MonoBehaviour
     private bool waitingForConfirmation;
     private Image mapImage;
 
+
+    [SerializeField] private AnimationCurve myCurve;
+    private Vector2 startPos, targetPos;
+    private float highlightAnimationTimer;
+    [SerializeField] private float highlightAnimationDuration;
+
+
     [SerializeField]
     private GameObject confirmationPanel;
     [SerializeField]
     private GameObject map;
+    [SerializeField]
+    private GameObject textHighlighter;
     [SerializeField]
     private GameObject[] levelPins;
 
@@ -31,6 +40,8 @@ public class HubManager : MonoBehaviour
 
     void Update()
     {
+        HighlightTimer();
+
         if (waitingForConfirmation)
         {
             HandleConfirmationInput(leavingPlayer);
@@ -45,6 +56,18 @@ public class HubManager : MonoBehaviour
         }
     }
 
+    private void HighlightTimer()
+    {
+        highlightAnimationTimer += Time.deltaTime;
+        highlightAnimationTimer = Mathf.Clamp(highlightAnimationTimer, 0, highlightAnimationDuration);
+        HighlightAnimation(highlightAnimationTimer / highlightAnimationDuration);
+
+    }
+    private void HighlightAnimation(float factor)
+    {
+        Vector2 delta = targetPos - startPos;
+        textHighlighter.transform.position = startPos + (delta * myCurve.Evaluate(factor));
+    }
     private void HandleJoins()
     {
         foreach (Rewired.Player p in ReInput.players.AllPlayers)
@@ -110,8 +133,13 @@ public class HubManager : MonoBehaviour
 
     private void HighlightLevel()
     {
+        LevelPin currentLevelPin = currentSelection.GetComponent<LevelPin>();
+        mapImage.sprite = currentLevelPin.GetMapSprite();
+        startPos = textHighlighter.transform.position;
+        targetPos = currentLevelPin.currentTextObject.transform.position;
+        highlightAnimationTimer = 0;
+
         currentSelection.GetComponent<Image>().color = new Color(255, 0, 0);
-        mapImage.sprite = currentSelection.GetComponent<LevelPin>().GetMapSprite();
     }
 
     private void DehighlightLevel()
