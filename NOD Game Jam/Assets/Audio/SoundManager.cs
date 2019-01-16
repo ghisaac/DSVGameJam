@@ -5,12 +5,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance = null;
+    public CustomClip BackgroundMusic;
     [Header("UI")]
     public CustomClip ButtonHover;
-    public CustomClip ButtonPress, GameSelect;
+    public CustomClip ButtonPress, GameSelect, ChainSwoop, ScrollSweep;
     [Header("General")]
     public CustomClip PlayerLand;
-    public CustomClip PlayerRun, CollidePlayer, CollideTerrain, RoundStart, GainPoints, TickTock, VictorySound;
+    public CustomClip PlayerRun, PlayerJump, CollidePlayer, CollideTerrain, RoundStart, GainPoints, TickTock, VictorySound;
     [Header("Floor is Lava")]
     public CustomClip TableMelting;
     public CustomClip TableShaking, LavaSFX, FallInLava;
@@ -19,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public CustomClip CupImpact, CoffeeSplash;
     [Header("Kontorstols-racing")]
     public CustomClip TapFeet;
-    public CustomClip SpeedBoost, ChairRoll, Countdown, Groan;
+    public CustomClip SpeedBoost, ChairRoll, Countdown;
     [Header("Hela Havet Sneakar")]
     public CustomClip TeacherIdle;
     public CustomClip TeacherAlerted, StudentAskHelp, StudentDemandHelp, DuckFromSight, SitDown, Caught;
@@ -41,6 +42,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    //BGM
+    public void PlayBGM() {
+        AudioPlayer.Instance.Play2DSound(BackgroundMusic);
+    }
+
     //UI
     public void PlayButtonHover()
     {
@@ -54,23 +60,32 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(GameSelect);
     }
+    public void PlayChainSwoop() {
+        AudioPlayer.Instance.Play2DSound(ChainSwoop);
+    }
+    public void PlayScrollSweep() {
+        AudioPlayer.Instance.Play2DSound(ScrollSweep);
+    }
 
     //GENERAL
-    public void PlayPlayerRun(GameObject sourceOfSound)
+    public void PlayPlayerRun()
     {
-        AudioPlayer.Instance.Play3DSound(PlayerRun, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(PlayerRun);
     }
-    public void PlayPlayerLand(GameObject sourceOfSound)
+    public void PlayPlayerLand()
     {
-        AudioPlayer.Instance.Play3DSound(PlayerLand, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(PlayerLand);
     }
-    public void PlayCollidePlayer(GameObject sourceOfSound)
-    {
-        AudioPlayer.Instance.Play3DSound(CollidePlayer, sourceOfSound);
+    public void PlayPlayerJump() {
+        AudioPlayer.Instance.Play2DSound(PlayerJump);
     }
-    public void PlayCollideTerrain(GameObject sourceOfSound)
+    public void PlayCollidePlayer()
     {
-        AudioPlayer.Instance.Play3DSound(CollideTerrain, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(CollidePlayer);
+    }
+    public void PlayCollideTerrain()
+    {
+        AudioPlayer.Instance.Play2DSound(CollideTerrain);
     }
     public void PlayRoundStart()
     {
@@ -87,21 +102,21 @@ public class SoundManager : MonoBehaviour
 
 
     //FLOOR IS LAVA
-    public void PlayTableMelting(GameObject sourceOfSound)
+    public void PlayTableMelting()
     {
-        AudioPlayer.Instance.Play3DSound(TableMelting, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TableMelting);
     }
-    public void PlayTableShaking(GameObject sourceOfSound)
+    public void PlayTableShaking()
     {
-        AudioPlayer.Instance.Play3DSound(TableShaking, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TableShaking);
     }
     public void PlayLavaLoop()
     {
         AudioPlayer.Instance.Play2DSound(LavaSFX);
     }
-    public void PlayFallInLava(GameObject sourceOfSound)
+    public void PlayFallInLava()
     {
-        AudioPlayer.Instance.Play3DSound(FallInLava, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(FallInLava);
     }
 
     //KAFFEKOPP STACKING
@@ -119,25 +134,21 @@ public class SoundManager : MonoBehaviour
     }
 
     //KONTORSTOLSRACING
-    public void PlaySpeedUp(GameObject sourceOfSound)
+    public void PlaySpeedUp()
     {
-        AudioPlayer.Instance.Play3DSound(TapFeet, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TapFeet);
     }
-    public void PlayBoost(GameObject sourceOfSound)
+    public void PlayBoost()
     {
-        AudioPlayer.Instance.Play3DSound(SpeedBoost, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(SpeedBoost);
     }
-    public void PlayChairRolling(GameObject sourceOfSound)
+    public void PlayChairRolling()
     {
-        AudioPlayer.Instance.Play3DSound(ChairRoll, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(ChairRoll);
     }
     public void PlayCountdown()
     {
         AudioPlayer.Instance.Play2DSound(Countdown);
-    }
-    public void PlayGroan()
-    {
-        AudioPlayer.Instance.Play2DSound(Groan);
     }
 
     //HELA HAVET SNEAKAR

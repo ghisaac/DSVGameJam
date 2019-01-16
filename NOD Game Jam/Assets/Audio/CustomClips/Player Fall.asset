@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
   m_Name: Player Fall
   m_EditorClassIdentifier: 
-  AudioClips: []
-  Volume: 1
+  AudioClips:
+  - {fileID: 8300000, guid: e74a7cfc8a8fb15418cf3cf34d857dce, type: 3}
+  Volume: 0.2
   Pitch: 1
   PitchVariance: 0
   Loop: 0
@@ -23,7 +24,25 @@ MonoBehaviour:
   CurveType: 0
   CustomCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
