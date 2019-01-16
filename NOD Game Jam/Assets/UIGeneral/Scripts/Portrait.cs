@@ -33,7 +33,7 @@ public class Portrait : MonoBehaviour
         }
 
         profileName.text = Player.GetPlayerByRewindID(ID).Name;
-        points.text = "" + Player.GetPlayerByRewindID(ID).Points;
+        points.text = "" + Player.GetPlayerByRewindID(ID).LocalScore;
     
     }
 
