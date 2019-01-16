@@ -113,10 +113,11 @@ MonoBehaviour:
   lap: 0
   lapTimes: []
   finished: 0
-  checkpointsCleared: []
+  checkpointsCleared: 0
   lastCheckpoint: {fileID: 0}
   nextCheckpoint: {fileID: 0}
   distanceToNextCheckpoint: 0
+  positionScore: 0
 --- !u!1001 &4257246205435942851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +135,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+        type: 3}
+      propertyPath: stateMachine.states.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+        type: 3}
+      propertyPath: stateMachine.states.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 425937fcac7f85840b8adf14190ef756,
+        type: 2}
     - target: {fileID: 7553296917039859801, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -189,16 +201,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
+    - target: {fileID: 7553296917039859800, guid: 74f1b95bf4944124583f9c3346d24fee,
         type: 3}
-      propertyPath: stateMachine.states.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7553296917039859802, guid: 74f1b95bf4944124583f9c3346d24fee,
-        type: 3}
-      propertyPath: stateMachine.states.Array.data[0]
+      propertyPath: m_Material
       value: 
-      objectReference: {fileID: 11400000, guid: 425937fcac7f85840b8adf14190ef756,
+      objectReference: {fileID: 13400000, guid: c47ce286d62d5c84b981df972b404912,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74f1b95bf4944124583f9c3346d24fee, type: 3}

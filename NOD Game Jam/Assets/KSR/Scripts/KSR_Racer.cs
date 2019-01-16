@@ -36,7 +36,7 @@ public class KSR_Racer: MonoBehaviour
 
     public float CalculateScore()
     {
-        positionScore = (lap * checkpointsCleared * 100f) - distanceToNextCheckpoint;
+        positionScore = ((lap * 10000f) + (checkpointsCleared * 100f) - distanceToNextCheckpoint);
         return positionScore;
     }
 
