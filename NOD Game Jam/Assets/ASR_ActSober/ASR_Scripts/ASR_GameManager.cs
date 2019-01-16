@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using UnityEngine.SceneManagement;
 
 public class ASR_GameManager : MonoBehaviour
 {
@@ -29,7 +30,6 @@ public class ASR_GameManager : MonoBehaviour
     private int[] _placementScores = { 1, 2, 3, 4 };
 
     private ASR_RandomForce _forceGenerator;
-
 
     [Header("DEBUGGING")]
     public bool SpawnFourPlayers;
@@ -130,7 +130,6 @@ public class ASR_GameManager : MonoBehaviour
         {
             UIManager.SetScoreGui(cc, cc.Score);
         }
-
     }
 
     public ASR_CharacterController[] GetAllCharacters()
@@ -203,6 +202,8 @@ public class ASR_GameManager : MonoBehaviour
     private IEnumerator GameOverFeedback()
     {
         yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.RewierdId);
+        DistributePoints();
+        LoadScoreScreen();
 
         // Ladda scen
     }
@@ -243,6 +244,22 @@ public class ASR_GameManager : MonoBehaviour
             animationSpeedModifier += 0.3f;
         }
 
+    }
+
+    private void DistributePoints()
+    {
+        List<Player> players = new List<Player>();
+        foreach (ASR_CharacterController cc in _allCharacters)
+        {
+            players.Add(cc.Player);
+        }
+
+        Player.DistributePoints(players.ToArray());
+    }
+
+    private void LoadScoreScreen()
+    {
+        SceneManager.LoadScene("ScoreScreenScene");
     }
 
 }
