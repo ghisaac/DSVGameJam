@@ -2707,6 +2707,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIL_playerYellow
       objectReference: {fileID: 0}
+    - target: {fileID: 5234886965144748979, guid: a14049324f19c8248af0ca2e5c3949cf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: a14049324f19c8248af0ca2e5c3949cf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4919,6 +4924,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FIL_playerRed
       objectReference: {fileID: 0}
+    - target: {fileID: 5234886965144748979, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: 5da410f4cd2ea8540920ccf3dd0963fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5441,6 +5451,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234886965144748979, guid: 10ff7879cb330ca4995b4bd5cdd81580,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: 10ff7879cb330ca4995b4bd5cdd81580,
         type: 3}
@@ -11402,6 +11417,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FIL_playerGreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 5234886965144748979, guid: 42881eec6dff1834599d42c0c0c92acd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5234886965900429051, guid: 42881eec6dff1834599d42c0c0c92acd,
         type: 3}
