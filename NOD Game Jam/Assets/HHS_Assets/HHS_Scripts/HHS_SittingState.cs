@@ -22,6 +22,8 @@ public class HHS_SittingState : PlayerBaseState
                 HHS_GameManager.instance.Teacher.StopStudent();
                 HHS_GameManager.instance.Teacher.StartRaiseHand();
                 controller.GetComponentInChildren<SpriteRenderer>().enabled = true;
+
+    
                 controller.animator.SetBool("Raised Hand", true);
                 
                 //Animate player

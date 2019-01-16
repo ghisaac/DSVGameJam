@@ -65,6 +65,7 @@ public class HHS_Teacher : MonoBehaviour
     private void ResetStudents() {
         foreach(GameObject student in Students) {
             student.GetComponentInChildren<SpriteRenderer>().enabled = false;
+
         }
 
     }
@@ -72,6 +73,7 @@ public class HHS_Teacher : MonoBehaviour
     private void ResetPlayerRaisedHand() {
         foreach (HHS_Player player in HHS_GameManager.instance.activePlayers) {
             player.GetComponentInChildren<SpriteRenderer>().enabled = false;
+       
         }
     }
 

@@ -561,7 +561,7 @@ GameObject:
   - component: {fileID: 3049326608091501208}
   - component: {fileID: 3049326608091501213}
   m_Layer: 0
-  m_Name: HHS_Player_Brown
+  m_Name: HHS_Player_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -684,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3588584927267748724}
   m_LocalRotation: {x: 0.3535534, y: -0.61237246, z: 0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: 0.69, y: 4.39, z: 0.86}
+  m_LocalPosition: {x: 0.69, y: 4.77, z: 1.15}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 3049326608091501209}
