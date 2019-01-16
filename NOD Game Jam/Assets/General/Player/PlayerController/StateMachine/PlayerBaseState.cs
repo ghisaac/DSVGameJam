@@ -7,7 +7,7 @@ public abstract class PlayerBaseState : State
     protected PlayerController controller { get { return (PlayerController)StateMachine.owner; } }
     protected Transform transform { get { return controller.transform; } }
     protected Vector3 Velocity { get { return controller.Velocity; } set { controller.Velocity = value; } }
-    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(controller.myTestPlayerId >= 0 ? controller.myTestPlayerId : controller.myPlayer.RewierdId); } }
+    protected Rewired.Player RewierdPlayer { get { return Rewired.ReInput.players.GetPlayer(controller.myPlayer.RewierdId); } }
 
     //Protected methods
     /// <summary>
