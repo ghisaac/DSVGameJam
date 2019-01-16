@@ -77,13 +77,13 @@ public class HHS_Teacher : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Icon.sprite = AlertIcon;
         yield return new WaitForSeconds(1f);
-        transform.eulerAngles = new Vector3(0, 270, 0);
+       // transform.eulerAngles = new Vector3(0, 270, 0);
         CheckIfBusted();
         teacherMad = true;
         //SoundManager.Instance.PlayTeacherAlerted();   LJUD KOMMER HÄR
         //Animation till arg
         yield return new WaitForSeconds(2f); //TeacherActiveTime, balansera
-        transform.eulerAngles = new Vector3(0, 90, 0);
+      //  transform.eulerAngles = new Vector3(0, 90, 0);
         teacherMad = false;
         Icon.sprite = IdleIcon;
         //Teacher alert icon away

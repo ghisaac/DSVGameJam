@@ -99,17 +99,25 @@ public class HHS_GameManager : MonoBehaviour {
         //Tilldela betyg
         //Visa Betyg
         //GO NEXT
-        //SortPlayersByPoints();
+        SortPlayersByPoints();
     }
 
     private void SortPlayersByPoints() {
 
+        List<HHS_Player> finalScore = new List<HHS_Player>();
+        finalScore.AddRange(activePlayers);
 
+        finalScore.Sort(delegate(HHS_Player a, HHS_Player b) 
+        { return (a.Points).CompareTo(b.Points);
+        });
+        finalScore.Reverse();
 
+        for (int i = 0; i < finalScore.Count; i++)
+        {
+            Debug.Log(finalScore[i].PlayerID + " , " + finalScore[i].Points);
+        }
 
-
-
-       // AwardPointsForTheGame(finalScore);
+        AwardPointsForTheGame(finalScore);
 
     }
 
