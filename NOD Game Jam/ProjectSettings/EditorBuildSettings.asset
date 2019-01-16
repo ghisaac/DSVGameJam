@@ -26,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/General/ScoreScreenScene.unity
     guid: 401bcb7111c2f554b86c3678f5ba1cee
-  - enabled: 1
-    path: Assets/GGR_Assets/Scenes/GGR_GeoGuessr.unity
-    guid: f29e12e9c011bb0438d4d4f288609840
   m_configObjects: {}
