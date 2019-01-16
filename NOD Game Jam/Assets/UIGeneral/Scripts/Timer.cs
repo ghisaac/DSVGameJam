@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     private bool running;
     private static Timer instance;
 
-    public static TextMeshProUGUI timer;
+    public TextMeshProUGUI timer;
 
     public void Awake()
     {
@@ -25,7 +25,11 @@ public class Timer : MonoBehaviour
     private void Update()
     {
         TimerValue -= Time.deltaTime;
-        timer.text = TimerValue.ToString("00.00");
+        if(TimerValue < -1)
+        {
+            TimerValue = DefaultLenght;
+        }
+        instance.timer.text = TimerValue.ToString("00.00");
     }
 
     public static void StartTimer(float Length = -1)
@@ -36,7 +40,7 @@ public class Timer : MonoBehaviour
 
     public static void Hide()
     {
-        timer.enabled = false;
+        instance.timer.enabled = false;
     }
 
     public static void Pause()
