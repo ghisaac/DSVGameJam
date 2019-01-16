@@ -17,12 +17,23 @@ namespace FIL
         private float amount;
         private float duration;
         private bool isRunning = false;
+        private float timeInTableZone = 3;
+
+        [SerializeField]
+        private float _drownSpeed = 0.005f;
+
+        private Vector3 _startPos;
+
+        private WaitForSeconds _waitForSeconds;
+
+        private bool isShaking = false;
 
         private void Start()
         {
             amount = shakeAmount;
             duration = shakeDuration;
             tableMesh = transform.GetChild(0).gameObject;
+            _startPos = transform.position;
         }
 
         private void Update()
@@ -36,14 +47,46 @@ namespace FIL
 
         public void ShakeTable()
         {
-            FIL_GameManager.instance.RemoveTableFromList(gameObject);
-            shakeAmount += amount;
-            startAmount = shakeAmount;
-            shakeDuration += duration;
-            startDuration = shakeDuration;
+            if (!isShaking)
+            {
+                isShaking = true;
+                FIL_GameManager.instance.RemoveTableFromList(gameObject);
+                shakeAmount += amount;
+                startAmount = shakeAmount;
+                shakeDuration += duration;
+                startDuration = shakeDuration;
 
-            if (!isRunning)
-                StartCoroutine(Shake());
+                if (!isRunning)
+                    StartCoroutine(Shake());
+            }
+        }
+
+        public void DrownTable(float wait)
+        {
+            Debug.Log("DrownTable()");
+            _waitForSeconds = new WaitForSeconds(wait);
+            StartCoroutine("Drown");
+        }
+
+        private IEnumerator Drown()
+        {
+            ShakeTable();
+            yield return _waitForSeconds;
+            while (true)
+            {
+                yield return new WaitForEndOfFrame();
+                Vector3 newPos = transform.position - new Vector3(0, _drownSpeed * Time.deltaTime, 0);
+                transform.position = newPos;
+
+                if (transform.position.y < -2f)
+                {
+                    break;
+                }
+            }
+            Instantiate(FIL_GameManager.instance._smokePrefab, _startPos, Quaternion.Euler(-90, 0, 0));
+            GameObject bubble = Instantiate(FIL_GameManager.instance._lavaBubblePrefab, _startPos, Quaternion.identity);
+            bubble.transform.localScale *= 2;
+            yield return new WaitForEndOfFrame();
         }
 
 
@@ -70,4 +113,6 @@ namespace FIL
         }
 
     }
+
+
 }

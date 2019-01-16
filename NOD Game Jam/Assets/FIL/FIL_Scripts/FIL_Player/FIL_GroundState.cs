@@ -18,6 +18,7 @@ public class FIL_GroundState : FIL_PlayerBaseState
         Move();
         Velocity += Vector3.down * 10 * Time.deltaTime;
         Collide();
+
         if (RewierdPlayer.GetButtonDown("A"))
         {
             Velocity += Vector3.up * JumpForce;
@@ -31,6 +32,7 @@ public class FIL_GroundState : FIL_PlayerBaseState
     private void Collide()
     {
         List<RaycastHit> allhits = PreventCollision();
+
         RaycastHit hit = CheckGround(allhits);
         if (hit.collider != null)
             controller.groundPlane = hit.normal;

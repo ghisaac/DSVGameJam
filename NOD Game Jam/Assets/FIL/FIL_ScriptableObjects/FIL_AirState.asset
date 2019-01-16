@@ -17,3 +17,5 @@ MonoBehaviour:
   MaxSpeed: 7
   Gravity: 60
   JumpForce: 19
+  maxJumps: 2
+  jumpsPreformed: 2

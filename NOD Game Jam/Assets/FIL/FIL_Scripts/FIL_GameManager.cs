@@ -18,8 +18,6 @@ namespace FIL
         [SerializeField]
         private Transform[] _spawns;
         [SerializeField]
-        private float _drownSpeed = 0.005f;
-        [SerializeField]
         private GameObject tables;
         [SerializeField] private float _tableDrownDelay = 2f;
         [SerializeField] 
@@ -32,8 +30,7 @@ namespace FIL
         [SerializeField]
         private GameObject playerPrefab;
         public GameObject _lavaBubblePrefab;
-        [SerializeField]
-        private GameObject _smokePrefab;
+        public GameObject _smokePrefab;
         private WaitForSeconds _waitForSeconds;
 
         public bool gameStarted = false;
@@ -102,28 +99,10 @@ namespace FIL
                 int random = UnityEngine.Random.Range(0, _tablesList.Count - 1);
                 GameObject table = _tablesList[random];
                 _tablesList.Remove(table);
-                Vector3 tablePos = table.transform.position;
-                table.GetComponent<FIL_TableShake>().ShakeTable();
-                
+                table.GetComponent<FIL_TableShake>().DrownTable(2f);
                 yield return _waitForSeconds;
-                Instantiate(_smokePrefab, tablePos, Quaternion.Euler(-90, 0, 0));
-
-                GameObject bubble = Instantiate(_lavaBubblePrefab, tablePos, Quaternion.identity);
-                bubble.transform.localScale *= 2;
-                while (true)
-                {
-                    yield return new WaitForEndOfFrame();
-                    Vector3 newPos = table.transform.position - new Vector3(0, _drownSpeed * Time.deltaTime, 0);
-                    table.transform.position = newPos;
-
-                    if (table.transform.position.y < -2f)
-                    {
-                        break;
-                    }
-                }
                 StartCoroutine("DrownTable");
             }
-
             else
             {
                 yield return new WaitForEndOfFrame();

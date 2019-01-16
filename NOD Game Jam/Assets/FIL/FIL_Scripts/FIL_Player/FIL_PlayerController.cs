@@ -16,6 +16,7 @@ public class FIL_PlayerController : MonoBehaviour
     public Vector3 groundPlane = Vector3.up;
 
     public int lives = 3;
+    public GameObject[] hearts;
 
     [Header("DEBUGGING")]
     public bool TestPlayer;
@@ -44,12 +45,14 @@ public class FIL_PlayerController : MonoBehaviour
     public void LoseLife()
     {
         lives--;
-        if(lives == 0)
+
+        if(lives < 0)
         {
             FIL_GameManager.instance.PlayerDeath(gameObject);
         }
         else
         {
+            hearts[lives].SetActive(false);
             FIL_GameManager.instance.RespawnPlayer(this);
         }
 
