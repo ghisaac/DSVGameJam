@@ -14,52 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioClips:
   - {fileID: 8300000, guid: 837e11982a3168a4fb1af60e94e0db28, type: 3}
-  Volume: 1
-  Pitch: 1
-  PitchVariance: 0.2
+  Volume: 0.2
+  Pitch: 0.2
+  PitchVariance: 0.05
   Loop: 0
   MinDistance: 0.3
   MaxDistance: 10
-  RolloffMode: 2
+  RolloffMode: 0
   CurveType: 0
   CustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1.0037537
-      inSlope: -5.860942
-      outSlope: -5.860942
-      tangentMode: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.06696041
-    - serializedVersion: 3
-      time: 0.11498185
-      value: 0.502022
-      inSlope: -2.1724918
-      outSlope: -2.1724918
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.25954136
-      outWeight: 0.07831017
-    - serializedVersion: 3
-      time: 0.36809337
-      value: 0.18827732
-      inSlope: -0.69942397
-      outSlope: -0.69942397
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.25557056
-      outWeight: 0.33333334
+      outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.003753662
-      inSlope: -0.12085306
-      outSlope: -0.12085306
-      tangentMode: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
       weightedMode: 0
-      inWeight: 0.29269886
+      inWeight: 0
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

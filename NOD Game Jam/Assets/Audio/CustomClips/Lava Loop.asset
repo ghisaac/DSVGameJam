@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Lava Loop
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: 837e11982a3168a4fb1af60e94e0db28, type: 3}
-  Volume: 0.25
-  Pitch: 0.2
-  PitchVariance: 0.05
+  - {fileID: 8300000, guid: c2ecf7602ae8b484182bbc532bb35315, type: 3}
+  Volume: 0.2
+  Pitch: 1
+  PitchVariance: 0
   Loop: 1
   MinDistance: 1
   MaxDistance: 10
@@ -24,7 +24,25 @@ MonoBehaviour:
   CurveType: 0
   CustomCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
