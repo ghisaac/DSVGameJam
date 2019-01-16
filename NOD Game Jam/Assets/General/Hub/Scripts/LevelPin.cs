@@ -6,9 +6,6 @@ using UnityEngine.UI;
 public class LevelPin : MonoBehaviour
 {
     public enum Level { FooBar, Cafeteria, L50, Entrance, GamesLab, L70 }
-
-    public GameObject nextTextObject;
-    public GameObject previousTextObject;
     public GameObject currentTextObject;
 
     [SerializeField]

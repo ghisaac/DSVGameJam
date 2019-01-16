@@ -14,21 +14,17 @@ public class HubManager : MonoBehaviour
     private bool waitingForConfirmation;
     private Image mapImage;
 
-
     [SerializeField] private AnimationCurve myCurve;
+    [SerializeField] private float highlightAnimationDuration;
     private Vector2 startPos, targetPos;
     private float highlightAnimationTimer;
-    [SerializeField] private float highlightAnimationDuration;
 
 
-    [SerializeField]
-    private GameObject confirmationPanel;
-    [SerializeField]
-    private GameObject map;
-    [SerializeField]
-    private GameObject textHighlighter;
-    [SerializeField]
-    private GameObject[] levelPins;
+    [SerializeField] private GameObject confirmationPanel;
+    [SerializeField] private GameObject map;
+    [SerializeField] private GameObject textHighlighter;
+    [SerializeField] private GameObject[] levelPins;
+    [SerializeField] private List<string> randomNames; 
 
     void Start()
     {
@@ -63,11 +59,13 @@ public class HubManager : MonoBehaviour
         HighlightAnimation(highlightAnimationTimer / highlightAnimationDuration);
 
     }
+
     private void HighlightAnimation(float factor)
     {
         Vector2 delta = targetPos - startPos;
         textHighlighter.transform.position = startPos + (delta * myCurve.Evaluate(factor));
     }
+
     private void HandleJoins()
     {
         foreach (Rewired.Player p in ReInput.players.AllPlayers)
@@ -76,7 +74,7 @@ public class HubManager : MonoBehaviour
             {
                 if (!Player.CheckIfPlayerExists(p.id))
                 {
-                    new Player(p.id, "Player " + p.id);
+                    new Player(p.id, AssignName());
                     Debug.Log("Player added: " + p.name);
                 }
             }
@@ -124,6 +122,8 @@ public class HubManager : MonoBehaviour
 
         if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
         {
+            if (Player.AllPlayers.Count < 2) { Debug.Log("Less than two players present"); return; }
+
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
@@ -145,6 +145,22 @@ public class HubManager : MonoBehaviour
     private void DehighlightLevel()
     {
         currentSelection.GetComponent<Image>().color = new Color(20, 20, 20);
+    }
+
+    private string AssignName()
+    {
+        int randomIndex = Random.Range(0, randomNames.Count);
+        string name = randomNames[randomIndex];
+
+        foreach (Player p in Player.AllPlayers)
+        {
+            if (name == p.Name)
+            {
+                name = AssignName();
+            }
+        }
+
+        return name;
     }
 
     private void ToggleConfirmationPanel()
