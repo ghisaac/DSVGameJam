@@ -93,7 +93,11 @@ public class KSR_RaceState : PlayerBaseState
 
     public float getHorizontalAxis()
     {
-        return RewierdPlayer.GetAxis("Horizontal");
+        return RewierdPlayer.GetAxis("RightHorizontal");
+    }
+    public float getVerticalAxis()
+    {
+        return RewierdPlayer.GetAxis("RightVertical");
     }
 
 }
