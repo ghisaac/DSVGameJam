@@ -1,13 +1,8 @@
 fileFormatVersion: 2
-guid: 85f2d3d3dc3a0c249a6d20f664680310
+guid: d3745b9e1e701c547bec86fe3e4ec4b6
 TextureImporter:
   fileIDToRecycleName:
-    21300000: LevelsText_0
-    21300002: LevelsText_1
-    21300004: LevelsText_2
-    21300006: LevelsText_3
-    21300008: LevelsText_4
-    21300010: LevelsText_5
+    21300000: portrait_simple_blue_0
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -37,7 +32,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: 2
     mipBias: -100
     wrapU: 1
@@ -51,7 +46,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1000
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,7 +64,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -80,7 +75,7 @@ TextureImporter:
     maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,121 +118,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LevelsText_0
+      name: portrait_simple_blue_0
       rect:
         serializedVersion: 2
-        x: 188
-        y: 1073
-        width: 500
-        height: 129
+        x: 41
+        y: 58
+        width: 722
+        height: 769
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f1057e588ab943c4099656be2bdb7280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelsText_1
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 911
-        width: 561
-        height: 123
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3820b4f49b9ed34ca31ffe48e8d0027
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelsText_2
-      rect:
-        serializedVersion: 2
-        x: 221
-        y: 729
-        width: 597
-        height: 116
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b3aa53267ab90446a54f0511404aef8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelsText_3
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 558
-        width: 530
-        height: 106
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2072a441448c8643800f1fa73efb098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelsText_4
-      rect:
-        serializedVersion: 2
-        x: 244
-        y: 363
-        width: 603
-        height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fac82517744250d4b89de7f0c36d7abe
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: LevelsText_5
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 213
-        width: 316
-        height: 105
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3121327233864f643b9268f1865ed4b9
+      spriteID: 966109d422e7e4e4cbaff402a3762984
       vertices: []
       indices: 
       edges: []
@@ -245,7 +140,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 2f8beb129730eee4887ae46917d98324
+    spriteID: 7125917768a62aa4c9858da8757e55ea
     vertices: []
     indices: 
     edges: []
