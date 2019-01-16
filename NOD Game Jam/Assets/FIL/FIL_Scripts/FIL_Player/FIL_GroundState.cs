@@ -24,6 +24,7 @@ public class FIL_GroundState : FIL_PlayerBaseState
             Velocity += Vector3.up * JumpForce;
             controller.animator.SetTrigger("Jump");
             StateMachine.TransitionToState<FIL_AirState>();
+            SoundManager.Instance.PlayPlayerJump();
         }
 
         transform.position += controller.Velocity * Time.deltaTime;
@@ -37,7 +38,9 @@ public class FIL_GroundState : FIL_PlayerBaseState
         if (hit.collider != null)
             controller.groundPlane = hit.normal;
         else
+        {
             StateMachine.TransitionToState<FIL_AirState>();
+        }
     }
 
     private RaycastHit CheckGround(List<RaycastHit> allhits)

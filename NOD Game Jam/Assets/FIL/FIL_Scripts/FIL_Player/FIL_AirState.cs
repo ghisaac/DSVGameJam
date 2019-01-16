@@ -39,6 +39,7 @@ public class FIL_AirState : FIL_PlayerBaseState
         {
             jumpsPreformed = 0;
             StateMachine.TransitionToState<FIL_GroundState>();
+            SoundManager.Instance.PlayerLand();
         }
     }
 

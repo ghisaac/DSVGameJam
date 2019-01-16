@@ -30,6 +30,7 @@ public class FIL_RandomLavaBubbles : MonoBehaviour
                     child.gameObject.SetActive(false);
                 }
                 particleEffectList.transform.GetChild(_currentIndex).gameObject.SetActive(true);
+                SoundManager.Instance.PlayPlayerLand();
             }
             else
             {
