@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Acceleration: 200
   Friction: 5
-  MaxSpeed: 6
+  MaxSpeed: 3
   JumpForce: 15
   ChairLayer:
     serializedVersion: 2

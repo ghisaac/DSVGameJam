@@ -130,6 +130,7 @@ public class HHS_Teacher : MonoBehaviour
     private void CheckIfBusted() {
         foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {
             bool bustedSomeone = false;
+            player.GetComponentInChildren<Animator>().SetBool("Raised Hand", false);
             if (player.GetComponent<PlayerController>().stateMachine.CurrentState is HHS_GroundState) {
                 player.GetComponentInChildren<Animator>().SetTrigger("Busted");
                 StartCoroutine(WaitForAnimationAndBust(1.5f, player));
