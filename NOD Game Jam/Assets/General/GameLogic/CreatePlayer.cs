@@ -11,15 +11,20 @@ public class CreatePlayer : MonoBehaviour
     [Tooltip("OLY USED FOR DEBBUGING, DUMMY!")]
     public bool DEBUGGING = false;
 
+    public static List<GameObject> allSpawnedPlayerControllers = new List<GameObject>();
+
     void Start()
     {
-        if(DEBUGGING)
+        if (DEBUGGING)
             Player.SpawnTestPlayers(4);
+        
+        allSpawnedPlayerControllers.Clear();
 
-        for(int i=0; i< AllPlayerPrefabs.Length;i++)
+        for(int i=0; i< Player.AllPlayers.Count;i++)
         {
             GameObject obj = Instantiate(AllPlayerPrefabs[Player.AllPlayers[i].RewierdId]);
             obj.SendMessage("CreatePlayerController", Player.AllPlayers[i]);
+            allSpawnedPlayerControllers.Add(obj);
         }
     }
 }
