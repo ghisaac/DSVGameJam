@@ -26,6 +26,7 @@ public class FIL_AirState : FIL_PlayerBaseState
             jumpsPreformed++;
             Velocity += Vector3.up * JumpForce;
             controller.animator.SetTrigger("Jump");
+            SoundManager.Instance.PlayPlayerJump();
         }
 
         transform.position += controller.Velocity * Time.deltaTime;
@@ -39,7 +40,7 @@ public class FIL_AirState : FIL_PlayerBaseState
         {
             jumpsPreformed = 0;
             StateMachine.TransitionToState<FIL_GroundState>();
-            SoundManager.Instance.PlayerLand();
+            SoundManager.Instance.PlayPlayerLand();
         }
     }
 

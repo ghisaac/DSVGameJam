@@ -18,7 +18,6 @@ namespace FIL
         public void StartTimer()
         {
             StartCountDown = true;
-            CountDownImage.gameObject.SetActive(true);
             time = TotalTime;
         }
 
@@ -39,23 +38,21 @@ namespace FIL
                 {
                     countdownsShown--;
                     CountDownImage.sprite = countdownSprites[0];
-                    SoundManager.Instance.PlayCountdown();
                     FIL_GameManager.instance.StartGameLoop();
                 }
                 else if (time < 1 && countdownsShown == 1)
                 {
                     countdownsShown--;
                     CountDownImage.sprite = countdownSprites[1];
-                    SoundManager.Instance.PlayCountdown();
                 }
                 else if (time < 2 && countdownsShown == 2)
                 {
                     countdownsShown--;
                     CountDownImage.sprite = countdownSprites[2];
-                    SoundManager.Instance.PlayCountdown();
                 }
                 else if (time < 3 && countdownsShown == 3)
                 {
+                    CountDownImage.gameObject.SetActive(true);
                     countdownsShown--;
                     CountDownImage.sprite = countdownSprites[3];
                     SoundManager.Instance.PlayCountdown();

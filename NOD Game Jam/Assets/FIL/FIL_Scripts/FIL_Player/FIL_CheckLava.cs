@@ -40,6 +40,7 @@ namespace FIL
                         Debug.Log("hit lava");
                         GameObject bubble = Instantiate(FIL_GameManager.instance._lavaBubblePrefab, transform.position, Quaternion.identity);
                         bubble.transform.localScale *= 2;
+                        SoundManager.Instance.PlayFallInLava();
                     }
                     else if (hit.collider.gameObject.layer == 9 && hit.collider.name == "Table")
                     {

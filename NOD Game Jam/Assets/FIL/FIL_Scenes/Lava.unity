@@ -5414,12 +5414,12 @@ GameObject:
   - component: {fileID: 618015111}
   - component: {fileID: 618015110}
   m_Layer: 5
-  m_Name: CountDownText
+  m_Name: CountdownImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &618015110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5429,31 +5429,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 618015109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 100
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
 --- !u!222 &618015111
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11596,7 +11591,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TotalTime: 3.3
-  CountDownText: {fileID: 618015110}
+  CountDownImage: {fileID: 618015110}
+  countdownSprites:
+  - {fileID: 21300000, guid: 0423981cb5b4f6541b78e227dc6955cf, type: 3}
+  - {fileID: 21300000, guid: ce9ca68e7639d8e4cb32afc597675292, type: 3}
+  - {fileID: 21300000, guid: cf529ecd7e4df8641ac9f2e89cd0525b, type: 3}
+  - {fileID: 21300000, guid: d9fed9065698d314b924f0569d649e6e, type: 3}
+  countdownsShown: 3
 --- !u!114 &1244540521
 MonoBehaviour:
   m_ObjectHideFlags: 0

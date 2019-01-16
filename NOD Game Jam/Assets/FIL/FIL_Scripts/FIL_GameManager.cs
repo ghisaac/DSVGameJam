@@ -68,6 +68,7 @@ namespace FIL
             _uI.StartTimer();
 
             SoundManager.Instance.PlayLavaLoop();
+            SoundManager.Instance.PlayBGM();
         }
 
 

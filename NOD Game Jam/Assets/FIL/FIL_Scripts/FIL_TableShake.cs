@@ -55,7 +55,7 @@ namespace FIL
                 startAmount = shakeAmount;
                 shakeDuration += duration;
                 startDuration = shakeDuration;
-
+                SoundManager.Instance.PlayTableShaking();
                 if (!isRunning)
                     StartCoroutine(Shake());
             }
