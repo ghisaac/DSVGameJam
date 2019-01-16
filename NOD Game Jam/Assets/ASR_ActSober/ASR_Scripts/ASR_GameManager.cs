@@ -79,13 +79,10 @@ public class ASR_GameManager : MonoBehaviour
         _characterPlacement.Add(character);
         _activeCharacters.Remove(character);
 
+        UIManager.SetPlacementGui(character, _activeCharacters.Count + 1);
 
         if (_activeCharacters.Count == 1){
-            UIManager.SetPlacementGui(character, 1);
             RoundFinished();
-        } else
-        {
-            UIManager.SetPlacementGui(character, _activeCharacters.Count + 1);
         }
     }
 
