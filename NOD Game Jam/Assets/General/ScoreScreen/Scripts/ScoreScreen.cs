@@ -71,7 +71,7 @@ public class ScoreScreen : MonoBehaviour
     {
         for(int i = 0; i < Player.AllPlayers.Count; i++)
         {
-            Player tempPlayer = Player.GetPlayerAtPlacement(i);
+            Player tempPlayer = Player.GetPlayerAtPlacement(Player.AllPlayers[i].RewierdId);
             playerScoreObjects[i].SetValues(tempPlayer, icons[tempPlayer.RewierdId]);
         }
         for(int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
