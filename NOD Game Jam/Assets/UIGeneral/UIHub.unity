@@ -704,7 +704,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 713181197}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283957754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1190,6 +1190,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.9433962
       objectReference: {fileID: 0}
+    - target: {fileID: 3077373540246108506, guid: 404ff20063603d545bcac47f76c2c89c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404ff20063603d545bcac47f76c2c89c, type: 3}
 --- !u!224 &713181198 stripped
@@ -1339,6 +1344,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.9433962
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077373540246108506, guid: 404ff20063603d545bcac47f76c2c89c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404ff20063603d545bcac47f76c2c89c, type: 3}
@@ -1671,7 +1681,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1028357291}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954482670}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -1817,6 +1827,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.8126029
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077373540246108506, guid: 404ff20063603d545bcac47f76c2c89c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404ff20063603d545bcac47f76c2c89c, type: 3}
@@ -2177,7 +2192,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 728087780}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1238780120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -2343,6 +2358,7 @@ GameObject:
   - component: {fileID: 1507013179}
   - component: {fileID: 1507013181}
   - component: {fileID: 1507013180}
+  - component: {fileID: 1507013182}
   m_Layer: 5
   m_Name: TimerWindow
   m_TagString: Untagged
@@ -2407,6 +2423,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1507013178}
   m_CullTransparentMesh: 0
+--- !u!114 &1507013182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507013178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56f40eb864971e34f8213536473ebde8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: {fileID: 1941315849}
 --- !u!1 &1616600555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3001,7 +3030,6 @@ GameObject:
   - component: {fileID: 1941315848}
   - component: {fileID: 1941315850}
   - component: {fileID: 1941315849}
-  - component: {fileID: 1941315851}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -3151,18 +3179,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941315847}
   m_CullTransparentMesh: 0
---- !u!114 &1941315851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1941315847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56f40eb864971e34f8213536473ebde8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2020737546
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,7 +3370,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 8624857947459128902}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2095854322612277228}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3496,6 +3512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.38581347
+      objectReference: {fileID: 0}
+    - target: {fileID: 3077373540246108506, guid: 404ff20063603d545bcac47f76c2c89c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 404ff20063603d545bcac47f76c2c89c, type: 3}
