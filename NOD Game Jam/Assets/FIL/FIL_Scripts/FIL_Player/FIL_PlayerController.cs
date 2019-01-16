@@ -32,6 +32,10 @@ public class FIL_PlayerController : MonoBehaviour
             myTestPlayerId = testPlayerIdCounter++;
     }
 
+    public void CreatePlayerController(Player player)
+    {
+        myPlayer = player;
+    }
 
     void Update()
     {
@@ -41,6 +45,8 @@ public class FIL_PlayerController : MonoBehaviour
     {
         stateMachine.FixedUpdate();
     }
+
+
 
     public void LoseLife()
     {

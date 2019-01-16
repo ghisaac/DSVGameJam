@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace FIL
 {
@@ -12,11 +13,9 @@ namespace FIL
         [SerializeField]
         private int[] _pointsPerPlacement;
         [SerializeField]
-        private List <GameObject> _placement = new List<GameObject>();
+        private List <Player> _placement = new List<Player>();
         [SerializeField]
         private GameObject[] _players;
-        [SerializeField]
-        private Transform[] _spawns;
         [SerializeField]
         private GameObject tables;
         [SerializeField] private float _tableDrownDelay = 2f;
@@ -33,10 +32,10 @@ namespace FIL
         public GameObject _smokePrefab;
         private WaitForSeconds _waitForSeconds;
 
-        public GameObject[] spritesInColorOrder;
+        public GameObject playerParent;
+        public GameObject playerUIParent;
 
         public bool gameStarted = false;
-        //blå, grön, röd, gul
 
         private void Awake()
         {
@@ -50,12 +49,12 @@ namespace FIL
 
             for (int i = 0; i < Player.AllPlayers.Count; i++)
             {
-                GameObject player = Instantiate(playerPrefab);
-                _players[i] = player;
-
-                _players[i].GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
-                _players[i].transform.position = _spawns[i].position;
-                //Sätt rätt färg på spelare / i UIt beroende på rewired ID
+                Player player = Player.AllPlayers[i];
+                FIL_PlayerController controller = playerParent.transform.GetChild(player.RewierdId).gameObject.GetComponent<FIL_PlayerController>();
+                controller.myPlayer = player;
+                controller.gameObject.SetActive(true);
+                _players[i] = controller.gameObject;
+                playerUIParent.transform.GetChild(player.RewierdId).gameObject.SetActive(true);
             }
  
             _tablesList = new List<GameObject>();
@@ -82,14 +81,6 @@ namespace FIL
             if(_placement.Count == _players.Length - 1)
             {
                 EndGame();
-            }
-
-            if (!gameStarted)
-            {
-                for (int i = 0; i < _players.Length; i++)
-                {
-                    _players[i].transform.position = _spawns[i].position;
-                }
             }
         }
 
@@ -128,10 +119,10 @@ namespace FIL
         {
             foreach (GameObject player in _players)
             {
-                if (!_placement.Contains(player))
+                Player myPlayer = player.GetComponent<FIL_PlayerController>().myPlayer;
+                if (!_placement.Contains(myPlayer))
                 {
-                    //add myPlayer, not the gameobject to placement list 
-                    _placement.Add(player);
+                    _placement.Add(myPlayer);
                 }
             }
         }
@@ -141,20 +132,19 @@ namespace FIL
 
             Debug.Log("GameEnded");
 
-            //Player.DistributePoints(_placements);
-            //load scoreboardscene
+            Player[] placementArray = _placement.ToArray();
 
-            for (int i = 0; i < _players.Length; i++)
-            {
-                //_placement[i].DistributePoints(_pointsPerPlacements[i]);
-            }
+            Player.DistributePoints(placementArray);
+            SceneManager.LoadScene("ScoreScreenScene");
+            
         }
 
         public void PlayerDeath(GameObject player)
         {
             player.SetActive(false);
-            _placement.Add(player);
-           
+            Player myPlayer = player.GetComponent<FIL_PlayerController>().myPlayer;
+            _placement.Add(myPlayer);
+
             if (_placement.Count == _players.Length - 1)
             {
                 EndGame();
