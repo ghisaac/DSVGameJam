@@ -156,6 +156,7 @@ public class Player
     {
         List<Player> tempPlayers = new List<Player>(AllPlayers);
         tempPlayers.OrderBy(x => x.Points);
+        tempPlayers.Reverse();
         return tempPlayers;
     }
 }
