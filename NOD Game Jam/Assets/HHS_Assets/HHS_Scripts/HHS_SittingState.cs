@@ -44,6 +44,7 @@ public class HHS_SittingState : PlayerBaseState
 
     public override void Exit() {
         base.Exit();
+        controller.GetComponentInChildren<SpriteRenderer>().enabled = false;
         controller.animator.SetBool("Raised Hand", false);
         controller.transform.position += new Vector3(-2, 0, 0); 
     }

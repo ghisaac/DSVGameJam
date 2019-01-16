@@ -147,15 +147,15 @@ public class HHS_GameManager : MonoBehaviour {
         roundTimer = RoundTime;
 
        // loopa på Player.AllPlayers.Count
-        for (int i = 0; i < playersInGame; i++)
+        for (int i = 0; i < CreatePlayer.allSpawnedPlayerControllers.Count; i++)
         {
             Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
-            GameObject newPlayer = Instantiate(playerPrefab, newPosition, Quaternion.identity);
-            //    newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
-            newPlayer.GetComponent<HHS_Player>().PlayerID = i;
-            newPlayer.GetComponent<HHS_Player>().Startposition = newPosition;
-            newPlayer.GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
-            activePlayers.Add(newPlayer.GetComponent<HHS_Player>());
+          
+            activePlayers.Add(CreatePlayer.allSpawnedPlayerControllers[i].GetComponent<HHS_Player>());
+            activePlayers[i].GetComponent<HHS_Player>().PlayerID = i;
+            activePlayers[i].GetComponent<HHS_Player>().Startposition = newPosition;
+            activePlayers[i].GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
+            
             PointsUI[i].gameObject.SetActive(true);
         }
         StartCoroutine(WaitForStartRound());
