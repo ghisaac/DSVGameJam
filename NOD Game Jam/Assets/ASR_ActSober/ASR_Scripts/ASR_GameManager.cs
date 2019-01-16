@@ -142,7 +142,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         ResetLists();
         _forceGenerator.ResetForce();
-        _roundCounter++;
+        //_roundCounter++;
 
         Debug.Log("StartRound");
 
@@ -177,7 +177,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         yield return ShowInstructions();
 
-        yield return UIManager.RoundCountdownTimer(_roundCounter);
+        yield return UIManager.RoundCountdownTimer(++_roundCounter);
 
         _forceGenerator.ActivateForceGenerator();
         StartGame();
@@ -192,7 +192,7 @@ public class ASR_GameManager : MonoBehaviour
 
         ResetPlayers();
 
-        yield return UIManager.RoundCountdownTimer(_roundCounter);
+        yield return UIManager.RoundCountdownTimer(++_roundCounter);
         StartGame();
     }
 
