@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rewired Input Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 1526715878425035779, guid: c037af8982f453c46b56e4aa31229132,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1526715878425035777, guid: c037af8982f453c46b56e4aa31229132,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3836,7 +3841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePlayers: []
-  playersInGame: 1
+  playersInGame: 2
   PointsUI:
   - {fileID: 1068241886}
   - {fileID: 1466296394}
@@ -3854,7 +3859,7 @@ MonoBehaviour:
   TimeUI: {fileID: 1951341339}
   RoundCountDownTimerUI: {fileID: 1252581862}
   waitForStartTimer: 3
-  MiniGameRounds: 2
+  MiniGameRounds: 1
   GoalChairs:
   - {fileID: 373307288}
   - {fileID: 901193339}

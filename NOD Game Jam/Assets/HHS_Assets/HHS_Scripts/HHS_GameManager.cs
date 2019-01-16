@@ -43,6 +43,7 @@ public class HHS_GameManager : MonoBehaviour {
         }
 
         instance = this;
+       // Player.SpawnTestPlayers(playersInGame);
     }
     private void Start() {
         InitializeGame();
@@ -98,34 +99,17 @@ public class HHS_GameManager : MonoBehaviour {
         //Tilldela betyg
         //Visa Betyg
         //GO NEXT
-        SortPlayersByPoints();
+        //SortPlayersByPoints();
     }
 
     private void SortPlayersByPoints() {
 
 
 
-        List<HHS_Player> scoreList = new List<HHS_Player>();
-        List<HHS_Player> startList = new List<HHS_Player>();
-        startList.AddRange(activePlayers);
 
 
-        while (startList.Count > 0) {
-            HHS_Player temp = null;
-            int highestpoints = 0;
-            foreach (HHS_Player player in activePlayers) {
 
-                if (player.Points > highestpoints) 
-                {
-                    highestpoints = player.Points;
-                    temp = player;
-                }
-             }
-            scoreList.Add(temp);
-            startList.Remove(temp);
-        }
-
-        AwardPointsForTheGame(scoreList);
+       // AwardPointsForTheGame(finalScore);
 
     }
 
@@ -153,11 +137,12 @@ public class HHS_GameManager : MonoBehaviour {
         //Sätt dem på nån position och få dem att komma ihåg sin startposition.
         roundTimer = RoundTime;
 
-        //loopa på Player.AllPlayers.Count
-        for (int i = 0; i < playersInGame; i++) {
+       // loopa på Player.AllPlayers.Count
+        for (int i = 0; i < playersInGame; i++)
+        {
             Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
             GameObject newPlayer = Instantiate(playerPrefab, newPosition, Quaternion.identity);
-            // newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
+            //    newPlayer.GetComponent<PlayerController>().myPlayer = Player.AllPlayers[i];
             newPlayer.GetComponent<HHS_Player>().PlayerID = i;
             newPlayer.GetComponent<HHS_Player>().Startposition = newPosition;
             newPlayer.GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
