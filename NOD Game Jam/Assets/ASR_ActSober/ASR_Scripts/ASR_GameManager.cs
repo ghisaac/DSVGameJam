@@ -49,8 +49,9 @@ public class ASR_GameManager : MonoBehaviour
         {
             for (int i = 0; i < 4; i++)
             {
-                GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
+                GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
+                Debug.Log(character);
                 _allCharacters.Add(character);
                 character.Initialize();
             }
@@ -59,7 +60,7 @@ public class ASR_GameManager : MonoBehaviour
         {
             for (int i = 0; i < Player.AllPlayers.Count; i++)
             {
-                GameObject instance = Instantiate(PlayerPrefab, StartPositionTransforms[i].position, Quaternion.identity);
+                GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
                 _allCharacters.Add(character);
                 character.Player = Player.AllPlayers[i];

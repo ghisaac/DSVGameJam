@@ -26,7 +26,7 @@ public class ASR_CharacterController : MonoBehaviour
 
     public int Score = 0;
     
-    public TextMeshProUGUI ScoreUI;
+    //public TextMeshProUGUI ScoreUI;
 
     [Header("DEBUGGING")]
     public bool UseKeyboard;
@@ -66,6 +66,8 @@ public class ASR_CharacterController : MonoBehaviour
         } else {
             _horizontal = Rewired.ReInput.players.GetPlayer(0).GetAxisRaw("Horizontal");
         }
+
+        //_horizontal = Player.Input.GetAxisRaw("Horizontal");
 
         //Vector3 direction = -transform.right * _horizontal;
         //_rigidbody.AddForce(direction * Force * _inputModifier, ForceMode.Acceleration);

@@ -13,6 +13,8 @@ public class ASR_UIManager : MonoBehaviour
     private Dictionary<ASR_CharacterController, TextMeshProUGUI> _scoreGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
     private Dictionary<ASR_CharacterController, TextMeshProUGUI> _placementGUIDictionary = new Dictionary<ASR_CharacterController, TextMeshProUGUI>();
 
+    public GameObject[] Portraits;
+
     public void FillUpDictionarys(ASR_CharacterController[] characterControllerList)
     {
         for(int i = 0; i < characterControllerList.Length; i++)
