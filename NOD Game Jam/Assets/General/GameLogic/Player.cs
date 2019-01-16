@@ -8,6 +8,8 @@ public class Player
     public int Points { get; private set; }
     public string Name { get; private set; }
     public Color PlayerColor { get; private set; }
+
+    public int LocalScore { get; set; }
     public int LocalPlacement;
     private Color[] colors = { Color.red, Color.blue, Color.green, Color.yellow };
 
