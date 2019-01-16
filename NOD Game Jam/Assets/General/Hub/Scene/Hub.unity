@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4423,10 +4423,71 @@ MonoBehaviour:
   - {fileID: 1303473814}
   - {fileID: 175718165}
   randomNames:
-  - Voldemort
-  - Harry
-  - Hermoine
-  - Ronald
+  - OgDaddy
+  - Daddy
+  - Papa
+  - Pippi
+  - Scidadle
+  - KushComax
+  - Frenchie
+  - Bubben
+  - MrDamon
+  - MrSnek
+  - Oldman
+  - Beardman
+  - Bavern
+  - Minken
+  - MrD
+  - Jimmy
+  - DanDan
+  - Steffe
+  - Moonmoon
+  - ElonMusk
+  - Naminaja
+  - HarryB
+  - Voldemor
+  - Rand
+  - CppTenta
+  - CVass
+  - NootNoot
+  - TufftJu
+  - Armadillo
+  - Hamster
+  - Frog
+  - BuzzLee
+  - IveGotAS
+  - Snek
+  - BootSnek
+  - BigDaddy
+  - LilDaddy
+  - BabyMama
+  - BigMama
+  - LilMama
+  - OgMama
+  - MidDad
+  - ThicMama
+  - ThiccDad
+  - Horasio
+  - Jesus
+  - Darius
+  - Hamilton
+  - AxolotlN
+  - Zelda
+  - Woody
+  - Captain
+  - Peanut
+  - Special
+  - RoseBud
+  - AltarBoi
+  - RanVespa
+  - OgAG
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
+  - TBA
 --- !u!114 &2095854322612277229
 MonoBehaviour:
   m_ObjectHideFlags: 0
