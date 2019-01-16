@@ -68,24 +68,24 @@ public class SoundManager : MonoBehaviour
     }
 
     //GENERAL
-    public void PlayPlayerRun(GameObject sourceOfSound)
+    public void PlayPlayerRun()
     {
-        AudioPlayer.Instance.Play3DSound(PlayerRun, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(PlayerRun);
     }
-    public void PlayPlayerLand(GameObject sourceOfSound)
+    public void PlayPlayerLand()
     {
-        AudioPlayer.Instance.Play3DSound(PlayerLand, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(PlayerLand);
     }
-    public void PlayPlayerJump(GameObject sourceOfSound) {
-        AudioPlayer.Instance.Play3DSound(PlayerJump, sourceOfSound);
+    public void PlayPlayerJump() {
+        AudioPlayer.Instance.Play2DSound(PlayerJump);
     }
-    public void PlayCollidePlayer(GameObject sourceOfSound)
+    public void PlayCollidePlayer()
     {
-        AudioPlayer.Instance.Play3DSound(CollidePlayer, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(CollidePlayer);
     }
-    public void PlayCollideTerrain(GameObject sourceOfSound)
+    public void PlayCollideTerrain()
     {
-        AudioPlayer.Instance.Play3DSound(CollideTerrain, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(CollideTerrain);
     }
     public void PlayRoundStart()
     {
@@ -102,21 +102,21 @@ public class SoundManager : MonoBehaviour
 
 
     //FLOOR IS LAVA
-    public void PlayTableMelting(GameObject sourceOfSound)
+    public void PlayTableMelting()
     {
-        AudioPlayer.Instance.Play3DSound(TableMelting, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TableMelting);
     }
-    public void PlayTableShaking(GameObject sourceOfSound)
+    public void PlayTableShaking()
     {
-        AudioPlayer.Instance.Play3DSound(TableShaking, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TableShaking);
     }
     public void PlayLavaLoop()
     {
         AudioPlayer.Instance.Play2DSound(LavaSFX);
     }
-    public void PlayFallInLava(GameObject sourceOfSound)
+    public void PlayFallInLava()
     {
-        AudioPlayer.Instance.Play3DSound(FallInLava, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(FallInLava);
     }
 
     //KAFFEKOPP STACKING
@@ -134,17 +134,17 @@ public class SoundManager : MonoBehaviour
     }
 
     //KONTORSTOLSRACING
-    public void PlaySpeedUp(GameObject sourceOfSound)
+    public void PlaySpeedUp()
     {
-        AudioPlayer.Instance.Play3DSound(TapFeet, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(TapFeet);
     }
-    public void PlayBoost(GameObject sourceOfSound)
+    public void PlayBoost()
     {
-        AudioPlayer.Instance.Play3DSound(SpeedBoost, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(SpeedBoost);
     }
-    public void PlayChairRolling(GameObject sourceOfSound)
+    public void PlayChairRolling()
     {
-        AudioPlayer.Instance.Play3DSound(ChairRoll, sourceOfSound);
+        AudioPlayer.Instance.Play2DSound(ChairRoll);
     }
     public void PlayCountdown()
     {
