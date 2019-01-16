@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: 1113235567f75e047a36d60068ee3f59
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bigger_Cylinder
+    100002: Box_Over_Door
+    100004: Connecting_Stick
+    100006: Cylinder_Stick
+    100008: Door_Flap
+    100010: Dorr
+    100012: //RootNode
+    100014: Handle
+    100016: Handle1
+    100018: Hinge_1
+    100020: Hinge_2
+    100022: Hinge_3
+    100024: Hinge_4
+    100026: Silver_Plate
+    100028: Silver_Plate1
+    100030: Thing_a_ma_bob
+    400000: Bigger_Cylinder
+    400002: Box_Over_Door
+    400004: Connecting_Stick
+    400006: Cylinder_Stick
+    400008: Door_Flap
+    400010: Dorr
+    400012: //RootNode
+    400014: Handle
+    400016: Handle1
+    400018: Hinge_1
+    400020: Hinge_2
+    400022: Hinge_3
+    400024: Hinge_4
+    400026: Silver_Plate
+    400028: Silver_Plate1
+    400030: Thing_a_ma_bob
+    2100000: Door_Material
+    2300000: Bigger_Cylinder
+    2300002: Box_Over_Door
+    2300004: Connecting_Stick
+    2300006: Cylinder_Stick
+    2300008: Door_Flap
+    2300010: Dorr
+    2300012: Handle
+    2300014: Handle1
+    2300016: Hinge_1
+    2300018: Hinge_2
+    2300020: Hinge_3
+    2300022: Hinge_4
+    2300024: Silver_Plate
+    2300026: Silver_Plate1
+    2300028: Thing_a_ma_bob
+    3300000: Bigger_Cylinder
+    3300002: Box_Over_Door
+    3300004: Connecting_Stick
+    3300006: Cylinder_Stick
+    3300008: Door_Flap
+    3300010: Dorr
+    3300012: Handle
+    3300014: Handle1
+    3300016: Hinge_1
+    3300018: Hinge_2
+    3300020: Hinge_3
+    3300022: Hinge_4
+    3300024: Silver_Plate
+    3300026: Silver_Plate1
+    3300028: Thing_a_ma_bob
+    4300000: Dorr
+    4300002: Silver_Plate
+    4300004: Handle
+    4300006: Hinge_1
+    4300008: Hinge_2
+    4300010: Hinge_3
+    4300012: Hinge_4
+    4300014: Silver_Plate1
+    4300016: Box_Over_Door
+    4300018: Cylinder_Stick
+    4300020: Bigger_Cylinder
+    4300022: Door_Flap
+    4300024: Connecting_Stick
+    4300026: Thing_a_ma_bob
+    4300028: Handle1
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
