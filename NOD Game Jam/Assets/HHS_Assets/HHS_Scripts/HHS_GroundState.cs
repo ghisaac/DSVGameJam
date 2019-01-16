@@ -22,6 +22,20 @@ public class HHS_GroundState : PlayerBaseState {
         }
 
         transform.position += controller.Velocity * Time.deltaTime;
+        AnimationUpdate();
+    }
+
+    private void AnimationUpdate()
+    {
+        Vector3 newlookDirection = Vector3.ProjectOnPlane(controller.Velocity, controller.groundPlane);
+        Vector3 lookDirection = Vector3.zero;
+        if (newlookDirection.magnitude > 1f)
+            lookDirection = newlookDirection;
+        Debug.Log(lookDirection);
+        Quaternion wantToLook = Quaternion.LookRotation(lookDirection, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, wantToLook, 0.1f);
+        controller.animator.SetFloat("Velocity", Mathf.Clamp01(lookDirection.magnitude / MaxSpeed));
+        controller.animator.SetBool("Airborne", controller.stateMachine.CurrentState == controller.stateMachine.GetState<AirState>());
     }
 
     private void Collide() {

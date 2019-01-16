@@ -8,6 +8,7 @@ public class HHS_Player : MonoBehaviour
     public LayerMask Chairlayer;
     public int Points;
     private GameObject goal;
+    private Animator animator; 
     [HideInInspector]
     public SpriteRenderer goalindicator;
 
@@ -24,6 +25,7 @@ public class HHS_Player : MonoBehaviour
     }
 
     public void Bust() {
+        
         ResetPosition();
         //Animation
         //Ljud
@@ -68,6 +70,7 @@ public class HHS_Player : MonoBehaviour
 
     private void Start() {
         Startposition = transform.position;
+        animator = GetComponent<Animator>();
     }
 
 
