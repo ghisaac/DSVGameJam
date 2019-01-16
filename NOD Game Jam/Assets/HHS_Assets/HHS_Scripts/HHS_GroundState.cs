@@ -34,7 +34,7 @@ public class HHS_GroundState : PlayerBaseState {
         Debug.Log(lookDirection);
         Quaternion wantToLook = Quaternion.LookRotation(lookDirection, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, wantToLook, 0.1f);
-        controller.animator.SetFloat("Velocity", Mathf.Clamp01(lookDirection.magnitude / MaxSpeed));
+        controller.animator.SetFloat("Velocity", Mathf.Clamp(lookDirection.magnitude / MaxSpeed, 0, 0.8f));
         controller.animator.SetBool("Airborne", controller.stateMachine.CurrentState == controller.stateMachine.GetState<AirState>());
     }
 
