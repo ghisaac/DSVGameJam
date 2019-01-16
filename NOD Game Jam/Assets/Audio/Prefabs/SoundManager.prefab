@@ -56,11 +56,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17915901367da034caebc2e208ce4678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BackgroundMusic: {fileID: 0}
   ButtonHover: {fileID: 11400000, guid: 556ed161b9f5fa4448d0d6374984a1d1, type: 2}
   ButtonPress: {fileID: 11400000, guid: 435bd5956f7957743b02f10acfa12f44, type: 2}
   GameSelect: {fileID: 11400000, guid: a96b4a70eefbe614197b4b455c940500, type: 2}
+  ChainSwoop: {fileID: 11400000, guid: 741fe21b8fc68ce468df6b1c4768dd28, type: 2}
+  ScrollSweep: {fileID: 11400000, guid: e544f2200f62477408e7212305002a15, type: 2}
   PlayerLand: {fileID: 11400000, guid: 26b62a11d65f3124db1f26288a889de0, type: 2}
   PlayerRun: {fileID: 11400000, guid: 6ac8b47be1508004ea55e31c12f8bb3f, type: 2}
+  PlayerJump: {fileID: 11400000, guid: fdb6516a9a6b4f24b8cc3f2850120390, type: 2}
   CollidePlayer: {fileID: 11400000, guid: 1dce51b3cb4fd2044a05f8f529761099, type: 2}
   CollideTerrain: {fileID: 11400000, guid: 996ba4fc364515043bea2dbac76b59c1, type: 2}
   RoundStart: {fileID: 11400000, guid: 3123c21340175c64e8b0eafaf4849423, type: 2}

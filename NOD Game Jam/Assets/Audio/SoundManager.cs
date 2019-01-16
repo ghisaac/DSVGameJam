@@ -5,12 +5,13 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance = null;
+    public CustomClip BackgroundMusic;
     [Header("UI")]
     public CustomClip ButtonHover;
-    public CustomClip ButtonPress, GameSelect;
+    public CustomClip ButtonPress, GameSelect, ChainSwoop, ScrollSweep;
     [Header("General")]
     public CustomClip PlayerLand;
-    public CustomClip PlayerRun, CollidePlayer, CollideTerrain, RoundStart, GainPoints, TickTock, VictorySound;
+    public CustomClip PlayerRun, PlayerJump, CollidePlayer, CollideTerrain, RoundStart, GainPoints, TickTock, VictorySound;
     [Header("Floor is Lava")]
     public CustomClip TableMelting;
     public CustomClip TableShaking, LavaSFX, FallInLava;
@@ -19,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public CustomClip CupImpact, CoffeeSplash;
     [Header("Kontorstols-racing")]
     public CustomClip TapFeet;
-    public CustomClip SpeedBoost, ChairRoll, Countdown, Groan;
+    public CustomClip SpeedBoost, ChairRoll, Countdown;
     [Header("Hela Havet Sneakar")]
     public CustomClip TeacherIdle;
     public CustomClip TeacherAlerted, StudentAskHelp, StudentDemandHelp, DuckFromSight, SitDown, Caught;
@@ -41,6 +42,11 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    //BGM
+    public void PlayBGM() {
+        AudioPlayer.Instance.Play2DSound(BackgroundMusic);
+    }
+
     //UI
     public void PlayButtonHover()
     {
@@ -54,6 +60,12 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(GameSelect);
     }
+    public void PlayChainSwoop() {
+        AudioPlayer.Instance.Play2DSound(ChainSwoop);
+    }
+    public void PlayScrollSweep() {
+        AudioPlayer.Instance.Play2DSound(ScrollSweep);
+    }
 
     //GENERAL
     public void PlayPlayerRun(GameObject sourceOfSound)
@@ -63,6 +75,9 @@ public class SoundManager : MonoBehaviour
     public void PlayPlayerLand(GameObject sourceOfSound)
     {
         AudioPlayer.Instance.Play3DSound(PlayerLand, sourceOfSound);
+    }
+    public void PlayPlayerJump(GameObject sourceOfSound) {
+        AudioPlayer.Instance.Play3DSound(PlayerJump, sourceOfSound);
     }
     public void PlayCollidePlayer(GameObject sourceOfSound)
     {
@@ -134,10 +149,6 @@ public class SoundManager : MonoBehaviour
     public void PlayCountdown()
     {
         AudioPlayer.Instance.Play2DSound(Countdown);
-    }
-    public void PlayGroan()
-    {
-        AudioPlayer.Instance.Play2DSound(Groan);
     }
 
     //HELA HAVET SNEAKAR
