@@ -47,8 +47,10 @@ public class ASR_GameManager : MonoBehaviour
 
     private void InitializePlayers()
     {
+        Player.SpawnTestPlayers(2);
         if (SpawnFourPlayers)
         {
+
             for (int i = 0; i < 4; i++)
             {
                 GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
@@ -109,11 +111,17 @@ public class ASR_GameManager : MonoBehaviour
         UpdateScoreInUI();
 
         if (_roundCounter == AmountOfRounds){
-            CalculateWinner();
+            GameFinished();
         } else {
             StartCoroutine(RestartGame());
         }
 
+    }
+
+    private void GameFinished()
+    {
+        CalculateWinner();
+        StartCoroutine(GameOverFeedback());
     }
 
     private void UpdateScoreInUI()
@@ -190,6 +198,13 @@ public class ASR_GameManager : MonoBehaviour
     {
         // Uppdatera poäng eller nått
         yield return new WaitForSeconds(1f);
+    }
+
+    private IEnumerator GameOverFeedback()
+    {
+        yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.RewierdId);
+
+        // Ladda scen
     }
 
     private IEnumerator ActivateGame()

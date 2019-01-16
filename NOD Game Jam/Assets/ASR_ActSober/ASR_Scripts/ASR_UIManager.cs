@@ -19,8 +19,8 @@ public class ASR_UIManager : MonoBehaviour
     {
         for(int i = 0; i < characterControllerList.Length; i++)
         {
-            _scoreGUIDictionary.Add(characterControllerList[i], PlayerScoreGUIs[i]);
-            _placementGUIDictionary.Add(characterControllerList[i], PlayerPlacementGuis[i]);
+            _scoreGUIDictionary.Add(characterControllerList[i], PlayerScoreGUIs[characterControllerList[i].Player.RewierdId]);
+            _placementGUIDictionary.Add(characterControllerList[i], PlayerPlacementGuis[characterControllerList[i].Player.RewierdId]);
 
             SetScoreGuiActive(characterControllerList[i]);
         }
@@ -39,6 +39,7 @@ public class ASR_UIManager : MonoBehaviour
 
     public void SetScoreGuiActive(ASR_CharacterController characterController)
     {
+        Portraits[characterController.Player.RewierdId].SetActive(true);
         _scoreGUIDictionary[characterController].gameObject.SetActive(true);
     }
 
