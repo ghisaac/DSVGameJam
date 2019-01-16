@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Lava Loop
   m_EditorClassIdentifier: 
   AudioClips:
-  - {fileID: 8300000, guid: 837e11982a3168a4fb1af60e94e0db28, type: 3}
-  Volume: 0.25
-  Pitch: 0.2
-  PitchVariance: 0.05
+  - {fileID: 8300000, guid: c2ecf7602ae8b484182bbc532bb35315, type: 3}
+  Volume: 0.2
+  Pitch: 1
+  PitchVariance: 0
   Loop: 1
   MinDistance: 1
   MaxDistance: 10

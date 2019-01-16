@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Drunk Idle
   m_EditorClassIdentifier: 
   AudioClips: []
-  Volume: 1
+  Volume: 0.2
   Pitch: 1
   PitchVariance: 0
   Loop: 0

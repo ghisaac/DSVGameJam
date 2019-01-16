@@ -9,24 +9,9 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/General/Hub/Scene/TempTest.unity
-    guid: 2ac0c7911a63ee549a01c18a861c1110
-  - enabled: 1
-    path: Assets/General/Hub/Scene/LoadTest1.1.unity
-    guid: 7c86f20080eef7644ad85288caf25a2e
-  - enabled: 1
-    path: Assets/General/Hub/Scene/LoadTest1.2.unity
-    guid: f918a010ddee01c479a42c6c45f14b06
-  - enabled: 1
-    path: Assets/General/Hub/Scene/LoadTest1.3.unity
-    guid: f662f832a378d1e449fa098907a0ac2f
-  - enabled: 1
     path: Assets/General/Hub/Scene/Hub.unity
     guid: 3021727eae355a84c9ad9a8d235f9552
   - enabled: 1
     path: Assets/General/ScoreScreenScene.unity
     guid: 401bcb7111c2f554b86c3678f5ba1cee
-  - enabled: 1
-    path: Assets/GGR_Assets/Scenes/GGR_GeoGuessr.unity
-    guid: f29e12e9c011bb0438d4d4f288609840
   m_configObjects: {}
