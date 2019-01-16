@@ -119,11 +119,20 @@ public class HHS_Teacher : MonoBehaviour
         Icon.sprite = sprite;
     }
 
+    public IEnumerator WaitForAnimationAndBust(float waitTime, HHS_Player player)
+    {
+
+        yield return new WaitForSeconds(waitTime);
+        player.Bust();
+    }
+
+
     private void CheckIfBusted() {
         foreach(HHS_Player player in HHS_GameManager.instance.activePlayers) {
             bool bustedSomeone = false;
             if (player.GetComponent<PlayerController>().stateMachine.CurrentState is HHS_GroundState) {
-                player.Bust();
+                player.GetComponentInChildren<Animator>().SetTrigger("Busted");
+                StartCoroutine(WaitForAnimationAndBust(1.5f, player));
                 Icon.sprite = BustIcon;
                 bustedSomeone = true;
                
