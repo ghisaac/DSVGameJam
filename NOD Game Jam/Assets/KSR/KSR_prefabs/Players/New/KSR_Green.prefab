@@ -64,7 +64,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1207959607
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -361,6 +361,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particles_Speedboost
       objectReference: {fileID: 0}
+    - target: {fileID: 7823732558701076470, guid: ae297559c1263324a863707eabdce8ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 4623997475184220, guid: ae297559c1263324a863707eabdce8ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -405,6 +410,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5566332913431450884, guid: ae297559c1263324a863707eabdce8ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae297559c1263324a863707eabdce8ae, type: 3}
 --- !u!4 &1408484021972515865 stripped
@@ -423,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 1673023106636703, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
       propertyPath: m_Name
       value: FireworksPrefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1673023106636703, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4430849814699647, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
       propertyPath: m_LocalPosition.x
@@ -467,6 +481,18 @@ PrefabInstance:
     - target: {fileID: 4430849814699647, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1286568291744801, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549795053762703, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744845644620153, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
@@ -680,6 +706,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KSR_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592322270107480720, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
         type: 3}

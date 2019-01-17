@@ -65,7 +65,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 671088695
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -274,6 +274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireworksPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 1673023106636703, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4430849814699647, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -318,6 +322,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1286568291744801, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1549795053762703, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744845644620153, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 408984d1c9da005429ed75543fcb6477, type: 3}
 --- !u!4 &1847539028492119952 stripped
@@ -333,6 +349,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9147850266412728538}
     m_Modifications:
+    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 289706871624048776}
+    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9179162180784041665, guid: ea6162733265f42448b29a14d47e9fdc,
         type: 3}
       propertyPath: m_Name
@@ -443,16 +469,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 289706871624048776}
-    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9179162180784041667, guid: ea6162733265f42448b29a14d47e9fdc,
         type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -512,6 +528,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particles_Speedboost
       objectReference: {fileID: 0}
+    - target: {fileID: 7823732558701076470, guid: ae297559c1263324a863707eabdce8ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     - target: {fileID: 4623997475184220, guid: ae297559c1263324a863707eabdce8ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -556,6 +577,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5566332913431450884, guid: ae297559c1263324a863707eabdce8ae,
+        type: 3}
+      propertyPath: m_Layer
+      value: 29
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae297559c1263324a863707eabdce8ae, type: 3}
 --- !u!4 &7341301039033028361 stripped
@@ -575,6 +601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: KSR_Blue
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592322270107480720, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1592322270107578032, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
         type: 3}

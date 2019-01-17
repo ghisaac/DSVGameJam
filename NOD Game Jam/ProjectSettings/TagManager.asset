@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Wall
+  - Checkpoint
+  - Cup
   layers:
   - Default
   - TransparentFX
@@ -33,10 +36,10 @@ TagManager:
   - 
   - 
   - UIMarkers
-  - 
-  - 
-  - 
-  - 
+  - RedCamera
+  - BlueCamera
+  - GreenCamera
+  - YellowCamera
   m_SortingLayers:
   - name: Default
     uniqueID: 0

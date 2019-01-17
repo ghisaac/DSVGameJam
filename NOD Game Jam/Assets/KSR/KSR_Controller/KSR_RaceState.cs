@@ -106,7 +106,8 @@ public class KSR_RaceState : PlayerBaseState
     {
         if (RewierdPlayer.GetButtonDown("LT"))
         {
-            _rb.AddForce(transform.right * -dashSpeed);
+            //_rb.AddForce(transform.right * -dashSpeed);
+            Boost();
         }
 
         if (RewierdPlayer.GetButtonDown("RT"))
@@ -119,7 +120,8 @@ public class KSR_RaceState : PlayerBaseState
     public void Boost()
     {
         _rb.AddForce(transform.forward  * boostSpeed);
-
+        controller.gameObject.transform.GetChild(2).gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+        SoundManager.Instance.PlayBoost();
     }
 
     public float GetHorizontalAxis()
