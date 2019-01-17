@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc9ce2464c710e4dbd87275336ffcbd, type: 3}
   m_Name: Round
   m_EditorClassIdentifier: Assembly-CSharp:GGR:GGR_RunGame/GGR_Round
-  roundTime: 25
+  roundTime: 20
