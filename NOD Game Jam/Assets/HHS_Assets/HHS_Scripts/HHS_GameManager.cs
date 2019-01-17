@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HHS_GameManager : MonoBehaviour {
 
@@ -103,6 +104,7 @@ public class HHS_GameManager : MonoBehaviour {
         //Visa Betyg
         //GO NEXT
         SortPlayersByPoints();
+        SceneManager.LoadScene("ScoreScreenScene");
     }
 
     private void SortPlayersByPoints() {
