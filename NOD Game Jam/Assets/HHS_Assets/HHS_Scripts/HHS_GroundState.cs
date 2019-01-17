@@ -54,7 +54,7 @@ public class HHS_GroundState : PlayerBaseState {
     }
 
     private void Move() {
-        Vector3 rawInput = new Vector3(RewierdPlayer.GetAxis("Horizontal"), 0f, RewierdPlayer.GetAxis("Vertical"));
+        Vector3 rawInput = new Vector3(RewierdPlayer.GetAxis("Vertical"), 0f, -RewierdPlayer.GetAxis("Horizontal"));
         Vector3 movement = Vector3.ProjectOnPlane(rawInput, controller.groundPlane).normalized;
 
         controller.Velocity += movement * Acceleration * Time.deltaTime;
@@ -71,7 +71,7 @@ public class HHS_GroundState : PlayerBaseState {
            
 
     private void CheckForNearbyChair() {
-        Collider[] colliderhits = Physics.OverlapSphere(transform.position, 2f, ChairLayer);
+        Collider[] colliderhits = Physics.OverlapSphere(transform.position, 0.5f, ChairLayer);
         float closestDistance = 9000f;
         if (colliderhits.Length > 0) {
             Collider chosenChair = null;
@@ -82,7 +82,7 @@ public class HHS_GroundState : PlayerBaseState {
                 }
             }
             //Kör animation
-            transform.position = new Vector3(chosenChair.gameObject.transform.position.x + 1, transform.position.y, chosenChair.gameObject.transform.position.z);
+            transform.position = new Vector3(chosenChair.gameObject.transform.position.x, transform.position.y, chosenChair.gameObject.transform.position.z);
             //transform.rotation = new Quaternion(
             //Rotera?
             //Kolla mot målstol
