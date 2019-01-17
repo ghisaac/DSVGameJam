@@ -109,12 +109,14 @@ public class KSR_RaceManager : MonoBehaviour
             }
             j++;
         }
+
+        SoundManager.Instance.PlayCountdown();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= 4)
+        if (Time.time >= 3 && Time.time <= raceTime)
         {
             if (!raceStarted)
             {
@@ -140,10 +142,17 @@ public class KSR_RaceManager : MonoBehaviour
         {
             if (racer != null)
             {
-                //           racer.GetComponent<KSR_Controller>().enabled = false;
+                racer.GetComponent<PlayerController>().enabled = false;
             }
         }
 
+        List<Player> points = new List<Player>();
+        foreach (KSR_Racer racer in result)
+        {
+            points.Add(racer.player);
+        }
+
+        //Player.DistributePoints(points[0], points[1], points[2], points[3]);
 
         Debug.Log("Race Over!");
         raceStarted = false;
@@ -154,7 +163,6 @@ public class KSR_RaceManager : MonoBehaviour
         foreach (KSR_Racer racer in racers)
         {
             racer.GetComponent<PlayerController>().enabled = true;
-            //racer.GetComponent<Rigidbody>().useGravity = true;
         }
         StartTime();
         raceStarted = true;

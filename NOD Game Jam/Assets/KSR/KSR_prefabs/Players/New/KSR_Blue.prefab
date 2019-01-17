@@ -362,16 +362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9147850266412728538}
     m_Modifications:
-    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 289706871624048776}
-    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9179162180784041665, guid: ea6162733265f42448b29a14d47e9fdc,
         type: 3}
       propertyPath: m_Name
@@ -481,6 +471,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 289706871624048776}
+    - target: {fileID: 9179162180784041668, guid: ea6162733265f42448b29a14d47e9fdc,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9179162180784041667, guid: ea6162733265f42448b29a14d47e9fdc,
         type: 3}
@@ -620,6 +620,41 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 289706871624048776}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: playerCanvas
+      value: 
+      objectReference: {fileID: 4553096401496797097}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: placementText
+      value: 
+      objectReference: {fileID: 3255366651946083456}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: lapText
+      value: 
+      objectReference: {fileID: 3255366651284002471}
+    - target: {fileID: 3332586693415049751, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855741713182755059, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 1592322270107578032, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -674,36 +709,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 289706871624048776}
-    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: playerCanvas
-      value: 
-      objectReference: {fileID: 4553096401496797097}
-    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: placementText
-      value: 
-      objectReference: {fileID: 3255366651946083456}
-    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: lapText
-      value: 
-      objectReference: {fileID: 3255366651284002471}
-    - target: {fileID: 1855741713182755059, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 4925114133189784812, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
         type: 3}

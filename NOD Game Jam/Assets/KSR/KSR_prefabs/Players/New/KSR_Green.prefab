@@ -200,6 +200,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: P3 Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1074667142975761257, guid: f310c9f74d7546448b1226092369fece,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2243227202229690235}
+    - target: {fileID: 1074667142975761257, guid: f310c9f74d7546448b1226092369fece,
+        type: 3}
+      propertyPath: m_PlaneDistance
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1074667142975761258, guid: f310c9f74d7546448b1226092369fece,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -304,16 +314,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1074667142975761257, guid: f310c9f74d7546448b1226092369fece,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 2243227202229690235}
-    - target: {fileID: 1074667142975761257, guid: f310c9f74d7546448b1226092369fece,
-        type: 3}
-      propertyPath: m_PlaneDistance
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1074667142975761256, guid: f310c9f74d7546448b1226092369fece,
         type: 3}
@@ -660,6 +660,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1592322270107480720, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_Name
+      value: KSR_Green
+      objectReference: {fileID: 0}
+    - target: {fileID: 1592322270107480720, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 2243227202229690235}
+    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: playerCanvas
+      value: 
+      objectReference: {fileID: 881773143561192777}
+    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: placementText
+      value: 
+      objectReference: {fileID: 6855309235373358695}
+    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: lapText
+      value: 
+      objectReference: {fileID: 6855309236288326720}
+    - target: {fileID: 3332586693415049751, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1855741713182755059, guid: 401d6cf7ada216140852788c8b769be3,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 84
+      objectReference: {fileID: 0}
     - target: {fileID: 1592322270107578032, guid: 401d6cf7ada216140852788c8b769be3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -714,46 +759,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1592322270107480720, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: m_Name
-      value: KSR_Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 1592322270107480720, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: playerCamera
-      value: 
-      objectReference: {fileID: 2243227202229690235}
-    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: playerCanvas
-      value: 
-      objectReference: {fileID: 881773143561192777}
-    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: placementText
-      value: 
-      objectReference: {fileID: 6855309235373358695}
-    - target: {fileID: 8250954849525002015, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: lapText
-      value: 
-      objectReference: {fileID: 6855309236288326720}
-    - target: {fileID: 1855741713182755059, guid: 401d6cf7ada216140852788c8b769be3,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 84
       objectReference: {fileID: 0}
     - target: {fileID: 6168578315543837643, guid: 401d6cf7ada216140852788c8b769be3,
         type: 3}
