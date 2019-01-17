@@ -43,7 +43,7 @@ public class HHS_SittingState : PlayerBaseState
         controller.animator.SetFloat("Velocity", 0);
 
             
-      //  SoundManager.Instance.PlaySitDown();  
+      SoundManager.Instance.PlaySitDown();  
     }
 
     public override void Exit() {

@@ -49,7 +49,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
     private void Start() {
         InitializeGame();
-     //   SoundManager.Instance.PlayBGM();
+        SoundManager.Instance.PlayBGM();
     }
 
     private void AssignRandomChairs() {
@@ -86,7 +86,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
 
     private void EndRound() {
-        //Showpoints? LeaderBoard?
+        //Showpoints? LeaderBoard?   
         --MiniGameRounds;
         foreach (HHS_Player player in activePlayers) {
             player.GetComponent<PlayerController>().stateMachine.TransitionToState<HHS_FrozenState>();

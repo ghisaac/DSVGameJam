@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8667296233131400206}
   m_Layer: 4
-  m_Name: Chair
+  m_Name: HHS_ChairAnimated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.8198822, y: 1.609406, z: 0.8579012}
+  m_Size: {x: 0.5, y: 1.609406, z: 0.5}
   m_Center: {x: 0, y: 0.8055414, z: 0.0045773387}
 --- !u!95 &8667296233748603037
 Animator:
@@ -228,6 +228,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.60000074
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478207422695550221, guid: 55071157a7d6f5d45ad36dad5aa7f0c7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478207422695550221, guid: 55071157a7d6f5d45ad36dad5aa7f0c7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55071157a7d6f5d45ad36dad5aa7f0c7, type: 3}

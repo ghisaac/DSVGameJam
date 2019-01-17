@@ -1435,7 +1435,7 @@ MonoBehaviour:
   - {fileID: 1594331591}
   - {fileID: 1734440121}
   - {fileID: 912393767}
-  RoundTime: 60
+  RoundTime: 35
   TimeUI: {fileID: 943013816}
   RoundCountDownTimerUI: {fileID: 943013811}
   waitForStartTimer: 3
@@ -1547,6 +1547,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8667296233748603034, guid: 8fad76ba7e233d54f96933ce008959f5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8fad76ba7e233d54f96933ce008959f5, type: 3}
 --- !u!4 &226511419 stripped
@@ -1620,6 +1625,11 @@ PrefabInstance:
     - target: {fileID: 8667296233131400206, guid: 8fad76ba7e233d54f96933ce008959f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667296233748603034, guid: 8fad76ba7e233d54f96933ce008959f5,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3206,6 +3216,11 @@ PrefabInstance:
     - target: {fileID: 8667296233131400206, guid: 8fad76ba7e233d54f96933ce008959f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667296233748603034, guid: 8fad76ba7e233d54f96933ce008959f5,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -8546,6 +8561,11 @@ PrefabInstance:
     - target: {fileID: 8667296233131400206, guid: 8fad76ba7e233d54f96933ce008959f5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8667296233748603034, guid: 8fad76ba7e233d54f96933ce008959f5,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -13909,7 +13929,7 @@ PrefabInstance:
     - target: {fileID: 2095854322612277228, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024564352592206058, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
@@ -14521,7 +14541,7 @@ PrefabInstance:
     - target: {fileID: 2095854322612277228, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024564352592206058, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
@@ -14749,7 +14769,7 @@ PrefabInstance:
     - target: {fileID: 2095854322612277228, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024564352592206058, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
@@ -15487,7 +15507,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -479, y: 41}
+  m_AnchoredPosition: {x: -462.87, y: 41}
   m_SizeDelta: {x: 79.69, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1438865516213832323
@@ -16216,7 +16236,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -118, y: 36}
+  m_AnchoredPosition: {x: -107.4, y: 36}
   m_SizeDelta: {x: 79.69, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1438865516613948775
@@ -20273,7 +20293,7 @@ PrefabInstance:
     - target: {fileID: 2095854322612277228, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4024564352592206058, guid: 404ff20063603d545bcac47f76c2c89c,
         type: 3}
@@ -21701,8 +21721,8 @@ MonoBehaviour:
   - {fileID: 3901450614923665307}
   - {fileID: 3901450615536167258}
   - {fileID: 3901450613525604146}
-  MinStudentActivateTime: 3
-  MaxStudentActivateTime: 6
+  MinStudentActivateTime: 4
+  MaxStudentActivateTime: 8
   Icon: {fileID: 8865988896401743670}
   IdleIcon: {fileID: 21300000, guid: c39ed828bb5c0d8459a6a4c1cd19cae8, type: 3}
   AlertIcon: {fileID: 21300000, guid: dfc7fc509223f3a4c889e052a87e4c94, type: 3}
@@ -21808,8 +21828,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8865988896401743668}
   m_LocalRotation: {x: 0.3535534, y: 0.61237246, z: -0.3535534, w: 0.61237246}
-  m_LocalPosition: {x: -0.62, y: 2.58, z: -0.52}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.19999997}
+  m_LocalPosition: {x: -0.76, y: 3, z: -0.3}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 0.19999997}
   m_Children: []
   m_Father: {fileID: 8865988896230304499}
   m_RootOrder: 0
@@ -21856,7 +21876,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 20.48, y: 20.48}
+  m_Size: {x: 4.76, y: 2.42}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
