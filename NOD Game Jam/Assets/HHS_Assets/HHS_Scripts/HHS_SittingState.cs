@@ -32,9 +32,7 @@ public class HHS_SittingState : PlayerBaseState
             else {
                 Debug.Log("CANT RAISE IT!");
             }
-
         }
-
     }
 
     public override void Enter() {

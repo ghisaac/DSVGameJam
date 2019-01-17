@@ -63,13 +63,15 @@ public class ASR_CharacterController : MonoBehaviour
 
     private void Move()
     {
+        /*
         if (UseKeyboard){
             _horizontal = Input.GetAxisRaw("Horizontal");
         } else {
             _horizontal = Rewired.ReInput.players.GetPlayer(0).GetAxisRaw("Horizontal");
         }
+        */
 
-        //_horizontal = Player.Input.GetAxisRaw("Horizontal");
+        _horizontal = Player.Input.GetAxisRaw("Horizontal");
 
         //Vector3 direction = -transform.right * _horizontal;
         //_rigidbody.AddForce(direction * Force * _inputModifier, ForceMode.Acceleration);
