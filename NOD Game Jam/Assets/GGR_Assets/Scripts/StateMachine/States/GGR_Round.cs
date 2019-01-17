@@ -12,6 +12,7 @@ namespace GGR
 
         public override void Enter()
         {
+            Timer.StartTimer();
             currentTime = roundTime;
             GGR_GameData.UnfreezeAllPlayers();
         }

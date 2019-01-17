@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp:GGR:GGR_RunGame/GGR_PostRound
   lineRendererPrefab: {fileID: 6384826722139545572, guid: 15d994471f026b740a016ec83cec079c,
     type: 3}
-  drawSpeed: 30
+  drawSpeed: 17

@@ -10,6 +10,7 @@ public class GGR_GameData : MonoBehaviour
     public List<Transform> spawnPositions = new List<Transform>();
     public List<Transform> boardPictureSlots;
     public Transform instructionNoteTransform;
+    public GameObject splashScreen;
 
     public static GGR_GameData instance { get; private set; }
     private List<GGR_Location> allLocations = new List<GGR_Location>();
@@ -87,9 +88,16 @@ public class GGR_GameData : MonoBehaviour
     public static void GivePlayerScore(Player player, float score)
     {
         if (instance.scoreBoard.ContainsKey(player))
+        {
             instance.scoreBoard[player] += score;
+            player.LocalScore = Mathf.RoundToInt(instance.scoreBoard[player]);
+        }
         else
+        {
             instance.scoreBoard.Add(player, score);
+            player.LocalScore = Mathf.RoundToInt(instance.scoreBoard[player]);
+        }
+         
     }
 
     public static float GetPlayerScore(Player player)

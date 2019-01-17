@@ -71,6 +71,9 @@ namespace GGR
             for(int i = 0; i < playerPaths.Keys.Count; i++)
             {
                 lineRenderers.Add(ObjectPool.Instantiate(lineRendererPrefab.gameObject).GetComponent<LineRenderer>());
+                lineRenderers[i].material = Instantiate(lineRenderers[i].material);
+                lineRenderers[i].material.color = playerPaths.Keys.ToList()[i].PlayerColor;
+
             }
 
             List<Player> playerList = playerPaths.Keys.ToList();
@@ -107,8 +110,8 @@ namespace GGR
                 lr.positionCount = 0;
                 ObjectPool.Destroy(lr.gameObject);
            }
-            Debug.Log("donwdrawing");
-           callback();
+            callback();
+       
 
         }
 
