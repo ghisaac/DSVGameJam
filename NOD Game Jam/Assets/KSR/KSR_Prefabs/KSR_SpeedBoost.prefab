@@ -1,48 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!136 &606795933
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654226091490219865}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.2
-  m_Height: 0.5
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.071896486, z: 0}
---- !u!114 &606795932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654226091490219865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8827c032d5548aa4890f76b7e2b28d1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationAngle: 10
-  rotationSpeed: 50
-  hoverSpeed: 5
-  hoverHeight: 0.02
---- !u!114 &606795934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3654226091490219865}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064a1d33e2292af49b30ee77d4b145dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawnTime: 2
 --- !u!1001 &3949169881568954575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 322058301412728726, guid: c893116d00437b041bebf958b2544ac9,
         type: 3}
       propertyPath: m_Name
-      value: SpeedBoost
+      value: KSR_SpeedBoost
       objectReference: {fileID: 0}
     - target: {fileID: 3470668733612253052, guid: c893116d00437b041bebf958b2544ac9,
         type: 3}
@@ -63,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 3470668733612253052, guid: c893116d00437b041bebf958b2544ac9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3470668733612253052, guid: c893116d00437b041bebf958b2544ac9,
         type: 3}
@@ -112,9 +69,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c893116d00437b041bebf958b2544ac9, type: 3}
---- !u!1 &3654226091490219865 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 322058301412728726, guid: c893116d00437b041bebf958b2544ac9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3949169881568954575}
-  m_PrefabAsset: {fileID: 0}

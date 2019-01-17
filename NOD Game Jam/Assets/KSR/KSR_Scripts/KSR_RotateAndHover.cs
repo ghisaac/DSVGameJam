@@ -11,10 +11,12 @@ public class KSR_RotateAndHover : MonoBehaviour
     public float hoverSpeed;
     public float hoverHeight;
 
+    public Vector3 offset;
 
     void Awake()
     {
         transform.Rotate(new Vector3(rotationAngle, 0f, 0f));
+        transform.position += offset;
     }
 
 
