@@ -11,6 +11,8 @@ public class HHS_Player : MonoBehaviour
     private Animator animator; 
     [HideInInspector]
     public GameObject goalindicator;
+    [HideInInspector]
+    public GameObject chair;
 
     public int PlayerID;
 

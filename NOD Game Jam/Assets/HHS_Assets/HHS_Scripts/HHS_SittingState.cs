@@ -41,7 +41,7 @@ public class HHS_SittingState : PlayerBaseState
         base.Enter();
         Velocity = Vector3.zero;
         controller.animator.SetFloat("Velocity", 0);
-        //SoundManager.Instance.PlaySitDown();  LJUD HÄR
+        SoundManager.Instance.PlaySitDown();  
     }
 
     public override void Exit() {

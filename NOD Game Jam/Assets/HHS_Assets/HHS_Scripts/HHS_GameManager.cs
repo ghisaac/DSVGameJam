@@ -48,6 +48,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
     private void Start() {
         InitializeGame();
+        SoundManager.Instance.PlayBGM();
     }
 
     private void AssignRandomChairs() {
