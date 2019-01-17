@@ -15,7 +15,7 @@ public class HHS_GameManager : MonoBehaviour {
 
 
     public Transform[] startPosition;
-    public SpriteRenderer[] goalIndicators;
+    public GameObject[] goalIndicators;
 
 
     [Header("UI")]
