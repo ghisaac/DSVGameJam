@@ -14,7 +14,7 @@ public class FIL_RandomLavaBubbles : MonoBehaviour
         _randomNumber = Random.Range(0.0f, 2.0f);
     }
 
-    // Update is called once per frame
+    // går igenom en lista med partikel effekter och aktiverar de. Får det att se ut som att det slumpas fram bubblor etc. i lavan, men är determenistiskt.
     void Update()
     {
         _timer += Time.deltaTime;
