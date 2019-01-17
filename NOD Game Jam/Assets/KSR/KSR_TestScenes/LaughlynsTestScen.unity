@@ -413,7 +413,7 @@ PrefabInstance:
     - target: {fileID: 410591254580978365, guid: 7ffc881432b1d9f4da694eef48599c9e,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 410591254580978362, guid: 7ffc881432b1d9f4da694eef48599c9e,
         type: 3}
@@ -469,6 +469,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410591254673602916, guid: 7ffc881432b1d9f4da694eef48599c9e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 410591255850011703, guid: 7ffc881432b1d9f4da694eef48599c9e,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 134217729
+      objectReference: {fileID: 0}
+    - target: {fileID: 410591255850011703, guid: 7ffc881432b1d9f4da694eef48599c9e,
+        type: 3}
+      propertyPath: orthographic size
+      value: 235
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ffc881432b1d9f4da694eef48599c9e, type: 3}
