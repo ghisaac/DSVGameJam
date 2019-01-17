@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Hanterar ett events i detta fall körse ett event när spelarna trycker på A - Micke
 public class CFT_EventManager : MonoBehaviour
 {
     public delegate void ClickAction_Player1();

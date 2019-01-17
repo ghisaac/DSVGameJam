@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// En klass som Skapar spelarna - Micke
 public class CFT_PlayerManager : MonoBehaviour
 {
     public GameObject playerPreFab;

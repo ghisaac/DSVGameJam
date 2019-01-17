@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Johan Huvudansvarig
 public class CFT_CupController : MonoBehaviour
 {
     public int playerID;
@@ -29,10 +30,11 @@ public class CFT_CupController : MonoBehaviour
     public void Init(int ID)
     {
         playerID = ID;
-        playerColor = Player.AllPlayers[playerID].PlayerColor;
+        playerColor = Player.GetPlayerByRewindID(playerID).PlayerColor;
         SubcribeToClickEvent();
     }
 
+    // Premunerar på ett event beroende på spelare - Micke
     private void SubcribeToClickEvent()
     {
         switch (playerID)
@@ -51,6 +53,8 @@ public class CFT_CupController : MonoBehaviour
                 break;
         }
     }
+
+    // Avpremunerar på ett event beroende på spelare - Micke
     private void OnDisable()
     {
         switch (playerID)

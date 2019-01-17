@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Hanterar Spelar inputs - Micke
 public class CFT_InputHandler : MonoBehaviour
 {
     [SerializeField]
@@ -15,6 +16,6 @@ public class CFT_InputHandler : MonoBehaviour
 
     public bool IsButtonAPressedPro(int ID)
     {
-        return Player.AllPlayers[ID].Input.GetButtonDown(_aButtonProduction);
+        return Player.GetPlayerByRewindID(ID).Input.GetButtonDown(_aButtonProduction);
     }
 }

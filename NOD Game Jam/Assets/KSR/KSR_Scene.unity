@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -222,7 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 48301060}
-  - component: {fileID: 48301061}
   - component: {fileID: 48301059}
   m_Layer: 0
   m_Name: RaceManager
@@ -312,24 +311,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 38.032, z: 0}
---- !u!114 &48301061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 48301058}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dd4b1ea9083a424f89e9ec4ee82d24d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AllPlayerPrefabs:
-  - {fileID: 9206102636149115177, guid: acce0115a56ab564f85be360a6e8cfb8, type: 3}
-  - {fileID: 9147850266412440826, guid: 94a56ae7f0462e2478fd9e18eedfbb1f, type: 3}
-  - {fileID: 7740216644302596683, guid: dde7c6c8981886140b809e29c1f00c30, type: 3}
-  - {fileID: 1960204449422283036, guid: 304dcc1f58a2d70418cbb43fe8e49add, type: 3}
-  DEBUGGING: 0
 --- !u!1001 &140084778
 PrefabInstance:
   m_ObjectHideFlags: 0

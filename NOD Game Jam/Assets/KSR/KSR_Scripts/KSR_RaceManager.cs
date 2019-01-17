@@ -142,7 +142,7 @@ public class KSR_RaceManager : MonoBehaviour
         {
             if (racer != null)
             {
-                racer.GetComponent<PlayerController>().enabled = false;
+                //racer.GetComponent<PlayerController>().enabled = false;
             }
         }
 
@@ -160,10 +160,10 @@ public class KSR_RaceManager : MonoBehaviour
 
     void StartRace()
     {
-        foreach (KSR_Racer racer in racers)
-        {
-            racer.GetComponent<PlayerController>().enabled = true;
-        }
+        //foreach (KSR_Racer racer in racers)
+        //{
+        //    //racer.GetComponent<PlayerController>().enabled = true;
+        //}
         StartTime();
         raceStarted = true;
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// En klass som samlar poäng och delar ut poäng för spelet, Micke Patric
 public class CFT_WinnerData
 {
     public List<CFT_RoundData> rounds;
@@ -14,12 +15,14 @@ public class CFT_WinnerData
         player = new List<CFT_PlayerData>();
     }
 
+    // Hämtar en vinnare
     public int GetWinner()
     {
         player.Sort(new SortByScoreDecending());
         return player[0].Id;
     }
 
+    // Sätter Ger spelarna sin plasering i spelet.
     public void SetPlayerAllOverPlacement()
     {
         List<int> placement = new List<int>();
@@ -44,7 +47,7 @@ public class CFT_WinnerData
         }
     }
 
-
+    //Ger poäng till spelarna beroende på runda
     public void SetRoundScore(int round)
     {
         foreach (KeyValuePair<int, int[]> _playerAndScore in rounds[round].placements)
@@ -67,7 +70,7 @@ public class CFT_WinnerData
             }
         }
     }
-
+    //Adderar poäng
     private void AddPoints(int[] ids,int point)
     {
         foreach(int id in ids)
@@ -76,7 +79,13 @@ public class CFT_WinnerData
             CFT_PlayerData p = new CFT_PlayerData(id);
             if (player.Contains(p))
             {
-                player[id].Score += point;
+                foreach(CFT_PlayerData pl in player)
+                {
+                    if(pl.Id == p.Id)
+                    {
+                        pl.Score += point;
+                    }
+                }
             }
             else
             {
@@ -86,6 +95,7 @@ public class CFT_WinnerData
         }
     }
 
+    // Egen sotering Klass Som soterar med spelar data på poäng.
     private class SortByScoreDecending : IComparer<CFT_PlayerData>
     {
         public int Compare(CFT_PlayerData x, CFT_PlayerData y)

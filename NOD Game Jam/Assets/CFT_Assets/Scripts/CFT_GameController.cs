@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+
+// Patric Huvudansvarig,  Micke delprogrammerare
 public class CFT_GameController : MonoBehaviour
 {
     //Enum för game state
@@ -89,6 +91,7 @@ public class CFT_GameController : MonoBehaviour
         UpdateUI();  
     }
 
+    // Spelets Loop - Patric
     private void GameLoop()
     {
         switch(_gameState)
@@ -110,7 +113,7 @@ public class CFT_GameController : MonoBehaviour
                 break;
         }
     }
-
+    // Metoder för represive Game States - Patric Micke
     #region GameStateInit
     private void GameStateInit()
     {
@@ -231,7 +234,7 @@ public class CFT_GameController : MonoBehaviour
     }
     #endregion
 
-
+    // Sätter sätter kamrornas storlek och position baserat på antelat spelare - Patric
     private void SetCameraViewport()
     {     
         for (int i = 0; i < _cameras.Count; i++)
@@ -240,22 +243,7 @@ public class CFT_GameController : MonoBehaviour
             _cameraOffset += (1.0f / _cameras.Count);
         } 
     }
-
-    private void InitializePlayer()
-    {
-        for (int i = 0; i < _numberOfPlayers; i++)
-        {
-            GameObject bg = Instantiate(_boardGame, _playerSpawnPoint[i].transform.position, Quaternion.Euler(0, 0, 0), _playerSpawnPoint[i].transform);
-            bg.GetComponentInChildren<CFT_CupController>().Init(i);
-            CFT_CupController _cup = bg.GetComponentInChildren<CFT_CupController>();
-            _gameBoards.Add(_cup);
-            Camera go = bg.GetComponentInChildren<Camera>();
-            _cameras.Add(go);
-            Text pName = Instantiate(PlayerName, PlayerNameDisplayBord.transform);
-            pName.text = "Player" + (i + 1);
-        }
-    }
-
+    // Skapar skapare spelarenas spelplan - Patric, Micke
     private void InitializePlayerProduction()
     {
         for (int i = 0; i < _numberOfPlayers; i++)
@@ -271,6 +259,7 @@ public class CFT_GameController : MonoBehaviour
         }
     }
 
+    // Hanterar UI - Patric
     private void UpdateUI()
     {
         if (_gameState == GameState.init)
@@ -298,6 +287,7 @@ public class CFT_GameController : MonoBehaviour
         }       
     }
 
+    //Hämtar rund vinnarna -  Patric, Micke
     private string RoundWinner()
     {
         string winner = null;
@@ -318,6 +308,7 @@ public class CFT_GameController : MonoBehaviour
         }
         return winner;
     }
+
 
     private void DisplayName(bool v)
     {
