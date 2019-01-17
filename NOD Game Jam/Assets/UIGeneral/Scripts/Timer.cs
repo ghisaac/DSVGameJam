@@ -18,15 +18,16 @@ public class Timer : MonoBehaviour
             instance = this;
         }
 
-        //StartTimer(30);
     }
 
     private void Update()
     {
+        if (!running)
+            return;
         TimerValue -= Time.deltaTime;
-        if(TimerValue < -1)
+        if(TimerValue < 0)
         {
-            TimerValue = DefaultLenght;
+            Pause();
         }
         instance.timer.text = TimerValue.ToString("00.00");
     }
