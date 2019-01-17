@@ -599,9 +599,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stateMachine:
     states:
+    - {fileID: 11400000, guid: 031ed5ac8a3d0f4409cd4107f1db4404, type: 2}
     - {fileID: 11400000, guid: a38dfac02629d814e9d28a266a347529, type: 2}
     - {fileID: 11400000, guid: d22899b9ebec48143b138d1b7955d731, type: 2}
-    - {fileID: 11400000, guid: 031ed5ac8a3d0f4409cd4107f1db4404, type: 2}
     - {fileID: 11400000, guid: 1a4e87ddcd991e6478e60fff9a235f5d, type: 2}
     - {fileID: 11400000, guid: d03646b70a5a91743aff1cc28bf987d9, type: 2}
     firstStateIsDefault: 1

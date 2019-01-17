@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
   m_Name: Sit Down
   m_EditorClassIdentifier: 
-  AudioClips: []
-  Volume: 0.2
+  AudioClips:
+  - {fileID: 8300000, guid: 977a5180dd6ba764f81dbe715204c1ff, type: 3}
+  Volume: 0.1
   Pitch: 1
   PitchVariance: 0
   Loop: 0
