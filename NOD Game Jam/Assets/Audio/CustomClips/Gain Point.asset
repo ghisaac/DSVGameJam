@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eabe7b57e7882343bcc073ee4db356f, type: 3}
   m_Name: Gain Point
   m_EditorClassIdentifier: 
-  AudioClips: []
-  Volume: 0.2
+  AudioClips:
+  - {fileID: 8300000, guid: d5158ecfb8e8da5418087612be5c6848, type: 3}
+  Volume: 0.6
   Pitch: 1
-  PitchVariance: 0
+  PitchVariance: 0.05
   Loop: 0
   MinDistance: 1
   MaxDistance: 10
