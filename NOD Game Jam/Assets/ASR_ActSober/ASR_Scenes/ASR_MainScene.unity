@@ -7014,6 +7014,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3120324293551576131, guid: ffe340d8a9c1dd0439df6034360865b5,
+        type: 3}
+      propertyPath: BackgroundMusic
+      value: 
+      objectReference: {fileID: 11400000, guid: b7964b3699cab6d42be660fa4ce5665c,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ffe340d8a9c1dd0439df6034360865b5, type: 3}
 --- !u!1001 &1726383328
