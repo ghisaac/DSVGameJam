@@ -12,6 +12,7 @@ namespace GGR
     {
         public LineRenderer lineRendererPrefab;
         public float drawSpeed;
+        public ParticleSystem confetti;
         private GGR_Location goalLocation;
         private Dictionary<Player, Vector3[]> playerPaths;
         private bool postRoundDone = false;
@@ -26,6 +27,7 @@ namespace GGR
             goalLocation = GGR_GameData.DequeueCurrentLocation();
             GGR_GameData.FreezeAllPlayers();
             SetAllPlayerPaths();
+            GGR_GameData.instance.timesUp.SetActive(true);
             foreach (Player player in playerPaths.Keys)
             {
                 float score = GGR_Helper.GetPathLength(playerPaths[player]);
@@ -61,8 +63,20 @@ namespace GGR
 
         private void ZoomDone()
         {
-            //poff fyverkerier
+            GGR_GameData.instance.StartCoroutine(ConfettiCloud());
             GGR_GameData.instance.StartCoroutine(DrawPaths(() => postRoundDone = true));
+            GGR_GameData.instance.timesUp.SetActive(false);
+        }
+
+        private IEnumerator ConfettiCloud()
+        {
+            ParticleSystem particles = ObjectPool.Instantiate(confetti.gameObject, goalLocation.position).GetComponent<ParticleSystem>();
+            particles.Play();
+            SoundManager.Instance.PlayVictorySound();
+            while (particles.IsAlive())
+                yield return null;
+
+            ObjectPool.Destroy(particles.gameObject);
         }
 
         private IEnumerator DrawPaths(Action callback)
@@ -71,13 +85,15 @@ namespace GGR
             for(int i = 0; i < playerPaths.Keys.Count; i++)
             {
                 lineRenderers.Add(ObjectPool.Instantiate(lineRendererPrefab.gameObject).GetComponent<LineRenderer>());
+                lineRenderers[i].material = Instantiate(lineRenderers[i].material);
+                lineRenderers[i].material.color = playerPaths.Keys.ToList()[i].PlayerColor;
+
             }
 
             List<Player> playerList = playerPaths.Keys.ToList();
             float currentTime = 0;
             while(currentTime < GetMaxPathDistance()/drawSpeed)
             {
-                Debug.Log("drawing");
                 for(int i = 0; i < lineRenderers.Count; i++)
                 {
                     int corners = 0;
@@ -101,14 +117,13 @@ namespace GGR
             }
 
             yield return new WaitForSeconds(5);
-            ShowScore();
            foreach(LineRenderer lr in lineRenderers)
            {
                 lr.positionCount = 0;
                 ObjectPool.Destroy(lr.gameObject);
            }
-            Debug.Log("donwdrawing");
-           callback();
+            callback();
+       
 
         }
 
@@ -120,18 +135,7 @@ namespace GGR
                 if (distance > maxDistance)
                     maxDistance = distance;
             }
-            Debug.Log(maxDistance);
             return maxDistance;
-        }
-
-        private void ShowScore()
-        {
-            foreach(Player p in roundScores.Keys)
-            {
-                Debug.Log("round score"+" name" + p.Name + "score:" + roundScores[p]);
-                Debug.Log("total score" + p.Name + "score:" + GGR_GameData.GetPlayerScore(p));
-            }
-            
         }
     }
 }
