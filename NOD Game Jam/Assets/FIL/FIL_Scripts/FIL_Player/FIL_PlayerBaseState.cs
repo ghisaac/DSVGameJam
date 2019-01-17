@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using FIL;
 
+/*
+ *Kopia av andras kod. Skapad för att fungera i våran scen.
+ */
 public abstract class FIL_PlayerBaseState : State
 {
     protected FIL_PlayerController controller { get { return (FIL_PlayerController)StateMachine.owner; } }
