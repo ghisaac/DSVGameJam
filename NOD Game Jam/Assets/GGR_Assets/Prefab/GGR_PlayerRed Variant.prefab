@@ -29,7 +29,7 @@ PrefabInstance:
     - target: {fileID: 8821475281022493632, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 8099373106901972425, guid: 4921be029791949479f1af193e56d589,
         type: 3}
@@ -97,90 +97,95 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b8c8b458952e4ce4d869ac78f4728950,
         type: 2}
+    - target: {fileID: 4008609785414579787, guid: 4921be029791949479f1af193e56d589,
+        type: 3}
+      propertyPath: CollisionLayers.m_Bits
+      value: 4194304
+      objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419915, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419913, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419935, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419921, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419929, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419931, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419933, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419909, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419911, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419917, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419919, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419923, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419925, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2687163136694496008, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419905, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2410211477801419907, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2687163136694496012, guid: 4921be029791949479f1af193e56d589,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4921be029791949479f1af193e56d589, type: 3}
