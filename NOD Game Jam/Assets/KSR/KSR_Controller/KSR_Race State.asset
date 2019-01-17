@@ -15,6 +15,6 @@ MonoBehaviour:
   _deadzone: 0.5
   thrustFwd: 5
   thrustBack: 4
-  turnSpeed: 0.24
+  turnSpeed: 0.5
   dashSpeed: 300
   boostSpeed: 1000
