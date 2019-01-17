@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//Manager to handle all UI elements in the scene
 public class ASR_UIManager : MonoBehaviour
 {
     public TextMeshProUGUI RoundNumber, RoundCountdown, Winscreen;

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Manager to handle player burp effects
 public class ASR_PlayerBurp : MonoBehaviour
 {
     public GameObject BurpParticle;
