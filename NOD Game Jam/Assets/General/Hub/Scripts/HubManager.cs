@@ -48,7 +48,7 @@ public class HubManager : MonoBehaviour
 
         HandleJoins();
 
-        if (!selectOnCooldown)
+        if (!selectOnCooldown && Player.AllPlayers.Count > 0 && Player.AllPlayers[0] != null)
         {
             HandleLevelSelection();
         }
@@ -96,7 +96,7 @@ public class HubManager : MonoBehaviour
 
     private void HandleLevelSelection()
     {
-        if (ReInput.players.AllPlayers[1].GetAxisRaw("Vertical") < 0)
+        if (Player.AllPlayers[0].Input.GetAxisRaw("Vertical") < 0)
         {
             currentPinIndex += 1;
 
@@ -109,7 +109,7 @@ public class HubManager : MonoBehaviour
             currentSelection = levelPins[currentPinIndex];
         }
         
-        else if (ReInput.players.AllPlayers[1].GetAxisRaw("Vertical") > 0)
+        else if (Player.AllPlayers[0].Input.GetAxisRaw("Vertical") > 0)
         {
             if (currentPinIndex == 0)
             {
@@ -122,7 +122,7 @@ public class HubManager : MonoBehaviour
             currentSelection = levelPins[currentPinIndex];
         }
 
-        if (ReInput.players.AllPlayers[1].GetButtonDown("A"))
+        if (Player.AllPlayers[0].Input.GetButtonDown("A"))
         {
             if (Player.AllPlayers.Count < 2) { Debug.Log("Less than two players present"); return; }
 
