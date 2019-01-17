@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1021027906477952815}
   - component: {fileID: 4157597234069923771}
   - component: {fileID: 6541405431249557908}
-  - component: {fileID: 3458790270521950119}
   m_Layer: 0
   m_Name: "General_sm_Brandsl\xE4ckare"
   m_TagString: Untagged
@@ -78,16 +77,3 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &3458790270521950119
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583778635775331955}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.4408775, y: 1.259838, z: 0.37071067}
-  m_Center: {x: 0.009818159, y: 0.629919, z: 0}
