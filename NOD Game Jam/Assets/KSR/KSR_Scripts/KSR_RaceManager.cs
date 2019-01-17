@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Collections;
+using UnityEngine.SceneManagement;
 
 public class KSR_RaceManager : MonoBehaviour
 {
@@ -72,7 +73,6 @@ public class KSR_RaceManager : MonoBehaviour
 
     void Start()
     {
-        Player.SpawnTestPlayers(2);
 
         SoundManager.Instance.PlayBGM();
 
@@ -152,8 +152,8 @@ public class KSR_RaceManager : MonoBehaviour
             points.Add(racer.player);
         }
 
-        //Player.DistributePoints(points[0], points[1], points[2], points[3]);
-
+        Player.DistributePoints(points.ToArray());
+        SceneManager.LoadScene("ScoreScreenScene");
         Debug.Log("Race Over!");
         raceStarted = false;
     }

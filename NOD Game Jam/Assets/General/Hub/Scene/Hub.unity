@@ -4078,7 +4078,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 654361255}
   myLevel: 4
   myMapSprite: {fileID: 21300000, guid: 0b5933d5912391346aad8336868650f9, type: 3}
-  levelBuildIndex: 0
+  levelBuildIndex: 8
 --- !u!222 &1303473819
 CanvasRenderer:
   m_ObjectHideFlags: 0
