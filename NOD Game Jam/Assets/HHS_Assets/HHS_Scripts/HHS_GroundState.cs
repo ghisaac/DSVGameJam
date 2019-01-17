@@ -82,8 +82,18 @@ public class HHS_GroundState : PlayerBaseState {
                 }
             }
             //Kör animation
-            transform.position = new Vector3(chosenChair.gameObject.transform.position.x - 1f, transform.position.y, chosenChair.gameObject.transform.position.z);
-           // chosenChair.GetComponentInChildren<Animator>().SetBool("Pulled Out", true);
+           
+            if (chosenChair.gameObject.tag != "Cup")
+            {
+                chosenChair.GetComponentInChildren<Animator>().SetBool("Pulled Out", true);
+                transform.position = new Vector3(chosenChair.gameObject.transform.position.x - 0.5f, transform.position.y, chosenChair.gameObject.transform.position.z);
+            }
+            else
+            {
+                transform.position = new Vector3(chosenChair.gameObject.transform.position.x, transform.position.y, chosenChair.gameObject.transform.position.z);
+            }
+      
+            controller.GetComponent<HHS_Player>().chair = chosenChair.gameObject;
             //transform.rotation = new Quaternion(
             //Rotera?
             //Kolla mot målstol

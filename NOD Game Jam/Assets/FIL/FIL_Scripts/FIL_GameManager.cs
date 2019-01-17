@@ -42,7 +42,7 @@ namespace FIL
             instance = this;
         }
 
-
+        //Start sätter variabler som behövs och hittar relevanta players från Player-classen. Startar en countdown och musik.
         private void Start()
         {
             _players = new GameObject[Player.AllPlayers.Count];
@@ -78,7 +78,7 @@ namespace FIL
             StartCoroutine("DrownTable");
         }
 
-
+        //kollar hur många spelare som är kvar i spelet och avslutar om det bara är en kvar.
         private void Update()
         {
             if(_placement.Count == _players.Length - 1)
@@ -87,6 +87,7 @@ namespace FIL
             }
         }
 
+        //slumpar fram ett bord ur en lista och startar en metod på det som får det att skaka och sedan sjunka ner i lavan.
         private IEnumerator DrownTable()
         {
             if (_tablesList.Count > 0)
@@ -105,19 +106,24 @@ namespace FIL
             }
         }
 
+        //Avslutar spelet, ger ut poäng och laddar nästa scen.
         private void EndGame()
         {
             StopAllCoroutines();
             AddLastPlayer();
             FlipPlacementList();
             AwardPoints();
+
+            SceneManager.LoadScene("ScoreScreenScene");
         }
 
+        //vänder på listan över spelarnas placering för att den ska fungera med Player.DistributePoints().
         private void FlipPlacementList()
         {
             _placement.Reverse();
         }
 
+        //lägger till den överlevande spelarna i placement listan.
         private void AddLastPlayer()
         {
             foreach (GameObject player in _players)
@@ -129,7 +135,7 @@ namespace FIL
                 }
             }
         }
-
+        
         private void AwardPoints()
         {
 
@@ -138,10 +144,9 @@ namespace FIL
             Player[] placementArray = _placement.ToArray();
 
             Player.DistributePoints(placementArray);
-            SceneManager.LoadScene("ScoreScreenScene");
-            
         }
 
+        //lägger till en död spelare till en lista (_placement). Index 0 är den som dör först, sista index den som vinner.
         public void PlayerDeath(GameObject player)
         {
             player.SetActive(false);
@@ -154,6 +159,7 @@ namespace FIL
             }
         }
 
+        //tar bort et bord från listan över bord så att spelet inte försöker skaka och sänka ner det i lavan flera gånger.
         public void RemoveTableFromList(GameObject table)
         {
             _tablesList.Remove(table);

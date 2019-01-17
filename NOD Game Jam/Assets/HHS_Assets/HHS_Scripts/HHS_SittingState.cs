@@ -41,6 +41,8 @@ public class HHS_SittingState : PlayerBaseState
         base.Enter();
         Velocity = Vector3.zero;
         controller.animator.SetFloat("Velocity", 0);
+
+            
       //  SoundManager.Instance.PlaySitDown();  
     }
 
@@ -48,6 +50,14 @@ public class HHS_SittingState : PlayerBaseState
         base.Exit();
         controller.GetComponentInChildren<SpriteRenderer>().enabled = false;
         controller.animator.SetBool("Raised Hand", false);
- 
+        if (controller.GetComponent<HHS_Player>().chair.gameObject.tag != "Cup")
+        { 
+            controller.GetComponent<HHS_Player>().chair.GetComponentInChildren<Animator>().SetBool("Pulled Out", false);
+        }
+        else
+        {
+            GameObject chair = controller.GetComponent<HHS_Player>().chair;
+            transform.position = new Vector3(chair.transform.position.x, transform.position.y, chair.transform.position.z - 0.5f);
+        }
     }
 }

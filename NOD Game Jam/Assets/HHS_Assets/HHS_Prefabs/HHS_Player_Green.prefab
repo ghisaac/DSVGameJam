@@ -658,6 +658,7 @@ MonoBehaviour:
     m_Bits: 16
   Points: 0
   goalindicator: {fileID: 0}
+  chair: {fileID: 0}
   PlayerID: 0
 --- !u!1 &3588584927267748724
 GameObject:

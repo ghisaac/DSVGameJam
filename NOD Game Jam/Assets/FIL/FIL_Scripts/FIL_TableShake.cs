@@ -36,15 +36,7 @@ namespace FIL
             _startPos = transform.position;
         }
 
-        private void Update()
-        {
-            
-            if (Input.GetKeyDown(KeyCode.Return) && !isRunning)
-            {
-                ShakeTable();
-            }
-        }
-
+        //sätter de variabler som behövs för att skaka bordet och sätter igång skakandet.
         public void ShakeTable()
         {
             if (!isShaking)
@@ -61,6 +53,7 @@ namespace FIL
             }
         }
 
+        //får bordet att skaka och startar en coroutine som sänker ner det i lavan. 
         public void DrownTable(float wait)
         {
             Debug.Log("DrownTable()");
@@ -89,7 +82,7 @@ namespace FIL
             yield return new WaitForEndOfFrame();
         }
 
-
+        //skakar bordet.
         private IEnumerator Shake()
         {
             isRunning = true;
