@@ -4,8 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Wall
-  - Checkpoint
+  - LevelPin
   - Cup
   layers:
   - Default
@@ -16,6 +15,9 @@ TagManager:
   - UI
   - 
   - 
+  - PostProcessing
+  - Stuff
+  - ActSoberLayer
   - 
   - 
   - 
@@ -30,16 +32,13 @@ TagManager:
   - 
   - 
   - 
-  - CollidLayer
   - 
   - 
   - 
   - 
-  - UIMarkers
-  - RedCamera
-  - BlueCamera
-  - GreenCamera
-  - YellowCamera
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
