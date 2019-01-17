@@ -42,8 +42,6 @@ public class ScoreScreen : MonoBehaviour
         ActivateScores();
         SoundManager.Instance.PlayChainSwoop();
     }
-
-
     void Update()
     {
         animationTimer += Time.deltaTime * animationDirection;
@@ -63,27 +61,25 @@ public class ScoreScreen : MonoBehaviour
         }
 
         if (sceneTimer >= sceneDuration)
-            SceneManager.LoadScene("HUB");
-            
+            SceneManager.LoadScene("HUB");    
     }
 
     private void ActivateScores()
     {
-        List<Player> tempList = new List<Player>();
-        for(int i = 0; i < Player.AllPlayers.Count; i++)
-        {
-            Player tempPlayer = Player.GetPlayerAtPlacement(i);
-            playerScoreObjects[i].SetValues(tempPlayer, icons[tempPlayer.RewierdId]);
-            tempList.Add(tempPlayer);
-        }
-        for(int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
-        {
-            playerScoreObjects[i].gameObject.SetActive(false);
-        }
-        foreach(Player p in tempList)
-        {
-            Debug.Log(p.Name + " " + p.Points);
-        }
+        foreach (Player p in Player.AllPlayers)
+            Debug.Log(p.Points);
+        //Deactivate all
+        for (int i = 0; i < playerScoreObjects.Length; i++)
+            playerScoreObjects[i].Hide();
+
+        //Activate All in order
+        List<Player> tempList = new List<Player>(Player.GetPlayersByPoints());
+        for(int i = 0; i < tempList.Count; i++)
+            playerScoreObjects[i].SetValues(tempList[i], icons[tempList[i].RewierdId]);
+
+         foreach (Player p in Player.AllPlayers)
+            Debug.Log(p.Points);
+
     }
 
     private void DropDownAnimation(float factor, AnimationCurve curve)

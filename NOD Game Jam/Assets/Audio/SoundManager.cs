@@ -20,7 +20,7 @@ public class SoundManager : MonoBehaviour
     public CustomClip CupImpact, CoffeeSplash;
     [Header("Kontorstols-racing")]
     public CustomClip TapFeet;
-    public CustomClip SpeedBoost, ChairRoll, Countdown;
+    public CustomClip SpeedBoost, ChairRoll, Countdown, Fireworks;
     [Header("Hela Havet Sneakar")]
     public CustomClip TeacherIdle;
     public CustomClip TeacherAlerted, StudentAskHelp, StudentDemandHelp, DuckFromSight, SitDown, Caught;
@@ -132,6 +132,10 @@ public class SoundManager : MonoBehaviour
     {
         AudioPlayer.Instance.Play2DSound(CoffeeSplash);
     }
+    public void PlayFireworks()
+    {
+        AudioPlayer.Instance.Play2DSound(Fireworks);
+    }
 
     //KONTORSTOLSRACING
     public void PlaySpeedUp()
@@ -195,5 +199,4 @@ public class SoundManager : MonoBehaviour
         AudioPlayer.Instance.Play2DSound(PlayerFall);
     }
 
-    //GEOGUESSER
 }

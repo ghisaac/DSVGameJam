@@ -35,7 +35,7 @@ public class ASR_CharacterController : MonoBehaviour
 
 	public void Initialize()
 	{
-        Debug.Log("Initialize");
+        //Debug.Log("Initialize");
         _rigidbody = GetComponent<Rigidbody>();
         _rigidbody.isKinematic = true;
         CharacterAnimator = GetComponent<Animator>();
@@ -107,8 +107,8 @@ public class ASR_CharacterController : MonoBehaviour
     {
         RaycastHit leftSide, rightSide;
 
-        Debug.DrawRay(RaycastTransform.position, -transform.right * RayMaxDistance, Color.red);
-        Debug.DrawRay(RaycastTransform.position, transform.right * RayMaxDistance, Color.green);
+        //Debug.DrawRay(RaycastTransform.position, -transform.right * RayMaxDistance, Color.red);
+        //Debug.DrawRay(RaycastTransform.position, transform.right * RayMaxDistance, Color.green);
         if (Physics.Raycast(RaycastTransform.position, -transform.right, out leftSide, RayMaxDistance, FloorMask) || Physics.Raycast(RaycastTransform.position, transform.right, out rightSide, RayMaxDistance, FloorMask))
         {
             //Debug.Log("You ded");
@@ -123,7 +123,7 @@ public class ASR_CharacterController : MonoBehaviour
     {
         //kalla på metod i gamemanager
         //_isKnockedOut = true;
-
+        SoundManager.Instance.PlayCollidePlayer();
         ASR_GameManager.Instance.PlayerKnockedOut(this);
         Deactivate();
 

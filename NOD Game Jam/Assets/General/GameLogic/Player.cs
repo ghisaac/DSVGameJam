@@ -12,15 +12,9 @@ public class Player
     public int LocalScore { get; set; }
     public int LocalPlacement;
     private Color[] colors = { Color.red, Color.blue, Color.green, Color.yellow };
-
     public Rewired.Player Input { get { return Rewired.ReInput.players.GetPlayer(RewierdId); } }
-
     public static List<Player> AllPlayers = new List<Player>();
-
     private static int[] POINTSFORPLACEMENTS = { 3,2,1};
-
-
-
 
 
     public Player(int RewierdId, string Name)
@@ -31,7 +25,6 @@ public class Player
         this.PlayerColor = colors[RewierdId];
         AllPlayers.Add(this);
     }
-
     public static bool SetNewName(int playerID, string name)
     {
         for(int i = 0; i < Player.AllPlayers.Count; i++)
@@ -43,7 +36,6 @@ public class Player
         return true;
        
     }
-
     public static bool CheckIfPlayerExists(int RewierdId)
     {
         foreach(Player p in AllPlayers)
@@ -68,7 +60,6 @@ public class Player
     {
         Player[] tempArr = { firstPlace, secondPlace, thirdPlace };
         DistributePoints(tempArr);
-
     }
     public static void DistributePoints(Player[] placements)
     {
@@ -129,7 +120,8 @@ public class Player
     {
         for(int i = 0; i < amountOfPlayers; i++)
         {
-            new Player(i, "player " + i);
+            Player temp = new Player(i, "player " + i);
+            temp.Points = Random.Range(0, 10);
         }
     }
     public static int GetPlayerPlacementByID(int ID)
@@ -144,19 +136,17 @@ public class Player
 
         return -1;
     }
-
     private static List<Player> GetPlayersByLocalPlacement()
     {
         List<Player> tempPlayers = new List<Player>(AllPlayers);
-        tempPlayers.OrderBy(x => x.LocalPlacement);
+        tempPlayers = tempPlayers.OrderBy(x => x.LocalPlacement).ToList();
         return tempPlayers;
     }
 
-    private static List<Player> GetPlayersByPoints()
+    public static List<Player> GetPlayersByPoints()
     {
-        List<Player> tempPlayers = new List<Player>(AllPlayers);
-        tempPlayers.OrderBy(x => x.Points);
-        tempPlayers.Reverse();
+        List<Player> tempPlayers = AllPlayers;
+        tempPlayers = tempPlayers.OrderByDescending(x => x.Points).ToList();
         return tempPlayers;
     }
 }
