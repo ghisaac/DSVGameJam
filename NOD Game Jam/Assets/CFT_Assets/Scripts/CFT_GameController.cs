@@ -63,9 +63,10 @@ public class CFT_GameController : MonoBehaviour
         _cameras = new List<Camera>();
 
         _playerManager = FindObjectOfType<CFT_PlayerManager>();
-   
+    
         _numberOfPlayers = Player.AllPlayers.Count;
-      
+        
+
         _playerManager.InitProduction();
 
         InitializePlayerProduction();
@@ -74,6 +75,11 @@ public class CFT_GameController : MonoBehaviour
         _gameState = GameState.init;
         _timer = _setInitTimer;
         _winnerData = new CFT_WinnerData();
+    }
+
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM();
     }
 
     private void Update()
@@ -152,10 +158,15 @@ public class CFT_GameController : MonoBehaviour
         {
             var _playerCups = g.GetComponent<CFT_CupController>();
             roundScores.Add(_playerCups.playerID, _playerCups.BoxCastHeight());
+            
         }
         _roundData.SetRoundPlacement(roundScores);
         _winnerData.rounds.Add(_roundData);
         _winnerData.SetRoundScore(_currentRound);
+        foreach(CFT_PlayerData p in _winnerData.player)
+        {
+            Player.GetPlayerByRewindID(p.Id).LocalScore = p.Score;
+        }
     }
 
     private void DebugPoints()
@@ -295,11 +306,15 @@ public class CFT_GameController : MonoBehaviour
 
         if (winners.Length == 1)
         {
-            winner = "Player" + winners[0].ToString();
+            winner = Player.GetPlayerByRewindID(winners[0]).Name;
         }
         else if (winners.Length > 1)
         {
-            winner = "Tie";
+            winner = "Tie between ";
+            for (int i = 0; i < winners.Length; i++)
+            {
+                winner += Player.GetPlayerByRewindID(winners[i]).Name+" ";
+            }
         }
         return winner;
     }

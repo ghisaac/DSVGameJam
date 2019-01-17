@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HHS_Air State
   m_EditorClassIdentifier: 
   Acceleration: 80
-  Friction: 5
-  MaxSpeed: 6
-  Gravity: 20
+  Friction: 3
+  MaxSpeed: 0
+  Gravity: 50
