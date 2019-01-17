@@ -15,7 +15,7 @@ namespace GGR
 
         public override void Enter()
         {
-
+            SoundManager.Instance.PlayBGM();
 
             Camera.main.transform.position = cameraStartPos;
             Camera.main.transform.rotation = Quaternion.Euler(cameraStartRotation);
