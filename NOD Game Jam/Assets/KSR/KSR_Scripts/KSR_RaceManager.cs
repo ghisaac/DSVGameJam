@@ -143,6 +143,8 @@ public class KSR_RaceManager : MonoBehaviour
                 //           racer.GetComponent<KSR_Controller>().enabled = false;
             }
         }
+
+
         Debug.Log("Race Over!");
         raceStarted = false;
     }
