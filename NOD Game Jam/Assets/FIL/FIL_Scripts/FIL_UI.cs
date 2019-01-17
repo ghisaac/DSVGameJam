@@ -21,7 +21,7 @@ namespace FIL
             time = TotalTime;
         }
 
-
+        //Kör en countdown i början på spelet.
         private void Update()
         {
             if (StartCountDown)
