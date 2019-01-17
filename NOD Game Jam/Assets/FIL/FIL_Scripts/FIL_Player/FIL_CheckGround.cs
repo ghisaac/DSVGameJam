@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace FIL
 {
-    public class FIL_CheckLava : MonoBehaviour
+    public class FIL_CheckGround : MonoBehaviour
     {
         [SerializeField]
         private LayerMask mask;
@@ -22,7 +22,7 @@ namespace FIL
             controller = GetComponent<FIL_PlayerController>();
         }
 
-
+        //kollar om spelaren landat i lava eller står på ett bord. Spelar en partikeleffekt och får spelaren att förlora ett liv. 
         void Update()
         {
             RaycastHit[] hits = Physics.RaycastAll(transform.position, Vector3.down, 0.7f, mask);
@@ -36,25 +36,36 @@ namespace FIL
                 {
                     if (hit.collider.gameObject.name == "LavaFloor" && !isSinking)
                     {
-                        isSinking = true;
-                        Debug.Log("hit lava");
-                        GameObject bubble = Instantiate(FIL_GameManager.instance._lavaBubblePrefab, transform.position, Quaternion.identity);
-                        bubble.transform.localScale *= 2;
-                        SoundManager.Instance.PlayFallInLava();
+                        InLava();
                     }
                     else if (hit.collider.gameObject.layer == 9 && hit.collider.name == "Table")
                     {
-                        _timer += Time.deltaTime;
-                        if (_timer > _delayBeforeDrown)
-                        {
-                            _timer = 0f;
-                            hit.collider.GetComponent<FIL_TableShake>().DrownTable(2f);
-                        }
+                        OnTable(hit);
                     }
                 }
             }
             if (isSinking)
                 Sink();
+        }
+
+        //spelaren står på ett bord. sänker det bordwet om spelaren står på ett bord för länge.
+        private void OnTable(RaycastHit hit)
+        {
+            _timer += Time.deltaTime;
+            if (_timer > _delayBeforeDrown)
+            {
+                _timer = 0f;
+                hit.collider.GetComponent<FIL_TableShake>().DrownTable(2f);
+            }
+        }
+
+        //spelaren är i lava; spelar ett ljud och påbörjar en timer för att kalla på FIL_playerController.LoseLife().
+        private void InLava()
+        {
+            isSinking = true;
+            GameObject bubble = Instantiate(FIL_GameManager.instance._lavaBubblePrefab, transform.position, Quaternion.identity);
+            bubble.transform.localScale *= 2;
+            SoundManager.Instance.PlayFallInLava();
         }
 
         private void Sink()
