@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -5378,7 +5378,7 @@ MonoBehaviour:
   - Papa
   - Pippi
   - Scidadle
-  - KushComax
+  - KushComa
   - Frenchie
   - Bubben
   - MrDamon
@@ -5429,9 +5429,9 @@ MonoBehaviour:
   - Special
   - RoseBud
   - AltarBoi
-  - RanVespa
+  - RonVespa
   - OgAG
-  - legaltass
+  - urrlygud
   - Legolas
   - Bilbo
   - Samwise
@@ -5439,11 +5439,11 @@ MonoBehaviour:
   - Gandalf
   - Saruman
   - Faramir
-  - Boromir
+  - Hajima
   - Gimli
   - Buckbeak
   - Peeves
-  - Hanna
+  - ShitGame
   - Giraffe
   - Falcon
   - AARON
@@ -5452,8 +5452,8 @@ MonoBehaviour:
   - Sbuckers
   - Domherre
   - DoomHare
-  - Awkward
-  - Handshake
+  - ERETROLL
+  - ERETOL
   - Pinkbull
   - WeakMans
   - bruh
@@ -5472,7 +5472,7 @@ MonoBehaviour:
   - Knugen
   - Dabster
   - Aragorn
-  - Frodo
+  - Frodood
 --- !u!114 &2095854322612277229
 MonoBehaviour:
   m_ObjectHideFlags: 0
