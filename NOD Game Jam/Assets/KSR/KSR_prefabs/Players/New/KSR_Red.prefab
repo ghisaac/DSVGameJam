@@ -182,6 +182,20 @@ MonoBehaviour:
   maxDistance: 10
   delayCam: 0
   timeToBeDelayed: 1
+--- !u!114 &4047726314480254328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9206102636149115177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfe1d7018759654d9635cd69371f995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 0}
+  bounceSpeed: 0.3
 --- !u!1001 &7627889651856423865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -301,6 +315,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2b8d00342a416b48bac98e36ce6f46b, type: 3}
+--- !u!1 &9206102636149115177 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1592322270107480720, guid: e2b8d00342a416b48bac98e36ce6f46b,
+    type: 3}
+  m_PrefabInstance: {fileID: 7627889651856423865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9206102636149019913 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1592322270107578032, guid: e2b8d00342a416b48bac98e36ce6f46b,

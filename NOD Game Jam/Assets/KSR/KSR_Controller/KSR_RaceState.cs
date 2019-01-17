@@ -110,6 +110,7 @@ public class KSR_RaceState : PlayerBaseState
     public void Boost()
     {
         _rb.AddForce(transform.forward  * boostSpeed);
+
     }
 
     public float GetHorizontalAxis()
