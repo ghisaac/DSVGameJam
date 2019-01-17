@@ -89,7 +89,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -779,6 +779,7 @@ MonoBehaviour:
   profileImage: {fileID: 0}
   points: {fileID: 552021088}
   profile: {fileID: 652328019}
+  inHub: 1
   ID: 2
 --- !u!222 &375272482
 CanvasRenderer:
@@ -1062,7 +1063,7 @@ MonoBehaviour:
   currentTextObject: {fileID: 274446711}
   myLevel: 1
   myMapSprite: {fileID: 21300000, guid: 9dd457bfc84917b46a9e4bab781b2902, type: 3}
-  levelBuildIndex: 0
+  levelBuildIndex: 5
 --- !u!222 &461727692
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1945,6 +1946,7 @@ MonoBehaviour:
   profileImage: {fileID: 0}
   points: {fileID: 1205542635}
   profile: {fileID: 765328512}
+  inHub: 1
   ID: 1
 --- !u!222 &665491051
 CanvasRenderer:
@@ -2920,6 +2922,7 @@ MonoBehaviour:
   profileImage: {fileID: 0}
   points: {fileID: 1880645266}
   profile: {fileID: 40140258}
+  inHub: 1
   ID: 3
 --- !u!222 &1185778188
 CanvasRenderer:
@@ -5455,6 +5458,21 @@ MonoBehaviour:
   - WeakMans
   - bruh
   - Abdullah
+  - KaosChic
+  - TrashBoi
+  - Swagstah
+  - Garbage
+  - Person
+  - ActualTho
+  - Ungersk
+  - Folkdans
+  - Floofy
+  - Ploof
+  - Untitled
+  - Knugen
+  - Dabster
+  - Aragorn
+  - Frodo
 --- !u!114 &2095854322612277229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5472,6 +5490,7 @@ MonoBehaviour:
   profileImage: {fileID: 0}
   points: {fileID: 1880838719}
   profile: {fileID: 818416547}
+  inHub: 1
   ID: 0
 --- !u!224 &4642007731479565996
 RectTransform:

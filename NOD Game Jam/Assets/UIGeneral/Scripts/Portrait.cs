@@ -11,6 +11,7 @@ public class Portrait : MonoBehaviour
     [SerializeField] private Image profileImage;
     [SerializeField] private TextMeshProUGUI points;
     [SerializeField] private GameObject profile;
+    [SerializeField] private bool inHub = false;
 
     [SerializeField]
     private int ID;
@@ -33,8 +34,16 @@ public class Portrait : MonoBehaviour
         }
 
         profileName.text = Player.GetPlayerByRewindID(ID).Name;
-        points.text = "" + Player.GetPlayerByRewindID(ID).LocalScore;
-    
+
+        if (inHub)
+        {
+            points.text = "" + Player.GetPlayerByRewindID(ID).Points;
+        }
+
+        else
+        {
+            points.text = "" + Player.GetPlayerByRewindID(ID).LocalScore;
+        }
     }
 
 }
