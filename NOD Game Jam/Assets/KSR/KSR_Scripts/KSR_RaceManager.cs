@@ -72,7 +72,7 @@ public class KSR_RaceManager : MonoBehaviour
 
     void Start()
     {
-        Player.SpawnTestPlayers(4);
+        Player.SpawnTestPlayers(2);
 
         SoundManager.Instance.PlayBGM();
 
