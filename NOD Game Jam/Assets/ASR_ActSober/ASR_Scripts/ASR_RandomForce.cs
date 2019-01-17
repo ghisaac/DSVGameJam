@@ -78,7 +78,8 @@ public class ASR_RandomForce : MonoBehaviour
 
             foreach (ASR_CharacterController cc in Characters)
             {
-                cc.AddForce(cc.transform.right * randomHorizontal * _force);
+                if (cc != null)
+                    cc.AddForce(cc.transform.right * randomHorizontal * _force);
             }
 
             timer += Time.deltaTime;
