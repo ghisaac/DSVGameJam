@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Rotates a transform around the axis given
 public class ASR_RotateObject : MonoBehaviour
 {
     public float RotateY = 15f;

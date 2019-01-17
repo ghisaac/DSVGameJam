@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Makes a list of lists blink simultaneously
 public class ASR_LightBlink : MonoBehaviour
 {
+    // A struct that has an array. Used to be able to have an array with arrays visible in the editor
     [System.Serializable]
     public struct LightStruct 
     {
@@ -19,7 +21,7 @@ public class ASR_LightBlink : MonoBehaviour
 
     public float LowerLightTime = 0.3f;
 
-
+    // Starts the 
 	private void Update()
 	{
         _delayTimer += Time.deltaTime;
@@ -37,6 +39,7 @@ public class ASR_LightBlink : MonoBehaviour
 
 	}
 
+    // Lowers and raises the light-intesity of every light in the LightStruct sent in. 
     private IEnumerator LowerIntensity(LightStruct activeLights)
     {
 

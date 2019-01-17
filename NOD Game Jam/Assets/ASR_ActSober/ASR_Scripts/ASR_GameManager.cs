@@ -4,6 +4,7 @@ using UnityEngine;
 using Rewired;
 using UnityEngine.SceneManagement;
 
+// Runs the gameloop
 public class ASR_GameManager : MonoBehaviour
 {
 
@@ -48,8 +49,7 @@ public class ASR_GameManager : MonoBehaviour
         SoundManager.Instance.PlayBGM();
     }
 
-
-
+    // Instatiates a character for every player in the scene and starts the gameloop
     private void InitializePlayers()
     {
         //Player.SpawnTestPlayers(4);
@@ -84,6 +84,7 @@ public class ASR_GameManager : MonoBehaviour
         StartCoroutine(StartCharacterAnimationsWithDelay());
     }
 
+    // Called by player when knocked out
     public void PlayerKnockedOut(ASR_CharacterController character)
     {
         if (_activeCharacters.Count == 0)
@@ -99,14 +100,13 @@ public class ASR_GameManager : MonoBehaviour
         }
     }
 
+    // When a round is finished the characters is awarded a score. 
+    // If all rounds have been played the game is finished, else next round is started
     private void RoundFinished()
     {
         _characterPlacement.Add(_activeCharacters[0]);
         _activeCharacters[0].Deactivate();
         UIManager.SetPlacementGui(_activeCharacters[0], 1);
-        
-
-        //Debug.Log("Round finished");
 
         for (int i = 0; i < _characterPlacement.Count; i++)
         {
@@ -129,6 +129,7 @@ public class ASR_GameManager : MonoBehaviour
         StartCoroutine(GameOverFeedback());
     }
 
+    // Updates player-scores
     private void UpdateScoreInUI()
     {
         foreach(ASR_CharacterController cc in _allCharacters)
@@ -142,17 +143,10 @@ public class ASR_GameManager : MonoBehaviour
         return _allCharacters.ToArray();
     }
 
+    // Sorts the list with all characters based on their score
     private void CalculateWinner()
     {
-        //Debug.Log("Someone won!");
-
         _allCharacters.Sort((p2, p1) => p1.Score.CompareTo(p2.Score));
-
-        /*
-        foreach (ASR_CharacterController cc in _allCharacters){
-            Debug.Log("Score = " + cc.Score);
-        }
-        */
     }
 
     private void ResetPlayers()
@@ -174,9 +168,6 @@ public class ASR_GameManager : MonoBehaviour
     {
         ResetLists();
         _forceGenerator.ResetForce();
-        //_roundCounter++;
-
-        //Debug.Log("StartRound");
 
         foreach (ASR_CharacterController cc in _allCharacters)
         {
@@ -194,26 +185,24 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator Countdown()
     {
-        // Nedräkning eller nått
         yield return new WaitForSeconds(CountdownTime);
 
     }
 
     private IEnumerator RoundFeedback()
     {
-        // Uppdatera poäng eller nått
         yield return new WaitForSeconds(1f);
     }
 
+    // Shows who won, gives points to the players and loads the another scene
     private IEnumerator GameOverFeedback()
     {
         yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.Name);
         DistributePoints();
         LoadScoreScreen();
-
-        // Ladda scen
     }
 
+    // Is called before the first round is started. Shows instructions and countdown
     private IEnumerator ActivateGame()
     {
         yield return ShowInstructions();
@@ -237,6 +226,7 @@ public class ASR_GameManager : MonoBehaviour
         StartGame();
     }
 
+    // Sets all characters animations to different speeds
     private IEnumerator StartCharacterAnimationsWithDelay()
     {
         float animationSpeedModifier = 0.6f;
