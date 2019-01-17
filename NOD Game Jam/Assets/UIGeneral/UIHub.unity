@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.30692166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -561,6 +561,31 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637640, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 513
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637640, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637640, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_text
+      value: 99:99
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637640, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637640, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5198312280770729056, guid: abbe18e857229a940a116e6251b8b0f3,
         type: 3}
       propertyPath: m_havePropertiesChanged
@@ -665,6 +690,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_isInputParsingRequired
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637641, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 25.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637641, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 129
+      objectReference: {fileID: 0}
+    - target: {fileID: 5198312281634637641, guid: abbe18e857229a940a116e6251b8b0f3,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abbe18e857229a940a116e6251b8b0f3, type: 3}

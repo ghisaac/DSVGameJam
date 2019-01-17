@@ -17,7 +17,6 @@ public class Timer : MonoBehaviour
         {
             instance = this;
         }
-
     }
 
     private void Update()
@@ -29,7 +28,7 @@ public class Timer : MonoBehaviour
         {
             Pause();
         }
-        instance.timer.text = TimerValue.ToString("00.00");
+        instance.timer.text = TimerValue.ToString("00.00").Replace(",", ":");
     }
 
     public static void StartTimer(float Length = -1)
