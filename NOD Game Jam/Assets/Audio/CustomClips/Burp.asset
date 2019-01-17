@@ -16,7 +16,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 8983e6719c117ec4a9f9a483fe487d2d, type: 3}
   Volume: 0.2
   Pitch: 1
-  PitchVariance: 0.05
+  PitchVariance: 0.1
   Loop: 0
   MinDistance: 1
   MaxDistance: 10

@@ -123,7 +123,7 @@ public class ASR_CharacterController : MonoBehaviour
     {
         //kalla på metod i gamemanager
         //_isKnockedOut = true;
-
+        SoundManager.Instance.PlayCollidePlayer();
         ASR_GameManager.Instance.PlayerKnockedOut(this);
         Deactivate();
 

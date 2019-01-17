@@ -43,11 +43,16 @@ public class ASR_GameManager : MonoBehaviour
         StartCoroutine(ActivateGame());
     }
 
-    
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM();
+    }
+
+
 
     private void InitializePlayers()
     {
-        //Player.SpawnTestPlayers(2);
+        Player.SpawnTestPlayers(2);
         if (SpawnFourPlayers)
         {
 
