@@ -87,6 +87,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 0}
   Force: 3
+  KnockdownParticle: {fileID: 4263818828217069781, guid: c70a8047003c20d43bb323f4a866c530,
+    type: 3}
   RaycastTransform: {fileID: 24782003293044155}
   ForcePositionTransform: {fileID: 3010275711495937526}
   BurpTransform: {fileID: 2039216869427956628}
@@ -167,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7788978696675710325}
   m_Layer: 0
-  m_Name: ASR_Player01
+  m_Name: ASR_Player02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

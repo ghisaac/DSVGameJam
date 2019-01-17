@@ -52,7 +52,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private void InitializePlayers()
     {
-        //Player.SpawnTestPlayers(2);
+        Player.SpawnTestPlayers(4);
         if (SpawnFourPlayers)
         {
 

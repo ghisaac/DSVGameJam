@@ -12,6 +12,7 @@ public class ASR_CharacterController : MonoBehaviour
     public float Force = 20f;
     private bool _isKnockedOut;
     public Player Player;
+    public GameObject KnockdownParticle;
 
     private float _inputModifier = 1f;
     private const float INPUT_MODIFIER_MIN = 1F;
@@ -109,22 +110,26 @@ public class ASR_CharacterController : MonoBehaviour
 
         //Debug.DrawRay(RaycastTransform.position, -transform.right * RayMaxDistance, Color.red);
         //Debug.DrawRay(RaycastTransform.position, transform.right * RayMaxDistance, Color.green);
-        if (Physics.Raycast(RaycastTransform.position, -transform.right, out leftSide, RayMaxDistance, FloorMask) || Physics.Raycast(RaycastTransform.position, transform.right, out rightSide, RayMaxDistance, FloorMask))
+        if (Physics.Raycast(RaycastTransform.position, -transform.right, out leftSide, RayMaxDistance, FloorMask))
         {
             //Debug.Log("You ded");
-            OnKnockout();
+            OnKnockout(leftSide.point);
+        } else if(Physics.Raycast(RaycastTransform.position, transform.right, out rightSide, RayMaxDistance, FloorMask))
+        {
+            OnKnockout(rightSide.point);
         }
         
 
         
     }
 
-    private void OnKnockout()
+    private void OnKnockout(Vector3 position)
     {
         //kalla på metod i gamemanager
         //_isKnockedOut = true;
         SoundManager.Instance.PlayCollidePlayer();
         ASR_GameManager.Instance.PlayerKnockedOut(this);
+        StartCoroutine(KnockDownParticleEffect(position));
         Deactivate();
 
         //Kom ihåg att ta bort kommentar!!!
@@ -163,4 +168,11 @@ public class ASR_CharacterController : MonoBehaviour
         Score += awardedScore;
     }
 
+    private IEnumerator KnockDownParticleEffect(Vector3 pos)
+    {
+        GameObject tempEffect = Instantiate(KnockdownParticle, pos, Quaternion.Euler(-90, 0, 0));
+
+        yield return new WaitForSeconds(2f);
+        Destroy(tempEffect);
+    }
 }

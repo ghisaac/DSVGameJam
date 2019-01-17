@@ -70,7 +70,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6759368130233566012}
   m_Layer: 0
-  m_Name: ASR_Player02
+  m_Name: ASR_Player03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterAnimator: {fileID: 0}
   Force: 3
+  KnockdownParticle: {fileID: 4263818828217069781, guid: c70a8047003c20d43bb323f4a866c530,
+    type: 3}
   RaycastTransform: {fileID: 6888609012246721519}
   ForcePositionTransform: {fileID: 9173794024856669191}
   BurpTransform: {fileID: 6452880160467992915}
@@ -196,11 +198,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6759368130233566012}
     m_Modifications:
-    - target: {fileID: 8836119836306253423, guid: 994e0bb15ed0f154eb704679f5eb976f,
-        type: 3}
-      propertyPath: m_Name
-      value: Character2
-      objectReference: {fileID: 0}
     - target: {fileID: 8836119836306618959, guid: 994e0bb15ed0f154eb704679f5eb976f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -261,6 +258,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: a645cbe6c017d4f78aa71d062257715e, type: 2}
+    - target: {fileID: 8836119836306253423, guid: 994e0bb15ed0f154eb704679f5eb976f,
+        type: 3}
+      propertyPath: m_Name
+      value: Character2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 994e0bb15ed0f154eb704679f5eb976f, type: 3}
 --- !u!1 &9178131127877748794 stripped
