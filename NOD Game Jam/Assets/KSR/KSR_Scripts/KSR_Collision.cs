@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KSR_Collision : MonoBehaviour
 {
-    public GameObject mainCamera;
+ //   public GameObject mainCamera;
     public float bounceSpeed = 1f;
     private Vector3 currentVelocity;
     private Rigidbody _rb;
@@ -25,16 +25,15 @@ public class KSR_Collision : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Wall")
+        Bounce(col.contacts[0].normal);
+        if (KSR_ParticleSpawner.instance != null)
         {
-            Bounce(col.contacts[0].normal);
-
-            if(mainCamera != null)
-                mainCamera.GetComponent<KSR_CameraFollow>().delayCam = true;
-            // Debug.Log("WALL");
+            KSR_ParticleSpawner.instance.SpawnBigImpact(transform.position, transform.rotation);
         }
-
-        
+        else
+        {
+            Debug.Log("FINNS INGEN PARTICLESPAWNER");
+        }
     }
 
     private void Bounce(Vector3 collisonNormal)

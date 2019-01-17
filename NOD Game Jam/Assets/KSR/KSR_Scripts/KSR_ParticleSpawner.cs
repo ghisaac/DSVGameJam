@@ -15,7 +15,7 @@ public class KSR_ParticleSpawner : MonoBehaviour
     public GameObject smallImpactParticle;
 
     [HideInInspector]
-    public KSR_ParticleSpawner instance;
+    public static KSR_ParticleSpawner instance;
 
     public void Awake()
     {
@@ -46,7 +46,7 @@ public class KSR_ParticleSpawner : MonoBehaviour
         Instantiate(temp, pos, rotation);
     }
 
-    public void SpawnBigImpactParticle(Vector3 pos, Quaternion rotation)
+    public void SpawnBigImpact(Vector3 pos, Quaternion rotation)
     {
         GameObject temp = bigImpactParticle;
         Instantiate(temp, pos, rotation);

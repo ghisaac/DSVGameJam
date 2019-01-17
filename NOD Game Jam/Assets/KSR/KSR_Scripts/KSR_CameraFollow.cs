@@ -25,8 +25,8 @@ public class KSR_CameraFollow : MonoBehaviour
     void Update()
     {
         _followPos = player.TransformPoint(0, cameraHeight, Mathf.Clamp(-cameraDistance, -maxDistance, 0));
-        transform.position = _followPos;
-
+        //transform.position = _followPos;
+        transform.position = Vector3.Lerp(transform.position, _followPos, followDelay * Time.deltaTime);
 
 
         //if (!delayCam)
@@ -38,7 +38,7 @@ public class KSR_CameraFollow : MonoBehaviour
         //{
         //    CameraDelay();
         //}
-        //  followRotation = Quaternion.LookRotation(player.position - transform.position, player.up);
+          //followRotation = Quaternion.LookRotation(player.position - transform.position, player.up);
         //transform.RotateAround()
         //      transform.LookAt(player);
     }
