@@ -106,8 +106,7 @@ public class KSR_RaceState : PlayerBaseState
     {
         if (RewierdPlayer.GetButtonDown("LT"))
         {
-            //_rb.AddForce(transform.right * -dashSpeed);
-            Boost();
+            _rb.AddForce(transform.right * -dashSpeed);
         }
 
         if (RewierdPlayer.GetButtonDown("RT"))

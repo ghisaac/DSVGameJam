@@ -4,6 +4,10 @@ using UnityEngine;
 using Rewired;
 using FIL;
 
+
+/*
+ *Kopia av andras kod. Skapad för att fungera i våran scen.
+ */
 [CreateAssetMenu(menuName = "Player/State/FIL_PlayerGroundState")]
 public class FIL_GroundState : FIL_PlayerBaseState
 {
