@@ -15,7 +15,7 @@ public class ScoreScreenPlayerScore : MonoBehaviour
     {
         placement.text = "" + (Player.GetPlayerPlacementByID(player.RewierdId) + 1);
         name.text = player.Name;
-        score.text = "" + player.Points;
+        score.text = "" + player.Points + "p";
         portrait.sprite = sprite;
         gameObject.SetActive(true);
     }
