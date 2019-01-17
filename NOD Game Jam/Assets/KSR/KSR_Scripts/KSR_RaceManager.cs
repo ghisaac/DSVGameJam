@@ -14,6 +14,7 @@ public class KSR_RaceManager : MonoBehaviour
     public GameObject[] playerPrefab;
 
     float startTime;
+    float startDelayTimer;
     bool raceStarted = false;
     public List<KSR_Racer> result;
     public List<KSR_Racer> racers;
@@ -88,17 +89,17 @@ public class KSR_RaceManager : MonoBehaviour
         }
 
         int j = 0;
-        foreach(GameObject go in allSpawnedPlayerControllers)
+        foreach (GameObject go in allSpawnedPlayerControllers)
         {
             go.transform.position = startLine.position + new Vector3(j * 2, 0, 0);
             go.transform.rotation = startLine.rotation;
             racers.Add(go.GetComponent<KSR_Racer>());
 
-            if(allSpawnedPlayerControllers.Count == 2)
+            if (allSpawnedPlayerControllers.Count == 2)
             {
                 go.GetComponent<KSR_Racer>().playerCamera.rect = new Rect(0f, 0.5f * j, 1f, 0.5f);
             }
-            else if(allSpawnedPlayerControllers.Count == 3)
+            else if (allSpawnedPlayerControllers.Count == 3)
             {
                 go.GetComponent<KSR_Racer>().playerCamera.rect = new Rect(((j / 2 + 1) % 2) * 0.501f, j % 2 * 0.501f, 0.498f, 0.498f);
             }
@@ -113,7 +114,7 @@ public class KSR_RaceManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Time.time >= 4)
         {
             if (!raceStarted)
             {
@@ -139,7 +140,7 @@ public class KSR_RaceManager : MonoBehaviour
         {
             if (racer != null)
             {
-     //           racer.GetComponent<KSR_Controller>().enabled = false;
+                //           racer.GetComponent<KSR_Controller>().enabled = false;
             }
         }
         Debug.Log("Race Over!");
@@ -148,9 +149,9 @@ public class KSR_RaceManager : MonoBehaviour
 
     void StartRace()
     {
-        foreach(KSR_Racer racer in racers)
+        foreach (KSR_Racer racer in racers)
         {
-            //racer.GetComponent<KSR_Controller>().enabled = true;
+            racer.GetComponent<PlayerController>().enabled = true;
             //racer.GetComponent<Rigidbody>().useGravity = true;
         }
         StartTime();
@@ -162,6 +163,7 @@ public class KSR_RaceManager : MonoBehaviour
         if (racer.lastCheckpoint == checkpoints[0] && racer.nextCheckpoint == checkpoints[0])
         {
             racer.lap += 1;
+            racer.lapText.text = racer.lap.ToString() + " Lap";
             racer.lapTimes.Add(Time.time);
             if (racer.lap == lapsToWin + 1)
             {
@@ -209,15 +211,21 @@ public class KSR_RaceManager : MonoBehaviour
             });
         }
         positions.Reverse();
+        int k = 1;
+        foreach (KSR_Racer racer in positions)
+        {
+            racer.placementText.text = k.ToString();
+            k++;
+        }
     }
 
     private void CheckTime()
     {
-        if(Time.time - startTime > raceTime)
+        if (Time.time - startTime > raceTime)
         {
-            foreach(KSR_Racer racer in positions)
+            foreach (KSR_Racer racer in positions)
             {
-                if(!result.Contains(racer))
+                if (!result.Contains(racer))
                 {
                     result.Add(racer);
                 }

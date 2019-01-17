@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class KSR_Racer: MonoBehaviour
+public class KSR_Racer : MonoBehaviour
 {
     public int lap = 0;
     public List<float> lapTimes;
@@ -14,11 +15,15 @@ public class KSR_Racer: MonoBehaviour
     public float distanceToNextCheckpoint = 0;
     public float positionScore = 0;
     public Camera playerCamera;
+    public Canvas playerCanvas;
+    public Text placementText;
+    public Text lapText;
 
     private void Start()
     {
         lastCheckpoint = KSR_RaceManager.instance.checkpoints[0];
         nextCheckpoint = KSR_RaceManager.instance.checkpoints[0];
+        lapText.text = lap.ToString() + " Lap";
     }
 
     private void Update()
@@ -43,6 +48,6 @@ public class KSR_Racer: MonoBehaviour
 
     public void Finished()
     {
- //       GetComponent<KSR_Controller>().enabled = false;
+        GetComponent<PlayerController>().enabled = false;
     }
 }
