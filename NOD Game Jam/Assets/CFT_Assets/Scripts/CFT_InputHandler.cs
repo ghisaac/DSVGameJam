@@ -15,6 +15,6 @@ public class CFT_InputHandler : MonoBehaviour
 
     public bool IsButtonAPressedPro(int ID)
     {
-        return Player.AllPlayers[ID].Input.GetButtonDown(_aButtonProduction);
+        return Player.GetPlayerByRewindID(ID).Input.GetButtonDown(_aButtonProduction);
     }
 }

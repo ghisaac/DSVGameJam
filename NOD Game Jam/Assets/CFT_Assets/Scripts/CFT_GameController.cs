@@ -241,21 +241,6 @@ public class CFT_GameController : MonoBehaviour
         } 
     }
 
-    private void InitializePlayer()
-    {
-        for (int i = 0; i < _numberOfPlayers; i++)
-        {
-            GameObject bg = Instantiate(_boardGame, _playerSpawnPoint[i].transform.position, Quaternion.Euler(0, 0, 0), _playerSpawnPoint[i].transform);
-            bg.GetComponentInChildren<CFT_CupController>().Init(i);
-            CFT_CupController _cup = bg.GetComponentInChildren<CFT_CupController>();
-            _gameBoards.Add(_cup);
-            Camera go = bg.GetComponentInChildren<Camera>();
-            _cameras.Add(go);
-            Text pName = Instantiate(PlayerName, PlayerNameDisplayBord.transform);
-            pName.text = "Player" + (i + 1);
-        }
-    }
-
     private void InitializePlayerProduction()
     {
         for (int i = 0; i < _numberOfPlayers; i++)

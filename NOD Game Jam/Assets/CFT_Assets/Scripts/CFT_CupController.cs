@@ -29,7 +29,7 @@ public class CFT_CupController : MonoBehaviour
     public void Init(int ID)
     {
         playerID = ID;
-        playerColor = Player.AllPlayers[playerID].PlayerColor;
+        playerColor = Player.GetPlayerByRewindID(playerID).PlayerColor;
         SubcribeToClickEvent();
     }
 

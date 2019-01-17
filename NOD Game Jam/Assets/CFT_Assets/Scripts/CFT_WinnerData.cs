@@ -76,7 +76,13 @@ public class CFT_WinnerData
             CFT_PlayerData p = new CFT_PlayerData(id);
             if (player.Contains(p))
             {
-                player[id].Score += point;
+                foreach(CFT_PlayerData pl in player)
+                {
+                    if(pl.Id == p.Id)
+                    {
+                        pl.Score += point;
+                    }
+                }
             }
             else
             {
