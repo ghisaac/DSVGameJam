@@ -71,7 +71,7 @@ public class KSR_RaceManager : MonoBehaviour
 
     void Start()
     {
-        Player.SpawnTestPlayers(3);
+        Player.SpawnTestPlayers(4);
 
         if (DEBUGGING)
             Player.SpawnTestPlayers(4);
@@ -94,16 +94,15 @@ public class KSR_RaceManager : MonoBehaviour
 
             if(allSpawnedPlayerControllers.Count == 2)
             {
-                go.AddComponent<Camera>().rect = new Rect(0f, 0.5f * j, 1f, 0.5f);
+                go.GetComponent<KSR_Racer>().playerCamera.rect = new Rect(0f, 0.5f * j, 1f, 0.5f);
             }
             else if(allSpawnedPlayerControllers.Count == 3)
             {
-                go.AddComponent<Camera>().rect = new Rect(((j / 2 + 1) % 2) * 0.501f, j % 2 * 0.501f, 0.498f, 0.498f);
+                go.GetComponent<KSR_Racer>().playerCamera.rect = new Rect(((j / 2 + 1) % 2) * 0.501f, j % 2 * 0.501f, 0.498f, 0.498f);
             }
             else
             {
-                Debug.Log((j/2+1) % 2);
-                go.AddComponent<Camera>().rect = new Rect(((j / 2 + 1) % 2 )* 0.501f, j % 2 * 0.501f, 0.498f, 0.498f);
+                go.GetComponent<KSR_Racer>().playerCamera.rect = new Rect(((j / 2 + 1) % 2) * 0.501f, j % 2 * 0.501f, 0.498f, 0.498f);
             }
             j++;
         }
