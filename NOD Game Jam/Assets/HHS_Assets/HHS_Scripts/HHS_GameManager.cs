@@ -48,7 +48,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
     private void Start() {
         InitializeGame();
-        SoundManager.Instance.PlayBGM();
+     //   SoundManager.Instance.PlayBGM();
     }
 
     private void AssignRandomChairs() {
@@ -147,9 +147,9 @@ public class HHS_GameManager : MonoBehaviour {
         //Instansiera mängden spelare i Player.AllPlayers.Count
         //Sätt dem på nån position och få dem att komma ihåg sin startposition.
         roundTimer = RoundTime;
-       
-        // loopa på Player.AllPlayers.Count
 
+        // loopa på Player.AllPlayers.Count
+        print(CreatePlayer.allSpawnedPlayerControllers.Count);
         for (int i = 0; i < CreatePlayer.allSpawnedPlayerControllers.Count; i++)
         {
           

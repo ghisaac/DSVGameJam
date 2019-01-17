@@ -82,8 +82,8 @@ public class HHS_GroundState : PlayerBaseState {
                 }
             }
             //Kör animation
-            transform.position = new Vector3(chosenChair.gameObject.transform.position.x, transform.position.y, chosenChair.gameObject.transform.position.z);
-            chosenChair.GetComponentInChildren<Animator>().SetBool("Pulled Out", true);
+            transform.position = new Vector3(chosenChair.gameObject.transform.position.x - 1f, transform.position.y, chosenChair.gameObject.transform.position.z);
+           // chosenChair.GetComponentInChildren<Animator>().SetBool("Pulled Out", true);
             //transform.rotation = new Quaternion(
             //Rotera?
             //Kolla mot målstol
