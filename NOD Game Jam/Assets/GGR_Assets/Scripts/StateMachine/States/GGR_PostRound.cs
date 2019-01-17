@@ -94,7 +94,6 @@ namespace GGR
             float currentTime = 0;
             while(currentTime < GetMaxPathDistance()/drawSpeed)
             {
-                Debug.Log("drawing");
                 for(int i = 0; i < lineRenderers.Count; i++)
                 {
                     int corners = 0;
