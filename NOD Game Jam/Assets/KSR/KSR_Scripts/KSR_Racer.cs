@@ -13,6 +13,7 @@ public class KSR_Racer: MonoBehaviour
     public Player player;
     public float distanceToNextCheckpoint = 0;
     public float positionScore = 0;
+    public Camera playerCamera;
 
     private void Start()
     {

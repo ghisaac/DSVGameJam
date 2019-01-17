@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 289706871624048776}
   - component: {fileID: 9153603592355223892}
   - component: {fileID: 345855219024394508}
+  - component: {fileID: 3073004493949106326}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -66,7 +67,7 @@ Camera:
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 1
+  m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
@@ -90,7 +91,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2791064618187689866}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d0ac7dd4d123f8439c60b3375c4e96c, type: 3}
   m_Name: 
@@ -103,6 +104,24 @@ MonoBehaviour:
   maxDistance: 10
   delayCam: 0
   timeToBeDelayed: 1
+--- !u!114 &3073004493949106326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2791064618187689866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba6af5eaa8d821f4e93093fd37ee3484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &6012401135656547519
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,8 +271,13 @@ PrefabInstance:
     - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8250954849525002015, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 289706871624048776}
     - target: {fileID: 1855741713182755059, guid: c03dc8294e8db2e45a35fa2a2fafbaa2,
         type: 3}
       propertyPath: m_Constraints
