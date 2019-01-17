@@ -65,6 +65,7 @@ namespace GGR
         {
             GGR_GameData.instance.StartCoroutine(ConfettiCloud());
             GGR_GameData.instance.StartCoroutine(DrawPaths(() => postRoundDone = true));
+            GGR_GameData.instance.timesUp.SetActive(false);
         }
 
         private IEnumerator ConfettiCloud()
