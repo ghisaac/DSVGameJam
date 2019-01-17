@@ -12,6 +12,7 @@ namespace GGR
     {
         public LineRenderer lineRendererPrefab;
         public float drawSpeed;
+        public ParticleSystem confetti;
         private GGR_Location goalLocation;
         private Dictionary<Player, Vector3[]> playerPaths;
         private bool postRoundDone = false;
@@ -61,8 +62,19 @@ namespace GGR
 
         private void ZoomDone()
         {
-            //poff fyverkerier
+            GGR_GameData.instance.StartCoroutine(ConfettiCloud());
             GGR_GameData.instance.StartCoroutine(DrawPaths(() => postRoundDone = true));
+        }
+
+        private IEnumerator ConfettiCloud()
+        {
+            ParticleSystem particles = ObjectPool.Instantiate(confetti.gameObject, goalLocation.position).GetComponent<ParticleSystem>();
+            particles.Play();
+            SoundManager.Instance.PlayVictorySound();
+            while (particles.IsAlive())
+                yield return null;
+
+            ObjectPool.Destroy(particles.gameObject);
         }
 
         private IEnumerator DrawPaths(Action callback)
