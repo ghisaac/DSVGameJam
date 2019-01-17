@@ -27,6 +27,7 @@ namespace GGR
             goalLocation = GGR_GameData.DequeueCurrentLocation();
             GGR_GameData.FreezeAllPlayers();
             SetAllPlayerPaths();
+            GGR_GameData.instance.timesUp.SetActive(true);
             foreach (Player player in playerPaths.Keys)
             {
                 float score = GGR_Helper.GetPathLength(playerPaths[player]);

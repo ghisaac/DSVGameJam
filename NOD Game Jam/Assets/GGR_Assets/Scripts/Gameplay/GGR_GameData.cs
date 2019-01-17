@@ -11,6 +11,7 @@ public class GGR_GameData : MonoBehaviour
     public List<Transform> boardPictureSlots;
     public Transform instructionNoteTransform;
     public GameObject splashScreen;
+    public GameObject timesUp;
 
     public static GGR_GameData instance { get; private set; }
     private List<GGR_Location> allLocations = new List<GGR_Location>();
