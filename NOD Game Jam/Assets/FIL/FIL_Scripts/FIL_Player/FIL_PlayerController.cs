@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using FIL;
 
+/*
+ *Kopia av andras kod. Skapad för att fungera i våran scen.
+ */
 public class FIL_PlayerController : MonoBehaviour
 {
 
@@ -47,7 +50,7 @@ public class FIL_PlayerController : MonoBehaviour
     }
 
 
-
+    //Metod vi lagt till, får spelaren att förlora ett liv och kallar på olika metoder beroende på hur många liv som finns kvar.
     public void LoseLife()
     {
         lives--;
