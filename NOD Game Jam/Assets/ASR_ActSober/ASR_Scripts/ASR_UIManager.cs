@@ -99,7 +99,7 @@ public class ASR_UIManager : MonoBehaviour
         RoundNumber.SetText("Round {0}", roundNumber);
         RoundNumber.gameObject.SetActive(true);
         yield return new WaitForSeconds(2);
-
+        SoundManager.Instance.PlayCountdown();
         RoundCountdown.SetText("3");
         RoundCountdown.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
@@ -114,6 +114,7 @@ public class ASR_UIManager : MonoBehaviour
 
     public IEnumerator WinScreenCoroutine(int playerWinNumber)
     {
+        SoundManager.Instance.PlayVictorySound();
         Winscreen.SetText("Player {0} Wins!", playerWinNumber);
         Winscreen.gameObject.SetActive(true);
         
