@@ -34,6 +34,16 @@ public class KSR_Collision : MonoBehaviour
         {
             Debug.Log("FINNS INGEN PARTICLESPAWNER");
         }
+
+        if(col.gameObject.tag == "Player")
+        {
+            SoundManager.Instance.PlayCollidePlayer();
+        }
+
+        if (col.gameObject.tag == "Wall")
+        {
+            SoundManager.Instance.PlayCollideTerrain();
+        }
     }
 
     private void Bounce(Vector3 collisonNormal)

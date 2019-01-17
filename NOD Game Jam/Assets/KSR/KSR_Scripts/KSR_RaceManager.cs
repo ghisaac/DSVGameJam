@@ -73,6 +73,8 @@ public class KSR_RaceManager : MonoBehaviour
     {
         Player.SpawnTestPlayers(4);
 
+        SoundManager.Instance.PlayBGM();
+
         if (DEBUGGING)
             Player.SpawnTestPlayers(4);
 
@@ -165,6 +167,9 @@ public class KSR_RaceManager : MonoBehaviour
             {
                 result.Add(racer);
                 racer.Finished();
+                SoundManager.Instance.PlayVictorySound();
+                racer.GetComponent<PlayerController>().gameObject.transform.GetChild(2).gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+                SoundManager.Instance.PlayFireworks();
             }
             if (racers.Count == result.Count)
             {

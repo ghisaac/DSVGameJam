@@ -22,6 +22,8 @@ public class KSR_SpeedBoost : MonoBehaviour
            if(other.GetComponent<PlayerController>().stateMachine.CurrentState is KSR_RaceState)
             {
                 other.GetComponent<PlayerController>().stateMachine.GetState<KSR_RaceState>().Boost();
+                other.GetComponent<PlayerController>().gameObject.transform.GetChild(2).gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().Play();
+                SoundManager.Instance.PlayBoost();
                 Debug.Log("SPEEDBOOST");
                 Deactivate();
             }

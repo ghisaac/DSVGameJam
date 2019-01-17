@@ -50,18 +50,27 @@ public class KSR_RaceState : PlayerBaseState
 
     private void ReadInput()
     {
+        controller.gameObject.transform.GetChild(4).gameObject.SetActive(false);
         _currentThrust = 0.0f;
         float thrustInput = RewierdPlayer.GetAxis("Vertical");
         if (thrustInput > _deadzone)
         {
-
+            controller.gameObject.transform.GetChild(4).gameObject.SetActive(false);
             _currentThrust = thrustInput * thrustFwd;
         }
         else if (thrustInput < _deadzone)
         {
             _currentThrust = thrustInput * thrustBack;
-        }
+            //KSR_ParticleSpawner.instance.SpawnBrakeParticle(controller.transform.position, controller.transform.rotation);
 
+            if (_rb.velocity.magnitude > 0.2)
+            controller.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+
+            else if (_rb.velocity.magnitude < 0.2)
+                controller.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+        } 
+
+       
         _currentTurn = 0.0f;
         float turnInput = RewierdPlayer.GetAxis("Horizontal");
         if (Mathf.Abs(turnInput) > _deadzone)
