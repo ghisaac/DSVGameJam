@@ -9,10 +9,19 @@ public class ASR_PlayerBurp : MonoBehaviour
     private float _delayBetweenBurps;
     private float _timer = 0f;
     private ASR_CharacterController[] _activePlayers;
+    public float TimeBetweenBurps;
+    public bool RandomTimeBetweenBurps;
 
     private void Start()
     {
-        SetRandomDelayTime();
+        if (RandomTimeBetweenBurps)
+        {
+            SetRandomDelayTime();
+        }
+        else
+        {
+            _delayBetweenBurps = TimeBetweenBurps;
+        }
         _activePlayers = ASR_GameManager.Instance.GetAllCharacters();
     }
 
@@ -24,7 +33,15 @@ public class ASR_PlayerBurp : MonoBehaviour
         {
             
             RandomBurps();
-            SetRandomDelayTime();
+            if (RandomTimeBetweenBurps)
+            {
+                SetRandomDelayTime();
+            }
+            else
+            {
+                _delayBetweenBurps = TimeBetweenBurps;
+            }
+            
             _timer = 0f;
         }
 
@@ -33,7 +50,7 @@ public class ASR_PlayerBurp : MonoBehaviour
 
     private void SetRandomDelayTime()
     {
-        _delayBetweenBurps = Random.Range(0, RandomTimeRange);
+        _delayBetweenBurps = Random.Range(1, RandomTimeRange);
     }
 
     private void RandomBurps()
@@ -42,8 +59,8 @@ public class ASR_PlayerBurp : MonoBehaviour
         
         if(_activePlayers.Length > 0)
         {
-            GameObject tempBurp = Instantiate(BurpParticle, _activePlayers[Random.Range(0, _activePlayers.Length - 1)].BurpTransform);
-            Debug.Log("Entered Burp");
+            GameObject tempBurp = Instantiate(BurpParticle, _activePlayers[Random.Range(0, _activePlayers.Length)].BurpTransform);
+            SoundManager.Instance.PlayBurp();
 
             //
             StartCoroutine(DestroyBurp(tempBurp));
