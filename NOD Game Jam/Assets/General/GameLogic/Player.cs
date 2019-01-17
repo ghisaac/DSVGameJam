@@ -120,7 +120,8 @@ public class Player
     {
         for(int i = 0; i < amountOfPlayers; i++)
         {
-            new Player(i, "player " + i);
+            Player temp = new Player(i, "player " + i);
+            temp.Points = Random.Range(0, 10);
         }
     }
     public static int GetPlayerPlacementByID(int ID)
@@ -138,13 +139,14 @@ public class Player
     private static List<Player> GetPlayersByLocalPlacement()
     {
         List<Player> tempPlayers = new List<Player>(AllPlayers);
-        tempPlayers.OrderBy(x => x.LocalPlacement);
+        tempPlayers = tempPlayers.OrderBy(x => x.LocalPlacement).ToList();
         return tempPlayers;
     }
-    private static List<Player> GetPlayersByPoints()
+
+    public static List<Player> GetPlayersByPoints()
     {
-        List<Player> tempPlayers = new List<Player>(AllPlayers);
-        tempPlayers.OrderByDescending(x => x.Points);
+        List<Player> tempPlayers = AllPlayers;
+        tempPlayers = tempPlayers.OrderByDescending(x => x.Points).ToList();
         return tempPlayers;
     }
 }

@@ -1,17 +1,23 @@
 fileFormatVersion: 2
-guid: ff7c80cd636a3be4aa4aaeb0f9c3eb18
+guid: 56d4fa3e0d1a64041bb201319b1de7cc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: polaroid_2
-    100002: //RootNode
-    400000: polaroid_2
-    400002: //RootNode
-    2100000: polaroid_2Mat
-    2100002: initialShadingGroup
-    2300000: polaroid_2
-    3300000: polaroid_2
-    4300000: polaroid_2
+    100000: //RootNode
+    400000: //RootNode
+    2100000: tables
+    2100002: Chairs
+    2100004: WoodWals
+    2100006: lambert1
+    2100008: flor
+    2100010: Sofas
+    2100012: WhiteWalls_areas
+    2100014: Anslagstavla
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Grupp2_pCube1
+    7400000: Take 001
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +49,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0006
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -63,9 +69,9 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -92,7 +98,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
