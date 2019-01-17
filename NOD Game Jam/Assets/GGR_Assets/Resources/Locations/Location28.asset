@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6550325d02e51b74a8fc55919d5383ab, type: 3}
   m_Name: Location28
   m_EditorClassIdentifier: 
-  position: {x: 24, y: 0, z: -20.5}
+  position: {x: 25, y: 0, z: -27}
   picture: {fileID: 1958250648807562, guid: a345cfb7d64a20343a2965610572b879, type: 3}
