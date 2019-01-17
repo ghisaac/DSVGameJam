@@ -13,6 +13,7 @@ public class HHS_Player : MonoBehaviour
     public GameObject goalindicator;
     [HideInInspector]
     public GameObject chair;
+    public GameObject smokeParticles, fParticles;
 
     public int PlayerID;
 
@@ -27,7 +28,8 @@ public class HHS_Player : MonoBehaviour
     }
 
     public void Bust() {
-        
+
+        StartCoroutine(ActivateParticles());
         ResetPosition();
         //Animation
         //Ljud
@@ -90,5 +92,27 @@ public class HHS_Player : MonoBehaviour
             
     //    }
     //}
+
+    public void TriggerParticles()
+    {
+        StartCoroutine(ActivateParticles());
+    }
+
+    private IEnumerator ActivateParticles()
+    {
+        yield return new WaitForSeconds(0.75f);
+        
+        smokeParticles.SetActive(true);
+        fParticles.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        smokeParticles.SetActive(false);
+
+        yield return new WaitForSeconds(3f);
+
+
+        fParticles.SetActive(false);
+    }
 
 }

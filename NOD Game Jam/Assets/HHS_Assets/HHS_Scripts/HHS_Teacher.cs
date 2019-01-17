@@ -135,9 +135,11 @@ public class HHS_Teacher : MonoBehaviour
             player.GetComponentInChildren<Animator>().SetBool("Raised Hand", false);
             if (player.GetComponent<PlayerController>().stateMachine.CurrentState is HHS_GroundState) {
                 player.GetComponentInChildren<Animator>().SetTrigger("Busted");
+                player.GetComponent<HHS_Player>().TriggerParticles();
                 StartCoroutine(WaitForAnimationAndBust(1.5f, player));
                 Icon.sprite = BustIcon;
                 bustedSomeone = true;
+
                
             }
 
