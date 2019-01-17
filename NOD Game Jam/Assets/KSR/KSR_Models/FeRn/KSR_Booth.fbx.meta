@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: b6d093abce6d7584fb5ad40793c7d9e5
+guid: 6a7e503dfe4f28946bf49a0e553572d2
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: lapp
-    100002: //RootNode
-    400000: lapp
-    400002: //RootNode
-    2100000: lappMat
-    2300000: lapp
-    3300000: lapp
-    4300000: lapp
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert32
+    2100002: lambert31
+    2100004: lambert30
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube17
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -42,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0006
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -62,7 +62,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:

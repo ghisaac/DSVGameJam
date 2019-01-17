@@ -1,17 +1,28 @@
 fileFormatVersion: 2
-guid: ff7c80cd636a3be4aa4aaeb0f9c3eb18
+guid: b2512b83f09f2aa4b80204ca34f61b32
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: polaroid_2
-    100002: //RootNode
-    400000: polaroid_2
-    400002: //RootNode
-    2100000: polaroid_2Mat
-    2100002: initialShadingGroup
-    2300000: polaroid_2
-    3300000: polaroid_2
-    4300000: polaroid_2
+    100000: Box
+    100002: Club
+    100004: Glas
+    100006: //RootNode
+    400000: Box
+    400002: Club
+    400004: Glas
+    400006: //RootNode
+    2100000: lambert8
+    2100002: lambert9
+    2100004: lambert1
+    2300000: Box
+    2300002: Club
+    2300004: Glas
+    3300000: Box
+    3300002: Club
+    3300004: Glas
+    4300000: Box
+    4300002: Club
+    4300004: Glas
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +54,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0006
+    globalScale: 25
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -63,7 +74,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:

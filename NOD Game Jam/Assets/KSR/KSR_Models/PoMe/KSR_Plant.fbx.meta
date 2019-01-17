@@ -1,17 +1,34 @@
 fileFormatVersion: 2
-guid: 09261b220abb2194a8d5b8abc3d75fd5
+guid: 31757b75e6ee25848b5bcc9e2747bd14
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: board
-    100002: //RootNode
-    400000: board
-    400002: //RootNode
-    2100000: boardMat
-    2100002: initialShadingGroup
-    2300000: board
-    3300000: board
-    4300000: board
+    100000: //RootNode
+    100002: Leaves
+    100004: PlantPot
+    100006: Soil
+    100008: Wood
+    400000: //RootNode
+    400002: Leaves
+    400004: PlantPot
+    400006: Soil
+    400008: Wood
+    2100000: lambert4
+    2100002: lambert5
+    2100004: lambert7
+    2100006: lambert6
+    2300000: Leaves
+    2300002: PlantPot
+    2300004: Soil
+    2300006: Wood
+    3300000: Leaves
+    3300002: PlantPot
+    3300004: Soil
+    3300006: Wood
+    4300000: Leaves
+    4300002: Wood
+    4300004: PlantPot
+    4300006: Soil
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -43,7 +60,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0006
+    globalScale: 20
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -63,7 +80,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
