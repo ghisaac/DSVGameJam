@@ -12,8 +12,9 @@ public class HHS_GameManager : MonoBehaviour {
     public List<HHS_Player> activePlayers = new List<HHS_Player>();
 
     public TextMeshProUGUI[] PointsUI;
-    public GameObject playerPrefab;
-    public Transform startPosition;
+
+
+    public Transform[] startPosition;
     public SpriteRenderer[] goalIndicators;
 
 
@@ -149,11 +150,10 @@ public class HHS_GameManager : MonoBehaviour {
 
         for (int i = 0; i < CreatePlayer.allSpawnedPlayerControllers.Count; i++)
         {
-            Vector3 newPosition = startPosition.position + new Vector3(1 + i, 0, 0);
           
             activePlayers.Add(CreatePlayer.allSpawnedPlayerControllers[i].GetComponent<HHS_Player>());
             activePlayers[i].GetComponent<HHS_Player>().PlayerID = i;
-            activePlayers[i].GetComponent<HHS_Player>().Startposition = newPosition;
+            activePlayers[i].GetComponent<HHS_Player>().Startposition = startPosition[i].position;
             activePlayers[i].GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
             
             PointsUI[i].gameObject.SetActive(true);
