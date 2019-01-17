@@ -10,14 +10,16 @@ public class HHS_Player : MonoBehaviour
     private GameObject goal;
     private Animator animator; 
     [HideInInspector]
-    public SpriteRenderer goalindicator;
+    public GameObject goalindicator;
+    [HideInInspector]
+    public GameObject chair;
 
     public int PlayerID;
 
 
     public void SetGoal(GameObject newGoal) {
         goal = newGoal;
-        goalindicator.transform.position = newGoal.transform.position + new Vector3(2,0,0);
+        goalindicator.transform.position = newGoal.transform.position + new Vector3(0,0.5f,0);
     }
 
     public GameObject GetGoal() {

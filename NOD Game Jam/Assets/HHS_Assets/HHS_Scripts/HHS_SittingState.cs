@@ -41,13 +41,13 @@ public class HHS_SittingState : PlayerBaseState
         base.Enter();
         Velocity = Vector3.zero;
         controller.animator.SetFloat("Velocity", 0);
-        //SoundManager.Instance.PlaySitDown();  LJUD HÄR
+        SoundManager.Instance.PlaySitDown();  
     }
 
     public override void Exit() {
         base.Exit();
         controller.GetComponentInChildren<SpriteRenderer>().enabled = false;
         controller.animator.SetBool("Raised Hand", false);
-        controller.transform.position += new Vector3(-2, 0, 0); 
+        controller.transform.position += new Vector3(-1, 0, 0); 
     }
 }

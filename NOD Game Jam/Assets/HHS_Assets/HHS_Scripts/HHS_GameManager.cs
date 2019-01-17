@@ -11,11 +11,11 @@ public class HHS_GameManager : MonoBehaviour {
     [HideInInspector]
     public List<HHS_Player> activePlayers = new List<HHS_Player>();
 
-    public TextMeshProUGUI[] PointsUI;
+    public GameObject[] PointsUI;
 
 
     public Transform[] startPosition;
-    public SpriteRenderer[] goalIndicators;
+    public GameObject[] goalIndicators;
 
 
     [Header("UI")]
@@ -48,6 +48,7 @@ public class HHS_GameManager : MonoBehaviour {
     }
     private void Start() {
         InitializeGame();
+        SoundManager.Instance.PlayBGM();
     }
 
     private void AssignRandomChairs() {
@@ -75,6 +76,7 @@ public class HHS_GameManager : MonoBehaviour {
     private void StartRound() {
 
         roundTimer = RoundTime;
+        Timer.StartTimer(roundTimer);
         roundIsActive = true;
         Teacher.StartStudent();
         //Byt state på spelare (lås upp kontroller)
@@ -145,7 +147,7 @@ public class HHS_GameManager : MonoBehaviour {
         //Instansiera mängden spelare i Player.AllPlayers.Count
         //Sätt dem på nån position och få dem att komma ihåg sin startposition.
         roundTimer = RoundTime;
-
+       
         // loopa på Player.AllPlayers.Count
 
         for (int i = 0; i < CreatePlayer.allSpawnedPlayerControllers.Count; i++)
@@ -155,7 +157,7 @@ public class HHS_GameManager : MonoBehaviour {
             activePlayers[i].GetComponent<HHS_Player>().PlayerID = i;
             activePlayers[i].GetComponent<HHS_Player>().Startposition = startPosition[i].position;
             activePlayers[i].GetComponent<HHS_Player>().goalindicator = goalIndicators[i];
-            
+            activePlayers[i].transform.position = activePlayers[i].Startposition;
             PointsUI[i].gameObject.SetActive(true);
         }
         StartCoroutine(WaitForStartRound());
@@ -196,9 +198,10 @@ public class HHS_GameManager : MonoBehaviour {
         }
 
 
-
-        for(int i = 0; i < activePlayers.Count; i++) {
-            PointsUI[i].text = activePlayers[i].Points.ToString();
+        
+        for (int i = 0; i < Player.AllPlayers.Count; i++)
+        {
+            Player.AllPlayers[i].LocalScore = activePlayers[i].Points;
         }
         TimeUI.text = ((int)(roundTimer * 100)).ToString();
     }
