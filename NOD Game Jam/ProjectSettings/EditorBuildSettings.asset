@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CFT_Assets/Scenes/CFT_MainScene.unity
     guid: c949d3911953dec4cad70763fe15b793
+  - enabled: 1
+    path: Assets/HHS_Assets/HHS_Scenes/HHS_GameScene.unity
+    guid: 866e3b56bab222644b4eff7da11074ee
   m_configObjects: {}
