@@ -33,12 +33,14 @@ public class ScoreScreen : MonoBehaviour
 
     private int animationDirection = 1;
 
+    private bool hasPlayedChainSound = false;
 
     void Start()
     {
         if(testing)
             Player.SpawnTestPlayers(3);
         ActivateScores();
+        SoundManager.Instance.PlayChainSwoop();
     }
 
 
@@ -50,7 +52,15 @@ public class ScoreScreen : MonoBehaviour
         float factor = animationTimer / animationDuration;
         DropDownAnimation(factor, animationDirection > 0 ? dropDownCurv : liftDownCurv);
         if (sceneTimer >= (sceneDuration - animationTimer))
+        {
+            if (!hasPlayedChainSound)
+            {
+                SoundManager.Instance.PlayChainSwoop();
+                hasPlayedChainSound = true;
+            }
             animationDirection = -1;
+
+        }
 
         if (sceneTimer >= sceneDuration)
             SceneManager.LoadScene("HUB");
@@ -59,14 +69,20 @@ public class ScoreScreen : MonoBehaviour
 
     private void ActivateScores()
     {
+        List<Player> tempList = new List<Player>();
         for(int i = 0; i < Player.AllPlayers.Count; i++)
         {
             Player tempPlayer = Player.GetPlayerAtPlacement(i);
             playerScoreObjects[i].SetValues(tempPlayer, icons[tempPlayer.RewierdId]);
+            tempList.Add(tempPlayer);
         }
         for(int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
         {
             playerScoreObjects[i].gameObject.SetActive(false);
+        }
+        foreach(Player p in tempList)
+        {
+            Debug.Log(p.Name + " " + p.Points);
         }
     }
 
