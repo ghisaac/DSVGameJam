@@ -69,21 +69,14 @@ public class ScoreScreen : MonoBehaviour
 
     private void ActivateScores()
     {
-        List<Player> tempList = new List<Player>();
-        for(int i = 0; i < Player.AllPlayers.Count; i++)
-        {
-            Player tempPlayer = Player.GetPlayerAtPlacement(i);
-            playerScoreObjects[i].SetValues(tempPlayer, icons[tempPlayer.RewierdId]);
-            tempList.Add(tempPlayer);
-        }
-        for(int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
-        {
-            playerScoreObjects[i].gameObject.SetActive(false);
-        }
-        foreach(Player p in tempList)
-        {
-            Debug.Log(p.Name + " " + p.Points);
-        }
+        //Deactivate all
+        for (int i = Player.AllPlayers.Count; i < playerScoreObjects.Length; i++)
+            playerScoreObjects[i].Hide();
+
+        //Activate All in order
+        List<Player> tempList = Player.GetPlayersByPoints();
+        for(int i = 0; i < tempList.Count; i++)
+            playerScoreObjects[i].SetValues(tempList[i], icons[tempList[i].RewierdId]);
     }
 
     private void DropDownAnimation(float factor, AnimationCurve curve)

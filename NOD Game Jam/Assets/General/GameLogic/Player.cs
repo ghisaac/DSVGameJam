@@ -141,10 +141,11 @@ public class Player
         tempPlayers.OrderBy(x => x.LocalPlacement);
         return tempPlayers;
     }
-    private static List<Player> GetPlayersByPoints()
+
+    public static List<Player> GetPlayersByPoints()
     {
         List<Player> tempPlayers = new List<Player>(AllPlayers);
-        tempPlayers.OrderByDescending(x => x.Points);
+        tempPlayers.OrderBy(x => x.Points);
         return tempPlayers;
     }
 }

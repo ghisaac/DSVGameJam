@@ -17,5 +17,15 @@ public class ScoreScreenPlayerScore : MonoBehaviour
         name.text = player.Name;
         score.text = "" + player.Points;
         portrait.sprite = sprite;
+        gameObject.SetActive(true);
+    }
+
+    public void Hide()
+    {
+        placement.text = "";
+        name.text = "";
+        score.text = "";
+        portrait.sprite = null;
+        gameObject.SetActive(false);
     }
 }
