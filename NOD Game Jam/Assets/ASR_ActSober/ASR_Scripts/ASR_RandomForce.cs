@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ASR_RandomForce : MonoBehaviour
 {
-    //public Rigidbody[] _rigidbodies;
+    
     public ASR_CharacterController[] Characters;
     public float StartForce;
     public float ForceMultiplier;
@@ -14,7 +14,7 @@ public class ASR_RandomForce : MonoBehaviour
     public float MinRandomTime;
     public float MaxRandomTime;
 
-    //private IEnumerator _activeCoroutine;
+    
 
     void Start()
     {
@@ -22,59 +22,47 @@ public class ASR_RandomForce : MonoBehaviour
         StartCoroutine(RandomForceTimer());
     }
 
+    //Activates the random force generator
     public void ActivateForceGenerator()
     {
         ResetForce();
         StartCoroutine(RandomForceTimer());
-        //_activeCoroutine = RandomForceTimer();
-        //StartCoroutine(_activeCoroutine);
+        
     }
 
+    //Method to add the active players in the scene to characterlist
     public void AddCharacters(ASR_CharacterController[] characters)
     {
         Characters = characters;
     }
 
+    //Method to reset the force applied to players to the startingforce
     public void ResetForce()
     {
         _force = StartForce;
     }
-    /*
-    private void AddRandomForce()
-    {
-        float randomHorizontal = Random.value > 0.5 ? 1 : -1;
-
-        foreach (Rigidbody rb in _rigidbodies)
-        {
-
-            rb.AddForce(rb.transform.right * randomHorizontal * _force, ForceMode.Impulse);
-        }
-        _force *= ForceMultiplier;
-    }
-    */
-
+    
+    //Coroutine to add force to the players randomly over time.
     private IEnumerator RandomForceTimer()
     {
         yield return new WaitForSeconds(Random.Range(MinRandomTime, MaxRandomTime));
-        //AddRandomForce();
+        
         yield return AddForceOverTime();
         StartCoroutine(RandomForceTimer());
     }
 
+    //Coroutine to add push force on the players over a set amount of time
     private IEnumerator AddForceOverTime(){
 
+        //Chooses random side from which the push force should be applied
         float randomHorizontal = Random.value > 0.5 ? 1 : -1;
 
         float timer = 0f;
 
+        //Applies push force while timer is less than the PushTime
         while (timer < PushTime){
 
-            /*
-            foreach (Rigidbody rb in _rigidbodies)
-            {
-                rb.AddForce(rb.transform.right * randomHorizontal * _force, ForceMode.Acceleration);
-            }
-            */
+            
 
             foreach (ASR_CharacterController cc in Characters)
             {
@@ -88,6 +76,7 @@ public class ASR_RandomForce : MonoBehaviour
 
         }
 
+        //Increases the amount of force by a factor set in the inspector that will be applied next time AddForceOverTime is called
         _force *= ForceMultiplier;
 
     }
