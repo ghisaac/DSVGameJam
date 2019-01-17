@@ -125,11 +125,10 @@ public class HubManager : MonoBehaviour
         if (Player.AllPlayers[0].Input.GetButtonDown("A"))
         {
             if (Player.AllPlayers.Count < 2) { Debug.Log("Less than two players present"); return; }
+
             StartCoroutine(StevenIsAight());
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
-
-            ControlsShow.ShowControlsForGameid(currentPinIndex, () => { SceneManager.LoadScene(currentSelectionSceneIndex); });
-            gameObject.SetActive(false);
+            SceneManager.LoadScene(currentSelectionSceneIndex);
         }
 
         HighlightLevel();
