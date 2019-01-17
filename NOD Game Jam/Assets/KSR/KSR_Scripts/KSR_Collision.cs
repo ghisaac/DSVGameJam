@@ -10,7 +10,7 @@ public class KSR_Collision : MonoBehaviour
     private Rigidbody _rb;
     private PlayerController _controller;
 
-    private void Start()
+     void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _controller = GetComponent<PlayerController>();
@@ -50,7 +50,7 @@ public class KSR_Collision : MonoBehaviour
     {
         var movementSpeed = currentVelocity.magnitude;
         var direction = Vector3.Reflect(currentVelocity.normalized, collisonNormal);
-        _rb.velocity = direction * Mathf.Clamp(Mathf.Max(movementSpeed, bounceSpeed), -10, 10);
+        _rb.velocity = direction * Mathf.Clamp(Mathf.Max(movementSpeed, bounceSpeed), -5, 5);
         Debug.Log("bouncen är: " + _rb.velocity);
     }
 }
