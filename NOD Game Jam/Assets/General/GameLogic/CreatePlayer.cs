@@ -13,7 +13,7 @@ public class CreatePlayer : MonoBehaviour
 
     public static List<GameObject> allSpawnedPlayerControllers = new List<GameObject>();
 
-    void Start()
+    void Awake()
     {
         if (DEBUGGING)
             Player.SpawnTestPlayers(4);

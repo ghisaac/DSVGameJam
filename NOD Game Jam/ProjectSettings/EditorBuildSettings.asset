@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/GGR_Assets/Scenes/GGR_GeoGuessr.unity
     guid: f29e12e9c011bb0438d4d4f288609840
+  - enabled: 1
+    path: Assets/CFT_Assets/Scenes/CFT_MainScene.unity
+    guid: c949d3911953dec4cad70763fe15b793
   m_configObjects: {}
