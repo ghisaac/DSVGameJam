@@ -226,6 +226,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.14999999
       objectReference: {fileID: 0}
+    - target: {fileID: 8892728755350896192, guid: 468e8c499eb8d4244b96f59f9444dc22,
+        type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 09dc7983d9682df418d0543c892ef283, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 468e8c499eb8d4244b96f59f9444dc22, type: 3}
 --- !u!224 &3304321496016855244 stripped
