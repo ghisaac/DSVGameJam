@@ -114,11 +114,11 @@ public class ASR_UIManager : MonoBehaviour
 
     }
 
-    public IEnumerator WinScreenCoroutine(int playerWinNumber)
+    public IEnumerator WinScreenCoroutine(string playerName)
     {
         SoundManager.Instance.PlayVictorySound();
         ConfettiParticles.SetActive(true);
-        Winscreen.SetText("Player {0} Wins!", playerWinNumber);
+        Winscreen.SetText(playerName + " Wins!");
         Winscreen.gameObject.SetActive(true);
         
         yield return new WaitForSeconds(3f);

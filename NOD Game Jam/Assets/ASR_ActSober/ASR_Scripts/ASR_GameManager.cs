@@ -207,7 +207,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator GameOverFeedback()
     {
-        yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.RewierdId);
+        yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.Name);
         DistributePoints();
         LoadScoreScreen();
 
