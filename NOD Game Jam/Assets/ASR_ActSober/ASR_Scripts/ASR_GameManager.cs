@@ -52,7 +52,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private void InitializePlayers()
     {
-        Player.SpawnTestPlayers(2);
+        //Player.SpawnTestPlayers(2);
         if (SpawnFourPlayers)
         {
 
@@ -60,7 +60,7 @@ public class ASR_GameManager : MonoBehaviour
             {
                 GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
-                Debug.Log(character);
+                //Debug.Log(character);
                 _allCharacters.Add(character);
                 character.Initialize();
             }
@@ -106,7 +106,7 @@ public class ASR_GameManager : MonoBehaviour
         UIManager.SetPlacementGui(_activeCharacters[0], 1);
         
 
-        Debug.Log("Round finished");
+        //Debug.Log("Round finished");
 
         for (int i = 0; i < _characterPlacement.Count; i++)
         {
@@ -144,14 +144,15 @@ public class ASR_GameManager : MonoBehaviour
 
     private void CalculateWinner()
     {
-        Debug.Log("Someone won!");
+        //Debug.Log("Someone won!");
 
         _allCharacters.Sort((p2, p1) => p1.Score.CompareTo(p2.Score));
 
+        /*
         foreach (ASR_CharacterController cc in _allCharacters){
             Debug.Log("Score = " + cc.Score);
         }
-
+        */
     }
 
     private void ResetPlayers()
@@ -175,7 +176,7 @@ public class ASR_GameManager : MonoBehaviour
         _forceGenerator.ResetForce();
         //_roundCounter++;
 
-        Debug.Log("StartRound");
+        //Debug.Log("StartRound");
 
         foreach (ASR_CharacterController cc in _allCharacters)
         {
@@ -227,7 +228,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         yield return Countdown();
         UIManager.InactivatePlacementGui();
-        Debug.Log("Restart game");
+        //Debug.Log("Restart game");
         yield return RoundFeedback();
 
         ResetPlayers();
