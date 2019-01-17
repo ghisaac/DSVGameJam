@@ -63,8 +63,6 @@ public class CFT_GameController : MonoBehaviour
         _cameras = new List<Camera>();
 
         _playerManager = FindObjectOfType<CFT_PlayerManager>();
-        new Player(0, "Micke");
-        new Player(1, "Kalle");
    
         _numberOfPlayers = Player.AllPlayers.Count;
       
