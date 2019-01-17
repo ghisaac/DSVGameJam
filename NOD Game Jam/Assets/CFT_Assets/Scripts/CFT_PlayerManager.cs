@@ -6,23 +6,8 @@ public class CFT_PlayerManager : MonoBehaviour
 {
     public GameObject playerPreFab;
     public List<CFT_PlayerController> players;
-    public Transform playerContainer;
-    
-   
-
-    public void Init(int numberOfPlayers)
-    {
-        for (int i = 0; i < numberOfPlayers; i++)
-        {
-            GameObject p = Instantiate(playerPreFab, playerContainer);
-            CFT_PlayerController pc = p.GetComponent<CFT_PlayerController>();
-            if(pc != null)
-            {
-                pc.Init(i);
-                players.Add(pc);
-            }
-        }
-    }
+    public Transform playerContainer;    
+ 
 
     public void InitProduction()
     {
@@ -32,7 +17,7 @@ public class CFT_PlayerManager : MonoBehaviour
             CFT_PlayerController pc = p.GetComponent<CFT_PlayerController>();
             if (pc != null)
             {
-                pc.Init(Player.AllPlayers[i].RewierdId);
+                pc.InitProduction(Player.AllPlayers[i].RewierdId);
                 players.Add(pc);
             }
         }

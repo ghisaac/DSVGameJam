@@ -7,39 +7,19 @@ public class CFT_PlayerController : MonoBehaviour
 {
     public CFT_InputHandler _inputHandler;
     public int ID;
-    public int controllNumber;
-    private bool isProduction;
     private bool _canDrop;
     public int score;
-
-    public void Init(int ID)
-    {
-        this.ID = ID;
-        _inputHandler.Init(ID);
-        isProduction = false;
-        _canDrop = true;
-
-    }
 
     public void InitProduction(int ID)
     {
         this.ID = ID;
         _inputHandler.InitProduction();
-        isProduction = true;
         _canDrop = true;
     }
 
     private void Update()
     {
-        if (isProduction)
-        {
-            PlayerProInput();
-        }
-        else
-        {
-            PlayerInput();
-        }
-  
+        PlayerProInput();
     }
 
     private void PlayerProInput()
@@ -50,13 +30,6 @@ public class CFT_PlayerController : MonoBehaviour
         }
     }
 
-    private void PlayerInput()
-    {
-        if (_inputHandler.IsButtonAPressed() && _canDrop)
-        {
-            Drop();
-        }
-    }
 
     private void Drop()
     {

@@ -36,10 +36,6 @@ public class CFT_GameController : MonoBehaviour
     public Text PlayerName;
     public GameObject PlayerNameDisplayBord;
 
-    [Header(" ")]
-    [SerializeField]
-    private bool _isProduction = false;
-
     //Spawn Stuff
     [SerializeField]
     private GameObject[] _playerSpawnPoint;
@@ -64,24 +60,17 @@ public class CFT_GameController : MonoBehaviour
     private void Awake()
     {
         _gameBoards = new List<CFT_CupController>();
-        _cameras = new List<Camera>();      
+        _cameras = new List<Camera>();
+
         _playerManager = FindObjectOfType<CFT_PlayerManager>();
         new Player(0, "Micke");
         new Player(1, "Kalle");
-        new Player(2, "Steffan");
-        new Player(3, "Arne");
+   
+        _numberOfPlayers = Player.AllPlayers.Count;
+      
+        _playerManager.InitProduction();
 
-        if (_isProduction)
-        {       
-            _numberOfPlayers = Player.AllPlayers.Count;
-            InitializePlayerProduction();
-            _playerManager.InitProduction();           
-        }
-        else
-        {
-            InitializePlayer();
-            _playerManager.Init(_numberOfPlayers);            
-        }
+        InitializePlayerProduction();
 
         SetCameraViewport();
         _gameState = GameState.init;
