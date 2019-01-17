@@ -15,6 +15,8 @@ public class ASR_UIManager : MonoBehaviour
 
     public GameObject[] Portraits;
 
+    public GameObject ConfettiParticles;
+
     public void FillUpDictionarys(ASR_CharacterController[] characterControllerList)
     {
         for(int i = 0; i < characterControllerList.Length; i++)
@@ -115,6 +117,7 @@ public class ASR_UIManager : MonoBehaviour
     public IEnumerator WinScreenCoroutine(int playerWinNumber)
     {
         SoundManager.Instance.PlayVictorySound();
+        ConfettiParticles.SetActive(true);
         Winscreen.SetText("Player {0} Wins!", playerWinNumber);
         Winscreen.gameObject.SetActive(true);
         
