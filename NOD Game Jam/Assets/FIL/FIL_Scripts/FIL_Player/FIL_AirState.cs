@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using FIL;
 
+
+/*
+ *Kopia av andras kod. Skapad för att fungera i våran scen med små ändraingar.
+ */
 [CreateAssetMenu(menuName = "Player/State/FIL_PlayerAirState")]
 public class FIL_AirState : FIL_PlayerBaseState
 {
@@ -21,6 +25,7 @@ public class FIL_AirState : FIL_PlayerBaseState
         Move();
         Collide();
 
+        //Detta är tillagt för att tillåta spelaren att hoppa flera gånger i luften.
         if (RewierdPlayer.GetButtonDown("A") && jumpsPreformed < maxJumps)
         {
             jumpsPreformed++;
@@ -28,7 +33,7 @@ public class FIL_AirState : FIL_PlayerBaseState
             controller.animator.SetTrigger("Jump");
             SoundManager.Instance.PlayPlayerJump();
         }
-
+        //slut här.
         transform.position += controller.Velocity * Time.deltaTime;
     }
 

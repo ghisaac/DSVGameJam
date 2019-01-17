@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ *Kopia av andras kod. Skapad för att fungera i våran scen.
+ */
 namespace FIL
 {
+
     public class FIL_PlayerAnimation : MonoBehaviour
     {
         public Animator Animator;
