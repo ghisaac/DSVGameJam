@@ -45,7 +45,7 @@ public class ASR_GameManager : MonoBehaviour
 
     private void Start()
     {
-        //SoundManager.Instance.PlayBGM();
+        SoundManager.Instance.PlayBGM();
     }
 
 
