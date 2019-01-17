@@ -33,7 +33,7 @@ public class ASR_CharacterController : MonoBehaviour
     [Header("DEBUGGING")]
     public bool UseKeyboard;
 
-    // The ASR_GameManager calls this method when the CharacterController has been instantiated
+
 	public void Initialize()
 	{
         //Debug.Log("Initialize");
@@ -61,7 +61,6 @@ public class ASR_CharacterController : MonoBehaviour
 
     }
 
-    // Adds force to the Character at a position above the Character-object to make it move sideways and with rotation
     private void Move()
     {
         /*
@@ -81,7 +80,6 @@ public class ASR_CharacterController : MonoBehaviour
         _rigidbody.AddForceAtPosition(direction * Force * _inputModifier, ForcePositionTransform.position, ForceMode.Acceleration);
     }
 
-    // Stops the character fro moving to far from its startposition
     private void ClampPosition()
     {
         Vector3 tempVec = transform.position;
@@ -89,7 +87,6 @@ public class ASR_CharacterController : MonoBehaviour
         transform.position = tempVec;
     }
 
-    // Increases the input value for every fram the player holds down input
     private void InputModification(){
 
         if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0){
@@ -109,7 +106,6 @@ public class ASR_CharacterController : MonoBehaviour
 
     }
 
-    // Checks if the player-head is too close to the floor
     private void CheckHeadCollision()
     {
         RaycastHit leftSide, rightSide;
@@ -129,13 +125,17 @@ public class ASR_CharacterController : MonoBehaviour
         
     }
 
-    // Character is knocked out of the round
     private void OnKnockout(Vector3 position)
     {
+        //kalla på metod i gamemanager
+        //_isKnockedOut = true;
         SoundManager.Instance.PlayCollidePlayer();
         ASR_GameManager.Instance.PlayerKnockedOut(this);
         StartCoroutine(KnockDownParticleEffect(position));
         Deactivate();
+
+        //Kom ihåg att ta bort kommentar!!!
+        //this.enabled = false;
     }
 
     public void Deactivate(){
@@ -143,7 +143,6 @@ public class ASR_CharacterController : MonoBehaviour
         _isKnockedOut = true;
     }
 
-    // Resets player position and rotation to make it ready for the next round
     public void OnRespawn()
     {
         _rigidbody.isKinematic = true;
@@ -154,7 +153,6 @@ public class ASR_CharacterController : MonoBehaviour
         
     }
 
-    // Activates player inpput
     public void ActivatePlayer()
     {
         this.enabled = true;
@@ -172,7 +170,6 @@ public class ASR_CharacterController : MonoBehaviour
         Score += awardedScore;
     }
 
-    // Instantiates particles and destroys after a while
     private IEnumerator KnockDownParticleEffect(Vector3 pos)
     {
         GameObject tempEffect = Instantiate(KnockdownParticle, pos, Quaternion.Euler(-90, 0, 0));

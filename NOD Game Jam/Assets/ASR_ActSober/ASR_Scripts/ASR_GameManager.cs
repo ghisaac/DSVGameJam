@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
+using UnityEngine.SceneManagement;
 
 public class ASR_GameManager : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class ASR_GameManager : MonoBehaviour
 
     private ASR_RandomForce _forceGenerator;
 
-
     [Header("DEBUGGING")]
     public bool SpawnFourPlayers;
 
@@ -43,11 +43,16 @@ public class ASR_GameManager : MonoBehaviour
         StartCoroutine(ActivateGame());
     }
 
-    
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM();
+    }
+
+
 
     private void InitializePlayers()
     {
-        Player.SpawnTestPlayers(2);
+        //Player.SpawnTestPlayers(4);
         if (SpawnFourPlayers)
         {
 
@@ -55,7 +60,7 @@ public class ASR_GameManager : MonoBehaviour
             {
                 GameObject instance = Instantiate(PlayerPrefabs[i], StartPositionTransforms[i].position, Quaternion.identity);
                 ASR_CharacterController character = instance.GetComponentInChildren<ASR_CharacterController>();
-                Debug.Log(character);
+                //Debug.Log(character);
                 _allCharacters.Add(character);
                 character.Initialize();
             }
@@ -101,7 +106,7 @@ public class ASR_GameManager : MonoBehaviour
         UIManager.SetPlacementGui(_activeCharacters[0], 1);
         
 
-        Debug.Log("Round finished");
+        //Debug.Log("Round finished");
 
         for (int i = 0; i < _characterPlacement.Count; i++)
         {
@@ -130,7 +135,6 @@ public class ASR_GameManager : MonoBehaviour
         {
             UIManager.SetScoreGui(cc, cc.Score);
         }
-
     }
 
     public ASR_CharacterController[] GetAllCharacters()
@@ -140,14 +144,15 @@ public class ASR_GameManager : MonoBehaviour
 
     private void CalculateWinner()
     {
-        Debug.Log("Someone won!");
+        //Debug.Log("Someone won!");
 
         _allCharacters.Sort((p2, p1) => p1.Score.CompareTo(p2.Score));
 
+        /*
         foreach (ASR_CharacterController cc in _allCharacters){
             Debug.Log("Score = " + cc.Score);
         }
-
+        */
     }
 
     private void ResetPlayers()
@@ -171,7 +176,7 @@ public class ASR_GameManager : MonoBehaviour
         _forceGenerator.ResetForce();
         //_roundCounter++;
 
-        Debug.Log("StartRound");
+        //Debug.Log("StartRound");
 
         foreach (ASR_CharacterController cc in _allCharacters)
         {
@@ -202,7 +207,9 @@ public class ASR_GameManager : MonoBehaviour
 
     private IEnumerator GameOverFeedback()
     {
-        yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.RewierdId.ToString());
+        yield return UIManager.WinScreenCoroutine(_allCharacters[0].Player.Name);
+        DistributePoints();
+        LoadScoreScreen();
 
         // Ladda scen
     }
@@ -221,7 +228,7 @@ public class ASR_GameManager : MonoBehaviour
     {
         yield return Countdown();
         UIManager.InactivatePlacementGui();
-        Debug.Log("Restart game");
+        //Debug.Log("Restart game");
         yield return RoundFeedback();
 
         ResetPlayers();
@@ -243,6 +250,22 @@ public class ASR_GameManager : MonoBehaviour
             animationSpeedModifier += 0.3f;
         }
 
+    }
+
+    private void DistributePoints()
+    {
+        List<Player> players = new List<Player>();
+        foreach (ASR_CharacterController cc in _allCharacters)
+        {
+            players.Add(cc.Player);
+        }
+
+        Player.DistributePoints(players.ToArray());
+    }
+
+    private void LoadScoreScreen()
+    {
+        SceneManager.LoadScene("ScoreScreenScene");
     }
 
 }
