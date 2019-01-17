@@ -33,8 +33,25 @@ public class ASR_UIManager : MonoBehaviour
 
     public void SetPlacementGui(ASR_CharacterController characterController, int placement)
     {
-        _placementGUIDictionary[characterController].SetText("Placement: {0}", placement);
+        switch (placement)
+        {
+            case 1:
+                _placementGUIDictionary[characterController].SetText("1st");
+                break;
+            case 2:
+                _placementGUIDictionary[characterController].SetText("2nd");
+                break;
+            case 3:
+                _placementGUIDictionary[characterController].SetText("3rd");
+                break;
+            default:
+                _placementGUIDictionary[characterController].SetText("4th");
+                break;
+        }
         _placementGUIDictionary[characterController].gameObject.SetActive(true);
+
+        //_placementGUIDictionary[characterController].SetText("Placement: {0}", placement);
+        //_placementGUIDictionary[characterController].gameObject.SetActive(true);
     }
 
     public void SetScoreGuiActive(ASR_CharacterController characterController)
