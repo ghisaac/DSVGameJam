@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿//STEVEN KRIDIOTIS
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 [CreateAssetMenu(fileName = "CustomClip", menuName = "ScriptableObjects/CustomClip")]
-public class CustomClip : ScriptableObject
+public class CustomClip : ScriptableObject //Scriptable object som används för att tilldela värden till spelobjekt med audiosources via AudioPlayer
 {
     public AudioClip[] AudioClips;
     [Range(0f, 1f)]
@@ -24,7 +25,7 @@ public class CustomClip : ScriptableObject
 
     private AudioSource _source;
 
-    public void PlayCustomClip(AudioSource source)
+    public void PlayCustomClip(AudioSource source) //Skriver över (AudioSource source) värden och spelar upp ljudet
     {
         source.pitch = Random.Range(Pitch - PitchVariance, Pitch + PitchVariance);
         source.volume = Volume;

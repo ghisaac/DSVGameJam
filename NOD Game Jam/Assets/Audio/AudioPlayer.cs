@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿//STEVEN KRIDIOTIS
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,7 +29,7 @@ public class AudioPlayer : MonoBehaviour
         PlayClip(clip, sourceOfAudio);
     }
 
-    public void PlayClip(CustomClip clip, GameObject sourceOfAudio = null)
+    public void PlayClip(CustomClip clip, GameObject sourceOfAudio = null) //Skapar ett spelobjekt med en AudioSource som tilldelas värden från (CustomClip clip, ...)
     {
         GameObject customSoundClip = new GameObject();
         customSoundClip.name = "SFX(" + clip.name + ")";
@@ -51,7 +52,7 @@ public class AudioPlayer : MonoBehaviour
         }
     }
 
-    private IEnumerator WaitAndDestroy(AudioSource source)
+    private IEnumerator WaitAndDestroy(AudioSource source) //Väntar med att förstöra spelobjektet som AudioSource:n sitter på så länge klippet spelas
     {
         while (source.isPlaying)
         {
