@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Checkpoint
-  - LevelPin
-  - Wall
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -16,8 +13,6 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Stuff
   - 
   - 
   - 
@@ -38,7 +33,9 @@ TagManager:
   - 
   - 
   - 
-  - MinimapMarker
+  - 
+  - 
+  - 
   - 
   m_SortingLayers:
   - name: Default

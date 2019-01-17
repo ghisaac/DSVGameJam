@@ -32,6 +32,8 @@ public class HubManager : MonoBehaviour
         currentPinIndex = 0;
         currentSelection = levelPins[currentPinIndex];
         selectOnCooldown = false;
+        startPos = currentSelection.GetComponent<LevelPin>().currentTextObject.transform.position;
+        SoundManager.Instance.PlayBGM();
     }
 
     void Update()
@@ -74,6 +76,7 @@ public class HubManager : MonoBehaviour
             {
                 if (!Player.CheckIfPlayerExists(p.id))
                 {
+                    PlayButtonSound();
                     new Player(p.id, AssignName());
                     Debug.Log("Player added: " + p.name);
                 }
@@ -83,6 +86,7 @@ public class HubManager : MonoBehaviour
             {
                 if (Player.CheckIfPlayerExists(p.id))
                 {
+                    PlayButtonSound();
                     leavingPlayer = p;
                     ToggleConfirmationPanel();
                 }
@@ -122,6 +126,7 @@ public class HubManager : MonoBehaviour
         {
             if (Player.AllPlayers.Count < 2) { Debug.Log("Less than two players present"); return; }
 
+            StartCoroutine(StevenIsAight());
             int currentSelectionSceneIndex = currentSelection.GetComponent<LevelPin>().GetSceneIndex();
             SceneManager.LoadScene(currentSelectionSceneIndex);
         }
@@ -161,6 +166,7 @@ public class HubManager : MonoBehaviour
     {
         if (player.GetButtonDown("A"))
         {
+            PlayButtonSound();
             Player.RemovePlayer(player.id);
             Debug.Log("Player removed: " + player.name);
             ToggleConfirmationPanel();
@@ -168,14 +174,27 @@ public class HubManager : MonoBehaviour
 
         if (player.GetButtonDown("B"))
         {
+            PlayButtonSound();
             ToggleConfirmationPanel();
         }
+    }
+
+    private void PlayButtonSound()
+    {
+        SoundManager.Instance.PlayButtonPress();
     }
 
     private IEnumerator SelectionCooldown()
     {
         selectOnCooldown = true;
+        SoundManager.Instance.PlayScrollSweep();
         yield return new WaitForSeconds(0.32f);
         selectOnCooldown = false;
+    }
+
+    private IEnumerator StevenIsAight()
+    {
+        SoundManager.Instance.PlayGameSelect();
+        yield return new WaitForSeconds(1.5f);
     }
 }
