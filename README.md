@@ -1,1 +1,1 @@
-# NOD-Game-Jam
+# DSV Game Jam 2018
